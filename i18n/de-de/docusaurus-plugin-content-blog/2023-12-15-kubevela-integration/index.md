@@ -91,7 +91,7 @@ curl -fsSL https://kcl-lang.io/script/install-cli.sh | /bin/bash
 kcl mod init kcl-play-svc && cd kcl-play-svc && kcl mod add oam
 ```
 
-- Write the following code in main.k.
+- Schreibe den folgenden Code in 'main.k'
 
 ```python
 import oam

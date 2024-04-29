@@ -1,6 +1,6 @@
 ---
 slug: 2024-03-22-pkl-kcl-comparison
-title: Comparison between Pkl und KCL
+title: Vergleich zwischen Pkl und KCL
 authors:
   name: KCL Team
   title: KCL Team
@@ -9,65 +9,65 @@ tags: [KCL, Newsletter]
 
 ## What is Pkl
 
-Pkl is a domain-specific programming language aimed at addressing the **complexity of configurations** such as repeated configurations und error verification. It is mainly targeted at cloud-native und application configuration scenarios. The primary goals of its technical product as a whole can be summarized as follows:
+Pkl ist eine domänenspezifische Programmiersprache, die darauf abzielt, **die Komplexität von Konfigurationen** wie wiederholte Konfigurationen und Fehlerprüfung anzugehen. Sie zielt hauptsächlich auf Cloud-native und Anwendungskonfigurationsszenarien ab. Die Hauptziele ihres technischen Produkts insgesamt lassen sich wie folgt zusammenfassen:
 
-- **Safety**: Provide safety by capturing validation errors before deployment.
-- **Scalability**: The language can be used in both simple und complex scenarios.
-- **Programmability**: Improve the experience of writing configuration code with first-class IDE support.
+**Sicherheit**: Bietet Sicherheit, indem Validierungsfehler vor der Bereitstellung erfasst werden.
+**Skalierbarkeit**: Die Sprache kann in einfachen und komplexen Szenarien verwendet werden.
+**Programmierbarkeit**: Verbessert die Erfahrung beim Schreiben von Konfigurationscode durch eine first-class IDE support.
 
 ## What is KCL
 
-KCL ist eine Open-Source Sprache mit Constraint basierten Records und funktionalen Elementen, die die Erstellung komplexer Konfigurationen, einschließlich solcher für Cloud-native Szenarien, verbessert. Sie wird von der Cloud Native Computing Foundation (CNCF) als Sandbox-Projekt gehostet. Mit fortschrittlicher Programmiersprachentechnologie und -praktiken widmet sich KCL der Förderung von besserer Modularität, Skalierbarkeit und Stabilität für Konfigurationen. Es ermöglicht einfacheres Schreiben von Logik und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
+KCL ist eine Open Source Sprache mit constraints-basierten Records und funktionalen Elementen, die die Erstellung komplexer Konfigurationen, einschließlich solcher für Cloud-native Szenarien, verbessern. Sie wird von der Cloud Native Computing Foundation (CNCF) als Sandbox Projekt gehostet. Mit fortschrittlicher Programmiersprachentechnologie und -praktiken widmet sich KCL der Förderung von besserer Modularität, Skalierbarkeit und Stabilität für Konfigurationen. Es ermöglicht einfacheres Schreiben von Logiken und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
 
-## Differences between Pkl und KCL
+## Die Unterschiede zwischen Pkl und KCL
 
 ### Design Philosophy
 
-The design philosophy of the two languages can be glimpsed from their respective official slogans. Pkl's slogan is Programmable, Scalable, und Safe, while KCL's slogan is Mutation, Validation, und Abstraction. It can be understood that KCL, compared to Pkl, is more focused on specific cloud-native domain issues such as complexity und security, und is closer to the cloud-native description method (Mutation und Validation are derived from Kubernetes' MutationWebhook und ValidationWebhook, using Abstraction to combat complexity). KCL converges the language's design für specific domains, reduces unnecessary designs, und enhances functionality und developer usability. It tries to reference simpler language styles such as Python und Go, excluding unexpected features und side effects. It strengthens stability und consistency by combining language technology und GitOps, ensures configuration determinism by enforcing strong immutability und conflict detection, shields user-side details through code reuse und abstraction combining default value filling, und supports business validation of configuration data through custom validation expressions. It also integrates with more cloud-native tools or projects such as Kustomize, Helm, und Crossplane to provide more scenario functionality.
+Die Designphilosophie der beiden Sprachen wird durch ihre offiziellen Slogans verdeutlicht. Der Slogan von Pkl lautet "Programmierbar, Skalierbar und Sicher", während KCL mit "Mutation, Validierung und Abstraktion" wirbt. Es lässt sich verstehen, dass KCL im Vergleich zu Pkl mehr auf spezifische Cloud-native Domänenfragen wie Komplexität und Sicherheit fokussiert ist und der cloud-nativen Beschreibungsmethode näher steht (Mutation und Validierung leiten sich von Kubernetes' MutationWebhook und ValidationWebhook ab und verwenden Abstraktion, um Komplexität entgegenzuwirken). KCL vereint das Design der Sprache für spezifische Domänen, reduziert unnötige Designs und verbessert Funktionalität und Entwicklerbenutzerfreundlichkeit. Es versucht, einfachere Sprachstile wie Python und Go zu referenzieren, indem unerwartete Funktionen und Seiteneffekte ausgeschlossen werden. Es stärkt Stabilität und Konsistenz durch die Kombination von Sprachtechnologie und GitOps, gewährleistet Konfigurationsdeterminismus durch die Durchsetzung starker Unveränderlichkeit und Konflikterkennung, schirmt benutzerseitige Details durch Code-Wiederverwendung und Abstraktion unter Verwendung von Standardwertfüllung ab und unterstützt die geschäftliche Validierung von Konfigurationsdaten durch benutzerdefinierte Validierungsausdrücke. Es integriert sich auch mit mehr Cloud-native Tools oder Projekten wie Kustomize, Helm und Crossplane, um mehr Szenariofunktionalität bereitzustellen.
 
-In contrast, Pkl is more "general" und "modern" in design compared to KCL, not only in its language design elements but also in its specific language features. Pkl is designed to be Turing complete und its overall language design is more like Swift und Kotlin, implying that it can be used für more than just "configuration" scenarios. It features object-oriented keywords similar to Java und pipeline operators such as |>, not commonly found in other common programming languages. Moreover, many of Pkl's features und tools are implemented by Pkl itself, to a certain extent demonstrating Pkl's capabilities. There are many use cases für Pkl, which cannot be exhaustively listed here.
+Im Gegensatz dazu ist Pkl im Design im Vergleich zu KCL eher "allgemein" und "modern", nicht nur in seinen Sprachelementen, sondern auch in seinen spezifischen Sprachmerkmalen. Pkl ist darauf ausgelegt, Turing-vollständig zu sein, und sein gesamtes Sprachdesign ähnelt eher Swift und Kotlin, was darauf hindeutet, dass es für mehr als nur "Konfigurations" -Szenarien verwendet werden kann. Es verfügt über objektorientierte Schlüsselwörter ähnlich wie Java und Pipeline-Operatoren wie |> , die in anderen gängigen Programmiersprachen nicht häufig vorkommen. Darüber hinaus werden viele der Funktionen und Tools von Pkl selbst implementiert, was in gewissem Maße die Fähigkeiten von Pkl zeigt. Es gibt viele Anwendungsfälle für Pkl, die hier nicht erschöpfend aufgeführt werden können.
 
-I personally am very fond of Pkl's modern language features, signifying its powerful functionality und the ease of acceptance für developers writing libraries. However, from a negative perspective, this undoubtedly brings additional complexity und learning thresholds für a domain-specific language. KCL, on the other hand, strikes a balance between configuration data und powerful general language features. For example, KCL does not have procedural für loops like Pkl, und while it provides language features with a partial object-oriented focus, it does not introduce complex inheritance chains und polymorphism like Pkl. Additionally, KCL adopts some functional language features, und its functions are designed to be "pure" without extra side effects. This allows KCL to integrate with upper-level business systems für more automation while avoiding the most complex extreme scenarios, offering many built-in library functions für common scenarios.
+Ich persönlich bin sehr angetan von den modernen Sprachmerkmalen von Pkl, die seine leistungsstarke Funktionalität und die Akzeptanz für Entwickler, die Bibliotheken schreiben, kennzeichnen. Aus negativer Sicht bringt dies zweifellos zusätzliche Komplexität und Lernschwellen für eine domänenspezifische Sprache mit sich. KCL hingegen findet einen Kompromiss zwischen Konfigurationsdaten und leistungsstarken allgemeinen Sprachmerkmalen. Zum Beispiel verfügt KCL nicht über prozedurale for-Schleifen wie Pkl, und während es Sprachmerkmale mit einem teilweisen Schwerpunkt auf der objektorientierten Programmierung bietet, führt es keine komplexen Vererbungsketten und Polymorphismen wie Pkl ein. Darüber hinaus übernimmt KCL einige funktionale Sprachmerkmale, und seine Funktionen sind darauf ausgelegt, "rein" ohne zusätzliche Seiteneffekte zu sein. Dies ermöglicht es KCL, sich mit höherstufigen Geschäftssystemen für eine umfangreichere Automatisierung zu integrieren, während die komplexesten Extremszenarien vermieden werden und viele integrierte Bibliotheksfunktionen für häufige Szenarien angeboten werden.
 
-### Language Features
+### Sprachmerkmale
 
-Overall, KCL und Pkl both support variable definition, references, und type definition, but there are differences in the degree of support und syntax semantics. They both support common programming language features such as arithmetic, logic, list comprehensions, conditions, functions, standard libraries, und importing third-party modules. However, the support methods und syntax are different, but they have drawn inspiration from general-purpose programming languages. Both partially or mixingly support user-defined types und object-oriented features. In terms of data file integration, KCL und Pkl can directly import JSON/YAML data types, JSON Schema, Kubernetes CRD, und other type definitions.
+Insgesamt unterstützen KCL und Pkl sowohl die Definition von Variablen, Referenzen und Typen als auch Unterschiede im Grad der Unterstützung und der Syntaxsemantik. Beide unterstützen gängige Programmiersprachenfunktionen wie arithmetische, logische Operationen, Listenverständnis, Bedingungen, Funktionen, Standardbibliotheken und das Importieren von Drittanbietermodulen. Die Methoden und Syntax zur Unterstützung sind jedoch unterschiedlich, aber sie haben sich von allgemeinen Programmiersprachen inspirieren lassen. Beide unterstützen teilweise oder gemischt benutzerdefinierte Typen und objektorientierte Funktionen. In Bezug auf die Integration von Datendateien können KCL und Pkl direkt JSON/YAML-Datentypen, JSON-Schema, Kubernetes-CRD und andere Typdefinitionen importieren.
 
-Additionally, KCL und Pkl both have many built-in language features für configuration operations, data validation, und security compliance to meet the needs of configuration scenarios. For example, they support configuration auto-merge features, field range checks, type checks, regular expressions, und more. The difference is that KCL adopts partial object-oriented features by separating data type checks und constraint checks, allowing KCL to provide more static analysis capabilities to meet the needs of IDEs or other toolchains. In contrast, Pkl requires constraint definitions to be written together with type definitions und performs type checks und constraint validation uniformly at runtime.
+Darüber hinaus verfügen KCL und Pkl beide über viele integrierte Sprachfunktionen für Konfigurationsoperationen, Datenvalidierung und Sicherheitskonformität, um den Anforderungen von Konfigurationsszenarien gerecht zu werden. Beispielsweise unterstützen sie Konfigurationsautomergung, Feldbereichsprüfungen, Typüberprüfungen, reguläre Ausdrücke und mehr. Der Unterschied besteht darin, dass KCL teilweise objektorientierte Funktionen übernimmt, indem es Datentypüberprüfungen und Einschränkungsprüfungen trennt und somit KCL ermöglicht, mehr statische Analysefähigkeiten bereitzustellen, um den Anforderungen von IDEs oder anderen Toolchains gerecht zu werden. Im Gegensatz dazu müssen bei Pkl Einschränkungsdefinitionen zusammen mit Typdefinitionen geschrieben werden, und Typüberprüfungen und Einschränkungsvalidierung werden einheitlich zur Laufzeit durchgeführt.
 
-### Developer Tools
+### Entwicklertools
 
-In terms of developer tools, both Pkl und KCL prioritize developer productivity, providing a wide range of language tools und IDE plugin support. In addition to basic language tools, the Pkl website primarily offers support für three IDE plugins: IntelliJ, NeoVim, und VS Code. Interestingly, KCL currently also provides support für these three IDE plugins, although their functions und focuses are slightly different.
+In Bezug auf die Entwicklertools priorisieren sowohl Pkl als auch KCL die Entwicklerproduktivität und bieten eine breite Palette von Sprachwerkzeugen und IDE-Plugin-Unterstützung. Neben den grundlegenden Sprachwerkzeugen bietet die Pkl-Website hauptsächlich Unterstützung für drei IDE-Plugins: IntelliJ, NeoVim und VS Code. Interessanterweise bietet KCL derzeit auch Unterstützung für diese drei IDE-Plugins, obwohl ihre Funktionen und Schwerpunkte leicht unterschiedlich sind.
 
-Due to Pkl being developed in Java und Kotlin, it can be easily adapted to the JetBrains IDE plugin ecosystem. As a result, the IntelliJ plugin support für Pkl is the most comprehensive. However, since Pkl itself does not provide a Language Server, the NeoVim und VS Code plugins are based on the Tree Sitter parser generator, offering only basic highlighting und code folding, without more advanced features such as definition navigation, code refactoring, und autocompletion. Although Pkl is an Apple project, it is not developed in Swift, und there are no IDE plugins für XCode.
+Da Pkl in Java und Kotlin entwickelt wurde, kann es leicht an das JetBrains-IDE-Plugin-Ökosystem angepasst werden. Daher ist die Unterstützung des IntelliJ-Plugins für Pkl am umfassendsten. Da Pkl selbst jedoch keinen Language Server bereitstellt, basieren die NeoVim- und VS-Code-Plugins auf dem Tree-Sitter-Parsergenerator und bieten nur grundlegende Hervorhebung und Code-Faltung ohne weiter fortgeschrittene Funktionen wie Definitionsnavigation, Code-Refactoring und automatische Vervollständigung. Obwohl Pkl ein Apple-Projekt ist, wird es nicht in Swift entwickelt, und es gibt keine IDE-Plugins für XCode.
 
-Conversely, KCL, being developed in Rust, provides Language Server support, enabling easy integration with IDE plugins other than VS Code, including NeoVim und some emerging LSP-supporting IDEs or editors. KCL's Language Server offers complete features such as code highlighting, autocompletion, navigation, refactoring, und quick fixes. Since IntelliJ provides limited LSP support only in its professional version, we have supplemented the IntelliJ plugin with corresponding Java implementation support. However, compared to the VS Code KCL plugin, the functionality of the IntelliJ plugin currently has room für improvement und enhancement.
+Im Gegensatz dazu bietet KCL, das in Rust entwickelt wurde, Unterstützung für Language Server und ermöglicht eine einfache Integration mit IDE-Plugins neben VS Code, einschließlich NeoVim und einigen aufkommenden LSP-unterstützenden IDEs oder Editoren. Der Language Server von KCL bietet vollständige Funktionen wie Code-Hervorhebung, automatische Vervollständigung, Navigation, Refactoring und Schnellkorrekturen. Da IntelliJ nur in seiner Professional-Version eine begrenzte LSP-Unterstützung bietet, haben wir das IntelliJ-Plugin mit entsprechender Java-Implementierungsunterstützung ergänzt. Im Vergleich zum VS-Code-KCL-Plugin hat die Funktionalität des IntelliJ-Plugins derzeit jedoch Verbesserungs- und Erweiterungsbedarf.
 
-In conclusion, both Pkl und KCL have room für improvement in terms of developer productivity. Due to differences in the implementation of IDE plugins, there is a need für further improvement of the IDE experience und workflow through greater collaboration with the open-source community.
+Zusammenfassend haben sowohl Pkl als auch KCL Verbesserungspotenzial in Bezug auf die Entwicklerproduktivität. Aufgrund von Unterschieden in der Implementierung von IDE-Plugins besteht Bedarf an weiteren Verbesserungen des IDE-Erlebnisses und des Workflows durch eine engere Zusammenarbeit mit der Open-Source-Community.
 
-### Multiple Language Bindings
+### Mehrere Sprachbindungen
 
-In order to better integrate the configuration language into user applications, Pkl provides bindings für four different languages: Java, Kotlin, Swift, und Go. Interestingly, KCL also offers four SDKs, including Go, Python, Java, und Rust.
+Um die Konfigurationssprache besser in Benutzeranwendungen zu integrieren, bietet Pkl Bindungen für vier verschiedene Sprachen: Java, Kotlin, Swift und Go. Interessanterweise bietet KCL auch vier SDKs, darunter Go, Python, Java und Rust.
 
-Prior to Pkl's open-source release, KCL was one of the few, if not the only, projects to officially provide multiple language bindings und IDE plugins. This accomplishment was the result of the joint efforts und accumulated contributions from the community users und developers. Despite having few core maintainers, Pkl, upon its open-source release, provided many features that could be compared to those of KCL. This suggests that a considerable amount of effort und time went into its development, und it is commendable.
+Vor der Open-Source-Veröffentlichung von Pkl war KCL eines der wenigen, wenn nicht das einzige, Projekt, das offiziell mehrere Sprachbindungen und IDE-Plugins bereitstellte. Dieser Erfolg war das Ergebnis gemeinsamer Anstrengungen und der angesammelten Beiträge von Community-Benutzern und -Entwicklern. Obwohl Pkl nur wenige Kernbetreuer hat, bot es nach seiner Open-Source-Veröffentlichung viele Funktionen, die mit denen von KCL verglichen werden können. Dies legt nahe, dass erhebliche Anstrengungen und Zeit in seine Entwicklung geflossen sind, was lobenswert ist.
 
 ### Summary
 
-The comparison table below summarizes the features of Pkl und KCL für reference.
+Die Vergleichstabelle unten umfasst die Funktionen von Pkl und KCL zur Referenz zusammen.
 
 | Features                              | Pkl                           | KCL                       |
 | ------------------------------------- | ----------------------------- | ------------------------- |
 | Open Source License                   | Apache-2.0                    | Apache-2.0                |
-| Programming Language                  | Java, Kotlin                  | Rust                      |
-| Language Style                        | Similar to Swift, Kotlin      | Similar to Python, Go     |
-| Language Functionality                | Strong                        | Medium                    |
-| Compilation Execution Method          | JIT                           | AOT                       |
-| Runtime Performance                   | Medium                        | Medium                    |
-| Incremental Compilation               | ✅                            | ✅                        |
-| Standard Library                      | ✅                            | ✅                        |
-| Package Management Tool               | ✅                            | ✅                        |
-| Formatting Tool                       | ❌                            | ✅                        |
-| Documentation Tool                    | ❌                            | ✅                        |
+| Programmiersprache                    | Java, Kotlin                  | Rust                      |
+| Sprachstil                            | Similar to Swift, Kotlin      | Similar to Python, Go     |
+| Sprachfunktionalität                  | Strong                        | Medium                    |
+| Kompilationsausführungsmethode        | JIT                           | AOT                       |
+| Laufzeitperformance                   | Medium                        | Medium                    |
+| Inkrementelle Kompilierung            | ✅                            | ✅                        |
+| Standardbibliothek                    | ✅                            | ✅                        |
+| Paketverwaltungs tool                 | ✅                            | ✅                        |
+| Formatierungs tool                    | ❌                            | ✅                        |
+| Dokumentations tool                   | ❌                            | ✅                        |
 | Testing Tool                          | ✅                            | ✅                        |
 | Debugging Tool                        | ❌                            | ❌                        |
 | IDE Plugins                           | IntelliJ, NeoVim, VS Code     | IntelliJ, NeoVim, VS Code |

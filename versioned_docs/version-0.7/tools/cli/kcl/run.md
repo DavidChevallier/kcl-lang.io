@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Run
 
-This command runs the kcl code and displays the output. 'kcl run' takes multiple input for arguments.
+Dieser Befehl führt den KCL-Code aus und zeigt den output an. 'kcl run' nimmt mehrere Eingaben für Argumente entgegen.
 
 ## Args
 
