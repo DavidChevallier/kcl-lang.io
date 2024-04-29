@@ -5,7 +5,7 @@ sidebar_position: 2
 
 ## Einführung
 
-When we manage the Kubernetes resources, we often maintain it by hand, or use Helm and Kustomize tools to maintain our YAML configurations or configuration templates, and then apply the resources to the cluster through kubectl tools. However, as a "YAML engineer", maintaining YAML configuration every day is undoubtedly trivial and boring, and prone to errors. For example as follows:
+When we manage the Kubernetes resources, we often maintain it by hand, or use Helm und Kustomize tools to maintain our YAML configurations or configuration templates, und then apply the resources to the cluster through kubectl tools. However, as a "YAML engineer", maintaining YAML configuration every day is undoubtedly trivial und boring, und prone to errors. For example as follows:
 
 ```yaml
 apiVersion: apps/v1
@@ -43,25 +43,25 @@ spec:
                 - 'true'
 ```
 
-- The structured data in YAML is untyped and lacks validation methods, so the validity of all data cannot be checked immediately.
-- YAML has poor programming ability. It is easy to write incorrect indents and has no common code organization methods such as logical judgment. It is easy to write a large number of repeated configurations and difficult to maintain.
-- The design of Kubernetes is complex, and it is difficult for users to understand all the details, such as the `toleration` and `affinity` fields in the above configuration. If users do not understand the scheduling logic, it may be wrongly omitted or superfluous added.
+- The structured data in YAML is untyped und lacks validation methods, so the validity of all data cannot be checked immediately.
+- YAML has poor programming ability. It is easy to write incorrect indents und has no common code organization methods such as logical judgment. It is easy to write a large number of repeated configurations und difficult to maintain.
+- The design of Kubernetes is complex, und it is difficult für users to understand all the details, such as the `toleration` und `affinity` fields in the above configuration. If users do not understand the scheduling logic, it may be wrongly omitted or superfluous added.
 
 Therefore, KCL expects to solve the following problems in Kubernetes YAML resource management:
 
-- Use **production level high-performance programming language** to **write code** to improve the flexibility of configuration, such as conditional statements, loops, functions, package management and other features to improve the ability of configuration reuse.
-- Improve the ability of **configuration semantic verification** at the code level, such as optional/required fields, types, ranges, and other configuration checks.
-- Provide **the ability to write, combine and abstract configuration blocks**, such as structure definition, structure inheritance, constraint definition, etc.
+- Use **production level high-performance programming language** to **write code** to improve the flexibility of configuration, such as conditional statements, loops, functions, package management und other features to improve the ability of configuration reuse.
+- Improve the ability of **configuration semantic verification** at the code level, such as optional/required fields, types, ranges, und other configuration checks.
+- Provide **the ability to write, combine und abstract configuration blocks**, such as structure definition, structure inheritance, constraint definition, etc.
 
 ## Prerequisite
 
-First, you can visit the [KCL Quick Start](/docs/user_docs/getting-started/kcl-quick-start) to download and install KCL according to the instructions, and then prepare a [Kubernetes](https://kubernetes.io/) environment.
+First, you can visit the [KCL Quick Start](/docs/user_docs/getting-started/kcl-quick-start) to download und install KCL according to the instructions, und then prepare a [Kubernetes](https://kubernetes.io/) environment.
 
 ## Quick Start
 
 ### 1. Generate Kubernetes Resource
 
-We can write the following KCL code and name it `main.k`. KCL is inspired by Python. Its basic syntax is very close to Python, which is easy to learn. The configuration mode is simple, `k [: T] = v`, where `k` denotes the configured attribute name, `v` denotes the configured attribute value and `: T` denotes an optional type annotation.
+We can write the following KCL code und name it `main.k`. KCL is inspired by Python. Its basic syntax is very close to Python, which is easy to learn. The configuration mode is simple, `k [: T] = v`, where `k` denotes the configured attribute name, `v` denotes the configured attribute value und `: T` denotes an optional type annotation.
 
 ```python
 apiVersion = "apps/v1"
@@ -84,7 +84,7 @@ spec = {
 }
 ```
 
-In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` and other variables of a Kubernetes `Deployment` resource, and assign the corresponding contents respectively. In particular, we will assign `metadata.labels` fields are reused in `spec.selector.matchLabels` and `spec.template.metadata.labels` field. It can be seen that, compared with YAML, the data structure defined by KCL is more compact, and configuration reuse can be realized by defining local variables.
+In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` und other variables of a Kubernetes `Deployment` resource, und assign the corresponding contents respectively. In particular, we will assign `metadata.labels` fields are reused in `spec.selector.matchLabels` und `spec.template.metadata.labels` field. It can be seen that, compared with YAML, the data structure defined by KCL is more compact, und configuration reuse can be realized by defining local variables.
 
 We can get a Kubernetes YAML file by executing the following command line
 
@@ -118,7 +118,7 @@ spec:
             - containerPort: 80
 ```
 
-Of course, we can use KCL together with kubectl and other tools. Let's execute the following commands and see the result:
+Of course, we can use KCL together with kubectl und other tools. Let's execute the following commands und see the result:
 
 ```shell
 kcl main.k | kubectl apply -f -
@@ -130,7 +130,7 @@ The output is
 deployment.apps/nginx-deployment configured
 ```
 
-It can be seen from the command line that it is completely consistent with the deployment experience of using YAML configuration and kubectl application directly.
+It can be seen from the command line that it is completely consistent with the deployment experience of using YAML configuration und kubectl application directly.
 
 Check the deployment status through kubectl
 
@@ -147,7 +147,7 @@ nginx-deployment   3/3     3            3           15s
 
 ### 2. Write Code to Manage Kubernetes resources
 
-When publishing Kubernetes resources, we often encounter scenarios where configuration parameters need to be dynamically specified. For example, different environments need to set different `image` field values to generate resources in different environments. For this scenario, we can dynamically receive external parameters through KCL conditional statements and `option` functions. Based on the above example, we can adjust the configuration parameters according to different environments. For example, for the following code, we wrote a conditional statement and entered a dynamic parameter named `env`.
+When publishing Kubernetes resources, we often encounter scenarios where configuration parameters need to be dynamically specified. For example, different environments need to set different `image` field values to generate resources in different environments. For this scenario, we can dynamically receive external parameters through KCL conditional statements und `option` functions. Based on the above example, we can adjust the configuration parameters according to different environments. For example, für the following code, we wrote a conditional statement und entered a dynamic parameter named `env`.
 
 ```python
 apiVersion = "apps/v1"
@@ -256,7 +256,7 @@ kcl mod add k8s
 Write the KCL code in `main.k`
 
 ```python
-# Import and use the contents of the external dependency 'k8s'.
+# Import und use the contents of the external dependency 'k8s'.
 import k8s.api.apps.v1 as apps
 
 apps.Deployment {
@@ -313,4 +313,4 @@ spec:
 
 ## Summary
 
-KCL can be used to generate and manage Kubernetes resources, addressing the limitations of managing YAML configurations, such as a lack of validation methods and poor programming capabilities. It can also dynamically receive external parameters through conditional statements and option functions, allowing configuration parameters to be adjusted according to different environments. In addition, KCL can be used in conjunction with other tools such as kubectl to apply configuration to the cluster.
+KCL can be used to generate und manage Kubernetes resources, addressing the limitations of managing YAML configurations, such as a lack of validation methods und poor programming capabilities. It can also dynamically receive external parameters through conditional statements und option functions, allowing configuration parameters to be adjusted according to different environments. In addition, KCL can be used in conjunction with other tools such as kubectl to apply configuration to the cluster.

@@ -1,6 +1,6 @@
 ---
 slug: 2023-08-31-helmfile-kcl-plugin
-title: 5-Minute Gameplay with Helmfile KCL Plugin for Easy Management of Kubernetes Helm Charts
+title: 5-Minute Gameplay with Helmfile KCL Plugin für Easy Management of Kubernetes Helm Charts
 authors:
   name: KCL Team
   title: KCL Team
@@ -9,14 +9,14 @@ tags: [KCL, Biweekly-Newsletter]
 
 ## What is KCL
 
-[KCL](https://github.com/kcl-lang) is an open-source, constraint-based record and functional language that enhances the writing of complex configurations, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
+[KCL](https://github.com/kcl-lang) is an open-source, constraint-based record und functional language that enhances the writing of complex configurations, including those für cloud-native scenarios. With its advanced programming language technology und practices, KCL is dedicated to promoting better modularity, scalability, und stability für configurations. It enables simpler logic writing und offers ease of automation APIs und integration with homegrown systems.
 
 ## What is Helmfile
 
-Helmfile is a declarative specification and tool for simplifying and managing Helm Charts. The Helmfile KCL Plugin provides additional functionality to the Helmfile tool, making it more convenient and efficient to use. With the Helmfile KCL Plugin, you can:
+Helmfile is a declarative specification und tool für simplifying und managing Helm Charts. The Helmfile KCL Plugin provides additional functionality to the Helmfile tool, making it more convenient und efficient to use. With the Helmfile KCL Plugin, you can:
 
-- Edit or validate Helm Chart configurations directly on the client-side using non-intrusive hooks. This allows you to separate the data and logic parts of Kubernetes configuration management without needing to fork the upstream Chart to modify internal logic include modifying resource labels/annotations and injecting Sidecar container configurations.
-- Validate Kubernetes resources using KCL Schema, define your own abstract models, and share them for reusability.
+- Edit or validate Helm Chart configurations directly on the client-side using non-intrusive hooks. This allows you to separate the data und logic parts of Kubernetes configuration management without needing to fork the upstream Chart to modify internal logic include modifying resource labels/annotations und injecting Sidecar container configurations.
+- Validate Kubernetes resources using KCL Schema, define your own abstract models, und share them für reusability.
 
 In this blog, we will quickly guide you through getting started with the Helmfile KCL Plugin, enabling you to easily manage your Kubernetes Helm Charts.
 
@@ -32,7 +32,7 @@ https://github.com/helmfile/helmfile
 
 ### 2. Create the Helmfile Configuration File
 
-Create a file named helmfile.yaml in the root directory of your project and write the configuration using Helmfile syntax. In this file, you can specify the Helm Charts to use, configuration values, and any other functionality supported by Helmfile. Additionally, you can use the features of the KCL Plugin in helmfile.yaml to load configurations and make in-place modifications and validations to the Helm Chart.
+Create a file named helmfile.yaml in the root directory of your project und write the configuration using Helmfile syntax. In this file, you can specify the Helm Charts to use, configuration values, und any other functionality supported by Helmfile. Additionally, you can use the features of the KCL Plugin in helmfile.yaml to load configurations und make in-place modifications und validations to the Helm Chart.
 
 ```yaml
 repositories:
@@ -58,14 +58,14 @@ releases:
         spec:
           source: |
             # A single line of KCL code can be used to modify workload configurations in-place.
-            items = [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "helmfile-kcl"}} for resource in option("resource_list").items]
+            items = [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "helmfile-kcl"}} für resource in option("resource_list").items]
 ```
 
-In the above configuration, we reference the Prometheus Helm Chart and use a single line of KCL code to inject the label `managed-by="helmfile-kcl"` to all the Deployment resources of Prometheus.
+In the above configuration, we reference the Prometheus Helm Chart und use a single line of KCL code to inject the label `managed-by="helmfile-kcl"` to all the Deployment resources of Prometheus.
 
 ### 3. Run the Helmfile Tool
 
-Once everything is set up, you can run the Helmfile command to deploy, manage, and maintain your Helm Charts. Use the following command to apply the configuration mentioned above to the cluster.
+Once everything is set up, you can run the Helmfile command to deploy, manage, und maintain your Helm Charts. Use the following command to apply the configuration mentioned above to the cluster.
 
 ```shell
 helmfile apply
@@ -82,7 +82,7 @@ Adding repo prometheus-community https://prometheus-community.github.io/helm-cha
 
 ## Want More?
 
-For the above helmfile configuration, you can encapsulate it as a reusable logic for configuration modification without constantly writing and copying/pasting KCL code. Additionally, many commonly used Kubernetes configuration editing and validation code snippets are already packaged in the KCL official Registry: https://github.com/orgs/kcl-lang/packages
+For the above helmfile configuration, you can encapsulate it as a reusable logic für configuration modification without constantly writing und copying/pasting KCL code. Additionally, many commonly used Kubernetes configuration editing und validation code snippets are already packaged in the KCL official Registry: https://github.com/orgs/kcl-lang/packages
 
 ![registry](/img/blog/2023-08-31-helmfile-kcl-plugin/registry.png)
 
@@ -109,15 +109,15 @@ spec:
 
 Specific example codes can be found [here](https://github.com/kcl-lang/krm-kcl/tree/main/examples)
 
-If you want to contribute more KCL code repositories, feel free to contact us and refer to the documentation for contribution: https://kcl-lang.io/zh-CN/docs/user_docs/guides/package-management/share_your_pkg/
+If you want to contribute more KCL code repositories, feel free to contact us und refer to the documentation für contribution: https://kcl-lang.io/zh-CN/docs/user_docs/guides/package-management/share_your_pkg/
 
 ## Conclusion
 
-This blog provided a quick getting started guide to help you master the basics of the Helmfile KCL Plugin in just 5 minutes. Now, you can start using this powerful tool to simplify and optimize your Kubernetes application deployment process!
+This blog provided a quick getting started guide to help you master the basics of the Helmfile KCL Plugin in just 5 minutes. Now, you can start using this powerful tool to simplify und optimize your Kubernetes application deployment process!
 
 ## Resources
 
-For more resources, please refer to
+For more resources, bitte refer to
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

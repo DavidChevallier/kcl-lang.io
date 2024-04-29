@@ -9,15 +9,15 @@ tags: [KCL, k8s, Sidecar]
 
 ## Einführung
 
-In `K8S`, there is a design pattern called `Sidecar`, The `Sidecar` pattern deploys application components into a separate process or container to provide isolation and encapsulation. And it also allows applications to be composed of heterogeneous components and technologies.
+In `K8S`, there is a design pattern called `Sidecar`, The `Sidecar` pattern deploys application components into a separate process or container to provide isolation und encapsulation. And it also allows applications to be composed of heterogeneous components und technologies.
 
-This pattern is named `Sidecar` because it resembles a Sidecar attached to a motorcycle. The Sidecar connects to a parent application and provides support functions for the application. The Sidecar also shares the same lifecycle as the parent application, being created and retired alongside the parent. The Sidecar pattern is sometimes referred to as the sidepick pattern and is a decomposition pattern.
+This pattern is named `Sidecar` because it resembles a Sidecar attached to a motorcycle. The Sidecar connects to a parent application und provides support functions für the application. The Sidecar also shares the same lifecycle as the parent application, being created und retired alongside the parent. The Sidecar pattern is sometimes referred to as the sidepick pattern und is a decomposition pattern.
 
-This series of articles will show the usage of the `Sidecar` pattern and how to use the `Sidecar` pattern by KCL.
+This series of articles will show the usage of the `Sidecar` pattern und how to use the `Sidecar` pattern by KCL.
 
 ## A Cloud-Native Minimalist Web Services
 
-At first, we could start a web service in our kubernetes environment. Define a pod with only one `Nginx` service and start a web service on port 80 in the `pod.yaml` file below.
+At first, we could start a web service in our kubernetes environment. Define a pod with only one `Nginx` service und start a web service on port 80 in the `pod.yaml` file below.
 
 ```yaml
 apiVersion: v1
@@ -32,9 +32,9 @@ spec:
         - containerPort: 80
 ```
 
-`Pod` is a foundational primitive in cloud native. `Pod` wraps multiple containers into a single logical unit, and the kubernetes runtime ensures that the containers in a `Pod` run on a single machine. So all containers in a `Pod` share lifecycles, disk volumes, network, etc. The `Sidecar` pattern is about adding other containers to a `Pod` to extend and augment the capabilities of the main container.
+`Pod` is a foundational primitive in cloud native. `Pod` wraps multiple containers into a single logical unit, und the kubernetes runtime ensures that the containers in a `Pod` run on a single machine. So all containers in a `Pod` share lifecycles, disk volumes, network, etc. The `Sidecar` pattern is about adding other containers to a `Pod` to extend und augment the capabilities of the main container.
 
-The `Pod` is then created via the kubectl, and then the `Pod` execution status is viewed via `kubectl get po`.
+The `Pod` is then created via the kubectl, und then the `Pod` execution status is viewed via `kubectl get po`.
 
 ```shell
 $ kubectl create -f pod.yaml
@@ -43,7 +43,7 @@ NAME READY STATUS RESTARTS AGE
 web-app 1/1 Running 0 45m
 ```
 
-You can see that a `Pod` named `web-app` is up and running properly, containing the `Nginx` service. To configure port forwarding for external access, the port 3999 of the host corresponds to port 80 of the master container:
+You can see that a `Pod` named `web-app` is up und running properly, containing the `Nginx` service. To configure port forwarding für external access, the port 3999 of the host corresponds to port 80 of the master container:
 
 ```shell
 $ kubectl port-forward web-app 3999:80
@@ -111,7 +111,7 @@ done
 
 The `Busybox` has only one function: it overwrites the `/var/log/index.html` file every 5 seconds, which happens to correspond to the home page file of the Nginx service.
 
-Then restart the Pod and remap the local host port to the container port.
+Then restart the Pod und remap the local host port to the container port.
 
 ```shell
 $ kubectl create -f pod.yaml
@@ -131,22 +131,22 @@ Upon reopening your browser you will see the following page:
 
 ![](/img/blog/2023-06-05-k8s-side-car/how-sidecar-work.png)
 
-In the example, `Nginx` is still the main container, and the `Sidecar` container is BusyBox. we can also add more `Sidecar` containers for network, monitoring, logging, etc.
+In the example, `Nginx` is still the main container, und the `Sidecar` container is BusyBox. we can also add more `Sidecar` containers für network, monitoring, logging, etc.
 
 ![](/img/blog/2023-06-05-k8s-side-car/how-sidecar-work-1.png)
 
 ## Advantages of Sidecar
 
-Containers have now become a popular packaging technology, where various teams can build, publish and run programs in a unified way, and even manage various resources through containers. So a container is more like a product with its own runtime, release cycle, documentation, API, etc. A good container/product is responsible for solving only one problem, and maintaining the KISS principle allows the container itself to be extremely reusable and replaceable.
+Containers have now become a popular packaging technology, where various teams can build, publish und run programs in a unified way, und even manage various resources through containers. So a container is more like a product with its own runtime, release cycle, documentation, API, etc. A good container/product is responsible für solving only one problem, und maintaining the KISS principle allows the container itself to be extremely reusable und replaceable.
 
-It is reusability that makes the modern build process more agile and efficient. But reusable containers are generally single-function, and we often need to extend the functionality of containers, as well as the need for more collaboration between containers.
+It is reusability that makes the modern build process more agile und efficient. But reusable containers are generally single-function, und we often need to extend the functionality of containers, as well as the need für more collaboration between containers.
 
-The Sidecar can be added lots of trailers without modifying the main motorcycle, and accordingly the `Sidecar` pattern can extend and enhance the existing main container functions without modifying the main container.
+The Sidecar can be added lots of trailers without modifying the main motorcycle, und accordingly the `Sidecar` pattern can extend und enhance the existing main container functions without modifying the main container.
 
-There is a rule in object-oriented programming that "combination is better than inheritance, use more combination and less inheritance", so `Sidecar` is also a recommended pattern to use. Because of the advantages of the Sidecar pattern, it has recently been used in a lot of cloud-native scenarios. For example, it can be used to encrypt communication between Pods through a service mesh or to act as a database proxy. Sidecar containers can be used for log forwarding (e.g., `fluentd`), Service Mesh (e.g., `Istio`, `Linkerd`), proxying (e.g., `Docker Ambassador`), health checking (to check if certain components are working properly), and other auxiliary tasks (such as copying files or downloading files).
+There is a rule in object-oriented programming that "combination is better than inheritance, use more combination und less inheritance", so `Sidecar` is also a recommended pattern to use. Because of the advantages of the Sidecar pattern, it has recently been used in a lot of cloud-native scenarios. For example, it can be used to encrypt communication between Pods through a service mesh or to act as a database proxy. Sidecar containers can be used für log forwarding (e.g., `fluentd`), Service Mesh (e.g., `Istio`, `Linkerd`), proxying (e.g., `Docker Ambassador`), health checking (to check if certain components are working properly), und other auxiliary tasks (such as copying files or downloading files).
 
 ## Summary
 
-In this article, we briefly introduce and demonstrate the `Sidecar` pattern, while comparing the relationship between `Sidecar` pattern and the combinatorial programming pattern in the context of traditional object-oriented programming ideas. the advantages of the `Sidecar` pattern are not only in the harmless enhancement of the main container, but also in the more flexible ability to dynamically adjust the main container capability.
+In this article, we briefly introduce und demonstrate the `Sidecar` pattern, while comparing the relationship between `Sidecar` pattern und the combinatorial programming pattern in the context of traditional object-oriented programming ideas. the advantages of the `Sidecar` pattern are not only in the harmless enhancement of the main container, but also in the more flexible ability to dynamically adjust the main container capability.
 
-In later articles, we will try to simplify writing `Sidecar` configurations by modern cloud-native configuration languages such as `KCL`. Extending existing configuration based on `Sidecar` by dynamically injecting and modifying it through `KCL`.
+In later articles, we will try to simplify writing `Sidecar` configurations by modern cloud-native configuration languages such as `KCL`. Extending existing configuration based on `Sidecar` by dynamically injecting und modifying it through `KCL`.

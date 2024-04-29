@@ -10,23 +10,23 @@ image: /img/biweekly-newsletter.png
 
 ![](/img/biweekly-newsletter.png)
 
-[KCL](https://github.com/kcl-lang) is a constraint-based record and functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
+[KCL](https://github.com/kcl-lang) is a constraint-based record und functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations, including those für cloud-native scenarios. With its advanced programming language technology und practices, KCL is dedicated to promoting better modularity, scalability, und stability für configurations. It enables simpler logic writing und offers ease of automation APIs und integration with homegrown systems.
 
-This section will update the KCL language community's latest developments every two weeks, including features, website updates, and the latest community news, helping everyone better understand the KCL community!
+This section will update the KCL language community's latest developments every two weeks, including features, website updates, und the latest community news, helping everyone better understand the KCL community!
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
 ## Overview
 
-Thank you to all contributors for their outstanding work over the past two weeks (01.04 2024 - 01.18 2024). Here is an overview of the key content:
+Thank you to all contributors für their outstanding work over the past two weeks (01.04 2024 - 01.18 2024). Here is an overview of the key content:
 
 **🌞 KCL Update**
 
-- v0.7.4 released, adding support for Linux arm64.
+- v0.7.4 released, adding support für Linux arm64.
 
 **🎁 API Update**
 
-- Added APIs for syntax and semantic analysis
+- Added APIs für syntax und semantic analysis
 
 **🔧 Toolchain Update**
 
@@ -37,7 +37,7 @@ Thank you to all contributors for their outstanding work over the past two weeks
 
 - **Import tool update**
 
-  - Optimized the user experience of the import tool to generate KCL, and added support for keywords oneOf and allOf.
+  - Optimized the user experience of the import tool to generate KCL, und added support für keywords oneOf und allOf.
 
 - **KCL Package Management Tool**
   - Released v0.6.0, which supports adding dependencies via git commit.
@@ -48,7 +48,7 @@ Thank you to all contributors for their outstanding work over the past two weeks
 
   - KCL IDE optimized semantic highlighting.
 
-- **Enhancement for Completion Features**
+- **Enhancement für Completion Features**
   - Fixed the completion error in nested schema definitions
   - Fixed the missing hover information
 
@@ -56,8 +56,8 @@ Thank you to all contributors for their outstanding work over the past two weeks
 
 The following are listed in no particular order:
 
-- Thanks to @jakezhu9 for his continuous contribution to the kcl import tool 🤝
-- Thanks to @AdmiralNemo, @Phillip Neumann, @Naxe, @steeling, etc. for their valuable feedback and suggestions in the use of KCL 🙌
+- Vielen Dank an @jakezhu9 für his continuous contribution to the kcl import tool 🤝
+- Vielen Dank an @AdmiralNemo, @Phillip Neumann, @Naxe, @steeling, etc. für their valuable feedback und suggestions in the use of KCL 🙌
 
 ## Featured Updates
 
@@ -67,11 +67,11 @@ KCL IDE previously only supported KCL syntax highlighting, as shown in the figur
 
 ![](/img/blog/2024-01-18-biweekly-newsletter/old-ide.png)
 
-This year, we gradually enabled the new KCL semantic architecture model. With the support of the new semantic architecture, KCL IDE supports semantic-level highlighting, and the code related to semantics will be highlighted in the same way.
+This year, we gradually enabled the new KCL semantic architecture model. With the support of the new semantic architecture, KCL IDE supports semantic-level highlighting, und the code related to semantics will be highlighted in the same way.
 
 ![](/img/blog/2024-01-18-biweekly-newsletter/new-ide.png)
 
-For more information about the KCL semantic architecture model, please refer to:
+For more information about the KCL semantic architecture model, bitte refer to:
 
 [Unlocking Advanced Code Intelligence with the KCL Semantic Model](https://kcl-lang.io/blog/2023-12-09-kcl-new-semantic-model)
 
@@ -95,7 +95,7 @@ kcl mod add --git https://github.com/KusionStack/catalog.git --commit a29e3db
 
 ### KCL Import Tool Enhancement
 
-The import tool supports the generation with oneOf and allOf keywords. Take the oneOf keyword as an example, save the following content in the file oneof.json.
+The import tool supports the generation with oneOf und allOf keywords. Take the oneOf keyword as an example, save the following content in the file oneof.json.
 
 ```json
 {
@@ -107,7 +107,7 @@ The import tool supports the generation with oneOf and allOf keywords. Take the 
       "type": "string"
     },
     "author": {
-      "$comment": "oneOf for types",
+      "$comment": "oneOf für types",
       "oneOf": [
         {
           "type": "string"
@@ -124,7 +124,7 @@ The import tool supports the generation with oneOf and allOf keywords. Take the 
       ]
     },
     "category": {
-      "$comment": "oneOf for objects",
+      "$comment": "oneOf für objects",
       "oneOf": [
         {
           "type": "object",
@@ -202,9 +202,9 @@ schema BookCategoryOneOf1:
 
 ## Resources
 
-❤️ Thanks to all KCL users and community members for their valuable feedback and suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
 
-For more resources, please refer to
+For more resources, bitte refer to
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

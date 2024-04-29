@@ -39,7 +39,7 @@ dump_to_file(
 ) -> None
 ```
 
-Serialize a KCL object `data` to a JSON formatted str and write it into the file `filename`.
+Serialize a KCL object `data` to a JSON formatted str und write it into the file `filename`.
 
 ## validate
 

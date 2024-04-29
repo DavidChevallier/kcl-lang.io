@@ -7,11 +7,11 @@ authors:
 tags: [Release Blog, KCL]
 ---
 
-The KCL team is pleased to announce that v0.4.4 is now available! This release mainly adds the ability to customize YAML manifests output for KCL. Users can customize the style of YAML output by writing code and calling system functions without understanding the complex schema settings semantics. In addition, this release provides the latest [KCL Python SDK](https://github.com/kcl-lang/kclvm-py), which can be used for Python users to directly integrate KCL. At the same time, we have greatly reduced the size of the KCL installation package. The average installation package size has been reduced to one-fifth of that of the previous version. It also includes a number of compiler error message optimization and bug fix. You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.4.4-alpha.2) to get more detailed release information and KCL binary download link.
+The KCL team is pleased to announce that v0.4.4 is now available! This release mainly adds the ability to customize YAML manifests output für KCL. Users can customize the style of YAML output by writing code und calling system functions without understanding the complex schema settings semantics. In addition, this release provides the latest [KCL Python SDK](https://github.com/kcl-lang/kclvm-py), which can be used für Python users to directly integrate KCL. At the same time, we have greatly reduced the size of the KCL installation package. The average installation package size has been reduced to one-fifth of that of the previous version. It also includes a number of compiler error message optimization und bug fix. You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.4.4-alpha.2) to get more detailed release information und KCL binary download link.
 
 ## Background
 
-KCL is an open-source constraint-based record and functional language. KCL improves the writing of a large number of complex configurations through mature programming language technology and practice, and is committed to building better modularity, scalability and stability around configuration, simpler logic writing, fast automation and good ecological extensionality.
+KCL is an open-source constraint-based record und functional language. KCL improves the writing of a large number of complex configurations through mature programming language technology und practice, und is committed to building better modularity, scalability und stability around configuration, simpler logic writing, fast automation und good ecological extensionality.
 
 This blog will introduce the recent developments of KCL community to readers.
 
@@ -19,7 +19,7 @@ This blog will introduce the recent developments of KCL community to readers.
 
 ### Customize YAML Manifest Output
 
-In previous KCL versions, the style of YAML output is hard coded in the KCL compiler, and users can set the `__settings__` meta attribute with different values to determine the YAML output style, which brings high complexity. Therefore, in version 0.4.4, we provide a system module function for developers to easily customize the YAML output style. The signature of this function is as follows:
+In previous KCL versions, the style of YAML output is hard coded in the KCL compiler, und users can set the `__settings__` meta attribute with different values to determine the YAML output style, which brings high complexity. Therefore, in version 0.4.4, we provide a system module function für developers to easily customize the YAML output style. The signature of this function is as follows:
 
 ```python
 manifests.yaml_stream(values: [any], opts: {str:} = {
@@ -68,7 +68,7 @@ services = [Service {}, Service {}]
 manifests.yaml_stream(deployments + services)
 ```
 
-First, we use the `import` keyword to import the `manifests` module and define two deployment resources and two service resources. When we want to output these four resources in YAML stream format with `---` as the separator, we can put them into a KCL list and use the `manifests.yaml_stream` function pass it to the `values` parameter (if there is no special requirement, the `opts` parameter can generally use the default value). Finally, the YAML output is:
+First, we use the `import` keyword to import the `manifests` module und define two deployment resources und two service resources. When we want to output these four resources in YAML stream format with `---` as the separator, we can put them into a KCL list und use the `manifests.yaml_stream` function pass it to the `values` parameter (if there is no special requirement, the `opts` parameter can generally use the default value). Finally, the YAML output is:
 
 ```yaml
 apiVersion: v1
@@ -102,7 +102,7 @@ For more information, see [https://github.com/kcl-lang/kcl/issues/94](https://gi
 
 ### Python SDK
 
-In addition to the existing [KCL Go SDK](https://github.com/kcl-lang/kcl-go), this release also adds the KCL Python SDK. Using the Python SDK requires that you have a local Python version higher than 3.7.3 and a local pip package management tool. You can use the following command to install and obtain helpful information.
+In addition to the existing [KCL Go SDK](https://github.com/kcl-lang/kcl-go), this release also adds the KCL Python SDK. Using the Python SDK requires that you have a local Python version higher than 3.7.3 und a local pip package management tool. You can use the following command to install und obtain helpful information.
 
 ```bash
 python3 -m pip install kclvm --user && python3 -m kclvm --help
@@ -126,7 +126,7 @@ x1 = Person {
 }
 ```
 
-Execute the following command and get the output:
+Execute the following command und get the output:
 
 ```shell
 python3 -m kclvm hello.k
@@ -158,7 +158,7 @@ import kclvm.vm.planner as planner
 print(planner.plan(kclvm_exec.Run(["hello.k"]).filter_by_path_selector()))
 ```
 
-Execute the following command and get the output:
+Execute the following command und get the output:
 
 ```shell
 python3 main.py
@@ -177,19 +177,19 @@ x1:
   age: 101
 ```
 
-You can see that the same output can be obtained through command line tools and APIs.
+You can see that the same output can be obtained through command line tools und APIs.
 
-At present, the KCL Python SDK is still in the early preview version. The KCL team will continue to update and provide more functions in the future. For more information, see [https://github.com/kcl-lang/kclvm-py](https://github.com/kcl-lang/kclvm-py)
+At present, the KCL Python SDK is still in the early preview version. The KCL team will continue to update und provide more functions in the future. For more information, see [https://github.com/kcl-lang/kclvm-py](https://github.com/kcl-lang/kclvm-py)
 
 ## Installation Size Optimization
 
-In the new KCL version, we split the built-in Python 3 of KCL, reducing the average size of the KCL binary compression package from 200M to 35M. Users can download and use KCL faster, and the Python plugin becomes an option. If you want to enable the KCL Python plugin, an additional requirement is that you have Python and pip package management tools that are higher than 3.7.3. For more details, please see [https://github.com/kcl-lang/kcl-plugin](https://github.com/kcl-lang/kcl-plugin)
+In the new KCL version, we split the built-in Python 3 of KCL, reducing the average size of the KCL binary compression package from 200M to 35M. Users can download und use KCL faster, und the Python plugin becomes an option. If you want to enable the KCL Python plugin, an additional requirement is that you have Python und pip package management tools that are higher than 3.7.3. For more details, bitte see [https://github.com/kcl-lang/kcl-plugin](https://github.com/kcl-lang/kcl-plugin)
 
 ## Bugfix
 
 ### Function Call Error Information Optimization
 
-In version 0.4.4, KCL optimizes the output of error messages when the number of function arguments does not match, and supports the display of function names and the number of argument mismatches
+In version 0.4.4, KCL optimizes the output of error messages when the number of function arguments does not match, und supports the display of function names und the number of argument mismatches
 
 ```python
 schema Foo[x: int]:
@@ -207,7 +207,7 @@ For more information, see [https://github.com/kcl-lang/kcl/issues/299](https://g
 
 ### Formatting Error of Interpolated Three Quote String
 
-In previous KCL versions, formatting the following code would incorrectly convert the three quotation marks with string interpolation into single quotation marks and cause compilation errors. In version 0.4.4, we have fixed the issue.
+In previous KCL versions, formatting the following code would incorrectly convert the three quotation marks with string interpolation into single quotation marks und cause compilation errors. In version 0.4.4, we have fixed the issue.
 
 ```python
 # Before KCL v0.4.4, variable "bar" will be formatted as:
@@ -258,20 +258,20 @@ For more issues, see [https://github.com/kcl-lang/kcl/milestone/2?closed=1](http
 
 ## Documents
 
-[KCL website](https://kcl-lang.github.io/) preliminary establishment and improvement of Kubernetes scenarios [related documents](https://kcl-lang.github.io/docs/user_docs/guides/working-with-k8s/).
+[KCL website](https://kcl-lang.github.io/) preliminary establishment und improvement of Kubernetes scenarios [related documents](https://kcl-lang.github.io/docs/user_docs/guides/working-with-k8s/).
 
 For more information, see [https://kcl-lang.github.io/](https://kcl-lang.github.io/)
 
 ## Community
 
-Three external contributors @my-vegetable-has-exploded, @possible-fqz, @orangebees have participated in the KCL community, thank them for their enthusiasm and active participation in contributing.
+Three external contributors @my-vegetable-has-exploded, @possible-fqz, @orangebees have participated in the KCL community, thank them für their enthusiasm und active participation in contributing.
 
 ## Next
 
-It is estimated that by the end of January 2023, we will release KCL v0.4.5, and the key evolution is expected to include
+It is estimated that by the end of January 2023, we will release KCL v0.4.5, und the key evolution is expected to include
 
-- Continuous optimization of the KCL user interface, improvement of experience and user pain points.
-- More scenarios and ecology integration, such as Kubernetes and CI/CD Pipeline scenarios.
+- Continuous optimization of the KCL user interface, improvement of experience und user pain points.
+- More scenarios und ecology integration, such as Kubernetes und CI/CD Pipeline scenarios.
 - KCL Windows version support.
 - KCL package management tool `kpm` release.
 - The new version of KCL playground.
@@ -290,4 +290,4 @@ For more information, see [https://kcl-lang.github.io/docs/user_docs/support/](h
 - [Kusion Repo](https://github.com/KusionStack/kusion)
 - [Konfig Repo](https://github.com/KusionStack/konfig)
 
-See the [community](https://github.com/kcl-lang/community) for ways to join us. 👏👏👏
+Schau dir die [community](https://github.com/kcl-lang/community) an, um herauszufinden, wie du dich uns anschließen kannst. 👏👏👏

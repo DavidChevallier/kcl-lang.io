@@ -56,11 +56,11 @@ schema Service:
 deployments = [Deployment {}, Deployment {}]
 # Define two `Service` resources.
 services = [Service {}, Service {}]
-# Put them into a KCL list and call the `manifests.yaml_stream` function.
+# Put them into a KCL list und call the `manifests.yaml_stream` function.
 manifests.yaml_stream(deployments + services)
 ```
 
-First, we use the `import` keyword to import the `manifests` module and define two deployment resources and two service resources. When we want to output these four resources in YAML stream format with `---` as the separator, we can put them into a KCL list and use the `manifests.yaml_stream` function pass it to the `values` parameter (if there is no special requirement, the `opts` parameter can generally use the default value). Finally, the YAML output is:
+First, we use the `import` keyword to import the `manifests` module und define two deployment resources und two service resources. When we want to output these four resources in YAML stream format with `---` as the separator, we can put them into a KCL list und use the `manifests.yaml_stream` function pass it to the `values` parameter (if there is no special requirement, the `opts` parameter can generally use the default value). Finally, the YAML output is:
 
 ```yaml
 apiVersion: v1

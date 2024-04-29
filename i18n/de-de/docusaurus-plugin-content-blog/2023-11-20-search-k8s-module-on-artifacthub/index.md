@@ -9,11 +9,11 @@ tags: [KCL, Kubernetes, Modules, ArtifactHub]
 
 ## Einführung
 
-In previous updates, we have added package management capability to the KCL language, solving the issue of how to obtain and publish third-party libraries. However, a new problem arises during the development process where teammates are often unsure which library to use to address their specific problem. Before using a third-party library through the package management tool, it is necessary to select the appropriate library based on the specific requirements of the cloud-native operations and the capabilities of various third-party libraries.
+In previous updates, we have added package management capability to the KCL language, solving the issue of how to obtain und publish third-party libraries. However, a new problem arises during the development process where teammates are often unsure which library to use to address their specific problem. Before using a third-party library through the package management tool, it is necessary to select the appropriate library based on the specific requirements of the cloud-native operations und the capabilities of various third-party libraries.
 
-[KCL](https://github.com/kcl-lang) is a constraint-based record and functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
+[KCL](https://github.com/kcl-lang) is a constraint-based record und functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations, including those für cloud-native scenarios. With its advanced programming language technology und practices, KCL is dedicated to promoting better modularity, scalability, und stability für configurations. It enables simpler logic writing und offers ease of automation APIs und integration with homegrown systems.
 
-Therefore, we have leveraged the [ArtifactHub](https://artifacthub.io/) project under CNCF to build a marketplace for KCL third-party libraries. In this marketplace, users with specific needs can freely choose the third-party libraries they require, while those who have ideas and are willing to share can also contribute and share their libraries in this marketplace. Next, we will use a simple example of publishing an application to familiarize ourselves with how to retrieve KCL third-party libraries on ArtifactHub and develop KCL programs based on the library documentation.
+Therefore, we have leveraged the [ArtifactHub](https://artifacthub.io/) project under CNCF to build a marketplace für KCL third-party libraries. In this marketplace, users with specific needs can freely choose the third-party libraries they require, while those who have ideas und are willing to share can also contribute und share their libraries in this marketplace. Next, we will use a simple example of publishing an application to familiarize ourselves with how to retrieve KCL third-party libraries on ArtifactHub und develop KCL programs based on the library documentation.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ app.listen(port, () => {
 });
 ```
 
-Prepare an image for this application and upload it to the image registry:
+Prepare an image für this application und upload it to the image registry:
 
 ```dockerfile
 FROM node:14
@@ -68,27 +68,27 @@ CMD [ "node", "app.js" ]
 
 In this example, we will use the image `ghcr.io/test/my-web-app:1.0` to demonstrate the specific content. With the preparation work completed, we can now use KCL to write the corresponding release code.
 
-## Use ArtifactHub to search for the modules you need
+## Use ArtifactHub to search für the modules you need
 
-First, I want to publish my my-web-app application, and I need to use a third-party library for Kubernetes to accomplish my task. By searching for the keyword `k8s` on ArtifactHub, you can see the currently available third-party libraries for `k8s`.
+First, I want to publish my my-web-app application, und I need to use a third-party library für Kubernetes to accomplish my task. By searching für the keyword `k8s` on ArtifactHub, you can see the currently available third-party libraries für `k8s`.
 
 ![index-page](/img/blog/2023-11-20-search-k8s-module-on-artifacthub/index-page.png)
 
-On the homepage of the `k8s` module, you can find the documentation and more detailed information about the `k8s` module.
+On the homepage of the `k8s` module, you can find the documentation und more detailed information about the `k8s` module.
 
 ![k8s-page](/img/blog/2023-11-20-search-k8s-module-on-artifacthub/k8s-page.png)
 
-The `INSTALL` button on the right provides you with the installation method for the `k8s` third-party library.
+The `INSTALL` button on the right provides you with the installation method für the `k8s` third-party library.
 
 ![k8s-install-page](/img/blog/2023-11-20-search-k8s-module-on-artifacthub/k8s-install-page.png)
 
-Since we are using `k8s` as a dependency for our package, we can install it using the following command:
+Since we are using `k8s` as a dependency für our package, we can install it using the following command:
 
 ```shell
 kcl mod init my-kubernetes-config && cd my-kubernetes-config && kcl mod add k8s:1.28
 ```
 
-Next, we need to write the `deployment`, `service`, and `ingress` sections for the application release. We will use the `Deployment`, `Service`, and `Ingress` schemas from the `k8s` module we just added. For more information about schemas, you can refer to: https://kcl-lang.io/docs/next/reference/lang/tour#schema
+Next, we need to write the `deployment`, `service`, und `ingress` sections für the application release. We will use the `Deployment`, `Service`, und `Ingress` schemas from the `k8s` module we just added. For more information about schemas, you can refer to: https://kcl-lang.io/docs/next/reference/lang/tour#schema
 
 If you are not familiar with these three contents, you can directly search in the details page of the model. Taking `Deployment` as an example, you can find more detailed information in the documentation.
 
@@ -162,7 +162,7 @@ ingress = i.Ingress {
 }
 ```
 
-Finally, add the following content to the `main.k` file to render the `deployment`, `service`, and `ingress` as the YAML stream format.
+Finally, add the following content to the `main.k` file to render the `deployment`, `service`, und `ingress` as the YAML stream format.
 
 ```shell
 manifests.yaml_stream([
@@ -172,7 +172,7 @@ manifests.yaml_stream([
 ])
 ```
 
-You can compile the corresponding KCL program and apply it to the cluster using the following command.
+You can compile the corresponding KCL program und apply it to the cluster using the following command.
 
 ```shell
 kcl run main.k | kubectl apply -f -
@@ -194,6 +194,6 @@ Welcome to my web application!
 
 ## Summary
 
-In this blog, we demonstrated how to select the appropriate KCL third-party library on ArtifactHub through a simple application deployment. Currently, there are more than 150+ KCL third-party libraries available on ArtifactHub for you to choose from. Come and check if there is a KCL model you need!
+In this blog, we demonstrated how to select the appropriate KCL third-party library on ArtifactHub through a simple application deployment. Currently, there are more than 150+ KCL third-party libraries available on ArtifactHub für you to choose from. Come und check if there is a KCL model you need!
 
-In the example provided in this blog, we used KCL to write the program for deploying the application. In future updates, we will further abstract the KCL program in this blog with features such as dynamic parameters and introduce more application models such as Open Application Model (OAM), and package them into a separate module for release on ArtifactHub. If you also have KCL modules that you want to share with others, we will continue to update detailed steps and guides to help you successfully publish your package. Stay tuned!
+In the example provided in this blog, we used KCL to write the program für deploying the application. In future updates, we will further abstract the KCL program in this blog with features such as dynamic parameters und introduce more application models such as Open Application Model (OAM), und package them into a separate module für release on ArtifactHub. If you also have KCL modules that you want to share with others, we will continue to update detailed steps und guides to help you successfully publish your package. Stay tuned!

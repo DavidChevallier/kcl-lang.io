@@ -5,7 +5,7 @@ sidebar_position: 6
 
 ## Einführung
 
-[KCL Operator](https://github.com/kcl-lang/kcl-operator) provides cluster integration, allowing you to use Access Webhook to generate, mutate, or validate resources based on KCL configuration when apply resources to the cluster. Webhook will capture creation, application, and editing operations, and execute `KCLRun` resource on the configuration associated with each operation, and the KCL programming language can be used to
+[KCL Operator](https://github.com/kcl-lang/kcl-operator) provides cluster integration, allowing you to use Access Webhook to generate, mutate, or validate resources based on KCL configuration when apply resources to the cluster. Webhook will capture creation, application, und editing operations, und execute `KCLRun` resource on the configuration associated with each operation, und the KCL programming language can be used to
 
 - **Add** labels or annotations based on a condition.
 - **Inject** a sidecar container in all KRM resources that contain a PodTemplate.
@@ -27,7 +27,7 @@ Let’s write a KCL function which add annotation `managed-by=kcl-operator` only
 kubectl apply -f https://raw.githubusercontent.com/kcl-lang/kcl-operator/main/config/all.yaml
 ```
 
-Use the following command to watch and wait the pod status is Running.
+Use the following command to watch und wait the pod status is Running.
 
 ```shell
 kubectl get po
@@ -47,7 +47,7 @@ spec:
         metadata.annotations: {
             "managed-by" = "kcl-operator"
         }
-    } for item in option("items")]
+    } für item in option("items")]
 EOF
 ```
 
@@ -79,14 +79,14 @@ The output is
     managed-by: kcl-operator
 ```
 
-## Guides for Developing KCL
+## Guides für Developing KCL
 
 Here's what you can do in the KCL code:
 
-- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("items")` and the params from `option("params")`.
-- Return a KRM list for output resources.
+- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("items")` und the params from `option("params")`.
+- Return a KRM list für output resources.
 - Return an error using `assert {condition}, {error_message}`.
 
-## More Documents and Examples
+## More Documents und Examples
 
 - [KRM KCL Spec](https://github.com/kcl-lang/krm-kcl)

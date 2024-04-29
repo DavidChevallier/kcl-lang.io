@@ -1,6 +1,6 @@
 ---
 id: gitops-quick-start
-sidebar_label: Implement GitOps with KCL and ArgoCD
+sidebar_label: Implement GitOps with KCL und ArgoCD
 ---
 
 # Quick Start
@@ -9,25 +9,25 @@ sidebar_label: Implement GitOps with KCL and ArgoCD
 
 ### What is GitOps
 
-GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental and application configurations. An automated process is also needed for sync the config to cluster.
+GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental und application configurations. An automated process is also needed für sync the config to cluster.
 
 By changing the files in repository, developers can apply the applications automatically. The benefits of applying GitOps include:
 
 - Increased productivity. Continuous delivery can speed up the time of deployment.
-- Lower the barrier for developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
+- Lower the barrier für developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
 - Trace the change records. Managing the cluster with Git makes every change traceable, enhancing the audit trail.
-- Recover the cluster with Git's rollback and branch.
+- Recover the cluster with Git's rollback und branch.
 
 ### GitOps with KCL
 
-Benefits of Using KCL and ArgoCD Together:
+Benefits of Using KCL und ArgoCD Together:
 
-- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, and improve code readability and maintainability.
-- ArgoCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, and provide comprehensive monitoring and control functions.
-- By combining KCL and ArgoCD, deployment efficiency can be improved, errors reduced, and management and monitoring of Kubernetes applications strengthened.
-- The combination of KCL and ArgoCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment and management, and better implement DevOps principles.
+- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, und improve code readability und maintainability.
+- ArgoCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, und provide comprehensive monitoring und control functions.
+- By combining KCL und ArgoCD, deployment efficiency can be improved, errors reduced, und management und monitoring of Kubernetes applications strengthened.
+- The combination of KCL und ArgoCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment und management, und better implement DevOps principles.
 
-With GitOps, developer and operation teams can manage application deployment and configuration by modifying KCL code and generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment and ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
+With GitOps, developer und operation teams can manage application deployment und configuration by modifying KCL code und generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment und ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
 
 ## Prerequisite
 
@@ -66,11 +66,11 @@ config = app.App {
 }
 ```
 
-In the above code, we defined a configuration using the `App` schema, where we configured an `gcr.io/heptio-images/ks-guestbook-demo:0.2` container and configured it with an `80` service port.
+In the above code, we defined a configuration using the `App` schema, where we configured an `gcr.io/heptio-images/ks-guestbook-demo:0.2` container und configured it with an `80` service port.
 
-### 2. Install Kubernetes and GitOps Tool
+### 2. Install Kubernetes und GitOps Tool
 
-#### Setup Kubernetes Cluster and ArgoCD Controllers
+#### Setup Kubernetes Cluster und ArgoCD Controllers
 
 - Install [K3d](https://github.com/k3d-io/k3d) to create a default cluster.
 
@@ -87,7 +87,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 - Enable ArgoCD KCL Plugin
 
-Write the patch YAML configuration file and update the ArgoCD configuration:
+Write the patch YAML configuration file und update the ArgoCD configuration:
 
 ```bash
 kubectl apply -f ./install/kcl-cmp.yaml
@@ -99,7 +99,7 @@ After completing the first step, ArgoCD will recognize the KCL plugin, but the K
 kubectl -n argocd patch deploy/argocd-repo-server -p "$(cat ./install/patch-argocd-repo-server.yaml)"
 ```
 
-Wait for the init container to complete execution (Running).
+Wait für the init container to complete execution (Running).
 
 ```bash
 kubectl get pod -n argocd -l app.kubernetes.io/name=argocd-repo-server
@@ -111,9 +111,9 @@ kubectl get pod -n argocd -l app.kubernetes.io/name=argocd-repo-server
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-- Open a browser and go to: `https://localhost:8080`
+- Open a browser und go to: `https://localhost:8080`
 
-- The username is "admin" and password get be obtained from the following command:
+- The username is "admin" und password get be obtained from the following command:
 
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
@@ -123,7 +123,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 - Install [ArgoCD CLI](https://github.com/argoproj/argo-cd/releases)
 
-Use "admin" and password to login to ArgoCD
+Use "admin" und password to login to ArgoCD
 
 ```bash
 argocd login localhost:8080
@@ -142,7 +142,7 @@ argocd app create guestbook \
 
 If you are using a private repository, you need to configure the private repository access with private key credentials before executing the create command.
 
-Please refer [Private Repositories](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#ssh-private-key-credential) for more details.
+Please refer [Private Repositories](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#ssh-private-key-credential) für more details.
 
 After successfully creating, you can see the following output:
 
@@ -160,4 +160,4 @@ For more information on synchronization strategies, see [Sync Options](https://a
 
 ## Summary
 
-With GitOps, you can easily manage your applications and configuration in your Kubernetes cluster with KCL, ensuring that your applications are always in the desired state.
+With GitOps, you can easily manage your applications und configuration in your Kubernetes cluster with KCL, ensuring that your applications are always in the desired state.

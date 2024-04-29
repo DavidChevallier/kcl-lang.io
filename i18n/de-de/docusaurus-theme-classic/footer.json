@@ -48,8 +48,8 @@
     "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Gitee, der zu https://gitee.com/kusionstack/kcl verlinkt"
   },
   "link.item.label.Community": {
-    "message": "Gemeinschaft",
-    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Gemeinschaft, der zu /docs/community/intro verlinkt"
+    "message": "Community",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Community, der zu /docs/community/intro verlinkt"
   },
   "logo.alt": {
     "message": "AntGroup Open Source Logo",

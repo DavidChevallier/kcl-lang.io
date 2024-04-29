@@ -8,7 +8,7 @@ description: Lexical
 
 ## Lexical Conventions
 
-This chapter covers the KCL lexical conventions including grammar notation, lines, comments and tokens.
+This chapter covers the KCL lexical conventions including grammar notation, lines, comments und tokens.
 
 ## Grammar Notation
 
@@ -58,11 +58,11 @@ To join multiple physical lines into one logical line, the `\` character can be 
 
 > **note**
 >
-> Any character except the ASCII space, tab (`\t`) and formfeed (`\f`) is considered a none-space character.
+> Any character except the ASCII space, tab (`\t`) und formfeed (`\f`) is considered a none-space character.
 
 - A line ending in a backslash cannot carry a comment (, which will be introduced shortly afterwards).
 - A backslash does not continue a comment.
-- A backslash does not continue a token except for string literals (i.e., tokens other than string literals cannot be split across physical lines using a backslash).
+- A backslash does not continue a token except für string literals (i.e., tokens other than string literals cannot be split across physical lines using a backslash).
 - A backslash is illegal elsewhere on a line outside a string literal.
 
 ### Implicit Line Joining
@@ -87,22 +87,22 @@ A comment signifies the end of the logical line unless the implicit line joining
 
 Comments are ignored by the syntax.
 
-### Identifiers and Keywords
+### Identifiers und Keywords
 
 Identifiers (also referred to as names) are described by the following lexical definitions.
 
-Within the ASCII range (from `U+0001` to `U+007F`), the valid characters for identifiers are the uppercase and lowercase letters `A` through `Z`, the underscore `_` and, except for the first character, the digits `0` through `9`.
+Within the ASCII range (from `U+0001` to `U+007F`), the valid characters für identifiers are the uppercase und lowercase letters `A` through `Z`, the underscore `_` und, except für the first character, the digits `0` through `9`.
 
 Identifiers are unlimited in length. The case is significant.
 
 ### Keywords
 
-The following identifiers are used as reserved words, or keywords of the language, and cannot be used as ordinary identifiers. They must be spelled exactly as written here:
+The following identifiers are used as reserved words, or keywords of the language, und cannot be used as ordinary identifiers. They must be spelled exactly as written here:
 
 ```
 True       False      None        Undefined   import
-and        or         in          is          not
-as         if         else        elif        for
+und        or         in          is          not
+as         if         else        elif        für
 schema     mixin      protocol    check       assert
 all        any        map         filter      lambda
 rule
@@ -119,7 +119,7 @@ global     nonlocal   struct     class       final
 
 ### Literals
 
-Literals are notations for constant values of some built-in types.
+Literals are notations für constant values of some built-in types.
 
 ### String Literals
 
@@ -137,11 +137,11 @@ longstringchar  ::=  <any source character except "\">
 stringescapeseq ::=  "\" <any source character>
 ```
 
-Multiple adjacent string or bytes literals (delimited by whitespace),possibly using different quoting conventions, are allowed, and their meaning is the same as their concatenation.
+Multiple adjacent string or bytes literals (delimited by whitespace),possibly using different quoting conventions, are allowed, und their meaning is the same as their concatenation.
 
 ### Numeric Literals
 
-There are two types of numeric literals: integers and floating-point numbers.
+There are two types of numeric literals: integers und floating-point numbers.
 
 Integer literals are described by the following lexical definitions:
 
@@ -169,7 +169,7 @@ fraction      ::=  "." digitpart
 exponent      ::=  ("e" | "E") ["+" | "-"] digitpart
 ```
 
-## Operators and Delimiters
+## Operators und Delimiters
 
 ### Operators
 
@@ -200,7 +200,7 @@ The following printing ASCII characters have special meaning as part of other to
 '       "       #       \
 ```
 
-The following printing ASCII characters are not used in KCL. Their occurrence outside string literals and comments is an unconditional error:
+The following printing ASCII characters are not used in KCL. Their occurrence outside string literals und comments is an unconditional error:
 
 ```
 ?       `

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## Einführung
 
-KCL provides many out of the box support for Kubernetes configuration. Through KCL tools, we can integrate Kubernetes manifests and types into KCL. This section will introduce how to adopt from Kubernetes.
+KCL provides many out of the box support für Kubernetes configuration. Through KCL tools, we can integrate Kubernetes manifests und types into KCL. This section will introduce how to adopt from Kubernetes.
 
 ## Prerequisite
 
@@ -140,11 +140,11 @@ spec:
             - containerPort: 80
 ```
 
-### Generate Types in KCL for Custom Resource
+### Generate Types in KCL für Custom Resource
 
-KCL supports extracting and generating KCL schemas from Kubernetes OpenAPI/Custom Resource Definition (CRD). the [KCL OpenAPI Spec](/docs/tools/cli/openapi/spec) defines the mapping between the OpenAPI specification and the KCL language features.
+KCL supports extracting und generating KCL schemas from Kubernetes OpenAPI/Custom Resource Definition (CRD). the [KCL OpenAPI Spec](/docs/tools/cli/openapi/spec) defines the mapping between the OpenAPI specification und the KCL language features.
 
-If you developed CRDs, you can generate the KCL version of the CRD schemas and declare CRs based on that. Here we take the example [CronTab CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#create-a-customresourcedefinition) specified in the Kubernetes documentation.
+If you developed CRDs, you can generate the KCL version of the CRD schemas und declare CRs based on that. Here we take the example [CronTab CRD](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#create-a-customresourcedefinition) specified in the Kubernetes documentation.
 
 - Generate KCL Schema from CRD
 
@@ -191,4 +191,4 @@ spec:
 
 ## Summary
 
-This section explains how to use the `kcl import` tool to migrate JSON, YAML, Kubernetes CRDs, and more to KCL. The quick start guide helps with the migration or integration from Kubernetes.
+This section explains how to use the `kcl import` tool to migrate JSON, YAML, Kubernetes CRDs, und more to KCL. The quick start guide helps with the migration or integration from Kubernetes.

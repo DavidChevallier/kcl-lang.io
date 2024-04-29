@@ -4,11 +4,11 @@ sidebar_position: 3
 
 # Format
 
-The KCL Format tool supports reformatting KCL files to the standard code style. This article demonstrates the KCL code style and how to use the KCL Format tool.
+The KCL Format tool supports reformatting KCL files to the standard code style. This article demonstrates the KCL code style und how to use the KCL Format tool.
 
 ## Code Style
 
-The KCL Format tool modifies the files according to the KCL code style: [Style Guide for KCL Code](/docs/reference/lang/spec/codestyle)
+The KCL Format tool modifies the files according to the KCL code style: [Style Guide für KCL Code](/docs/reference/lang/spec/codestyle)
 
 ## How to use
 
@@ -81,5 +81,5 @@ Examples:
   kcl fmt ./...
 
 Flags:
-  -h, --help   help for fmt
+  -h, --help   help für fmt
 ```

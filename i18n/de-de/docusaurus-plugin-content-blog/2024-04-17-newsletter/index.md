@@ -10,19 +10,19 @@ image: /img/biweekly-newsletter.png
 
 ![](/img/biweekly-newsletter.png)
 
-[KCL](https://github.com/kcl-lang) is a constraint-based record and functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations and polices, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
+[KCL](https://github.com/kcl-lang) ist eine auf Einschränkungen basierende rekursive und funktionale Sprache, die von der Cloud Native Computing Foundation (CNCF) gehostet wird und die Erstellung komplexer Konfigurationen und Richtlinien, einschließlich solcher für Cloud-native Szenarien, erleichtert. Mit ihrer fortschrittlichen Programmiersprachentechnologie und -praxis ist KCL darauf ausgerichtet, eine bessere Modularität, Skalierbarkeit und Stabilität für Konfigurationen zu fördern. Sie ermöglicht einfacheres Schreiben von Logik und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
 
-This section will update the KCL language community's latest news, including features, website updates, and the latest community news, helping everyone better understand the KCL community!
+Dieser Abschnitt wird die neuesten Nachrichten der KCL language community's aktualisieren, einschließlich Funktionen, Website Updates und den neuesten community nachrichten, um allen ein besseres Verständnis der KCL Community zu ermöglichen!
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
 ## Overview
 
-Thanks to to all contributors for their outstanding work over the past twenty days (2024.04.04 - 2024.04.17). Here is an overview of the key content.
+Vielen Dank an alle Beitragenden für ihre herausragende Arbeit in den letzten zwanzig Tagen (04.04.2024 - 17.04.2024). Hier ist eine Übersicht über die wichtigsten Inhalte.
 
 **🏄 Language Updates**
 
-- The `instances()` method of Schema has added a new keyword parameter `full_pkg` for reading all instances corresponding to the Schema in the code.
+- Die `instances()` Methode des Schemas hat einen neuen Schlüsselwortparameter `full_pkg` hinzugefügt, um alle Instanzen zu lesen, die dem Schema im Code entsprechen.
 
 ```python
 schema Person:
@@ -32,7 +32,7 @@ alice = Person {name = "Alice"}
 all_persons = Person.instances(True)
 ```
 
-- Added the `template` system module for manipulation of templates in KCL.
+- Das Modul `template` wurde hinzugefügt, um templates in KCL zu manipulieren.
 
 ```python
 import template
@@ -52,8 +52,8 @@ content = template.execute("""\
 
 **⛵️ Toolchain Updates**
 
-- The OverrideFile API supports modifying/deleting non-schema type fields.
-- New ListVariable API for reading the values of variables in KCL files.
+- Die OverrideFile API unterstützt das Ändern/Löschen von non-schema type Feldern.
+- Neue ListVariable API zum Lesen der values von Variablen in KCL files.
 
 **🔥 SDK Updates**
 
@@ -126,7 +126,7 @@ main();
 
 **🌼 Integration Updates**
 
-- Crossplane KCL Function supports reading Function Context parameters for passing parameters to different functions.
+- Crossplane KCL Function supports reading Function Context parameters für passing parameters to different functions.
   - Support reading the function context across different functions.
   - Support reading the function details to set sensitive information.
   - Support setting the status field of XR to output user information.
@@ -139,20 +139,20 @@ We'd like to thank all the community participants from the past two weeks.
 
 The following are listed in no particular order:
 
-- Thanks to @bozaro for the contribution to the KCL Go SDK 🙌
-- Thanks to @jheyduk for the contribution to the Kubectl KCL plugin 🙌
-- Thanks to @shashank-iitbhu for the contribution to the quick fix feature for KCL IDE syntax 🙌
-- Thanks to @d4v1d03 for the contribution to the KCL official website FAQ documentation 🙌
-- Thanks to @octonawish-akcodes for the contribution to the automatic dependency update feature for KCL IDE based on kcl.mod 🙌
-- Thanks to @utnim2 for the contribution to the restart kcl-language-server command for KCL IDE 🙌
-- Thanks to @AkashKumar7902 for the contribution to the KCL package management tool MVS algorithm 🙌
-- Thanks to @steeling, @bozaro, @vtomilov, @sanzoghenzo, @folliehiyuki, @markphillips100, @wilsonwang371, @zargor, @aleeriz, @reckless-huang, @zhuxw, @jheyduk, @Vitaly Tomilov, @Sergey Ryabin, @Stephen C, @ytsarev and others for their valuable suggestions and feedback while using KCL recently. 🙌
+- Vielen Dank an @bozaro für seinen Beitrag zum KCL Go SDK 🙌
+- Vielen Dank an @jheyduk für seinen Beitrag zum Kubectl KCL plugin 🙌
+- Vielen Dank an @shashank-iitbhu für seinen Beitrag zum quick fix feature für KCL IDE syntax 🙌
+- Vielen Dank an @d4v1d03 für seinen Beitrag zum KCL official website FAQ documentation 🙌
+- Vielen Dank an @octonawish-akcodes für seinen Beitrag zum automatic dependency update feature für KCL IDE based on kcl.mod 🙌
+- Vielen Dank an @utnim2 für seinen Beitrag zum restart kcl-language-server command für KCL IDE 🙌
+- Vielen Dank an @AkashKumar7902 für seinen Beitrag zum KCL package management tool MVS algorithm 🙌
+- Vielen Dank an @steeling, @bozaro, @vtomilov, @sanzoghenzo, @folliehiyuki, @markphillips100, @wilsonwang371, @zargor, @aleeriz, @reckless-huang, @zhuxw, @jheyduk, @Vitaly Tomilov, @Sergey Ryabin, @Stephen C, @ytsarev und others für their valuable suggestions und feedback while using KCL recently. 🙌
 
 ## Resources
 
 ❤️ See [here](https://github.com/kcl-lang/community) to join us!
 
-For more resources, please refer to
+For more resources, bitte refer to
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

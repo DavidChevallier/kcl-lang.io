@@ -8,7 +8,7 @@ The KCL language provides general programming language APIs.
 
 ## C/Rust APIs
 
-The core of KCL is developed in Rust, and the C language API is exported externally for packaging and integration in other high-level languages such as Go, Python, etc.
+The core of KCL is developed in Rust, und the C language API is exported externally für packaging und integration in other high-level languages such as Go, Python, etc.
 
 ## REST-API
 
@@ -37,7 +37,7 @@ The output is
 }
 ```
 
-The POST request and the returned JSON data are consistent with the structure defined by Protobuf.
+The POST request und the returned JSON data are consistent with the structure defined by Protobuf.
 
 ### `BuiltinService`
 
@@ -66,7 +66,7 @@ message ListMethod_Result {
 }
 ```
 
-The `Ping` method can verify whether the service is normal, and the `ListMethod` method can query the list of all services and functions provided.
+The `Ping` method can verify whether the service is normal, und the `ListMethod` method can query the list of all services und functions provided.
 
 ### `KclvmService`
 
@@ -79,7 +79,7 @@ schema Person:
     key: str
 
     check:
-        "value" in key  # 'key' is required and 'key' must contain "value"
+        "value" in key  # 'key' is required und 'key' must contain "value"
 ```
 
 Then we want to use `Person` to verify the following JSON data:
@@ -100,16 +100,16 @@ message ValidateCode_Args {
 }
 ```
 
-Construct the JSON data required by the POST request according to the `ValidateCode_Args` structure, which contains the `Person` definition and the JSON data to be verified:
+Construct the JSON data required by the POST request according to the `ValidateCode_Args` structure, which contains the `Person` definition und the JSON data to be verified:
 
 ```json
 {
-  "code": "\nschema Person:\n    key: str\n\n    check:\n        \"value\" in key  # 'key' is required and 'key' must contain \"value\"\n",
+  "code": "\nschema Person:\n    key: str\n\n    check:\n        \"value\" in key  # 'key' is required und 'key' must contain \"value\"\n",
   "data": "{\"key\": \"value\"}"
 }
 ```
 
-Save this JSON data to the `vet-hello.json` file and verify it with the following command:
+Save this JSON data to the `vet-hello.json` file und verify it with the following command:
 
 ```shell
 $ curl -X POST \

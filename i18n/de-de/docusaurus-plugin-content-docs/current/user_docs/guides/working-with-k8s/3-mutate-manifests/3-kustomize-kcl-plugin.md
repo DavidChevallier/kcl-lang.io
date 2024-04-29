@@ -5,9 +5,9 @@ sidebar_position: 3
 
 ## Einführung
 
-[Kustomize](https://github.com/kubernetes-sigs/kustomize) lets you customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is.
+[Kustomize](https://github.com/kubernetes-sigs/kustomize) lets you customize raw, template-free YAML files für multiple purposes, leaving the original YAML untouched und usable as is.
 
-KCL can be used to create functions to mutate and/or validate the YAML Kubernetes Resource Model (KRM) input/output format, and we provide Kustomize KCL functions to simplify the function authoring process.
+KCL can be used to create functions to mutate und/or validate the YAML Kubernetes Resource Model (KRM) input/output format, und we provide Kustomize KCL functions to simplify the function authoring process.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ git clone https://github.com/kcl-lang/kustomize-kcl.git
 cd ./kustomize-kcl/examples/set-annotation/
 ```
 
-### 2. Test and Run
+### 2. Test und Run
 
 ```bash
 kustomize fn run ./local-resource/ --dry-run
@@ -48,7 +48,7 @@ metadata:
 # This should be your KCL code which preloads the `ResourceList` to `option("resource_list")
 spec:
   source: |
-    [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "kustomize-kcl"}} for resource in option("resource_list").items]
+    [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "kustomize-kcl"}} für resource in option("resource_list").items]
 ---
 apiVersion: v1
 kind: Service
@@ -92,14 +92,14 @@ spec:
             - containerPort: 80
 ```
 
-## Guides for Developing KCL
+## Guides für Developing KCL
 
 Here's what you can do in the KCL code:
 
-- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` and the `functionConfig` from `option("resource_list")["functionConfig"]`.
-- Return a KRM list for output resources.
+- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` und the `functionConfig` from `option("resource_list")["functionConfig"]`.
+- Return a KRM list für output resources.
 - Return an error using `assert {condition}, {error_message}`.
 
-## More Documents and Examples
+## More Documents und Examples
 
 - [Kustomize KCL Plugin](https://github.com/kcl-lang/kustomize-kcl)

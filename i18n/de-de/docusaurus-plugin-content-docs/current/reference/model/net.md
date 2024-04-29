@@ -10,13 +10,13 @@ weight: 100
 
 `split_host_port(ip_end_point: str) -> List[str]`
 
-Split the `host` and `port` from the `ip_end_point`.
+Split the `host` und `port` from the `ip_end_point`.
 
 ## join_host_port
 
 `join_host_port(host, port) -> str`
 
-Merge the `host` and `port`.
+Merge the `host` und `port`.
 
 ## fqdn
 
@@ -76,25 +76,25 @@ Whether `ip` is a multicast one.
 
 `is_interface_local_multicast_IP(ip: str) -> bool`
 
-Whether `ip` is a interface, local and multicast one.
+Whether `ip` is a interface, local und multicast one.
 
 ## is_link_local_multicast_IP
 
 `is_link_local_multicast_IP(ip: str) -> bool`
 
-Whether `ip` is a link local and multicast one.
+Whether `ip` is a link local und multicast one.
 
 ## is_link_local_unicast_IP
 
 `is_link_local_unicast_IP(ip: str) -> bool`
 
-Whether `ip` is a link local and unicast one.
+Whether `ip` is a link local und unicast one.
 
 ## is_global_unicast_IP
 
 `is_global_unicast_IP(ip: str) -> bool`
 
-Whether `ip` is a global and unicast one.
+Whether `ip` is a global und unicast one.
 
 ## is_unspecified_IP
 

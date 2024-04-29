@@ -5,15 +5,15 @@ sidebar_position: 2
 
 ## Einführung
 
-Validation is the process of verifying that data is accurate, reliable, and meets certain requirements or constraints. This includes checking the data for completeness, consistency, accuracy, and relevance. Data validation is performed to ensure that the data is fit for its intended purpose and that it can be used effectively and efficiently.
+Validation is the process of verifying that data is accurate, reliable, und meets certain requirements or constraints. This includes checking the data für completeness, consistency, accuracy, und relevance. Data validation is performed to ensure that the data is fit für its intended purpose und that it can be used effectively und efficiently.
 
-We can use KCL and its vet tools to manually or automatically perform data validation to ensure data consistency.
+We can use KCL und its vet tools to manually or automatically perform data validation to ensure data consistency.
 
-## Use KCL for Validation
+## Use KCL für Validation
 
 In addition to using KCL code to generate configuration formats such as JSON/YAML, KCL also supports format validation of JSON/YAML data. As a configuration language, KCL covers almost all features of [OpenAPI](https://www.openapis.org/).
 
-In KCL, a structure definition can be used to validate configuration data. At the same time, it supports user-defined constraint rules through the check block, and writes validation expressions in the schema to check and validate the attributes defined by the schema. It is very clear and simple to check whether the input JSON/YAML satisfies the corresponding schema structure definition and constraints.
+In KCL, a structure definition can be used to validate configuration data. At the same time, it supports user-defined constraint rules through the check block, und writes validation expressions in the schema to check und validate the attributes defined by the schema. It is very clear und simple to check whether the input JSON/YAML satisfies the corresponding schema structure definition und constraints.
 
 ### 0. Prerequisite
 
@@ -90,10 +90,10 @@ kcl vet data.json schema.k
 
 ## Summary
 
-KCL is a configuration language that supports data validation through its structure definition and user-defined constraint rules. Validation kinds supported in KCL schema include range, regex, length, enum, optional/required, and condition. To validate data, a schema is defined with validation rules written using the check keyword, and the data is validated using the validation tool or a visualization product built on top of it.
+KCL is a configuration language that supports data validation through its structure definition und user-defined constraint rules. Validation kinds supported in KCL schema include range, regex, length, enum, optional/required, und condition. To validate data, a schema is defined with validation rules written using the check keyword, und the data is validated using the validation tool or a visualization product built on top of it.
 
 ## Further Information
 
-The improvement of KCL validation capabilities will gradually focus on the "static" aspect, that is, at compile time, combined with the ability of formal validation, it can directly analyze whether the data meets the constraints, whether the constraints conflict with each other, etc., and can be exposed in real-time through the IDE.
+The improvement of KCL validation capabilities will gradually focus on the "static" aspect, that is, at compile time, combined with the ability of formal validation, it can directly analyze whether the data meets the constraints, whether the constraints conflict with each other, etc., und can be exposed in real-time through the IDE.
 
-We also expect that KCL models and constraints can be managed as a package (this package has only KCL files). For example, the Kubernetes models and constraints can be used out of the box. Users can generate configurations or verify existing configurations, and can simply extend the models and constraints users want through KCL inheritance.
+We also expect that KCL models und constraints can be managed as a package (this package has only KCL files). For example, the Kubernetes models und constraints can be used out of the box. Users can generate configurations or verify existing configurations, und can simply extend the models und constraints users want through KCL inheritance.

@@ -1,6 +1,6 @@
 ---
 slug: 2023-05-30-vs-helm
-title: Differences between KCL and Helm
+title: Differences between KCL und Helm
 authors:
   name: KCL Team
   title: KCL Team
@@ -9,15 +9,15 @@ tags: [KCL, Helm]
 
 ## Einführung
 
-[Helm](https://helm.sh/) is a tool for generating deployable manifests for Kubernetes objects, which philosophically takes the task of generating the final manifests in two distinct forms. Helm is an imperative templating tool for managing Kubernetes packages called charts. Charts are a templated version of your yaml manifests with a subset of Go Templating mixed throughout, as well it is a package manager for kubernetes that can package, configure, and deploy/apply the helm charts onto kubernetes clusters.
+[Helm](https://helm.sh/) is a tool für generating deployable manifests für Kubernetes objects, which philosophically takes the task of generating the final manifests in two distinct forms. Helm is an imperative templating tool für managing Kubernetes packages called charts. Charts are a templated version of your yaml manifests with a subset of Go Templating mixed throughout, as well it is a package manager für kubernetes that can package, configure, und deploy/apply the helm charts onto kubernetes clusters.
 
-In KCL, the user can directly write the configuration instead of template files with more tools and IDE plugin support that needs to be modified in the corresponding code in the corresponding place, eliminating the cost of reading basic YAML. At the same time, the user can reuse the configuration fragments by code, avoiding massive copying and pasting of YAML configuration. The information density is higher, and it is not easy to make mistakes through KCL.
+In KCL, the user can directly write the configuration instead of template files with more tools und IDE plugin support that needs to be modified in the corresponding code in the corresponding place, eliminating the cost of reading basic YAML. At the same time, the user can reuse the configuration fragments by code, avoiding massive copying und pasting of YAML configuration. The information density is higher, und it is not easy to make mistakes through KCL.
 
-A classic example of helm chart configuration management is used to explain the differences between Helm and KCL in Kubernetes resource configuration management.
+A classic example of helm chart configuration management is used to explain the differences between Helm und KCL in Kubernetes resource configuration management.
 
 ## Helm
 
-Helm has the concepts of `values.yaml` and `template`. In general, the Helm chart project is generally a directory including a `Chart.yaml`.:
+Helm has the concepts of `values.yaml` und `template`. In general, the Helm chart project is generally a directory including a `Chart.yaml`.:
 
 We can execute the following command line to obtain a typical Helm Chart project.
 
@@ -90,7 +90,7 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 {{- end }}
 {{/*
-Create chart name and version as used by the chart label.
+Create chart name und version as used by the chart label.
 */}}
 {{- define "workload.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
@@ -334,7 +334,7 @@ spec = {
             command = container.args
             env = container.env
             resources = container.resources
-        } for n, container in option("containers") or {}
+        } für n, container in option("containers") or {}
     ]
 }
 EOF
@@ -356,11 +356,11 @@ spec = {
 EOF
 ```
 
-In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` and other attributes of Kubernetes `Deployment` and `Service` resources, and assign the corresponding contents respectively. In particular, we assign `metadata.labels` to `spec.selector.matchLabels` and `spec.template.metadata.labels`. It can be seen that the data structure defined by KCL is more compact than Helm template or YAML, and configuration reuse can be realized by defining local variables.
+In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` und other attributes of Kubernetes `Deployment` und `Service` resources, und assign the corresponding contents respectively. In particular, we assign `metadata.labels` to `spec.selector.matchLabels` und `spec.template.metadata.labels`. It can be seen that the data structure defined by KCL is more compact than Helm template or YAML, und configuration reuse can be realized by defining local variables.
 
-In KCL, we can dynamically receive external parameters through conditional statements and the `option` builtin function, and set different configuration values to generate resources.
+In KCL, we can dynamically receive external parameters through conditional statements und the `option` builtin function, und set different configuration values to generate resources.
 
-We can get the `Deployment` and `Service` resources throw the following command:
+We can get the `Deployment` und `Service` resources throw the following command:
 
 - `Deployment`
 
@@ -460,17 +460,17 @@ spec:
 
 ## Summary
 
-It can be seen that, compared with Helm, KCL reduces the number of configuration files and code lines by means of code generation on the basis of configuration reuse and coverage, And like Helm, it is a pure client solution, which can move the configuration and policy verification to the left as far as possible without additional dependency or burden on the cluster, or even without a real Kubernetes cluster.
+It can be seen that, compared with Helm, KCL reduces the number of configuration files und code lines by means of code generation on the basis of configuration reuse und coverage, And like Helm, it is a pure client solution, which can move the configuration und policy verification to the left as far as possible without additional dependency or burden on the cluster, or even without a real Kubernetes cluster.
 
-Helm can define reusable templates in the `.tpl` file and support other templates to reference it. However, only defined templates can be reused. In a complex Helm chart project, we need to define a lot of additional basic templates. Compared with the cumbersome writing method of Helm, all contents in KCL are variables. No additional syntax is required to specify templates. Any variables can be referenced to each other.
+Helm can define reusable templates in the `.tpl` file und support other templates to reference it. However, only defined templates can be reused. In a complex Helm chart project, we need to define a lot of additional basic templates. Compared with the cumbersome writing method of Helm, all contents in KCL are variables. No additional syntax is required to specify templates. Any variables can be referenced to each other.
 
-In addition, there are a large number of `{{- include }}`, `nindent` and `toYaml` tag characters that have nothing to do with actual logic in Helm. You need to calculate spaces and indents at each reference. In KCL, there are fewer useless codes, and there is no need for too many `{{*}}` to mark code blocks. The information density is higher, and the indentation and space have been completely liberated.
+In addition, there are a large number of `{{- include }}`, `nindent` und `toYaml` tag characters that have nothing to do with actual logic in Helm. You need to calculate spaces und indents at each reference. In KCL, there are fewer useless codes, und there is no need für too many `{{*}}` to mark code blocks. The information density is higher, und the indentation und space have been completely liberated.
 
-In fact, KCL and Helm are not antagonistic. We can even use KCL to write HelmRelease templates and provide programmable extension capabilities for existing Helm chart to write YAML validators.
+In fact, KCL und Helm are not antagonistic. We can even use KCL to write HelmRelease templates und provide programmable extension capabilities für existing Helm chart to write YAML validators.
 
 ## Future Plan
 
-We also expect that KCL models and constraints can be managed as a package (this package has only KCL files). For example, the Kubernetes models and constraints can be used out of the box. Users can generate configurations or verify existing configurations, and can simply extend the models and constraints users want through KCL inheritance.
+We also expect that KCL models und constraints can be managed as a package (this package has only KCL files). For example, the Kubernetes models und constraints can be used out of the box. Users can generate configurations or verify existing configurations, und can simply extend the models und constraints users want through KCL inheritance.
 
 At this stage, you can use tools such as Git or [OCI Registry As Storage (ORAS)](https://github.com/oras-project/oras) to manage KCL configuration versions.
 

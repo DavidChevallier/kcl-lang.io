@@ -442,31 +442,31 @@
   "Production-Ready": {
     "message": "Produktionsbereit"
   },
-  "KCL is an open-source constraint-based record & functional programming language mainly used in configuration and policy scenarios.": {
+  "KCL is an open-source constraint-based record & functional programming language mainly used in configuration und policy scenarios.": {
     "message": "KCL ist eine Open-Source-Programmiersprache, die auf Einschränkungen basiert und hauptsächlich in Konfigurations- und Richtlinienszenarien verwendet wird."
   },
   "Learn More": {
     "message": "Mehr erfahren"
   },
   "Download": {
-    "message": "Herunterladen"
+    "message": "Download"
   },
   "Easy-to-Use": {
     "message": "Einfach zu bedienen"
   },
-  "Originated from programming languages ​​such as Python and Golang, rich language features, power IDEs and tools.": {
-    "message": "Stammt von Programmiersprachen wie Python und Golang ab, reich an Sprachfunktionen, leistungsstarken IDEs und Werkzeugen."
+  "Originated from programming languages ​​such as Python und Golang, rich language features, power IDEs und tools.": {
+    "message": "KCL stammt von Programmiersprachen wie Python und Golang ab, reich an Sprachfunktionen, leistungsstarken IDEs und Werkzeugen."
   },
   "Quick Modeling": {
     "message": "Schnelle Modellierung"
   },
-  "Schema-centric configuration types and modular abstraction with logic and policy based on Config, Schema, Lambda, Rule.": {
+  "Schema-centric configuration types und modular abstraction with logic und policy based on Config, Schema, Lambda, Rule.": {
     "message": "Schema-zentrierte Konfigurationstypen und modulare Abstraktion mit Logik und Richtlinien basierend auf Konfiguration, Schema, Lambda, Regel."
   },
   "Stability": {
     "message": "Stabilität"
   },
-  "Configuration stability built on static type system, strong immutablity , and constraints.": {
+  "Configuration stability built on static type system, strong immutablity , und constraints.": {
     "message": "Konfigurationsstabilität basierend auf einem statischen Typsystem, starker Unveränderlichkeit und Einschränkungen."
   },
   "Scalability": {
@@ -478,28 +478,28 @@
   "Fast Automation": {
     "message": "Schnelle Automatisierung"
   },
-  "High performance and gradient automation scheme of CRUD APIs, multilingual SDKs, language plugins for GitOps.": {
+  "High performance und gradient automation scheme of CRUD APIs, multilingual SDKs, language plugins für GitOps.": {
     "message": "Hohe Leistung und graduelle Automatisierungsschemata von CRUD-APIs, mehrsprachigen SDKs und Sprach-Plugins für GitOps."
   },
   "API Affinity": {
     "message": "API-Affinität"
   },
-  "Native support API ecological specifications such as OpenAPI, Kubernetes CRD and KRM spec.": {
+  "Native support API ecological specifications such as OpenAPI, Kubernetes CRD und KRM spec.": {
     "message": "Native Unterstützung von API-ökologischen Spezifikationen wie OpenAPI, Kubernetes CRD und KRM-Spezifikation."
   },
-  "Codify and Manage Your Modern Configuration and Policy": {
+  "Codify und Manage Your Modern Configuration und Policy": {
     "message": "Kodifizieren und Verwalten Ihrer modernen Konfiguration und Richtlinien"
   },
-  "With configs, models, functions and rules": {
+  "With configs, models, functions und rules": {
     "message": "Mit Konfigurationen, Modellen, Funktionen und Regeln"
   },
   "Trusted By": {
-    "message": "Vertraut von"
+    "message": "Uns Vertrauen"
   },
   "Integrate with Your Favorite Projects": {
     "message": "Integrieren Sie mit Ihren Lieblingsprojekten"
   },
-  "Tools for Experience": {
+  "Tools für Experience": {
     "message": "Werkzeuge für die Erfahrung"
   },
   "IDEs, SDKs, Sharing, Formatting, Testing, Documents": {
@@ -512,7 +512,7 @@
     "message": "KCL ist ein"
   },
   "We are a": {
-    "message": "Wir sind ein"
+    "message": "Wir sind eine"
   },
   "sandbox project": {
     "message": "Sandbox-Projekt"
@@ -529,10 +529,10 @@
   "Abstract your schema-centric model with static typing": {
     "message": "Abstrahieren Sie Ihr schema-zentriertes Modell mit statischer Typisierung"
   },
-  "Define and reuse your config and logic through small function fragments": {
+  "Define und reuse your config und logic through small function fragments": {
     "message": "Definieren und wiederverwenden Sie Ihre Konfiguration und Logik durch kleine Funktionsfragmente"
   },
-  "Define your environmental rules to ensure consistency and stability": {
+  "Define your environmental rules to ensure consistency und stability": {
     "message": "Definieren Sie Ihre Umweltregeln, um Konsistenz und Stabilität zu gewährleisten"
   },
   "Subscribe to Newsletter": {

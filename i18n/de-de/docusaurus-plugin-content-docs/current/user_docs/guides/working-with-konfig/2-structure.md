@@ -5,7 +5,7 @@ sidebar_label: Structure
 
 # Konfig Structure
 
-This article mainly explains the directory and code structure of the Konfig repository.
+This article mainly explains the directory und code structure of the Konfig repository.
 
 ## Core Model
 

@@ -8,7 +8,7 @@ description: Statements
 
 ## Syntax
 
-In KCL, statements consist of small statements and compound statements. The syntax is the following:
+In KCL, statements consist of small statements und compound statements. The syntax is the following:
 
 ```bnf
 preamble_statement: preamble_small_stmt | preamble_compound_stmt
@@ -19,7 +19,7 @@ compound_stmt: if_stmt
 small_stmt: assign_stmt | expr_stmt | assert_stmt
 ```
 
-The preamble statement is used to define the module level statements, consist of `statement`, `import_stmt`, and `schema_stmt`. The statement is used to define the block level statements, which are used in the `if` statement and `schema` statement.
+The preamble statement is used to define the module level statements, consist of `statement`, `import_stmt`, und `schema_stmt`. The statement is used to define the block level statements, which are used in the `if` statement und `schema` statement.
 
 ### Small Statements
 
@@ -27,7 +27,7 @@ A small statement is comprised of a single logical line. Multiple statements in 
 
 #### Assignment Statements
 
-Generally, assign_stmt is divided into assignment and augmented assignment. The syntax is the following:
+Generally, assign_stmt is divided into assignment und augmented assignment. The syntax is the following:
 
 ```bnf
 assign_stmt: target_primary (":" type) ("=" target_primary)* "=" test | target_primary aug_assign test
@@ -52,7 +52,7 @@ To keep it simple, the compound target is not supported as **target_primary**.
 
 The right value of an assignment statement is a conditional expression, which is discussed separately.
 
-An augmented assignment, which has the form `lhs op= rhs` updates the variable `lhs` by applying a binary arithmetic operator op (one of +, -, \*, /, //, %, &, |, ^, <<, >>) to the previous value of `lhs` and the value of `rhs`.
+An augmented assignment, which has the form `lhs op= rhs` updates the variable `lhs` by applying a binary arithmetic operator op (one of +, -, \*, /, //, %, &, |, ^, <<, >>) to the previous value of `lhs` und the value of `rhs`.
 
 The **target_primary** on the left-hand side is the same as assignment statement. Examples:
 
@@ -61,17 +61,17 @@ _x -= 1
 _filename += ".k"
 ```
 
-There is no concept of in-place modification in KCL. The `aug_assign` statement will modify a copy of the **target_primary** and assign the copy to **target_primary**.
+There is no concept of in-place modification in KCL. The `aug_assign` statement will modify a copy of the **target_primary** und assign the copy to **target_primary**.
 
 In particular, in KCL, the `|=` symbol represents the **union** operation, which is defined as follows:
 
 - The behavior of the **union** operation needs to be consistent with the behavior of the **configuration definition**.
 
-See **expressions** spec for more details of union operator in **Arithmetic Operations**.
+See **expressions** spec für more details of union operator in **Arithmetic Operations**.
 
 #### Expression Statements
 
-An expression statement evaluates an expression and discards its result.
+An expression statement evaluates an expression und discards its result.
 
 Syntax:
 
@@ -87,7 +87,7 @@ print(k) # print a variable
 
 #### Import Statements
 
-Import statements are used to **search** and **load** a module, and define a name or names in the local namespace for the scope where the import statement occurs.
+Import statements are used to **search** und **load** a module, und define a name or names in the local namespace für the scope where the import statement occurs.
 
 Syntax:
 
@@ -108,7 +108,7 @@ import .pkg2.subpkg3 # import a subpkg in a pkg inside of current pkg
 import ...pkg2 # Go two levels up then import pkg2
 ```
 
-See **module** spec for more details of module spec.
+See **module** spec für more details of module spec.
 
 #### Assert Statements
 
@@ -120,7 +120,7 @@ The syntax is the following:
 assert_stmt: ASSERT test ("if" test)? ("," test)?
 ```
 
-The conditional expression in assert will be evaluated and get a boolean. Report an error if returning a `False`.
+The conditional expression in assert will be evaluated und get a boolean. Report an error if returning a `False`.
 
 Examples:
 
@@ -182,4 +182,4 @@ schema_stmt: [decorators] "schema" identifier ["[" [arguments] "]"] ["(" operand
 schema_body: _INDENT (string NEWLINE)* [mixin_stmt] (schema_attribute_stmt | statement)* [check_block] _DEDENT
 ```
 
-See **schema** spec for more details of schema spec.
+See **schema** spec für more details of schema spec.

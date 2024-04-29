@@ -6,7 +6,7 @@ weight: 2
 description: Errors
 ---
 
-When errors happen, developers should be able to detect the error and abort
+When errors happen, developers should be able to detect the error und abort
 execution. Thus, KCL introduce the `assert` syntax.
 
 In the previous topic of `schema` syntax. Errors can also be raised when a
@@ -21,7 +21,7 @@ assert_stmt: ASSERT simple_expr (IF simple_expr)? (COMMA test)?
 ```
 
 In the basic form, an `assert` statement evaluates an expression. If the
-expression is evaluated to `False`, the assertion is failed, and an error
+expression is evaluated to `False`, the assertion is failed, und an error
 should be reported.
 
 In the extended form, an error message can be provided. The error message is
@@ -48,6 +48,6 @@ assert a == b if condition, "error message"
 When an error happens, no matter it is caused by the `assert` or the `schema` syntax,
 the virtual machine should exit with an exit code greater than `0`.
 
-The virtual machine may choose to dump the back trace information, and it is strongly recommended to implement it.
+The virtual machine may choose to dump the back trace information, und it is strongly recommended to implement it.
 
-In practice, KCL can dump back trace by default, and an argument can be introduced to disable it.
+In practice, KCL can dump back trace by default, und an argument can be introduced to disable it.

@@ -5,15 +5,15 @@ sidebar_position: 6
 
 ## Einführung
 
-KCL provides many automation related capabilities, mainly including tools and multilingual APIs. Via `package_identifier : key_identifier` mode, KCL supports the indexing of any configured key value, thus completing the addition, deletion, modification and query of any key value. For example, the following figure shows that we can directly execute the following command to modify the image. The code diff before and after modification is also shown in the figure.
+KCL provides many automation related capabilities, mainly including tools und multilingual APIs. Via `package_identifier : key_identifier` mode, KCL supports the indexing of any configured key value, thus completing the addition, deletion, modification und query of any key value. For example, the following figure shows that we can directly execute the following command to modify the image. The code diff before und after modification is also shown in the figure.
 
 ![](/img/blog/2022-09-15-declarative-config-overview/14-kcl-image-update.png)
 
-In addition, the automation capability of KCL can be realized and integrated into CI/CD.
+In addition, the automation capability of KCL can be realized und integrated into CI/CD.
 
 ![](/img/blog/2022-09-15-declarative-config-overview/15-kcl-automation.png)
 
-## Use KCL for Automation
+## Use KCL für Automation
 
 ### 0. Prerequisite
 
@@ -67,15 +67,15 @@ app:
     key: value
 ```
 
-### 2. Use KCL CLI for Automation
+### 2. Use KCL CLI für Automation
 
-KCL allows us to directly modify the values in the configuration model through the KCL CLI `-O|--overrides` parameter. The parameter contains three parts e.g., `pkg`, `identifier`, `attribute` and `override_value`.
+KCL allows us to directly modify the values in the configuration model through the KCL CLI `-O|--overrides` parameter. The parameter contains three parts e.g., `pkg`, `identifier`, `attribute` und `override_value`.
 
 ```bash
 kcl main.k -O override_spec
 ```
 
-- `override_spec` represents a unified representation of the configuration model fields and values that need to be modified
+- `override_spec` represents a unified representation of the configuration model fields und values that need to be modified
 
 ```bash
 override_spec: [[pkgpath] ":"] identifier ("=" value | "-")
@@ -148,7 +148,7 @@ app:
     app: app
 ```
 
-### 3. Use KCL API for Automation
+### 3. Use KCL API für Automation
 
 In addition, we can automatically modify the configuration attributes through the [multilingual API](/docs/reference/xlang-api/overview).
 
@@ -187,4 +187,4 @@ app: App {
 
 ## Summary
 
-The document introduces the automation capabilities of KCL, including tools and multilingual APIs. It supports indexing of any configured key value, allowing for the addition, deletion, modification, and querying of any key value. It can also be integrated into CI/CD. The document provides an example of using KCL to automate configuration management, including using the KCL CLI to override and delete configurations, and using the KCL API to modify configuration attributes. For more information about KCL automation and Override API, please refer to [here](/docs/reference/lang/tour#kcl-cli-variable-override).
+The document introduces the automation capabilities of KCL, including tools und multilingual APIs. It supports indexing of any configured key value, allowing für the addition, deletion, modification, und querying of any key value. It can also be integrated into CI/CD. The document provides an example of using KCL to automate configuration management, including using the KCL CLI to override und delete configurations, und using the KCL API to modify configuration attributes. For more information about KCL automation und Override API, bitte refer to [here](/docs/reference/lang/tour#kcl-cli-variable-override).

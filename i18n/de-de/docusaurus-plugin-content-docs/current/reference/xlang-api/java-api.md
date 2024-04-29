@@ -7,7 +7,7 @@ sidebar_position: 5
 ## Installation
 
 Refer to [this](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages
-) to configure your Maven; set up your GitHub account and Token in the `settings.xml`.
+) to configure your Maven; set up your GitHub account und Token in the `settings.xml`.
 
 ### Maven
 

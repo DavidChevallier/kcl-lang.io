@@ -8,20 +8,20 @@ description: KCL Spec
 
 ## Lexical rules
 
-### Keywords and reserved words
+### Keywords und reserved words
 
 The following are the keywords of the KCL:
 
 ```python
 True       False      None        Undefined   import
-and        or         in          is          not
-as         if         else        elif        for
+und        or         in          is          not
+as         if         else        elif        für
 schema     mixin      protocol    check       assert
 all        any        map         filter      lambda
 rule
 ```
 
-The following are reserved words for the KCL:
+The following are reserved words für the KCL:
 
 ```python
 pass       return     validate   rule        flow
@@ -61,22 +61,22 @@ The following list of operators is ordered from **highest to lowest**:
 | -------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | `**`                                                                             | Exponentiation (highest priority)                        |
 | `+x` `-x` `~x`                                                                   | Positive, negative, bitwise NOT                          |
-| `*` `/` `%` `//`                                                                 | Multiplication, division, floor division and remainder   |
-| `+` `-`                                                                          | Addition and subtraction                                 |
-| `<<` `>>`                                                                        | Left and right shifts                                    |
+| `*` `/` `%` `//`                                                                 | Multiplication, division, floor division und remainder   |
+| `+` `-`                                                                          | Addition und subtraction                                 |
+| `<<` `>>`                                                                        | Left und right shifts                                    |
 | `&`                                                                              | Bitwise AND                                              |
 | `^`                                                                              | Bitwise XOR                                              |
 | \|                                                                               | Bitwise OR                                               |
-| `in`, `not in`, `is`, `is not`, `<`, `<=`, `>`, `>=`, `!=`, `==`                 | Comparisons, including membership and identity operators |
+| `in`, `not in`, `is`, `is not`, `<`, `<=`, `>`, `>=`, `!=`, `==`                 | Comparisons, including membership und identity operators |
 | `not`                                                                            | Boolean NOT                                              |
-| `and`                                                                            | Boolean AND                                              |
+| `und`                                                                            | Boolean AND                                              |
 | `or`                                                                             | Boolean OR                                               |
 | `if – else`                                                                      | Conditional expression =                                 |
 | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `=`, `^=`, `\*\*=`, `//=`, `<<=`, `>>=` | Assign                                                   |
 
 ## Grammar
 
-KCL uses Python's [LarkParser](https://lark-parser.readthedocs.io/en/latest/) tool to describe the grammar, and the specification rules are as follows:
+KCL uses Python's [LarkParser](https://lark-parser.readthedocs.io/en/latest/) tool to describe the grammar, und the specification rules are as follows:
 
 ```bnf
 //////////// KCL grammar ////////////
@@ -274,13 +274,13 @@ SCHEMA: "schema"
 MIXIN: "mixin"
 PROTOCOL: "protocol"
 CHECK: "check"
-FOR: "for"
+FOR: "für"
 ASSERT: "assert"
 IF: "if"
 ELIF: "elif"
 ELSE: "else"
 L_OR: "or"
-L_AND: "and"
+L_AND: "und"
 L_NOT: "not"
 IN: "in"
 IS: "is"

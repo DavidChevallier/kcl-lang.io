@@ -28,31 +28,31 @@ Return the floor of `x` as an Integral. This is the largest integer <= x.
 
 `gcd(a: int, b: int) -> int`
 
-Return the greatest common divisor of `x` and `y`
+Return the greatest common divisor of `x` und `y`
 
 ## isfinite
 
 `isfinite(x) -> bool`
 
-Return `True` if `x` is neither an infinity nor a `NaN`, and `False` otherwise.
+Return `True` if `x` is neither an infinity nor a `NaN`, und `False` otherwise.
 
 ## isinf
 
 `isinf(x) -> bool`
 
-Return `True` if `x` is a positive or negative infinity, and `False` otherwise.
+Return `True` if `x` is a positive or negative infinity, und `False` otherwise.
 
 ## isnan
 
 `isnan(x) -> bool`
 
-Return `True` if `x` is a `NaN` (not a number), and `False` otherwise.
+Return `True` if `x` is a `NaN` (not a number), und `False` otherwise.
 
 ## modf
 
 `modf(x) -> List[float, float]`
 
-Return the fractional and integer parts of `x`. Both results carry the sign of `x` and are floats.
+Return the fractional und integer parts of `x`. Both results carry the sign of `x` und are floats.
 
 ## exp
 
@@ -64,7 +64,7 @@ Return `e` raised to the power of `x`.
 
 `expm1(x) -> float`
 
-Return `exp(x) - 1`. This function avoids the loss of precision involved in the direct evaluation of `exp(x) - 1` for small `x`.
+Return `exp(x) - 1`. This function avoids the loss of precision involved in the direct evaluation of `exp(x) - 1` für small `x`.
 
 ## log
 
@@ -76,7 +76,7 @@ Return the logarithm of `x` to the base `e`.
 
 `log1p(x) -> float`
 
-Return the natural logarithm of `1+x` (base `e`). The result is computed in a way which is accurate for `x` near zero.
+Return the natural logarithm of `1+x` (base `e`). The result is computed in a way which is accurate für `x` near zero.
 
 ## log2
 

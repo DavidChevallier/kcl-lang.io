@@ -9,13 +9,13 @@ tags: [Release Blog, KCL]
 
 ## Einführung
 
-The KCL team is pleased to announce that KCL v0.4.5 is now available! This release is mainly aimed at improving the convenience and stability of KCL language writing, improving error information, and supporting more platforms including Windows version and more download methods. In KCL v0.4.5, users can eliminate more configuration templates by writing fewer KCL codes. In the new version, preliminary KCL Playground support is provided, which can be used to write and run KCL code online without installation. In addition, this release also includes many compiler error information optimization and bug fixes.
+The KCL team is pleased to announce that KCL v0.4.5 is now available! This release is mainly aimed at improving the convenience und stability of KCL language writing, improving error information, und supporting more platforms including Windows version und more download methods. In KCL v0.4.5, users can eliminate more configuration templates by writing fewer KCL codes. In the new version, preliminary KCL Playground support is provided, which can be used to write und run KCL code online without installation. In addition, this release also includes many compiler error information optimization und bug fixes.
 
-You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.4.5) or the [KCL website](https://kcl-lang.io/) to get KCL binary download link and more detailed release information.
+You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.4.5) or the [KCL website](https://kcl-lang.io/) to get KCL binary download link und more detailed release information.
 
-[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record and functional language. KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology and practice. It is dedicated to building better modularity, scalability, and stability around configurations, simpler logic writing, faster automation, and great built-in or API-driven integrations.
+[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record und functional language. KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology und practice. It is dedicated to building better modularity, scalability, und stability around configurations, simpler logic writing, faster automation, und great built-in or API-driven integrations.
 
-This blog will introduce the content of KCL v0.4.5 and recent developments in the KCL community to readers.
+This blog will introduce the content of KCL v0.4.5 und recent developments in the KCL community to readers.
 
 ## Features
 
@@ -23,7 +23,7 @@ This blog will introduce the content of KCL v0.4.5 and recent developments in th
 
 #### Lazy Validation of Non-null Attributes in the KCL Schema
 
-In previous KCL versions, we have supported the lazy evaluation and validation capabilities of schema attribute cross-reference (including inheritance) and check expressions. In this version, we have supported more schema lazy evaluation capabilities such as the schema attribute non-null lazy validation. For example, for the following KCL codes:
+In previous KCL versions, we have supported the lazy evaluation und validation capabilities of schema attribute cross-reference (including inheritance) und check expressions. In this version, we have supported more schema lazy evaluation capabilities such as the schema attribute non-null lazy validation. For example, für the following KCL codes:
 
 ```python
 schema Spec:
@@ -41,11 +41,11 @@ config = Config {
 }
 ```
 
-Before KCL v0.4.5, directly executing the above code will throw an error that the `value` attribute of `spec` cannot be `None` at the `spec: Spec=Spec {` statement block of the `schema Config`, because only the `id` attribute of `spec` is assigned a value of `1`, and no value is assigned to the `value` attribute of `spec`.
+Before KCL v0.4.5, directly executing the above code will throw an error that the `value` attribute of `spec` cannot be `None` at the `spec: Spec=Spec {` statement block of the `schema Config`, because only the `id` attribute of `spec` is assigned a value of `1`, und no value is assigned to the `value` attribute of `spec`.
 
-After KCL v0.4.5, we will avoid throwing this error after supporting the lazy non-null validation capability of the schema attribute. That is, when the `spec.value="value"` and `spec.id=1` of the `config` attributes are merged, all the attributes of `config` will be checked recursively for non-null. At this time, all the values of the `spec` attribute are fully assigned (the value of the `id` attribute of `spec` is `1`, and the `value` attribute is `"value"`), the error that the required schema attribute is null will not be thrown.
+After KCL v0.4.5, we will avoid throwing this error after supporting the lazy non-null validation capability of the schema attribute. That is, when the `spec.value="value"` und `spec.id=1` of the `config` attributes are merged, all the attributes of `config` will be checked recursively für non-null. At this time, all the values of the `spec` attribute are fully assigned (the value of the `id` attribute of `spec` is `1`, und the `value` attribute is `"value"`), the error that the required schema attribute is null will not be thrown.
 
-Therefore, after KCL v0.4.5 and executing the above KCL code, we will get the complete YAML output as follows:
+Therefore, after KCL v0.4.5 und executing the above KCL code, we will get the complete YAML output as follows:
 
 ```yaml
 config:
@@ -56,7 +56,7 @@ config:
 
 #### Mutual Reference of Configuration Block Attributes
 
-In versions before v0.4.5, KCL has not yet supported the mutual reference of attributes within the configuration block, resulting in the need to define additional configuration variables or templates for reference in some scenarios, resulting in more configuration templates and duplicate codes, such as the KCL code shown below:
+In versions before v0.4.5, KCL has not yet supported the mutual reference of attributes within the configuration block, resulting in the need to define additional configuration variables or templates für reference in some scenarios, resulting in more configuration templates und duplicate codes, such as the KCL code shown below:
 
 ```python
 name = "app-name"
@@ -66,7 +66,7 @@ data = {
 }
 ```
 
-The `metadata.name` attribute of the `data` configuration block cannot directly reference the `name` attribute inside the `data`. We need to define an additional global variable `name` for reference.
+The `metadata.name` attribute of the `data` configuration block cannot directly reference the `name` attribute inside the `data`. We need to define an additional global variable `name` für reference.
 
 After KCL v0.4.5, we support the feature of mutual reference of configuration block attributes, which can be used to eliminate more configuration templates, such as the KCL code shown below:
 
@@ -128,18 +128,18 @@ data:
         name: metadata-name
 ```
 
-> ⚠️ Note: The current KCL version does not support the backward reference of the internal attributes of the configuration block and the direct reference of global variables by skipping the internal scope. The referenced attributes need to be written in front of the configuration reference.
+> ⚠️ Note: The current KCL version does not support the backward reference of the internal attributes of the configuration block und the direct reference of global variables by skipping the internal scope. The referenced attributes need to be written in front of the configuration reference.
 
 ### New Language Features
 
 #### Index Formatting of String Format Member function
 
-After KCL v0.4.5, KCL supports the use of the index tag style format `<format_ele_index>[<index_or_key>]` in the `{}` format block for KCL variables of list and dictionary types similar to the Python language.
+After KCL v0.4.5, KCL supports the use of the index tag style format `<format_ele_index>[<index_or_key>]` in the `{}` format block für KCL variables of list und dictionary types similar to the Python language.
 
-- `<format_ele_index>` indicates the index that is needed to serialize list and dictionary-type elements.
-- `<index_or_key>` indicates the list sub-element index or dictionary sub-element key value of the corresponding list and dictionary type element.
+- `<format_ele_index>` indicates the index that is needed to serialize list und dictionary-type elements.
+- `<index_or_key>` indicates the list sub-element index or dictionary sub-element key value of the corresponding list und dictionary type element.
 
-For example, for the following KCL code
+For example, für the following KCL code
 
 ```python
 # 0[0] means taking the 0th element of ["Hello", "World"]: "Hello"
@@ -159,15 +159,15 @@ dictIndexFormat: "00, 11, HelloWorld"
 
 ### KCL Playground
 
-In this update, we have updated the version of the KCL playground and support the automatic compilation and formatting of KCL code. You can visit the [KCL website](https://kcl-lang.io/) and click the playground button to experience it.
+In this update, we have updated the version of the KCL playground und support the automatic compilation und formatting of KCL code. You can visit the [KCL website](https://kcl-lang.io/) und click the playground button to experience it.
 
 ![](/img/blog/2023-02-27-kcl-0.4.5-release-blog/kcl-website-playground.png)
 
 ![](/img/blog/2023-02-27-kcl-0.4.5-release-blog/kcl-playground.png)
 
-In the subsequent KCL versions, we will continue to update the KCL playground to support more capabilities, such as KCL version selection and code sharing.
+In the subsequent KCL versions, we will continue to update the KCL playground to support more capabilities, such as KCL version selection und code sharing.
 
-### More Platforms and Download Methods for KCL
+### More Platforms und Download Methods für KCL
 
 #### Windows
 
@@ -187,9 +187,9 @@ We will support more Windows package management download methods in the future, 
 
 #### More Download Methods
 
-In this version update, we support more KCL download methods, including scripts, Python, Go, Homebrew, and Docker one-click installation. For more details, please refer to [KCL Download and Installation](https://kcl-lang.io/docs/user_docs/getting-started/install), we will support more KCL installation methods in the future.
+In this version update, we support more KCL download methods, including scripts, Python, Go, Homebrew, und Docker one-click installation. For more details, bitte refer to [KCL Download und Installation](https://kcl-lang.io/docs/user_docs/getting-started/install), we will support more KCL installation methods in the future.
 
-> ⚠️ Note: For all the above operating systems and installation methods, if you want to use [KCL Python plug-in](https://kcl-lang.io/docs/reference/plugin/overview), you need to ensure that Python 3.7+ is installed and add the python3 command to your PATH environment variable.
+> ⚠️ Note: For all the above operating systems und installation methods, if you want to use [KCL Python plug-in](https://kcl-lang.io/docs/reference/plugin/overview), you need to ensure that Python 3.7+ is installed und add the python3 command to your PATH environment variable.
 
 ## Bugfix
 
@@ -232,7 +232,7 @@ config: Config {
 }
 ```
 
-After KCL v0.4.5, the incorrect configuration of the merge order is corrected. You can execute `main.k` and obtain the expected YAML output:
+After KCL v0.4.5, the incorrect configuration of the merge order is corrected. You can execute `main.k` und obtain the expected YAML output:
 
 ```yaml
 r:
@@ -255,7 +255,7 @@ config: {"A"|"B": int} = {
 }
 ```
 
-Before KCL v0.4.5, for the configuration if expression, executing the above code will get the expected configuration value, resulting in the type unsoundness problem, because the KCL compiler incorrectly checks that the value `"2"` of the `A` attribute does not match the declared type `int`. After the KCL v0.4.5, this problem has been corrected. You can execute the above code to obtain the expected type mismatch error:
+Before KCL v0.4.5, für the configuration if expression, executing the above code will get the expected configuration value, resulting in the type unsoundness problem, because the KCL compiler incorrectly checks that the value `"2"` of the `A` attribute does not match the declared type `int`. After the KCL v0.4.5, this problem has been corrected. You can execute the above code to obtain the expected type mismatch error:
 
 ```stderr
 KCL Compile Error[E2G22] : The type got is inconsistent with the type expected
@@ -278,7 +278,7 @@ protocol KubeResourceProtocol:
 schema Service:
     name: str
 
-rule ServiceCheckRule for KubeResourceProtocol:
+rule ServiceCheckRule für KubeResourceProtocol:
     svc.name != "name"
 
 svc = Service {
@@ -290,7 +290,7 @@ ServiceCheckRule {
 }
 ```
 
-After the improvement, we execute the above code and get an accurate validation failure error:
+After the improvement, we execute the above code und get an accurate validation failure error:
 
 ```stderr
 KCL Runtime Error[E3B17] : Schema check is failed to check condition
@@ -318,7 +318,7 @@ c = Config {
 }
 ```
 
-Before KCL v0.4.5, executing the above code would result in an unexpected type mismatch, because the KCL compiler incorrectly deduced the type of the `c.data.A` attribute to the `str` type, resulting in a mismatch error with the string literal union type `"A"|"B"`. After KCL v0.4.5 was updated, this problem was corrected, and the expected YAML output could be obtained by executing the above code:
+Before KCL v0.4.5, executing the above code would result in an unexpected type mismatch, because the KCL compiler incorrectly deduced the type of the `c.data.A` attribute to the `str` type, resulting in a mismatch error with the string literal union type `"A"|"B"`. After KCL v0.4.5 was updated, this problem was corrected, und the expected YAML output could be obtained by executing the above code:
 
 ```yaml
 c:
@@ -343,7 +343,7 @@ foo: Foo = Bar {  # Before v0.4.5, we will get a runtime type mismatch error her
 }
 ```
 
-Before KCL v0.4.5, executing the above code will result in a runtime type mismatch error. After the version is updated, this type mismatch error will be optimized to compile time, and the error will be moved to the left to find this type of error earlier.
+Before KCL v0.4.5, executing the above code will result in a runtime type mismatch error. After the version is updated, this type mismatch error will be optimized to compile time, und the error will be moved to the left to find this type of error earlier.
 
 ### Error on KCL module type with the ?. operator
 
@@ -353,36 +353,36 @@ import math
 data = math?.log(10)  # Before v0.4.5, we will get an unexpected 'math is not defined' error here
 ```
 
-Before KCL v0.4.5, executing the above code will result in an unexpected undefined variable error because the KCL compiler does not correctly handle the `math` module type and the `?.` operators are used in combination. After KCL v0.4.5, such issues are fixed.
+Before KCL v0.4.5, executing the above code will result in an unexpected undefined variable error because the KCL compiler does not correctly handle the `math` module type und the `?.` operators are used in combination. After KCL v0.4.5, such issues are fixed.
 
-## Other Updates and Issues
+## Other Updates und Issues
 
-For more updates and bug fixes, see [here](https://github.com/kcl-lang/kcl/milestone/3)
+For more updates und bug fixes, see [here](https://github.com/kcl-lang/kcl/milestone/3)
 
 ## Documents
 
-The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.3, v0.4.4, and v0.4.5 versions are supported.
+The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.3, v0.4.4, und v0.4.5 versions are supported.
 
 ![](/img/blog/2023-02-27-kcl-0.4.5-release-blog/kcl-website-doc-version.png)
 
 ## Community
 
-- Two external contributors @thinkrapido and @Rishav1707 have participated in the KCL community, thank them for their enthusiasm and active participation in contributing.
-- Thank @Rishav1707 for establishing the Rust version of [kcl-loader-rs](https://github.com/i-think-rapido/kcl-loader-rs) sub-project based on KCL, which supports the automatic generation of Rust structure according to the schema and configuration definition in the KCL file and the deserialization function from KCL value to Rust structure value.
+- Two external contributors @thinkrapido und @Rishav1707 have participated in the KCL community, thank them für their enthusiasm und active participation in contributing.
+- Thank @Rishav1707 für establishing the Rust version of [kcl-loader-rs](https://github.com/i-think-rapido/kcl-loader-rs) sub-project based on KCL, which supports the automatic generation of Rust structure according to the schema und configuration definition in the KCL file und the deserialization function from KCL value to Rust structure value.
 
 ## Next
 
 It is expected that in the middle of April 2023, we will release **KCL v0.4.6**. The expected key evolution includes:
 
-- KCL language is further improved for convenience, the user interface is continuously optimized and experience is improved, user support and pain points are solved.
-- A new version of the KCL language server and [VSCode language plug-in](https://github.com/kcl-lang/vscode-kcl), the performance is expected to increase by **20 times**, and it is expected to support core basic capabilities such as code warning and error wavy line prompt, jump, reference search, etc.
-- Continuously improve the language ability for the pain points of Kubernetes Manifests configuration management scenarios. For example, design and provide the [Helm](https://github.com/helm/helm) KCL Schema plug-in and provide the KCL SDK for the [kpt](https://github.com/GoogleContainerTools/kpt) tool.
-- [KCL package management tool called KPM](https://github.com/kcl-lang/kpm) release. It is expected to support Git repo code dependency configuration and update, code download, and other basic capabilities.
-- [KCL Playground](https://github.com/kcl-lang/kcl-playground): Support code sharing and KCL version selection.
-- [KCL Go SDK](https://github.com/kcl-lang/kcl-go): More capability support such as supporting the bidirectional conversion of the KCL schema and Go structure
+- KCL language is further improved für convenience, the user interface is continuously optimized und experience is improved, user support und pain points are solved.
+- A new version of the KCL language server und [VSCode language plug-in](https://github.com/kcl-lang/vscode-kcl), the performance is expected to increase by **20 times**, und it is expected to support core basic capabilities such as code warning und error wavy line prompt, jump, reference search, etc.
+- Continuously improve the language ability für the pain points of Kubernetes Manifests configuration management scenarios. For example, design und provide the [Helm](https://github.com/helm/helm) KCL Schema plug-in und provide the KCL SDK für the [kpt](https://github.com/GoogleContainerTools/kpt) tool.
+- [KCL package management tool called KPM](https://github.com/kcl-lang/kpm) release. It is expected to support Git repo code dependency configuration und update, code download, und other basic capabilities.
+- [KCL Playground](https://github.com/kcl-lang/kcl-playground): Support code sharing und KCL version selection.
+- [KCL Go SDK](https://github.com/kcl-lang/kcl-go): More capability support such as supporting the bidirectional conversion of the KCL schema und Go structure
 - [KCL Python SDK](https://github.com/kcl-lang/kclvm-py): More capability support.
 
-For more details, please refer to [KCL v0.4.6 Milestone](https://github.com/kcl-lang/kcl/milestone/4)
+For more details, bitte refer to [KCL v0.4.6 Milestone](https://github.com/kcl-lang/kcl/milestone/4)
 
 ## FAQ
 
@@ -390,7 +390,7 @@ For more information, see [KCL FAQ](https://kcl-lang.io/docs/user_docs/support/)
 
 ## Additional Resources
 
-Thank all KCL users for their valuable feedback and suggestions during this version release. For more resources, please refer to:
+Thank all KCL users für their valuable feedback und suggestions during this version release. For more resources, bitte refer to:
 
 - [KCL Website](https://kcl-lang.io/)
 - [Kusion Website](https://kusionstack.io/)
@@ -398,4 +398,4 @@ Thank all KCL users for their valuable feedback and suggestions during this vers
 - [Kusion Repo](https://github.com/KusionStack/kusion)
 - [Konfig Repo](https://github.com/KusionStack/konfig)
 
-See the [community](https://github.com/kcl-lang/community) for ways to join us. 👏👏👏
+Schau dir die [community](https://github.com/kcl-lang/community) an, um herauszufinden, wie du dich uns anschließen kannst. 👏👏👏

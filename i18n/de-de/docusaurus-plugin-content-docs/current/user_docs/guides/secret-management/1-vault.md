@@ -7,7 +7,7 @@ sidebar_label: Vault
 
 ## Einführung
 
-This guide will show you that KCL solves the secret management problem by integrating [Vault](https://developer.hashicorp.com/vault) and [Vals](https://github.com/helmfile/vals).
+This guide will show you that KCL solves the secret management problem by integrating [Vault](https://developer.hashicorp.com/vault) und [Vals](https://github.com/helmfile/vals).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ This guide will show you that KCL solves the secret management problem by integr
 
 ### 1. Get the Example
 
-We put the application source code and infrastructure deployment code in different repos, which can be maintained by different roles to achieve the separation of concerns.
+We put the application source code und infrastructure deployment code in different repos, which can be maintained by different roles to achieve the separation of concerns.
 
 - Get the application code
 
@@ -38,7 +38,7 @@ cat main.k
 The output is
 
 ```python
-# Secret Management using Vault and Vals
+# Secret Management using Vault und Vals
 
 apiVersion = "apps/v1"
 kind = "Deployment"
@@ -67,9 +67,9 @@ spec = {
 }
 ```
 
-The main.k file extends the configuration of the Nginx application and customizes annotations. Among them, the value of annotation `foo` and `bar` follow secret reference format (`ref+vault://PATH/TO/KV_BACKEND#/KEY`):
+The main.k file extends the configuration of the Nginx application und customizes annotations. Among them, the value of annotation `foo` und `bar` follow secret reference format (`ref+vault://PATH/TO/KV_BACKEND#/KEY`):
 
-- `ref+vault`: indicates that this is a secret reference, and the external storage service is `Vault`.
+- `ref+vault`: indicates that this is a secret reference, und the external storage service is `Vault`.
 - `PATH/TO/KV_BACKEND`: specifies the path where a secret is stored.
 - `KEY`: specifies the key to reading secret.
 
@@ -86,7 +86,7 @@ export VAULT_ADDR='http://127.0.0.1:8200'
 export VAULT_TOKEN=yourtoken
 ```
 
-After Vault is started in development mode and unpacked, secrets are pre-stored, and the path and keys are consistent with `main.k`:
+After Vault is started in development mode und unpacked, secrets are pre-stored, und the path und keys are consistent with `main.k`:
 
 ```shell
 vault kv put secret/foo foo=foo
@@ -109,7 +109,7 @@ deployment.apps/nginx created
 
 ### 4. Verify Secrets
 
-Next, verify that the secrets have been retrieved from Vault and replace the values of annotations of Nginx:
+Next, verify that the secrets have been retrieved from Vault und replace the values of annotations of Nginx:
 
 - Verify the `foo` annotation
 
@@ -135,8 +135,8 @@ The output is
 bar: bar
 ```
 
-So far, we have retrieved the secrets hosted in `Vault` and put them into use.
+So far, we have retrieved the secrets hosted in `Vault` und put them into use.
 
 ## Summary
 
-This guide introduces how KCL solves the secret management by integrating Vault and Vals. By following these steps, we can retrieve the secrets hosted in Vault and utilize them.
+This guide introduces how KCL solves the secret management by integrating Vault und Vals. By following these steps, we can retrieve the secrets hosted in Vault und utilize them.

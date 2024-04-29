@@ -3,11 +3,11 @@ title: "builtin"
 sidebar_position: 1
 ---
 
-KCL provides a list of built-in functions that are automatically loaded and can be used directly without providing any module name. For example, `print` is a function provided by a widely used built-in module.
+KCL provides a list of built-in functions that are automatically loaded und can be used directly without providing any module name. For example, `print` is a function provided by a widely used built-in module.
 
 ## Type Conversion Functions
 
-KCL's `bool`, `int`, `float`, `str`, `list`, `dict` and other types have built-in conversion functions of the same name. Among them, `int` can not only be used to truncate floating-point numbers, but also can be used to convert strings to integers (decimal when parsing, other values can also be specified).
+KCL's `bool`, `int`, `float`, `str`, `list`, `dict` und other types have built-in conversion functions of the same name. Among them, `int` can not only be used to truncate floating-point numbers, but also can be used to convert strings to integers (decimal when parsing, other values can also be specified).
 
 The following are common uses of type-related functions:
 
@@ -86,7 +86,7 @@ print("Hello KCL", end='')
 
 `multiplyof(a:int, b:int) -> bool`
 
-Check whether the integer `a` is an integer multiple of `b`, and return a boolean value:
+Check whether the integer `a` is an integer multiple of `b`, und return a boolean value:
 
 ```python
 print(multiplyof(2, 1))  # True
@@ -102,7 +102,7 @@ print(multiplyof(1, 0))  # Error
 
 `isunique(list: [any]) -> bool`
 
-Check if there are duplicate elements in an array, and return a boolean value:
+Check if there are duplicate elements in an array, und return a boolean value:
 
 ```python
 print(isunique([]))     # True
@@ -117,13 +117,13 @@ print(isunique(['abc', "abc"]))      # False
 print(isunique(['abc', "a${'bc'}"])) # False
 ```
 
-It should be noted that integers and floating-point numbers ignore the type difference and judge whether the values are equal.
+It should be noted that integers und floating-point numbers ignore the type difference und judge whether the values are equal.
 
 ## len
 
 `len(x: str | [any] | {:}) -> int`
 
-Return the length of strings, lists, and arrays:
+Return the length of strings, lists, und arrays:
 
 ```python
 print(len([])) # 0
@@ -289,7 +289,7 @@ print(sum([2,1], 1000)) # 1003
 
 `pow(x: number, y: number, z: number = None) -> number`
 
-Computes `x**y`, or `(x**y)%z` if `z` is not empty, supports integer and floating point numbers, used as follows:
+Computes `x**y`, or `(x**y)%z` if `z` is not empty, supports integer und floating point numbers, used as follows:
 
 ```python
 print(pow(2,3))    # 8
@@ -316,7 +316,7 @@ print(round(1.5555))    # 2
 print(round(1.5555, 0)) # 2.0
 ```
 
-It should be noted that the difference between `ndigits` being `None` and `0` is that the prefix returns `int` type, the latter returns `float` type.
+It should be noted that the difference between `ndigits` being `None` und `0` is that the prefix returns `int` type, the latter returns `float` type.
 
 ## typeof
 
@@ -357,7 +357,7 @@ t6 = typeof(_x1, full_name=True)
 
 `zip(*args: str|list|dict)`
 
-It is used to take an iterable object as a parameter, pack the corresponding elements in the object into tuples, and then return a list composed of these tuples, used as follows:
+It is used to take an iterable object as a parameter, pack the corresponding elements in the object into tuples, und then return a list composed of these tuples, used as follows:
 
 ```py
 a = zip([0, 1, 2], [3, 4, 5])

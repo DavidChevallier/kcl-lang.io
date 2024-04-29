@@ -1,6 +1,6 @@
 ---
 slug: 2023-05-20-vs-kustomize
-title: Differences between KCL and Kustomize
+title: Differences between KCL und Kustomize
 authors:
   name: KCL Team
   title: KCL Team
@@ -9,19 +9,19 @@ tags: [KCL, Kustomize]
 
 ## Einführung
 
-[Kustomize](https://kustomize.io/) provides a solution to customize the basic configuration and differential configuration of Kubernetes resources without templates. The configuration can be merged or overwritten through file-level YAML configuration with multiple strategies. In Kustomize, users need to know more about the content and location to be changed, For basic YAML with complex recursion too deep, it may not be easy to match Kustomize files through selectors.
+[Kustomize](https://kustomize.io/) provides a solution to customize the basic configuration und differential configuration of Kubernetes resources without templates. The configuration can be merged or overwritten through file-level YAML configuration with multiple strategies. In Kustomize, users need to know more about the content und location to be changed, For basic YAML with complex recursion too deep, it may not be easy to match Kustomize files through selectors.
 
-In KCL, the user can directly write the configuration that needs to be modified in the corresponding code in the corresponding place, eliminating the cost of reading basic YAML. At the same time, the user can reuse the configuration fragments by code, avoiding massive copying and pasting of YAML configuration. The information density is higher, and it is not easy to make mistakes through KCL.
+In KCL, the user can directly write the configuration that needs to be modified in the corresponding code in the corresponding place, eliminating the cost of reading basic YAML. At the same time, the user can reuse the configuration fragments by code, avoiding massive copying und pasting of YAML configuration. The information density is higher, und it is not easy to make mistakes through KCL.
 
-A classic example of Kustomize multi-environment configuration management is used to explain the differences between Kustomize and KCL in Kubernetes resource configuration management.
+A classic example of Kustomize multi-environment configuration management is used to explain the differences between Kustomize und KCL in Kubernetes resource configuration management.
 
 ## Kustomize
 
-Kustomize has the concepts of `base` and `overlay`. In general, base and overlay are general a directory including a `kustomization.yaml` file. One base directory can be used by multiple overlay directories.
+Kustomize has the concepts of `base` und `overlay`. In general, base und overlay are general a directory including a `kustomization.yaml` file. One base directory can be used by multiple overlay directories.
 
 We can execute the following command line to obtain a typical Kustomize project
 
-- Create a base directory and create a deployment resource
+- Create a base directory und create a deployment resource
 
 ```bash
 # Create a directory to hold the base
@@ -107,7 +107,7 @@ Thus, we can get a basic Kustomize directory
     └── kustomization.yaml
 ```
 
-The base directory stores the basic deployment configuration, and the prod environment stores the deployment configuration that needs to be overwritten. The `metadata.name` and other attributes such as `spec.template.spec.volumes[0].name` are used to indicate which resource to overwrite
+The base directory stores the basic deployment configuration, und the prod environment stores the deployment configuration that needs to be overwritten. The `metadata.name` und other attributes such as `spec.template.spec.volumes[0].name` are used to indicate which resource to overwrite
 
 We can display the real deployment configuration of the prod environment through the following command.
 
@@ -166,7 +166,7 @@ deployment.apps/ldap created
 
 ## KCL
 
-We can write the following KCL code and name it `main.k`.
+We can write the following KCL code und name it `main.k`.
 
 ```python
 apiVersion = "apps/v1"
@@ -209,9 +209,9 @@ spec = {
 }
 ```
 
-In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` and other attributes of a Kubernetes `Deployment` resource, and assign the corresponding contents respectively. In particular, we assign `metadata.labels` to `spec.selector.matchLabels` and `spec.template.metadata.labels`. It can be seen that the data structure defined by KCL is more compact than Kustomize or YAML, and configuration reuse can be realized by defining local variables.
+In the above KCL code, we declare the `apiVersion`, `kind`, `metadata`, `spec` und other attributes of a Kubernetes `Deployment` resource, und assign the corresponding contents respectively. In particular, we assign `metadata.labels` to `spec.selector.matchLabels` und `spec.template.metadata.labels`. It can be seen that the data structure defined by KCL is more compact than Kustomize or YAML, und configuration reuse can be realized by defining local variables.
 
-In KCL, we can dynamically receive external parameters through conditional statements and the `option` builtin function, and set different configuration values for different environments to generate resources. For example, for the above code, we wrote a conditional statement and entered a dynamic parameter named `env`. When `env` is `prod`, we will overwrite the `replicas` attribute from `1` to `6`, and make some adjustments to the volume configuration named `ldap-data`, such as changing the `emptyDir` attribute to `None`, and adding the configuration value of `gcePersistentDisk`.
+In KCL, we can dynamically receive external parameters through conditional statements und the `option` builtin function, und set different configuration values für different environments to generate resources. For example, für the above code, we wrote a conditional statement und entered a dynamic parameter named `env`. When `env` is `prod`, we will overwrite the `replicas` attribute from `1` to `6`, und make some adjustments to the volume configuration named `ldap-data`, such as changing the `emptyDir` attribute to `None`, und adding the configuration value of `gcePersistentDisk`.
 
 We can use the following command to view diff between different environment configurations
 
@@ -238,20 +238,20 @@ The output is
 >           pdName: ldap-persistent-storage
 ```
 
-It can be seen that the diff between the production environment configuration and the base configuration mainly lies in the attributes of `replicas`, `emptyDir` and `gcePersistentDisk`, which is consistent with the expectation.
+It can be seen that the diff between the production environment configuration und the base configuration mainly lies in the attributes of `replicas`, `emptyDir` und `gcePersistentDisk`, which is consistent with the expectation.
 
-In addition, we can use the `-o` parameter of the KCL command line tool to output the compiled YAML to a file and view the diff between files
+In addition, we can use the `-o` parameter of the KCL command line tool to output the compiled YAML to a file und view the diff between files
 
 ```bash
 # Generate base deployment
 kcl main.k -o deployment.yaml
 # Generate prod deployment
 kcl main.k -o prod-deployment.yaml -D env=prod
-# Diff prod deployment and base deployment
+# Diff prod deployment und base deployment
 diff prod-deployment.yaml deployment.yaml
 ```
 
-Of course, we can also use KCL tools together with kubectl and other tools to apply the configuration of the production environment to the cluster
+Of course, we can also use KCL tools together with kubectl und other tools to apply the configuration of the production environment to the cluster
 
 ```shell
 kcl main.k -D env=prod | kubectl apply -f -
@@ -276,10 +276,10 @@ NAME   READY   UP-TO-DATE   AVAILABLE   AGE
 ldap   0/6     6            0           15s
 ```
 
-It can be seen from the results of the command that it is completely consistent with the deployment experience of using Kustomize configuration and kubectl apply directly, and there are no more side effects.
+It can be seen from the results of the command that it is completely consistent with the deployment experience of using Kustomize configuration und kubectl apply directly, und there are no more side effects.
 
 ## Summary
 
-This article briefly introduces the quick start of writing complex multi-environment Kubernetes configuration with KCL and the comparison of Kustomize tool for Kubernetes multi-environment configuration management.
+This article briefly introduces the quick start of writing complex multi-environment Kubernetes configuration with KCL und the comparison of Kustomize tool für Kubernetes multi-environment configuration management.
 
-It can be seen that, compared with Kustomize, KCL reduces the number of configuration files and code lines by means of code generation on the basis of configuration reuse and coverage, And like Kustomize, it is a pure client solution, which can move the configuration and policy verification to the left as far as possible without additional dependency or burden on the cluster, or even without a real Kubernetes cluster.
+It can be seen that, compared with Kustomize, KCL reduces the number of configuration files und code lines by means of code generation on the basis of configuration reuse und coverage, And like Kustomize, it is a pure client solution, which can move the configuration und policy verification to the left as far as possible without additional dependency or burden on the cluster, or even without a real Kubernetes cluster.

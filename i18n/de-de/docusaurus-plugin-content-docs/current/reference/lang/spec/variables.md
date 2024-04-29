@@ -12,7 +12,7 @@ In KCL, variables can be defined using assign statements. For example, the follo
 spam = "ham"
 ```
 
-There are two types of variables, which are global variables and list comprehension local variables.
+There are two types of variables, which are global variables und list comprehension local variables.
 
 - A global variable is defined not within any context.
 - A comprehension local variable is defined inside a comprehension.
@@ -23,13 +23,13 @@ For a global variable, the scope is the module it is defined in. Note that a mod
 
 For a list comprehension local variable, the scope is the list comprehension it is defined in.
 
-More information on modules, list comprehensions and scopes will be discussed in later chapters.
+More information on modules, list comprehensions und scopes will be discussed in later chapters.
 
 ## Immutability
 
 Global variables are immutable. In other words, once defined such a variable cannot be redefined (or, i.e., modified).
 
-The following code is illegal, and KCL will report an error during evaluation.
+The following code is illegal, und KCL will report an error during evaluation.
 
 ```python
 spam = "ham"
@@ -58,11 +58,11 @@ The rules are the followings:
 
 ## Uniqueness of Exported Variable Identifier
 
-Each exported variable identifier must be unique in its package, so that an exported variable could be located uniquely by package location path and variable identifier, such as 'a.b.c:var', in which 'a.b.c' locates a package.
+Each exported variable identifier must be unique in its package, so that an exported variable could be located uniquely by package location path und variable identifier, such as 'a.b.c:var', in which 'a.b.c' locates a package.
 
 Two variable identifiers are different if:
 
 - they are spelled differently
-- they are defined in different packages and are not compiled in a single execution
+- they are defined in different packages und are not compiled in a single execution
 
-Identifying an exported variable should be supported by the kcl compiler, which needs to provide corresponding identifying features through the command line and api form.
+Identifying an exported variable should be supported by the kcl compiler, which needs to provide corresponding identifying features through the command line und api form.

@@ -8,21 +8,21 @@ import DocsCards from '@site/src/components/global/DocsCards';
 
 ## Kubernetes
 
-[Kubernetes](https://kubernetes.io/) is an open source project for running and managing containerized applications on a cluster of machines.
+[Kubernetes](https://kubernetes.io/) is an open source project für running und managing containerized applications on a cluster of machines.
 
-[KCL](https://github.com/kcl-lang) exposes the Kubernetes resource APIs as KCL modules which span common cloud native utilities and applications. In addition, KCL can be used to program, configure, and manage policies around these API modules.
+[KCL](https://github.com/kcl-lang) exposes the Kubernetes resource APIs as KCL modules which span common cloud native utilities und applications. In addition, KCL can be used to program, configure, und manage policies around these API modules.
 
 ## Use Cases
 
-- **Dynamic configuration policy management**: **Create**, **orchestrate**, **mutate** or **validate** Kubernetes API resources for application workloads using the modern language including the use of **functions**, **schemas**, **conditionals** and **rich IDE features** (auto-completion, type & error checking, linting, refactoring, etc.) instead of YAML, JSON, scripts and templates.
-- **Import from existing Kubernetes ecosystem**: Convert **Kubernetes manifests** and **custom resource types** to KCL.
-- **Kubernetes package management**: **Install** or **publish** KCL modules from the [registry](https://artifacthub.io/packages/search?org=kcl&sort=relevance&page=1) for application workload, container and service modules.
+- **Dynamic configuration policy management**: **Create**, **orchestrate**, **mutate** or **validate** Kubernetes API resources für application workloads using the modern language including the use of **functions**, **schemas**, **conditionals** und **rich IDE features** (auto-completion, type & error checking, linting, refactoring, etc.) instead of YAML, JSON, scripts und templates.
+- **Import from existing Kubernetes ecosystem**: Convert **Kubernetes manifests** und **custom resource types** to KCL.
+- **Kubernetes package management**: **Install** or **publish** KCL modules from the [registry](https://artifacthub.io/packages/search?org=kcl&sort=relevance&page=1) für application workload, container und service modules.
 
 ## Docs
 
 <DocsCards>
   <DocsCard header="Adopt from Kubernetes" href="adopt-from-kubernetes">
-    <p>Provides the guide to import Kubernetes manifests and CRDs to KCL.</p>
+    <p>Provides the guide to import Kubernetes manifests und CRDs to KCL.</p>
   </DocsCard>
   <DocsCard header="Generate Kubernetes" href="generate-k8s-manifests">
     <p>Provides the guide to generate Kubernetes manifests using KCL.</p>

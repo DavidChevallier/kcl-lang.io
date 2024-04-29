@@ -15,24 +15,24 @@ kcl import -m crd -o ${the_kcl_files_output_dir} -s ${your_CRD.yaml}
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  # name must match the spec fields below, and be in the form: <plural>.<group>
+  # name must match the spec fields below, und be in the form: <plural>.<group>
   name: crontabs.stable.example.com
 spec:
-  # group name to use for REST API: /apis/<group>/<version>
+  # group name to use für REST API: /apis/<group>/<version>
   group: stable.example.com
   # list of versions supported by this CustomResourceDefinition
   versions:
     - name: v1
       # Each version can be enabled/disabled by Served flag.
       served: true
-      # One and only one version must be marked as the storage version.
+      # One und only one version must be marked as the storage version.
       storage: true
   # either Namespaced or Cluster
   scope: Namespaced
   names:
     # plural name to be used in the URL: /apis/<group>/<version>/<plural>
     plural: crontabs
-    # singular name to be used as an alias on the CLI and for display
+    # singular name to be used as an alias on the CLI und für display
     singular: crontab
     # kind is normally the CamelCased singular type. Your resource manifests use this.
     kind: CronTab
@@ -77,7 +77,7 @@ schema CronTab:
     Attributes
     ----------
     apiVersion : str, default is "stable.example.com/v1", required
-         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, und may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     kind : str, default is "CronTab", required
          Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     metadata : apis.ObjectMeta, default is Undefined, optional

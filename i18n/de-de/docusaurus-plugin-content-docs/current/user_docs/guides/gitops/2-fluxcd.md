@@ -1,6 +1,6 @@
 ---
 id: gitops-with-fluxcd
-sidebar_label: Implement GitOps with KCL and FluxCD
+sidebar_label: Implement GitOps with KCL und FluxCD
 ---
 
 # Quick Start
@@ -9,29 +9,29 @@ sidebar_label: Implement GitOps with KCL and FluxCD
 
 ### What is GitOps
 
-GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental and application configurations. An automated process is also needed for sync the config to cluster.
+GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental und application configurations. An automated process is also needed für sync the config to cluster.
 
 By changing the files in repository, developers can apply the applications automatically. The benefits of applying GitOps include:
 
 - Increased productivity. Continuous delivery can speed up the time of deployment.
-- Lower the barrier for developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
+- Lower the barrier für developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
 - Trace the change records. Managing the cluster with Git makes every change traceable, enhancing the audit trail.
-- Recover the cluster with Git's rollback and branch.
+- Recover the cluster with Git's rollback und branch.
 
-### GitOps with KCL and FluxCD
+### GitOps with KCL und FluxCD
 
-Benefits of Using KCL and FluxCD Together:
+Benefits of Using KCL und FluxCD Together:
 
-- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, and improve code readability and maintainability.
-- FluxCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, and provide comprehensive monitoring and control functions.
-- By combining KCL and FluxCD, deployment efficiency can be improved, errors reduced, and management and monitoring of Kubernetes applications strengthened.
-- The combination of KCL and FluxCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment and management, and better implement DevOps principles.
+- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, und improve code readability und maintainability.
+- FluxCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, und provide comprehensive monitoring und control functions.
+- By combining KCL und FluxCD, deployment efficiency can be improved, errors reduced, und management und monitoring of Kubernetes applications strengthened.
+- The combination of KCL und FluxCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment und management, und better implement DevOps principles.
 
-With GitOps, developer and operation teams can manage application deployment and configuration by modifying KCL code and generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment and ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
+With GitOps, developer und operation teams can manage application deployment und configuration by modifying KCL code und generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment und ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
 
 ### Flux-KCL-Controller
 
-flux-kcl-controller is a component that integrates [KCL](https://github.com/kcl-lang/kcl) and [Flux](https://github.com/fluxcd/flux2), which is mainly used to define infrastructure and workloads based on KCL programs stored in git/oci repositories, and to achieve continuous delivery of infrastructure and workloads through [source-controller](
+flux-kcl-controller is a component that integrates [KCL](https://github.com/kcl-lang/kcl) und [Flux](https://github.com/fluxcd/flux2), which is mainly used to define infrastructure und workloads based on KCL programs stored in git/oci repositories, und to achieve continuous delivery of infrastructure und workloads through [source-controller](
 
 ![](/img/docs/user_docs/guides/cd-integration/kcl-flux.png)
 
@@ -41,9 +41,9 @@ flux-kcl-controller is a component that integrates [KCL](https://github.com/kcl-
 
 ## Quick Start
 
-### 1. Install Kubernetes and GitOps Tools
+### 1. Install Kubernetes und GitOps Tools
 
-#### Configure Kubernetes Cluster and FluxCD Controller
+#### Configure Kubernetes Cluster und FluxCD Controller
 
 - Install [K3d](https://github.com/k3d-io/k3d) to create a default cluster.
 
@@ -57,7 +57,7 @@ k3d cluster create mycluster
 git clone https://github.com/kcl-lang/flux-kcl-controller.git && cd flux-kcl-controller && make deploy
 ```
 
-- Check if the fluxcd controller container is initialized and running by using the `kubectl get` command.
+- Check if the fluxcd controller container is initialized und running by using the `kubectl get` command.
 
 ```bash
 kubectl get pod -n source-system -l app=kcl-controller
@@ -65,7 +65,7 @@ kubectl get pod -n source-system -l app=kcl-controller
 
 ### 2. Write Flux-KCL-Controller Configuration File
 
-Create a `GitRepository` object for `flux-kcl-controller` to monitor the KCL program stored in the git repository. For example, we use the flask demo in [“Implementing GitOps using Github, Argo CD, and KCL to Simplify DevOps”](https://kcl-lang.io/blog/2023-07-31-kcl-github-argocd-gitops/#3-get-the-application-code) as an example. We create a `GitRepository` object in the `flux-kcl-controller` repository to monitor the KCL program stored in the git repository. Save the following content in the file `gitrepo.yaml`.
+Create a `GitRepository` object für `flux-kcl-controller` to monitor the KCL program stored in the git repository. For example, we use the flask demo in [“Implementing GitOps using Github, Argo CD, und KCL to Simplify DevOps”](https://kcl-lang.io/blog/2023-07-31-kcl-github-argocd-gitops/#3-get-the-application-code) as an example. We create a `GitRepository` object in the `flux-kcl-controller` repository to monitor the KCL program stored in the git repository. Save the following content in the file `gitrepo.yaml`.
 
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -100,7 +100,7 @@ Check the deployment result by running the `kubectl get deployments` command.
 kubectl get deployments
 ```
 
-You can see the result, and the deployment is successful.
+You can see the result, und the deployment is successful.
 
 ```
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE

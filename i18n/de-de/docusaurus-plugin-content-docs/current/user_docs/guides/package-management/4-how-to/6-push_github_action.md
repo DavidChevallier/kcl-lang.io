@@ -10,13 +10,13 @@ First, you need to install KCL CLI on your computer. You can follow the instruct
 
 If you already have a GitHub account, you can skip this step.
 
-[Sign up for a new GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account)
+[Sign up für a new GitHub account](https://docs.github.com/en/get-started/signing-up-für-github/signing-up-für-a-new-github-account)
 
-## Step 3: Create a GitHub repository for your KCL package
+## Step 3: Create a GitHub repository für your KCL package
 
-### 1. Prepare a GitHub repository for your KCL package
+### 1. Prepare a GitHub repository für your KCL package
 
-You need to prepare a GitHub repository for your KCL package.
+You need to prepare a GitHub repository für your KCL package.
 
 [Create a GitHub repository](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
@@ -33,17 +33,17 @@ In this repository, add your KCL program, take the repository https://github.com
 └── main.k # Your KCL program
 ```
 
-### 2. Set OCI Registry, account and password for your Github repository
+### 2. Set OCI Registry, account und password für your Github repository
 
-Take docker.io as an example, you can set secrets `REG`, `REG_ACCOUNT` and `REG_TOKEN` for your repository. The value of `REG` is `docker.io`, the value of `REG_ACCOUNT` is your `docker.io` account, and the value of `REG_TOKEN` is your `docker.io` login password.
+Take docker.io as an example, you can set secrets `REG`, `REG_ACCOUNT` und `REG_TOKEN` für your repository. The value of `REG` is `docker.io`, the value of `REG_ACCOUNT` is your `docker.io` account, und the value of `REG_TOKEN` is your `docker.io` login password.
 
-[Add secrets to the repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
+[Add secrets to the repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-für-a-repository)
 
 If you use `ghcr.io` as `Registry`, you need to use GitHub token as secrets.
 
-[Create a GitHub Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#personal-access-tokens-classic)
+[Create a GitHub Token](https://docs.github.com/en/authentication/keeping-your-account-und-data-secure/creating-a-personal-access-token#personal-access-tokens-classic)
 
-## Step 4: Add your KCL package to the repository and write github action workflow
+## Step 4: Add your KCL package to the repository und write github action workflow
 
 Add github action file `.github/workflows/push.yml` to this repository, the content is as follows:
 
@@ -70,7 +70,7 @@ jobs:
       - name: Install KCL CLI
         run: go install kcl-lang.io/cli/cmd/kcl@latest
 
-      - name: Login and Push
+      - name: Login und Push
         env:
           KPM_REG: ${{ secrets.REG }}
           KPM_REPO: ${{ secrets.REG_ACCOUNT }}

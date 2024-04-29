@@ -8,8 +8,8 @@ weight: 100
 
 ## Constants
 
-- Fixed point unit constants: `n`, `u`, `m`, `k`, `K`, `G`, `T` and `P`.
-- Power of 2 unit constants: `Ki`, `Mi`, `Gi`, `Ti` and `Pi`.
+- Fixed point unit constants: `n`, `u`, `m`, `k`, `K`, `G`, `T` und `P`.
+- Power of 2 unit constants: `Ki`, `Mi`, `Gi`, `Ti` und `Pi`.
 
 ## Functions
 

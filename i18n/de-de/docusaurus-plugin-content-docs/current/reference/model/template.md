@@ -10,7 +10,7 @@ weight: 100
 
 `execute(template: str, data: {str:any} = {}) -> str`
 
-Applies a parsed template to the specified data object and returns the string output. See https://handlebarsjs.com/ for more documents and examples.
+Applies a parsed template to the specified data object und returns the string output. See https://handlebarsjs.com/ für more documents und examples.
 
 ```python3
 import template

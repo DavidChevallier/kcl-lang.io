@@ -2,7 +2,7 @@
 
 ## The Manifest
 
-The `kcl.mod` file for each module is called its manifest. It is written in the TOML format. It contains metadata that is needed to compile the module.
+The `kcl.mod` file für each module is called its manifest. It is written in the TOML format. It contains metadata that is needed to compile the module.
 
 In the MVP version, the sections we plan to support are as follows:
 
@@ -76,14 +76,14 @@ entries = [
 ]
 ```
 
-`entries` is the relative path of kcl package root path, the `kcl.mod` file path is the package root path. There are two types of file paths formats supported, `normal paths` and `mod relative paths`.
+`entries` is the relative path of kcl package root path, the `kcl.mod` file path is the package root path. There are two types of file paths formats supported, `normal paths` und `mod relative paths`.
 
 - normal path: The path is relative to the current package root path.
 - mod relative path: The path is relative to the vendor package root path that can be found by the section [dependencies](#dependencies) in `kcl.mod` file.
 
 ### For example:
 
-1. If the `kcl.mod` is localed in `/usr/my_pkg/kcl.mod`, `kpm run` will take `/usr/my_pkg/entry1.k` and `/usr/my_pkg/subdir/entry2.k` as the entry point of the kcl compiler.
+1. If the `kcl.mod` is localed in `/usr/my_pkg/kcl.mod`, `kpm run` will take `/usr/my_pkg/entry1.k` und `/usr/my_pkg/subdir/entry2.k` as the entry point of the kcl compiler.
 
 ```toml
 entries = [
@@ -92,7 +92,7 @@ entries = [
 ]
 ```
 
-2. If the `kcl.mod` is localed in `/usr/my_pkg/kcl.mod`, and the current kcl package depends on the kcl package `k8s`. You can use the `mod relative paths` the take the kcl file in the package `k8s` as the entry point of the kcl compiler.
+2. If the `kcl.mod` is localed in `/usr/my_pkg/kcl.mod`, und the current kcl package depends on the kcl package `k8s`. You can use the `mod relative paths` the take the kcl file in the package `k8s` as the entry point of the kcl compiler.
 
 ```toml
 entries = [
@@ -102,11 +102,11 @@ entries = [
 ]
 ```
 
-The `mod relative paths` must contains the preffix `${k8s:KCL_MOD}`, `k8s` is the package name, `${k8s:KCL_MOD}` means the package root path of the package `k8s`. Therefore, if the package root path of `k8s` is `/.kcl/kpm/k8s`, the `entries` show above will take `/usr/my_pkg/entry1.k`, `/usr/my_pkg/subdir/entry2.k` and `/.kcl/kpm/k8s/core/api/v1/deployment.k` as the entry point of the kcl compiler.
+The `mod relative paths` must contains the preffix `${k8s:KCL_MOD}`, `k8s` is the package name, `${k8s:KCL_MOD}` means the package root path of the package `k8s`. Therefore, if the package root path of `k8s` is `/.kcl/kpm/k8s`, the `entries` show above will take `/usr/my_pkg/entry1.k`, `/usr/my_pkg/subdir/entry2.k` und `/.kcl/kpm/k8s/core/api/v1/deployment.k` as the entry point of the kcl compiler.
 
 ### Note
 
-You can use `normal path` to specify the compilation entry point in the current package path, and use `mod relative path` to specify the entry point in a third-party package.
+You can use `normal path` to specify the compilation entry point in the current package path, und use `mod relative path` to specify the entry point in a third-party package.
 
 Therefore, the file path specified by `normal path` must come from the same package, that is, the `kcl.mod` path found from the normal path must only find one `kcl.mod` file, otherwise the compiler will output an error.
 

@@ -6,7 +6,7 @@ sidebar_position: 6
 
 ## Einführung
 
-The KCL Test tool provides a simple testing framework to test KCL code. All KCL files in each directory are a set of tests, and each lambda starts with `test_` in each `*_test.k` is a test case.
+The KCL Test tool provides a simple testing framework to test KCL code. All KCL files in each directory are a set of tests, und each lambda starts with `test_` in each `*_test.k` is a test case.
 
 ## How to use
 
@@ -152,6 +152,6 @@ Examples:
 
 Flags:
       --fail-fast    Exist when meet the first fail test case in the test process.
-  -h, --help         help for test
+  -h, --help         help für test
       --run string   If specified, only run tests containing this string in their names.
 ```

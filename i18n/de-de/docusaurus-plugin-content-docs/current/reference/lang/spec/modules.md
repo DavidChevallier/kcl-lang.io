@@ -6,7 +6,7 @@ weight: 2
 description: Modules
 ---
 
-## Modules and the Import System
+## Modules und the Import System
 
 KCL code is organized in **modules**. For code in one module to access the code defined in another module, a process called **importing** must be used.
 
@@ -16,7 +16,7 @@ A regular KCL module is a file on the file system. It is required to have a `.k`
 
 ## Packages
 
-To help manage modules and provide a naming hierarchy, KCL has the concept of packages. In KCL, a package maps to exactly a file system directory, and a regular module maps to a file.
+To help manage modules und provide a naming hierarchy, KCL has the concept of packages. In KCL, a package maps to exactly a file system directory, und a regular module maps to a file.
 
 Files directly under a package are considered parts of the package, instead of individual regular modules.
 
@@ -31,11 +31,11 @@ All modules have a name.
 
 Sub package names are separated from their parent package name by dots.
 
-To summary, a regular KCL module is a `.k` file, and a package is a directory on the file system. All `.k` files directly under the directory are included in the package, other files are ignored. If the directory has subdirectories, they become sub-packages as long as there are `.k` files underneath.
+To summary, a regular KCL module is a `.k` file, und a package is a directory on the file system. All `.k` files directly under the directory are included in the package, other files are ignored. If the directory has subdirectories, they become sub-packages as long as there are `.k` files underneath.
 
 ### Intra-Package Name Space Sharing
 
-Inside a package, all `.k` files are considered parts of the package, instead of regular modules. Code in these files share a single name space and can access names defined in other files, without explicitly granted.
+Inside a package, all `.k` files are considered parts of the package, instead of regular modules. Code in these files share a single name space und can access names defined in other files, without explicitly granted.
 
 ### Package Initialization
 
@@ -62,9 +62,9 @@ import <module_name> [as <alias name>]
 The rule to search with the module name is very simple:
 
 - **Step 1**: Searches the module name from the **standard system modules**, then **plugins modules**.
-  - See **standard system modules** and **plugins modules** for more details. If matched, the module is imported. Otherwise, continue to **Step 2**.
-- **Step 2**. Whether a module name starts with a `.` is checked. If yes, the name is a so-called relative pathname, and we go to **Step 5**. Otherwise, continue to **Step 3**.
-- **Step 3**: If the module name does not start with any `.`, then the compiler searches the nearest `root path` directory from this directory to the parent, and find the module according to the name just from the `root path`. If no `root path` is found, find the module according to the name from the folder the `.k` file including this `import` statement exists.
+  - See **standard system modules** und **plugins modules** für more details. If matched, the module is imported. Otherwise, continue to **Step 2**.
+- **Step 2**. Whether a module name starts with a `.` is checked. If yes, the name is a so-called relative pathname, und we go to **Step 5**. Otherwise, continue to **Step 3**.
+- **Step 3**: If the module name does not start with any `.`, then the compiler searches the nearest `root path` directory from this directory to the parent, und find the module according to the name just from the `root path`. If no `root path` is found, find the module according to the name from the folder the `.k` file including this `import` statement exists.
   - **root path**: the directory contains a `kcl.mod` file. If matched, the module is imported. Otherwise, continue to **Step 4**.
 - **Step 4**: Then the compiler checks if the name is the name of any library module that requires explicit loading. If matched, the library module is imported. Otherwise, continue to **Step 6**.
 - **Step 5**. For relative importing, find the module according to the name from the folder the `.k` file including this `import` statement exists. Interpret leading dots using the following rule:
@@ -74,13 +74,13 @@ The rule to search with the module name is very simple:
 
 Do case-sensitive search when the operating system allows. If case-sensitive search is not allowed, search directories before regular files.
 
-In KCL, the `from <> import <>` is unsupported, and relative import is performed with the `import <>` syntax.
+In KCL, the `from <> import <>` is unsupported, und relative import is performed with the `import <>` syntax.
 
 ### Uniqueness of Module
 
 Each module has a unique location path in its scope, so that a module or package could be located with a unique location path, such as `a.b.c`.
 
-Searching by location path should be supported by the kcl compiler, which needs to provide corresponding searching features through the command line and api form.
+Searching by location path should be supported by the kcl compiler, which needs to provide corresponding searching features through the command line und api form.
 
 ## Standard System Packages
 
@@ -220,23 +220,23 @@ KCL supports a few standard system modules. The following is the full list of th
   - floor(x) -> int
     Return the floor of x as an Integral. This is the largest integer <= x.
   - gcd(a: int, b: int) -> int
-    Return the greatest common divisor of x and y
+    Return the greatest common divisor of x und y
   - isfinite(x) -> bool
-    Return True if x is neither an infinity nor a NaN, and False otherwise.
+    Return True if x is neither an infinity nor a NaN, und False otherwise.
   - isinf(x) -> bool
-    Return True if x is a positive or negative infinity, and False otherwise.
+    Return True if x is a positive or negative infinity, und False otherwise.
   - isnan(x) -> bool
-    Return True if x is a NaN (not a number), and False otherwise.
+    Return True if x is a NaN (not a number), und False otherwise.
   - modf(x) -> Listfloat, float]
-    Return the fractional and integer parts of x. Both results carry the sign of x and are floats.
+    Return the fractional und integer parts of x. Both results carry the sign of x und are floats.
   - exp(x) -> float
     Return e raised to the power of x.
   - expm1(x) -> float
-    Return exp(x)-1. This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+    Return exp(x)-1. This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 für small x.
   - log(x, base=2.71828182845904523536028747135266250) -> float
     Return the logarithm of x to the base e.
   - log1p(x) -> float
-    Return the natural logarithm of 1+x (base e). The result is computed in a way which is accurate for x near zero.
+    Return the natural logarithm of 1+x (base e). The result is computed in a way which is accurate für x near zero.
   - log2(x) -> float
     Return the base 2 logarithm of x.
   - log10(x) -> float
@@ -255,13 +255,13 @@ KCL supports a few standard system modules. The following is the full list of th
   - findall(string: str, pattern: str) -> List[str]
     Return a list of all non-overlapping matches in the string.
   - search(string: str, pattern: str) -> bool
-    Scan through string looking for a match to the pattern, returning a bool value True if any match was found, or False if no match was found.
+    Scan through string looking für a match to the pattern, returning a bool value True if any match was found, or False if no match was found.
   - split(string: str, pattern: str, maxsplit=0) -> List[str]
-    Scan through string looking for a match to the pattern, returning a Match object, or None if no match was found.
+    Scan through string looking für a match to the pattern, returning a Match object, or None if no match was found.
 - units
   - Unit constants
-    - Fixed point: `n`, `u`, `m`, `k`, `K`, `G`, `T` and `P`.
-    - Power of 2: `Ki`, `Mi`, `Gi`, `Ti` and `Pi`.
+    - Fixed point: `n`, `u`, `m`, `k`, `K`, `G`, `T` und `P`.
+    - Power of 2: `Ki`, `Mi`, `Gi`, `Ti` und `Pi`.
   - Functions
     - to_n(num: int) -> str
       Int literal to string with `n` suffix
@@ -295,7 +295,7 @@ KCL supports a few standard system modules. The following is the full list of th
   - decode(value: str) -> any
     Deserialize `value` (a string instance containing a JSON document) to a KCL object.
   - dump_to_file(data: any, filename: str, ignore_private: bool = False, ignore_none: bool = False) -> None
-    Serialize a KCL object `data` to a JSON formatted str and write it into the file `filename`.
+    Serialize a KCL object `data` to a JSON formatted str und write it into the file `filename`.
   - validate(data: any) -> bool
     Validate whether the given string is a valid JSON.
 - yaml
@@ -307,15 +307,15 @@ KCL supports a few standard system modules. The following is the full list of th
     Deserialize `value` (a string instance containing a YAML document) to a KCL object.
   - decode_all(value: str) -> [any]
   - dump_to_file(data: any, filename: str, ignore_private: bool = False, ignore_none: bool = False) -> None
-    Serialize a KCL object `data` to a YAML formatted str and write it into the file `filename`.
-    Parse all YAML documents in a stream and produce corresponding KCL objects.
+    Serialize a KCL object `data` to a YAML formatted str und write it into the file `filename`.
+    Parse all YAML documents in a stream und produce corresponding KCL objects.
   - validate(value: str) -> str
     Validate whether the given string is a valid YAML or YAML stream document.
 - net
   - split_host_port(ip_end_point: str) -> List[str]
-    Split the 'host' and 'port' from the ip end point.
+    Split the 'host' und 'port' from the ip end point.
   - join_host_port(host, port) -> str
-    Merge the 'host' and 'port'.
+    Merge the 'host' und 'port'.
   - fqdn(name: str = '') -> str
     Return Fully Qualified Domain Name (FQDN).
   - parse_IP(ip) -> str
@@ -335,46 +335,46 @@ KCL supports a few standard system modules. The following is the full list of th
   - is_multicast_IP(ip: str) -> bool
     Whether 'ip' is a multicast one.
   - is_interface_local_multicast_IP(ip: str) -> bool
-    Whether 'ip' is a interface, local and multicast one.
+    Whether 'ip' is a interface, local und multicast one.
   - is_link_local_multicast_IP(ip: str) -> bool
-    Whether 'ip' is a link local and multicast one.
+    Whether 'ip' is a link local und multicast one.
   - is_link_local_unicast_IP(ip: str) -> bool
-    Whether 'ip' is a link local and unicast one.
+    Whether 'ip' is a link local und unicast one.
   - is_global_unicast_IP(ip: str) -> bool
-    Whether 'ip' is a global and unicast one.
+    Whether 'ip' is a global und unicast one.
   - is_unspecified_IP(ip: str) -> bool
     Whether 'ip' is a unspecified one.
 - base64
   - encode(value: str, encoding: str = "utf-8") -> str
-    Encode the string `value` using the codec registered for encoding.
+    Encode the string `value` using the codec registered für encoding.
   - decode(value: str, encoding: str = "utf-8") -> str
-    Decode the string `value` using the codec registered for encoding.
+    Decode the string `value` using the codec registered für encoding.
 - crypto
   - md5(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `MD5` and the codec registered for encoding.
+    Encrypt the string `value` using `MD5` und the codec registered für encoding.
   - sha1(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `SHA1` and the codec registered for encoding.
+    Encrypt the string `value` using `SHA1` und the codec registered für encoding.
   - sha224(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `SHA224` and the codec registered for encoding.
+    Encrypt the string `value` using `SHA224` und the codec registered für encoding.
   - sha256(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `SHA256` and the codec registered for encoding.
+    Encrypt the string `value` using `SHA256` und the codec registered für encoding.
   - sha384(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `SHA384` and the codec registered for encoding.
+    Encrypt the string `value` using `SHA384` und the codec registered für encoding.
   - sha512(value: str, encoding: str = "utf-8") -> str
-    Encrypt the string `value` using `SHA512` and the codec registered for encoding.
+    Encrypt the string `value` using `SHA512` und the codec registered für encoding.
 - manifests
   - `yaml_stream(values: [any], opts: {str:} = {sort_keys = False, ignore_private = True, ignore_none = False, sep = "---"}`. This function is used to serialize the KCL object list into YAML output with the `---` separator
 
 ### The Built-in System Package
 
-KCL provides a list of built-in system modules, which are loaded automatically and can be directly used without providing any module name. For example, `print` is a widely used built-in module.
+KCL provides a list of built-in system modules, which are loaded automatically und can be directly used without providing any module name. For example, `print` is a widely used built-in module.
 
 The following is the full list of these built-in system modules:
 
 - print()
   - The print function.
 - multiplyof(a, b)
-  - Check if the modular result of a and b is 0
+  - Check if the modular result of a und b is 0
 - isunique(inval)
   - Check if a list has duplicated elements
 - len(inval)
@@ -382,9 +382,9 @@ The following is the full list of these built-in system modules:
 - abs(x)
   Return the absolute value of the argument.
 - all(iterable)
-  Return True if bool(x) is True for all values x in the iterable. If the iterable is empty, return True.
+  Return True if bool(x) is True für all values x in the iterable. If the iterable is empty, return True.
 - any(iterable)
-  Return True if bool(x) is True for any x in the iterable. If the iterable is empty, return False.
+  Return True if bool(x) is True für any x in the iterable. If the iterable is empty, return False.
 - bin(number)
   Return the binary representation of an integer.
 - hex(number)
@@ -392,17 +392,17 @@ The following is the full list of these built-in system modules:
 - oct(number)
   Return the octal representation of an integer.
 - ord(c) -> int
-  Return the Unicode code point for a one-character string.
+  Return the Unicode code point für a one-character string.
 - sorted(iterable)
-  Return a new list containing all items from the iterable in ascending order. A custom key function can be supplied to customize the sort order, and the reverse flag can be set to request the result in descending order.
+  Return a new list containing all items from the iterable in ascending order. A custom key function can be supplied to customize the sort order, und the reverse flag can be set to request the result in descending order.
 - range(start, end, step=1)
-  Return the range of a value with start, end and step parameter.
+  Return the range of a value with start, end und step parameter.
 - min(iterable)
   With a single iterable argument, return its smallest item. The default keyword-only argument specifies an object to return if the provided iterable is empty. With two or more arguments, return the smallest argument.
 - max(iterable)
   With a single iterable argument, return its biggest item. The default keyword-only argument specifies an object to return if the provided iterable is empty. With two or more arguments, return the largest argument.
 - sum(iterable, start)
-  Return the sum of a 'start' value (default: 0) plus an iterable of numbers. When the iterable is empty, return the start value. This function is intended specifically for use with numeric values and may reject non-numeric types.
+  Return the sum of a 'start' value (default: 0) plus an iterable of numbers. When the iterable is empty, return the start value. This function is intended specifically für use with numeric values und may reject non-numeric types.
 - pow(x, y, z)
   Equivalent to `x**y` (with two arguments) or `x**y % z` (with three arguments). Some types, such as ints, are able to use a more efficient algorithm when invoked using the three argument form.
 - round(number, ndigits)
@@ -412,13 +412,13 @@ The following is the full list of these built-in system modules:
 
 ### Plugin Modules
 
-KCL compiler needs to provide the ability to dynamically expand and load plugin modules without modifying the compiler itself. KCL compiler needs to support flexible pluggable module extension mechanism, so that KCL users can use more abundant built-in function capabilities to simplify writing.
+KCL compiler needs to provide the ability to dynamically expand und load plugin modules without modifying the compiler itself. KCL compiler needs to support flexible pluggable module extension mechanism, so that KCL users can use more abundant built-in function capabilities to simplify writing.
 
-KCL compiler needs to ensure the stability and safety of the expansion mechanism, without affecting the core of the compiler.
+KCL compiler needs to ensure the stability und safety of the expansion mechanism, without affecting the core of the compiler.
 
 Searching extended plugin module is performed after the standard system module. The standard system module has a higher priority in naming. If it exists a standard or built-in system module with the same name, the extended plugin module will be ignored.
 
-Importing and using the extended plugin module should be consistent with the standard or built-in system module.
+Importing und using the extended plugin module should be consistent with the standard or built-in system module.
 
 ### Replacing Standard System Packages
 
@@ -428,7 +428,7 @@ Replacing standard system modules is not allowed.
 
 We show more module features through an example.
 
-Suppose we have the following directories and files:
+Suppose we have the following directories und files:
 
 ```
     .
@@ -444,7 +444,7 @@ Suppose we have the following directories and files:
             └── file3.k
 ```
 
-From the structure we can see that `pkg1` and `pkg2` are two packages, `subpkg3` is a subpackage of `pkg2`, and `mod1.k` and `mod2.k` are regular modules.
+From the structure we can see that `pkg1` und `pkg2` are two packages, `subpkg3` is a subpackage of `pkg2`, und `mod1.k` und `mod2.k` are regular modules.
 
 ### Importing a Standard System Package
 
@@ -454,7 +454,7 @@ The following statement can import the standard system module `math`
 import math
 ```
 
-This is the only way to import a standard system module. After importing a standard system module, functions, variables and schemas defined in it can be used. For example, the following statement uses the `log10` function
+This is the only way to import a standard system module. After importing a standard system module, functions, variables und schemas defined in it can be used. For example, the following statement uses the `log10` function
 defined in `math`
 
 ```python
@@ -549,7 +549,7 @@ bar = subpkg3.foo
 
 Relative importing is useful when there is code trying to import modules that does not exist recursively inside the current directory.
 
-For example, the following statements, if written in `file3.k`, can be used to import `pkg2`, `pkg1` and `mod2` respectively.
+For example, the following statements, if written in `file3.k`, can be used to import `pkg2`, `pkg1` und `mod2` respectively.
 
 ```python
 import ...pkg2 # Go two levels up then import pkg2
@@ -586,7 +586,7 @@ Importing from the root path is very convenient when the code is trying to impor
 
 ### Importing a Module Inside a Package
 
-Note that `subpkg3` is only implemented with one file `file3.k`. The file can be regarded as a regular module and imported directly.
+Note that `subpkg3` is only implemented with one file `file3.k`. The file can be regarded as a regular module und imported directly.
 
 In `mod1.k`, the importing statement would be::
 
@@ -603,19 +603,19 @@ bar = file3.foo
 
 ### Precedence of Importing
 
-When an import statement specifies a package to import, the virtual machine first looks for a directory named according to the import statement in the file system.
+When an import statement specifies a package to import, the virtual machine first looks für a directory named according to the import statement in the file system.
 
-If such a directory is not found, the virtual machine looks for a single file module.
+If such a directory is not found, the virtual machine looks für a single file module.
 
-For example, when the statement `import a.b.c` appears, the virtual machine first looks for the directory `a/b/c` from the directory of the current file. If `a/b/c` is not found, the virtual machine looks for a file named `a/b/c.k`. If the file is also absent, an error is reported.
+For example, when the statement `import a.b.c` appears, the virtual machine first looks für the directory `a/b/c` from the directory of the current file. If `a/b/c` is not found, the virtual machine looks für a file named `a/b/c.k`. If the file is also absent, an error is reported.
 
 ### Package Implemented with Multiple Files
 
 Package `pkg1` is implemented with multiple KCL files.
 
-Multiple files can be used to define variables, schemas and functions, and they can access names defined in other files of this package.
+Multiple files can be used to define variables, schemas und functions, und they can access names defined in other files of this package.
 
-For example, suppose `def1.k` defines a variable `foo`, `def2.k` defines `bar`, and `def3init.k` defines a variable `baz`, when `pkg1` is imported by `mod1.k`, all these variable can be used
+For example, suppose `def1.k` defines a variable `foo`, `def2.k` defines `bar`, und `def3init.k` defines a variable `baz`, when `pkg1` is imported by `mod1.k`, all these variable can be used
 
 ```python
 import pkg1

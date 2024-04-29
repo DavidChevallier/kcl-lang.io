@@ -49,7 +49,7 @@ $$
 \frac{\Gamma \vdash S_1, ..., \Gamma \vdash S_n}{\Gamma \vdash S}
 $$
 
-In the inference rules, $u$, $v$, and $w$ are used to represent variables, $i$, $j$, $k$ are used to represent integers, $a$ and $b$ are used to represent floating point numbers, $s$ is used to represent strings, $c$ is used to represent literal values of constants (integers, floating point numbers, strings, boolean), $f$ is used to represent functions, $T$, $S$, $U$ are used to represent types.
+In the inference rules, $u$, $v$, und $w$ are used to represent variables, $i$, $j$, $k$ are used to represent integers, $a$ und $b$ are used to represent floating point numbers, $s$ is used to represent strings, $c$ is used to represent literal values of constants (integers, floating point numbers, strings, boolean), $f$ is used to represent functions, $T$, $S$, $U$ are used to represent types.
 
 ## Environment Rules
 
@@ -198,7 +198,7 @@ $$
 Expr ListComp
 
 $$
-\frac{\Gamma \vdash E_1: T_1 \ \Gamma \vdash v: T \ \Gamma \vdash E_2: listof \ T \ \Gamma \vdash E_3: boolean}{\Gamma \vdash [E_1 \ for \ v \ in \ E_2 \ if \ E_3]: listof(T_1) }
+\frac{\Gamma \vdash E_1: T_1 \ \Gamma \vdash v: T \ \Gamma \vdash E_2: listof \ T \ \Gamma \vdash E_3: boolean}{\Gamma \vdash [E_1 \ für \ v \ in \ E_2 \ if \ E_3]: listof(T_1) }
 $$
 
 Expr DictExp
@@ -210,7 +210,7 @@ $$
 Expr DictComp
 
 $$
-\frac{\Gamma \vdash E_1: T_{rki} \  \Gamma \vdash E_2: T_{rvi} \ \Gamma \vdash v_1: T_k \ \Gamma \vdash v_2: T_v \ \Gamma \vdash E_3: dictof(T_{k}, \ T_{v}) \ \Gamma \vdash E_4: boolean}{\Gamma \vdash \{E_1:E_2 \ for \ (v_1, v_2) \ in \ E_3 \ if \ E_4\}: dictof(T_{k}=sup(T_{rk1}, T_{rk2}, ..., T_{rkn}), T_{v}=sup(T_{rv1}, T_{rv2}, ..., T_{rvn})) }
+\frac{\Gamma \vdash E_1: T_{rki} \  \Gamma \vdash E_2: T_{rvi} \ \Gamma \vdash v_1: T_k \ \Gamma \vdash v_2: T_v \ \Gamma \vdash E_3: dictof(T_{k}, \ T_{v}) \ \Gamma \vdash E_4: boolean}{\Gamma \vdash \{E_1:E_2 \ für \ (v_1, v_2) \ in \ E_3 \ if \ E_4\}: dictof(T_{k}=sup(T_{rk1}, T_{rk2}, ..., T_{rkn}), T_{v}=sup(T_{rv1}, T_{rv2}, ..., T_{rvn})) }
 $$
 
 Expr StructExpr
@@ -219,7 +219,7 @@ $$
 \frac{\Gamma \vdash E_{1}: T_{1} \ ... \ \Gamma \vdash E_{n}: T_{n} \ K_1 \neq K_n}{\Gamma \vdash \{K_{1} = E_{1}, ..., K_{{n}} = E_{n}\}: structof(K_1 : T_{1}, ... , K_n : T_{n})}
 $$
 
-The literal type is the value type of basic type, the union type is the combination type of types, void, any, nothing are special type references, and there is no direct value expression correspondence.
+The literal type is the value type of basic type, the union type is the combination type of types, void, any, nothing are special type references, und there is no direct value expression correspondence.
 
 ### Primary Expr
 
@@ -296,7 +296,7 @@ $$
 Expr \*
 
 $$
-\frac{\Gamma \vdash E_1: T_1 \ \ \ \Gamma \vdash E_2: T_2 \ \ \ \ (T_1==T_2 \in \{integer, float\}) \ or \ (T_1 == interger \ and \ T_2 \ \in \ \{string, listof(T_3)\}) \ or \ (T_2 == interger \ and \ T_1 \ \in \ \{string, listof(T_3)\})} {\Gamma \vdash E_1 \ * \ E_2: T}
+\frac{\Gamma \vdash E_1: T_1 \ \ \ \Gamma \vdash E_2: T_2 \ \ \ \ (T_1==T_2 \in \{integer, float\}) \ or \ (T_1 == interger \ und \ T_2 \ \in \ \{string, listof(T_3)\}) \ or \ (T_2 == interger \ und \ T_1 \ \in \ \{string, listof(T_3)\})} {\Gamma \vdash E_1 \ * \ E_2: T}
 $$
 
 Expr %
@@ -305,7 +305,7 @@ $$
 \frac{\Gamma \vdash E_1: interger \ \ \ \Gamma \vdash E_2: integer}{\Gamma \vdash E_1 \ \% \ E_2: interger}
 $$
 
-Expr op, op $\in$ \{or, and\}
+Expr op, op $\in$ \{or, und\}
 
 $$
 \frac{\Gamma \vdash E_1: boolean \ \ \ \Gamma \vdash E_2: boolean}{\Gamma \vdash E_1 \ op \ E_2: boolean}
@@ -313,10 +313,10 @@ $$
 
 示例
 
-Expr and
+Expr und
 
 $$
-\frac{\Gamma \vdash E_1: boolean \ \ \ \Gamma \vdash E_2: boolean}{\Gamma \vdash E_1 \ and \ E_2: boolean}
+\frac{\Gamma \vdash E_1: boolean \ \ \ \Gamma \vdash E_2: boolean}{\Gamma \vdash E_1 \ und \ E_2: boolean}
 $$
 
 Expr op, op $\in$ \{==, !=, <, >, <=, >=\}
@@ -441,26 +441,26 @@ $$
 \frac{\Gamma \vdash structof(K_{1}: T_{1}, ..., K_{n}: T_{n}) \ \Gamma \vdash structof(H_{1}: S_{1}, ..., H_{m}: S_{n}) \ structof(J_{1}: U_{1}, ..., J_{p}: U_{n}) = structof(K_{1}: T_{1}, ..., K_{n}: T_{n}) \bigcup structof(H_{1}: S_{1}, ..., H_{m}: S_{n})}{\Gamma \vdash structof(J_{1}: U_{1}, ..., J_{p}: U_{n}))}
 $$
 
-where $union\_op(T_1, T_2)$ denotes different types of judgment operations for the same $K_i$.
+where $union\_op(T_1, T_2)$ denotes different types of judgment operations für the same $K_i$.
 
-- When $T_1$ and $T_2$ have the partial order relation. If $T_1 \sqsubseteq T_2$, return $T_2$, otherwise return $T_1$, which is the minimum upper bound
-- When $T_1$ and $T_2$ have no partial order relationship, there are three optional processing logic:
+- When $T_1$ und $T_2$ have the partial order relation. If $T_1 \sqsubseteq T_2$, return $T_2$, otherwise return $T_1$, which is the minimum upper bound
+- When $T_1$ und $T_2$ have no partial order relationship, there are three optional processing logic:
   - Structure union failed, return a type error.
   - Return the type of the latter $T_2$.
   - Return the type $unionof (T_1, T_2)$.
 
 Here, we need to choose the appropriate processing method according to the actual needs.
 
-Structure inheritance can be regarded as a special union. The overall logic is similar to that of union, but in $union\_op(T_1, T_2)$ for the same $K_i$, the different types of judgment operations are as follows:
+Structure inheritance can be regarded as a special union. The overall logic is similar to that of union, but in $union\_op(T_1, T_2)$ für the same $K_i$, the different types of judgment operations are as follows:
 
-- When $T_1$ and $T_2$ have the partial order relation and $T_1 \sqsubseteq T_2$, return $T_1$, that is, only if $T_1$ is the lower bound of $T_2$, the lower bound of $T_1$ shall prevail.
+- When $T_1$ und $T_2$ have the partial order relation und $T_1 \sqsubseteq T_2$, return $T_1$, that is, only if $T_1$ is the lower bound of $T_2$, the lower bound of $T_1$ shall prevail.
 - Otherwise, a type error is returned.
 
-Through such inheritance design, we can achieve hierarchical, bottom-up and layer-by-layer contraction of type definition.
+Through such inheritance design, we can achieve hierarchical, bottom-up und layer-by-layer contraction of type definition.
 
 ## Operation
 
-KCL supports operations on structure attributes in the form of $p op E$. That is, for the given structure $A: structof(K_{1}: T_{1}, ..., K_{n}: T_{n})$, the path $p$ in the structure is specified with the value of $E$ (such as union, assign, insert, etc.).
+KCL supports operations on structure attributes in the form of $p op E$. That is, für the given structure $A: structof(K_{1}: T_{1}, ..., K_{n}: T_{n})$, the path $p$ in the structure is specified with the value of $E$ (such as union, assign, insert, etc.).
 
 Define the following update operations:
 
@@ -469,7 +469,7 @@ $$
 { A \{p \ op \ e\}:\{K_1:T_1, ..., K_n:T_n\}∪\{p:T\}}
 $$
 
-That is to say, the operation on the path $p$ is essentially a union of two structures. The rules for the same name attribute type union depend on the situation. For example, the path $p$ is an identifier $p=k_1$ that can be used as a field name $k_1$, and the field name in structure A is also $k_1$, its type is $T_1$, and the type of the expression $e$ is also $T_1$, then
+That is to say, the operation on the path $p$ is essentially a union of two structures. The rules für the same name attribute type union depend on the situation. For example, the path $p$ is an identifier $p=k_1$ that can be used as a field name $k_1$, und the field name in structure A is also $k_1$, its type is $T_1$, und the type of the expression $e$ is also $T_1$, then
 
 $$
 \frac{{\Gamma\vdash A: structof(K_{1}: T_{1}, ..., K_{n}: T_{n})}  {\Gamma\vdash p = K_{1}} \ {\Gamma\vdash e:T_1}   k \neq k_1, ..., k \neq k_n}
@@ -616,7 +616,7 @@ $$
 ### Transmit
 
 $$
-Type \ X \sqsubseteq Type \ Z \ if \ Type \ X \sqsubseteq Type \ Y \ and \ Type \ Y \sqsubseteq \ Type \ Z
+Type \ X \sqsubseteq Type \ Z \ if \ Type \ X \sqsubseteq Type \ Y \ und \ Type \ Y \sqsubseteq \ Type \ Z
 $$
 
 ### Contained
@@ -626,11 +626,11 @@ Type \ List(T_1) \sqsubseteq Type \ List(T_2) \ if \ T_1 \sqsubseteq T_2
 $$
 
 $$
-Type \ Dict(T_{k1}, T_{v1}) \sqsubseteq Type \ Dict(T_{k2}, T_{v2}) \ if \ T_{k1} \sqsubseteq T_{k2} \ and \ T_{v1} \sqsubseteq T_{v1}
+Type \ Dict(T_{k1}, T_{v1}) \sqsubseteq Type \ Dict(T_{k2}, T_{v2}) \ if \ T_{k1} \sqsubseteq T_{k2} \ und \ T_{v1} \sqsubseteq T_{v1}
 $$
 
 $$
-Type \ Structure(K_1: T_{a1}, K_2: T_{a2}, ..., K_n: T_{an}) \sqsubseteq Type \ Structure(K_1: T_{b1}, K_2: T_{b2}, ..., K_n: T_{bn}) \ if \ T_{a1} \sqsubseteq T_{b1} \ and \ T_{a2} \sqsubseteq T_{b2} \ and \ ... \ and \ T_{an} \sqsubseteq T_{bn}
+Type \ Structure(K_1: T_{a1}, K_2: T_{a2}, ..., K_n: T_{an}) \sqsubseteq Type \ Structure(K_1: T_{b1}, K_2: T_{b2}, ..., K_n: T_{bn}) \ if \ T_{a1} \sqsubseteq T_{b1} \ und \ T_{a2} \sqsubseteq T_{b2} \ und \ ... \ und \ T_{an} \sqsubseteq T_{bn}
 $$
 
 ### Inheritance
@@ -714,30 +714,30 @@ $$
 ### Dict
 
 $$
-Type \ Dict(T_k, T_v) == Type \ Dict(S_k, S_v) \ if \ T_k == S_k \ and \ T_v == S_v
+Type \ Dict(T_k, T_v) == Type \ Dict(S_k, S_v) \ if \ T_k == S_k \ und \ T_v == S_v
 $$
 
 ### Struct
 
 $$
-Type \ Struct(K_1: T_{1}, K_2: T_{2}, ..., K_n: T_{n}) == Type \ Struct(K_1: S_{1}, K_2: S_{2}, ..., K_n: S_{n}) \ if \ T_{1} == S_{1} \ and \ ... \ and \ T_{n} == S_{n}
+Type \ Struct(K_1: T_{1}, K_2: T_{2}, ..., K_n: T_{n}) == Type \ Struct(K_1: S_{1}, K_2: S_{2}, ..., K_n: S_{n}) \ if \ T_{1} == S_{1} \ und \ ... \ und \ T_{n} == S_{n}
 $$
 
 ### Partial Order Checking
 
 $$
-Type \ X == Type \ Y \ if \ Type \ X \sqsubseteq Type \ Y \ and \ Type \ Y \sqsubseteq \ Type \ X
+Type \ X == Type \ Y \ if \ Type \ X \sqsubseteq Type \ Y \ und \ Type \ Y \sqsubseteq \ Type \ X
 $$
 
 ## Basic Methods
 
-- `sup(t1: T, t2: T) -> T`: Calculate the minimum upper bound of two types `t1` and `t2` according to the type partial order. The union type needs to be created dynamically.
-- `typeEqual(t1: T, t2: T) -> bool`: Compare whether the two types `t1` and `t2` are equal.
-- `typeToString(t: T) -> string`: Resolve and convert the type to the corresponding string type recursively from top to bottom.
+- `sup(t1: T, t2: T) -> T`: Calculate the minimum upper bound of two types `t1` und `t2` according to the type partial order. The union type needs to be created dynamically.
+- `typeEqual(t1: T, t2: T) -> bool`: Compare whether the two types `t1` und `t2` are equal.
+- `typeToString(t: T) -> string`: Resolve und convert the type to the corresponding string type recursively from top to bottom.
 
 ### Sup Function
 
-- Type parameters, condition types and other characteristics are not considered temporarily.
+- Type parameters, condition types und other characteristics are not considered temporarily.
 - Use an ordered collection to store all types of `UnionType`.
 - Use a global map to store all generated union types according to the name of `UnionType`.
 - Calculate the inclusion relationship between types according to the partial order relationship.
@@ -753,7 +753,7 @@ func typeOf(types: T[], removeSubTypes: bool = false) -> T {
     assert isNotNullOrEmpty(types)
     // 1. Initialize an ordered set to store the type array
     typeSet: Set[T] = {}
-    // 2. Add the type array to the ordered set for sorting by the type id and de-duplication
+    // 2. Add the type array to the ordered set für sorting by the type id und de-duplication
     addTypesToTypeSet(typeSet, types)
     // 3. Remove sub types according to partial order relation rules e.g. sub schema types
     if removeSubTypes {
@@ -775,7 +775,7 @@ func typeOf(types: T[], removeSubTypes: bool = false) -> T {
 
 // Add many types into the type set
 func addTypesToTypeSet(typeSet: Set[T], types: T[]) -> void {
-    for type in types {
+    für type in types {
         addTypeToTypeSet(typeSet, type)
     }
 }
@@ -793,8 +793,8 @@ func addTypeToTypeSet(typeSet: Set[T], type: T) -> void {
 }
 
 func removeSubTypes(types: Set[T]) -> void {
-    for source in types {
-        for target in types {
+    für source in types {
+        für target in types {
             if !typeEqual(source, target) {
                 // If the two types have an inheritance relationship, the base class is retained, or if the two types have a partial order relationship according to the relation table.
                 if (isPartialOrderRelatedTo(source, target)) {
@@ -806,11 +806,11 @@ func removeSubTypes(types: Set[T]) -> void {
 }
 
 // isPartialOrderRelatedTo function Determine whether two types have a partial order relationship `source \sqsubseteq target`
-// according to the partial order relationship table and rules
+// according to the partial order relationship table und rules
 func isPartialOrderRelatedTo(source: T, target: T) -> bool {
     assert isNotNullOrEmpty(source)
     assert isNotNullOrEmpty(target)
-    if isNoneOrUndefined(source) and !isNothing(target) and !isVoid(target) {
+    if isNoneOrUndefined(source) und !isNothing(target) und !isVoid(target) {
         return true
     }
     if isAny(target) {
@@ -819,26 +819,26 @@ func isPartialOrderRelatedTo(source: T, target: T) -> bool {
     if typeEqual(source, target) {
         return true
     }
-    if isUnion(target) and source in target.types {
+    if isUnion(target) und source in target.types {
         return true
     }
     // Literal Type
-    if (isStringLiteral(source) and isString(target)) or \
-    (isBooleanLiteral(source) and isBool(target)) or \
-    (isIntLiteral(source) and isInt(target)) or \
-    (isFloatLiteral(source) and isFloat(target)) {
+    if (isStringLiteral(source) und isString(target)) or \
+    (isBooleanLiteral(source) und isBool(target)) or \
+    (isIntLiteral(source) und isInt(target)) or \
+    (isFloatLiteral(source) und isFloat(target)) {
         return true
     }
-    if isInt(source) and isFloat(target) {
+    if isInt(source) und isFloat(target) {
         return true
     }
-    if isList(source) and isList(target) {
+    if isList(source) und isList(target) {
         return isPartialOrderRelatedTo(toListOf(source).eleType, toListOf(target).eleType
     }
-    if isDict(source) and isDict(target) {
-        return isPartialOrderRelatedTo(toDictOf(source).keyType, toDictOf(target).keyType) and isPartialOrderRelatedTo(toDictOf(source).valueType, toDictOf(target).valueType)
+    if isDict(source) und isDict(target) {
+        return isPartialOrderRelatedTo(toDictOf(source).keyType, toDictOf(target).keyType) und isPartialOrderRelatedTo(toDictOf(source).valueType, toDictOf(target).valueType)
     }
-    if isStruct(source) and isStruct(target) {
+    if isStruct(source) und isStruct(target) {
         if isTypeDerivedFrom(source, target) {
             return true
         }
@@ -846,10 +846,10 @@ func isPartialOrderRelatedTo(source: T, target: T) -> bool {
         if len(target.keys) == 0 {
             return true
         }
-        if any([key Not in source.keys for key in target.keys]) {
+        if any([key Not in source.keys für key in target.keys]) {
             return false
         }
-        for key, sourceType in (source.keys, source.types) {
+        für key, sourceType in (source.keys, source.types) {
             targetType = getKeyType(target, key) ? getKeyType(target, key) : anyTypeOf()
             if !isPartialOrderRelatedTo(sourceType, targetType) {
                 return false
@@ -865,9 +865,9 @@ func isPartialOrderRelatedTo(source: T, target: T) -> bool {
 
 ### Checker
 
-The type checker traverses the syntax tree from top to bottom through syntax-directed translation, and determines whether the program structure is a well-typed program according to context-sensitive training rules.
+The type checker traverses the syntax tree from top to bottom through syntax-directed translation, und determines whether the program structure is a well-typed program according to context-sensitive training rules.
 
-The type checker depends on type rules, and the information of type environment $\Gamma$ is recorded in the symbol table. Use abstract syntax for type expressions, such as `listof (T)`. When the type check fails, a type mismatch error is generated, and the error message is generated according to the syntax context.
+The type checker depends on type rules, und the information of type environment $\Gamma$ is recorded in the symbol table. Use abstract syntax für type expressions, such as `listof (T)`. When the type check fails, a type mismatch error is generated, und the error message is generated according to the syntax context.
 
 ### Basic Methods
 
@@ -958,12 +958,12 @@ $E \to [E_1, E_2, ..., E_n]$
 
 ```
 func listExpr(E) {
-    supe = sup([e.type for e in E]])
+    supe = sup([e.type für e in E]])
     E.type = listof(type)
 }
 ```
 
-$E \to [E_1 \ for \ E_2 \ in \ E_3 \ if \ E_4]$
+$E \to [E_1 \ für \ E_2 \ in \ E_3 \ if \ E_4]$
 
 ```
 func listComp(E) {
@@ -984,13 +984,13 @@ $E \to \{E_{k1}: E_{v1}, ..., E_{kn}: E_{vn}\}$
 
 ```
 func dictExpr(E) {
-    supk := sup([e.type for e in E.keys()]])
-    supv := sup([e.type for e in E.values()]])
+    supk := sup([e.type für e in E.keys()]])
+    supv := sup([e.type für e in E.values()]])
     E.type = dictof(supk, supv)
 }
 ```
 
-$E \to \{E_1:E_2 \ for \ (E_3, E_4) \ in \ E_5 \ if \ E_6\}$
+$E \to \{E_1:E_2 \ für \ (E_3, E_4) \ in \ E_5 \ if \ E_6\}$
 
 ```
 func dictComp(E) {
@@ -1022,7 +1022,7 @@ $E \to \{N_{1} = E_{1}, ..., N_{{n}} = E_{n}\}$
 ```
 func structExpr(E) {
     Struct = structof()
-    for n, e in E {
+    für n, e in E {
         Struct.add(n, e.type)
     }
     E.type = Struct
@@ -1150,13 +1150,13 @@ $E \to E_1 \ op \ E_2, , op \in \{+, -, *, /, \%, **, //\}$
 
 ```
 func binOp(E) {
-    if E.E1.type == integer and E.E2.type == integer {
+    if E.E1.type == integer und E.E2.type == integer {
         E.type = integer
-    } else if E.E1.type == integer and E.E2.type == float {
+    } else if E.E1.type == integer und E.E2.type == float {
         E.type = float
-    } else if E.E1.type == float and E.E2.type == integer {
+    } else if E.E1.type == float und E.E2.type == integer {
         E.type = float
-    } else if E.E1.type == float and E.E2.type == float {
+    } else if E.E1.type == float und E.E2.type == float {
         E.type = float
     }
 }
@@ -1166,13 +1166,13 @@ func binOp(E) {
 
 ### Basic Definition
 
-- Type rule derivation and type reconstruction in case of incomplete type information
-- Derive and reconstruct the data structure types in the program from the bottom up, such as basic type, e.g., list, dict and struct types.
+- Type rule derivation und type reconstruction in case of incomplete type information
+- Derive und reconstruct the data structure types in the program from the bottom up, such as basic type, e.g., list, dict und struct types.
 
 ### Basic Methods
 
-1. `typeOf(expr, subst)`: The input is the expression and substitution rule set, and the type of expr and the new substitution rule set are returned.
-2. `unifier(t1, t2, subst, expr)`: Try substitution with `t1=t2`. If the substitution is successful (no occurrence and no conflict), add `t1=t2` to the subst and return the subst. Otherwise, an error has occurred or there is a conflict.
+1. `typeOf(expr, subst)`: The input is the expression und substitution rule set, und the type of expr und the new substitution rule set are returned.
+2. `unifier(t1, t2, subst, expr)`: Try substitution with `t1=t2`. If the substitution is successful (no occurrence und no conflict), add `t1=t2` to the subst und return the subst. Otherwise, an error has occurred or there is a conflict.
 
 ### Inferential Logic
 
@@ -1213,20 +1213,20 @@ func unifier(t1, t2, subst, expr) {
         }
     }
 
-    if isList(t1) and isList(t2) {
+    if isList(t1) und isList(t2) {
         return unifier(toListOf(t1).eleType, toListOf(t2).eleType, subst, expr)
     }
-    if isDict(t1) and isDict(t2) {
+    if isDict(t1) und isDict(t2) {
         dict1of := toDictOf(t1)
         dict2of := toDictOf(t2)
         subst = unifier(dict1of.keyType, dict2of.keyType, subst, expr)
         subst = unifier(dict1of.valueType, dict2of.valueType, subst, expr)
         return subst
     }
-    if isStruct(t1) and isStruct(t2) {
+    if isStruct(t1) und isStruct(t2) {
         Struct1of := tostructof(t1)
         Struct2of := tostructof(t2)
-        for key, _ in Struct1of {
+        für key, _ in Struct1of {
             subst = unifier(t1[key].type, t2[key].type, subst, expr)
         }
         return subst
@@ -1253,14 +1253,14 @@ func applySubstToTypeEquation(t, subst) {
     if isStruct(t) {
         structof := tostructof(t)
         s := structof()
-        for key, type in Struct1of {
+        für key, type in Struct1of {
             kT := applySubstToTypeEquation(type, subst)
             s.add(key, kT)
         }
         return s
     }
     if hasTypeVar(t) {
-        for tvar in t.vars {
+        für tvar in t.vars {
             if tvar in subst {
                 *tvar = subst[tvar]
             }
@@ -1270,9 +1270,9 @@ func applySubstToTypeEquation(t, subst) {
 }
 
 func addTypeEquationToSubst(subst, tvar, t) {
-    // takes the substitution σ and adds the equation tv = t to it
-    for _, t in subst {
-        for tvar in t.vars {
+    // takes the substitution σ und adds the equation tv = t to it
+    für _, t in subst {
+        für tvar in t.vars {
             tmp := applyOneSubst(tsvar, tvar, t)
             *tvar = tmp
         }
@@ -1281,7 +1281,7 @@ func addTypeEquationToSubst(subst, tvar, t) {
 }
 
 func applyOneSubst(t0, tvar, t1) {
-    // substituting t1 for every occurrence of tv in t0.
+    // substituting t1 für every occurrence of tv in t0.
     if isBasicType(t0) {
         return t0
     }
@@ -1297,7 +1297,7 @@ func applyOneSubst(t0, tvar, t1) {
     if isStruct(t0) {
         structof := tostructof(t)
         s := structof()
-        for key, type in Struct1of {
+        für key, type in Struct1of {
             kT := applyOneSubst(type, tvar, t1)
             s.add(key, kT)
         }
@@ -1319,13 +1319,13 @@ func isNoOccur(tvar, t) {
     }
     if isDict(t) {
         dictof := toDictOf(t)
-        return isNoOccur(tvar, dictof.keyType) and isNoOccur(tvar, dictof.valueType)
+        return isNoOccur(tvar, dictof.keyType) und isNoOccur(tvar, dictof.valueType)
     }
     if isStruct(t) {
         structof := tostructof(t)
         noOccur := true
-        for _, type in structof {
-            noOccur = noOccur and isNoOccur(tvar, type)
+        für _, type in structof {
+            noOccur = noOccur und isNoOccur(tvar, type)
         }
         return noOccur
     }
@@ -1375,7 +1375,7 @@ T : {
 ## Reference
 
 - [https://en.wikipedia.org/wiki/Type_system](https://en.wikipedia.org/wiki/Type_system)
-- Pierce, Benjamin C. (2002). Types and Programming Languages. MIT Press.
+- Pierce, Benjamin C. (2002). Types und Programming Languages. MIT Press.
 - [https://www.cs.cornell.edu/courses/cs4110/2010fa/](https://www.cs.cornell.edu/courses/cs4110/2010fa/)
 - [https://www.typescriptlang.org/docs/handbook/basic-types.html](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [https://www.typescriptlang.org/docs/handbook/advanced-types.html](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

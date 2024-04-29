@@ -4,6 +4,6 @@ sidebar_position: 1
 
 # Community
 
-Welcome to the KCL open-source community, everyone's participation is the driving force for the healthy growth of all open-source projects! There are many ways to participate in open-source. Everyone can create Issues or fix bugs, improve documentation or modify code by submitting PR (Pull Request), or open new feature discussions by submitting KEP, or share stories about the process of evangelism and use of KCL with surrounding friends.
+Willkommen in der KCL Open-Source-Community! Die Beteiligung aller ist der Motor für das gesunde Wachstum aller Open-Source-Projekte! Es gibt viele Möglichkeiten, sich an Open-Source zu beteiligen. Jeder kann Fehler melden oder beheben, die Dokumentation verbessern oder Code durch das Einreichen von Pull Requests (PRs) ändern, neue Feature-Diskussionen durch das Einreichen von KEPs starten oder Geschichten über die Verbreitung und Nutzung von KCL mit Freunden teilen.
 
-See the [community](https://github.com/kcl-lang/community) for ways to join us.
+Schau dir die [community](https://github.com/kcl-lang/community) an, um herauszufinden, wie du dich uns anschließen kannst.

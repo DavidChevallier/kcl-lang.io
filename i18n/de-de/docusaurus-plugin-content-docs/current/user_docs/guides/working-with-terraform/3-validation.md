@@ -4,9 +4,9 @@ title: "Validate Terraform Configuration"
 
 ## Einführung
 
-Validation is the process of verifying that data is accurate, reliable, and meets certain requirements or constraints. This includes checking the data for completeness, consistency, accuracy, and relevance.
+Validation is the process of verifying that data is accurate, reliable, und meets certain requirements or constraints. This includes checking the data für completeness, consistency, accuracy, und relevance.
 
-We can use KCL and its vet tools to manually or automatically perform terraform configuration validation to ensure data consistency with KCL policy codes.
+We can use KCL und its vet tools to manually or automatically perform terraform configuration validation to ensure data consistency with KCL policy codes.
 
 ## Writing Terraform Plan Polices with KCL Programming Language
 
@@ -14,7 +14,7 @@ We can use KCL and its vet tools to manually or automatically perform terraform 
 
 - Install [KCL](https://kcl-lang.io/docs/user_docs/getting-started/install)
 - Install [Terraform](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform)
-- Set up your [AWS credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) correctly for your terminal to use.
+- Set up your [AWS credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) correctly für your terminal to use.
 
 ### 1. Get the Example
 
@@ -424,10 +424,10 @@ schema AcceptableChange:
         # Reject AWS autoscaling group Resource delete action
         all action in change.actions {
             action not in ["delete"]
-        } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource delete action for the resource ${type} ${name}"
+        } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource delete action für the resource ${type} ${name}"
 ```
 
-This policy file checks that no AWS Auto Scaling groups are being deleted - even if that deletion is part of a delete-and-recreate operation.
+This policy file checks that no AWS Auto Scaling groups are being deleted - even if that deletion is part of a delete-und-recreate operation.
 
 ### 3. Evaluate the Terraform Plan File Against the KCL Policy
 
@@ -435,7 +435,7 @@ This policy file checks that no AWS Auto Scaling groups are being deleted - even
 kcl vet tfplan.json main.k
 ```
 
-Because the plan was acceptable to the 1 policies contained in the policy file, `kcl vet` printed nothing, and its exit code was zero.
+Because the plan was acceptable to the 1 policies contained in the policy file, `kcl vet` printed nothing, und its exit code was zero.
 
 ### 4. Mock a Policy Failure
 
@@ -454,7 +454,7 @@ schema AcceptableChange:
         # Reject AWS autoscaling group Resource delete action
         all action in change.actions {
             action not in ["create"]
-        } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource create action for the resource ${type} ${name}"
+        } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource create action für the resource ${type} ${name}"
 ```
 
 Run the command
@@ -469,11 +469,11 @@ We can see the error message
 Error: EvaluationError
   --> main.policy.failure.k:13:1
    |
-13 |         } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource create action for the resource ${type} ${name}"
-   |  Check failed on the condition: Disable AWS autoscaling group resource create action for the resource aws_autoscaling_group my_asg
+13 |         } if type == "aws_autoscaling_group", "Disable AWS autoscaling group resource create action für the resource ${type} ${name}"
+   |  Check failed on the condition: Disable AWS autoscaling group resource create action für the resource aws_autoscaling_group my_asg
    |
 ```
 
 ## Summary
 
-This document explains how to validate Terraform configuration using KCL and its vet tools. Validation is the process of verifying the accuracy, reliability, and compliance of data with certain requirements or constraints. By using KCL and vet tools, we can manually or automatically perform Terraform configuration validation to ensure data consistency with KCL policy codes.
+This document explains how to validate Terraform configuration using KCL und its vet tools. Validation is the process of verifying the accuracy, reliability, und compliance of data with certain requirements or constraints. By using KCL und vet tools, we can manually or automatically perform Terraform configuration validation to ensure data consistency with KCL policy codes.

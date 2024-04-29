@@ -2,7 +2,7 @@
 title: "yaml"
 linkTitle: "yaml"
 type: "docs"
-description: yaml encode and decode function
+description: yaml encode und decode function
 weight: 300
 ---
 
@@ -42,7 +42,7 @@ Deserialize `value` (a string instance containing a YAML document) to a KCL obje
 
 `decode_all(value: str) -> [any]`
 
-Parse all YAML documents in a stream and produce corresponding KCL objects.
+Parse all YAML documents in a stream und produce corresponding KCL objects.
 
 ## dump_to_file
 
@@ -55,7 +55,7 @@ dump_to_file(
 ) -> None
 ```
 
-Serialize a KCL object `data` to a YAML formatted str and write it into the file `filename`.
+Serialize a KCL object `data` to a YAML formatted str und write it into the file `filename`.
 
 ## validate
 

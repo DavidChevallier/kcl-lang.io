@@ -10,15 +10,15 @@ image: /img/biweekly-newsletter.png
 
 ![](/img/biweekly-newsletter.png)
 
-[KCL](https://github.com/kcl-lang) is a constraint-based record and functional language hosted by Cloud Native Computing Foundation (CNCF) that enhances the writing of complex configurations and polices, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
+[KCL](https://github.com/kcl-lang) ist eine auf Einschränkungen basierende rekursive und funktionale Sprache, die von der Cloud Native Computing Foundation (CNCF) gehostet wird und die Erstellung komplexer Konfigurationen und Richtlinien, einschließlich solcher für Cloud-native Szenarien, erleichtert. Mit ihrer fortschrittlichen Programmiersprachentechnologie und -praxis ist KCL darauf ausgerichtet, eine bessere Modularität, Skalierbarkeit und Stabilität für Konfigurationen zu fördern. Sie ermöglicht einfacheres Schreiben von Logik und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
 
-This section will update the KCL language community's latest news, including features, website updates, and the latest community news, helping everyone better understand the KCL community!
+Dieser Abschnitt wird die neuesten Nachrichten der KCL language community's aktualisieren, einschließlich Funktionen, Website Updates und den neuesten community nachrichten, um allen ein besseres Verständnis der KCL Community zu ermöglichen!
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
 ## Overview
 
-Thanks to to all contributors for their outstanding work over the past twenty days (2024.02.02 - 2024.02.22). Here is an overview of the key content:
+Thanks to to all contributors für their outstanding work over the past twenty days (2024.02.02 - 2024.02.22). Here is an overview of the key content:
 
 **📦 Module Updates**
 
@@ -32,9 +32,9 @@ kcl mod add jsonschema:0.0.4
 
 KCL has released preview version 0.8.0, mainly including the following updates:
 
-- Added the file system library for reading KCL module information and system files, including the `read`, `glob`, `workdir`, and `modpath` functions. See more details in this [issue](https://github.com/kcl-lang/kcl/issues/1049)
-- Optimized syntax error messages for unexpected tokens.
-- Removed output for unexpected internal built-in type attributes in schema objects.
+- Added the file system library für reading KCL module information und system files, including the `read`, `glob`, `workdir`, und `modpath` functions. See more details in this [issue](https://github.com/kcl-lang/kcl/issues/1049)
+- Optimized syntax error messages für unexpected tokens.
+- Removed output für unexpected internal built-in type attributes in schema objects.
 - Fixed variable calculation in unexpected dictionary generation expressions where the key is the same as the loop variable.
 - Fixed errors in defining string identifiers within schemas, such as `"$if"`.
 
@@ -47,18 +47,18 @@ KCL has released preview version 0.8.0, mainly including the following updates:
 
 **💻 IDE Updates**
 
-- Enhanced autocompletion and hover documentation for built-in functions and system libraries
-- Fixed issues with navigating and autocompleting if statements symbols within configuration blocks
-- Added quick fix feature for variable reference errors
+- Enhanced autocompletion und hover documentation für built-in functions und system libraries
+- Fixed issues with navigating und autocompleting if statements symbols within configuration blocks
+- Added quick fix feature für variable reference errors
 
 **🎁 API Updates**
 
-- The `OverrideFile` API has added path for querying and modifying configurations, such as `a["b"].c`
-- The `Run` API has added the `WithShowHidden` and the `WithTypePath` flags.
+- The `OverrideFile` API has added path für querying und modifying configurations, such as `a["b"].c`
+- The `Run` API has added the `WithShowHidden` und the `WithTypePath` flags.
 
 **🚀 Plugin System Updates**
 
-In addition to using Python for KCL plugin functions, it now supports using Go to write plugin functions for KCL, which is very simple to use.
+In addition to using Python für KCL plugin functions, it now supports using Go to write plugin functions für KCL, which is very simple to use.
 
 - Define a plugin (using a hello plugin containing the add function as an example)
 
@@ -114,23 +114,23 @@ three = hello.add(1,2) # 3
 **🚢 Integration Updates**
 
 - Released initial version of Ansible KCL module, supporting basic execution of KCL code, with other functionalities being improved
-- Optimized Git Source functionality for KCL FluxCD Controller, with OCI Source functionality in progress
+- Optimized Git Source functionality für KCL FluxCD Controller, with OCI Source functionality in progress
 
 ## Special Thanks
 
 The following are listed in no particular order:
 
-- Thanks to @octonawish-akcodes and @d4v1d03 for their continuous contributions to KCL FAQ documentation and KCL IDE functionality 🙌
-- Thanks to @octonawish-akcodes for the contribution to the Ansible KCL Module
-- Thanks to @AkashKumar7902 and @Vanshikav123 for the contribution to the KCL package management tool functionality 🙌
-- Thanks to @StevenLeiZhang for the contribution to KCL documentation and KCL plugins
-- Thanks to @TheChinBot, @Evgeny Shepelyuk, @yonas, @steeling, @vtomilov, @Fdall, @CloudZero357, @bozaro, @starkers, @MrGuoRanDuo and @FLAGLORD, among others, for their valuable feedback and suggestions while using KCL recently. 🙌
+- Vielen Dank an @octonawish-akcodes und @d4v1d03 für their continuous contributions to KCL FAQ documentation und KCL IDE functionality 🙌
+- Vielen Dank an @octonawish-akcodes für seinen Beitrag zum Ansible KCL Module
+- Vielen Dank an @AkashKumar7902 und @Vanshikav123 für seinen Beitrag zum KCL package management tool functionality 🙌
+- Vielen Dank an @StevenLeiZhang für the contribution to KCL documentation und KCL plugins
+- Vielen Dank an @TheChinBot, @Evgeny Shepelyuk, @yonas, @steeling, @vtomilov, @Fdall, @CloudZero357, @bozaro, @starkers, @MrGuoRanDuo und @FLAGLORD, among others, für their valuable feedback und suggestions while using KCL recently. 🙌
 
 ## Resources
 
-❤️ Thanks to all KCL users and community members for their valuable feedback and suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
 
-For more resources, please refer to
+For more resources, bitte refer to
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

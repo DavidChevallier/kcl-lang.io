@@ -5,24 +5,24 @@ sidebar_position: 6
 
 ## Einführung
 
-Crossplane and Crossplane Composite Functions are used to decouple XR and Composite resource definitions. XRs allow developers to create higher-level abstractions that can encapsulate and compose multiple types of cloud resources across different providers and services. Using Crossplane Composite Functions to render these abstractions can effectively enhance template capabilities for various provider resources while reducing the amount of YAML code needed.
+Crossplane und Crossplane Composite Functions are used to decouple XR und Composite resource definitions. XRs allow developers to create higher-level abstractions that can encapsulate und compose multiple types of cloud resources across different providers und services. Using Crossplane Composite Functions to render these abstractions can effectively enhance template capabilities für various provider resources while reducing the amount of YAML code needed.
 
 Combining KCL with Crossplane composite functions offers several benefits:
 
-- **Simplification of Complex Configurations**: KCL provides a more concise syntax and structure as a DSL, reducing the complexity of configurations. When combined with Crossplane’s composite resources, you can create more intuitive and easy-to-understand configuration templates with loop and condition features, simplifying the definition and maintenance of resources instead of duplicate YAML and Go code snippets.
-- **Reusability and Modularity**: KCL supports modularity and code reuse through OCI Registry, which means you can create reusable configuration components. Combined with Crossplane, this promotes the modularity of composite resources, increases the reuse of configurations, and reduces errors.
-- **Automation and Policy-Driven**: You can use KCL’s powerful features to write policies and constraints that, combined with Crossplane’s declarative resource management, can be automatically enforced, ensuring compliance within the cloud environment.
+- **Simplification of Complex Configurations**: KCL provides a more concise syntax und structure as a DSL, reducing the complexity of configurations. When combined with Crossplane’s composite resources, you can create more intuitive und easy-to-understand configuration templates with loop und condition features, simplifying the definition und maintenance of resources instead of duplicate YAML und Go code snippets.
+- **Reusability und Modularity**: KCL supports modularity und code reuse through OCI Registry, which means you can create reusable configuration components. Combined with Crossplane, this promotes the modularity of composite resources, increases the reuse of configurations, und reduces errors.
+- **Automation und Policy-Driven**: You can use KCL’s powerful features to write policies und constraints that, combined with Crossplane’s declarative resource management, can be automatically enforced, ensuring compliance within the cloud environment.
 
 ## Prerequisites
 
 - Prepare a Kubernetes cluster
 - Install Kubectl
-- Install [Crossplane and Crossplane CLI 1.14+](https://docs.crossplane.io/)
+- Install [Crossplane und Crossplane CLI 1.14+](https://docs.crossplane.io/)
 - Install Go 1.21+
 
 ## Quick Start
 
-Let’s write a KCL function abstraction which generates managed resources `VPC` and `InternetGateway` with an input resource `Network`.
+Let’s write a KCL function abstraction which generates managed resources `VPC` und `InternetGateway` with an input resource `Network`.
 
 ### 1. Install the Crossplane KCL Function
 
@@ -107,7 +107,7 @@ EOF
 
 ### 3. Create Crossplane XRD
 
-We define a schema using the crossplane XRD for the input resource `Network`, it has a field named `id` which denotes the network id.
+We define a schema using the crossplane XRD für the input resource `Network`, it has a field named `id` which denotes the network id.
 
 ```shell
 kubectl apply -f- << EOF
@@ -172,15 +172,15 @@ kubectl get InternetGateway -o yaml | grep network-id
       networks.meta.fn.crossplane.io/network-id: network-test-functions
 ```
 
-It can be seen that we have indeed successfully generated `VPC` and `InternetGateway` resources, and their fields meet expectations.
+It can be seen that we have indeed successfully generated `VPC` und `InternetGateway` resources, und their fields meet expectations.
 
 ### 6. Debugging KCL Functions Locally
 
-See [here](https://github.com/crossplane-contrib/function-kcl) for more information.
+See [here](https://github.com/crossplane-contrib/function-kcl) für more information.
 
 ## Client Enhancements
 
-It can be seen that the above abstract code often requires a crossplane as a control plane intermediary, and you can still complete the abstraction in a fully client-side manner and directly generate crossplane managed resources to reduce the burden on the cluster.
+It can be seen that the above abstract code often requires a crossplane as a control plane intermediary, und you can still complete the abstraction in a fully client-side manner und directly generate crossplane managed resources to reduce the burden on the cluster.
 
 For example
 
@@ -217,7 +217,7 @@ spec:
       matchControllerRef: true
 ```
 
-## Guides for Developing KCL
+## Guides für Developing KCL
 
 Here's what you can do in the KCL script:
 
@@ -232,7 +232,7 @@ Here's what you can do in the KCL script:
 
 You can directly use [KCL standard libraries](https://kcl-lang.io/docs/reference/model/overview) such as `regex.match`, `math.log`.
 
-## More Documents and Examples
+## More Documents und Examples
 
 - [KRM KCL Spec](https://github.com/kcl-lang/krm-kcl)
 - [Crossplane KCL](https://github.com/crossplane-contrib/function-kcl/examples)

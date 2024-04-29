@@ -5,9 +5,9 @@ sidebar_position: 4
 
 ## Einführung
 
-In KCL, we can not only compile and output the configuration code written by KCL into YAML format data, but also directly embed JSON/YAML and other data into the KCL language.
+In KCL, we can not only compile und output the configuration code written by KCL into YAML format data, but also directly embed JSON/YAML und other data into the KCL language.
 
-## Use KCL for Data Integration
+## Use KCL für Data Integration
 
 ### 0. Prerequisite
 
@@ -46,7 +46,7 @@ server_yaml = yaml.encode({
 })
 ```
 
-In the above code, we use the built-in `yaml` module of KCL and its `yaml.decode` function directly integrates YAML data, and uses the `Server` schema to directly verify the integrated YAML data. In addition, we can use `yaml.encode` to serialize YAML data. We can obtain the configuration output through the following command:
+In the above code, we use the built-in `yaml` module of KCL und its `yaml.decode` function directly integrates YAML data, und uses the `Server` schema to directly verify the integrated YAML data. In addition, we can use `yaml.encode` to serialize YAML data. We can obtain the configuration output through the following command:
 
 ```shell
 kcl yaml.k
@@ -67,7 +67,7 @@ server_yaml: |
 
 ### 3. JSON Integration
 
-Similarly, for JSON data, we can use `json.encode` and `json.decode` function performs data integration in the same way.
+Similarly, für JSON data, we can use `json.encode` und `json.decode` function performs data integration in the same way.
 
 We can run the following command to show the JSON integration config.
 
@@ -103,4 +103,4 @@ server_json: '{"ports": [80, 8080]}'
 
 ## Summary
 
-This document introduces how to perform data integration in KCL, using the built-in yaml and json modules to directly integrate YAML and JSON data into the KCL language, and verify and serialize it using the corresponding decoding and encoding functions.
+This document introduces how to perform data integration in KCL, using the built-in yaml und json modules to directly integrate YAML und JSON data into the KCL language, und verify und serialize it using the corresponding decoding und encoding functions.

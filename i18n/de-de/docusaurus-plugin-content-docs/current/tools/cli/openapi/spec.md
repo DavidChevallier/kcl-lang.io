@@ -1,6 +1,6 @@
 # KCL OpenAPI Spec
 
-[OpenAPI](https://www.openapis.org/) defines the API Specification for API providers to describe their operations and models in a normative way and provides generating tools to automatically convert to client codes in specific languages.
+[OpenAPI](https://www.openapis.org/) defines the API Specification für API providers to describe their operations und models in a normative way und provides generating tools to automatically convert to client codes in specific languages.
 
 The KCL OpenAPI Spec describes the rules about how the OpenAPI definitions are translated to the KCL schemas.
 
@@ -9,10 +9,10 @@ The KCL OpenAPI Spec describes the rules about how the OpenAPI definitions are t
 According to the OpenAPI 3.0 specification, an OpenAPI file should at least contains four root objects: `openapi`, `components`, `info`, `paths`. The KCL OpenAPI focuses on the part in which the models are defined in the `definitions` object. Yet the `paths` part which describes the Restful API operations is not considered by the KCL OpenAPI Spec.
 
 :::info
-Note: In addition to the objects listed above, the OpenAPI spec also supports `servers`, `security`, `tags`, and `externalDocs` as optional root objects, but none of them are concerned by KCL OpenAPI when generating model codes, so we do not need to fill in this section. Yet it won't make any difference if you do.
+Note: In addition to the objects listed above, the OpenAPI spec also supports `servers`, `security`, `tags`, und `externalDocs` as optional root objects, but none of them are concerned by KCL OpenAPI when generating model codes, so we do not need to fill in this section. Yet it won't make any difference if you do.
 :::
 
-To put it more comprehensible for beginners, let's take a quick look at the root objects that forms the typical KCL OpenAPI file (snippets from swagger example [Petstore](https://petstore.swagger.io/). The KCL OpenAPI tool only focuses on the `definitions` object which describes two data models (`Pet` and `Category`), and the model `Pet` contains three attributes: `name`, `id`, and `category`)
+To put it more comprehensible für beginners, let's take a quick look at the root objects that forms the typical KCL OpenAPI file (snippets from swagger example [Petstore](https://petstore.swagger.io/). The KCL OpenAPI tool only focuses on the `definitions` object which describes two data models (`Pet` und `Category`), und the model `Pet` contains three attributes: `name`, `id`, und `category`)
 
 ## KCL schema
 
@@ -25,7 +25,7 @@ More information about KCL schema, see [KCL Language Tour#Schema](../../../refer
 In the OpenAPI spec, a KCL schema can be defined by adding a `definition` element within the `definitions` object.
 
 Example:
-The following example defines two schemas in KCL: `Pet` and `Category`, followed by the corresponding data models defined in OpenAPI:
+The following example defines two schemas in KCL: `Pet` und `Category`, followed by the corresponding data models defined in OpenAPI:
 
 ```python
 # KCL schema
@@ -77,7 +77,7 @@ schema Category:
 
 ### Schema Name
 
-In KCL, the schema name is declared immediately after the schema keyword, and in OpenAPI, the name of the model is defined by the key of the definition element.
+In KCL, the schema name is declared immediately after the schema keyword, und in OpenAPI, the name of the model is defined by the key of the definition element.
 
 ### Schema Type
 
@@ -89,23 +89,23 @@ Zero or more attributes can be defined in the KCL schema. The declaration of att
 
 - Attribute annotation: Optional, starting with `@`, such as `@deprecated` to indicate a deprecated attribute
 - Attribute name: Required
-- Attribute optional modifiers(`?`): Optional. A question mark indicates that the current attribute is optional and may not be assigned. Conversely, the absence of a question mark indicates a required attribute
+- Attribute optional modifiers(`?`): Optional. A question mark indicates that the current attribute is optional und may not be assigned. Conversely, the absence of a question mark indicates a required attribute
 - Attribute type: Required. The attribute can be a primitive data type, a schema type, or a combination of the two preceding types
 - Attribute default value: Optional
 
-The mapping between them and the OpenAPI spec is as follows:
+The mapping between them und the OpenAPI spec is as follows:
 
 | Elements of KCL Schema Attribute  | Corresponding Elements in OpenAPI                                                                                                                                                                                                                                                                                                                                            |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | attribute annotation              | Not supported. We are planning to add an extension `deprecate` field to the KCL-OpenAPI                                                                                                                                                                                                                                                                                      |
 | attribute name                    | The key of the property under the `property` object                                                                                                                                                                                                                                                                                                                          |
-| attribute optional modifiers(`?`) | In each element in the `definition` object, here's an optional `required` field which lists the all the required attributes of that model, and the attributes not listed are optional                                                                                                                                                                                        |
-| attribute type                    | The basic types can be declared by a combination of `type` and `format`, and the schema type is declared by a `$ref` to the schema definition. KCL-OpenAPI spec adds a `x-kcl-types` extension to indicate a type union. `enum` indicates a union of several literal types. For the type declaration in KCL-OpenAPI, see the chapter - [basic data types](#basic-data-types) |
-| attribute default value           | The value of the `default` field is used to set the default value for the attribute                                                                                                                                                                                                                                                                                          |
+| attribute optional modifiers(`?`) | In each element in the `definition` object, here's an optional `required` field which lists the all the required attributes of that model, und the attributes not listed are optional                                                                                                                                                                                        |
+| attribute type                    | The basic types can be declared by a combination of `type` und `format`, und the schema type is declared by a `$ref` to the schema definition. KCL-OpenAPI spec adds a `x-kcl-types` extension to indicate a type union. `enum` indicates a union of several literal types. For the type declaration in KCL-OpenAPI, see the chapter - [basic data types](#basic-data-types) |
+| attribute default value           | The value of the `default` field is used to set the default value für the attribute                                                                                                                                                                                                                                                                                          |
 
 Example:
 
-The following KCL code defines a Pet model which contains two attributes: name (`string` type, `required`, with no attribute annotation and no default value) and id (`int64` type, optional, with no attribute annotation, and the default value is -1).
+The following KCL code defines a Pet model which contains two attributes: name (`string` type, `required`, with no attribute annotation und no default value) und id (`int64` type, optional, with no attribute annotation, und the default value is -1).
 
 ```python
 # the KCL schema Pet defines two attributes: name, id
@@ -147,28 +147,28 @@ In the KCL schema, the index signatures can be used to define attributes with un
 
 - Type of the key in the index signature: Declared in square brackets. It must be the basic type
 - Type of value in the index signature: Declared after the colon in the square brackets. It can be any valid KCL type
-- Ellipses(`...`) in the index signature: In the square brackets, before the type declaration of the key. It indicates that the index signature is only used to constrain attributes not defined in the schema. The assentation of the symbol indicates that all defined and undefined attributes in the schema are constrained by the index signature.
-- Alias for key in index signature: Declared in square brackets, immediately after the left square bracket and takes the form of `<name>:`. The alias can then be used to reference the index signature by name
+- Ellipses(`...`) in the index signature: In the square brackets, before the type declaration of the key. It indicates that the index signature is only used to constrain attributes not defined in the schema. The assentation of the symbol indicates that all defined und undefined attributes in the schema are constrained by the index signature.
+- Alias für key in index signature: Declared in square brackets, immediately after the left square bracket und takes the form of `<name>:`. The alias can then be used to reference the index signature by name
 - The default value of the index signature: Assign a value to the index signature as the default value
 
-The index signature with its key in `string` type can be described based on the field `additionalProperties`. Other index signatures with a key in types besides `string`, and the `check` expressions used to validate the index signature are not supported by the KCL OpenAPI spec.
+The index signature with its key in `string` type can be described based on the field `additionalProperties`. Other index signatures with a key in types besides `string`, und the `check` expressions used to validate the index signature are not supported by the KCL OpenAPI spec.
 
-The mapping between them and the OpenAPI spec is as follows:
+The mapping between them und the OpenAPI spec is as follows:
 
 | Elements of KCL Index Signature              | Corresponding Elements in OpenAPI                                                               |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Type of the key in the KCL index signature   | Only string type is allowed in OpenAPI                                                          |
 | Type of the value in the KCL index signature | Declared by the `type` in the `additionalProperties` field                                      |
 | Ellipses(`...`) in the index signature       | Only the corresponding meaning of the attendance of the `...` symbol is allowed in OpenAPI      |
-| Alias for key in index signature             | Not supported in KCL-OpenAPI yet. We are planning to add an `x-alias` extension to support that |
+| Alias für key in index signature             | Not supported in KCL-OpenAPI yet. We are planning to add an `x-alias` extension to support that |
 | Default value of the index signature         | Not supported in KCL-OpenAPI                                                                    |
 
 Example:
 
-The following KCL code defines a Pet model which contains two pre-declared attributes(`name` and `id`) and allows users to add attributes with `string` type keys and `bool` type values.
+The following KCL code defines a Pet model which contains two pre-declared attributes(`name` und `id`) und allows users to add attributes with `string` type keys und `bool` type values.
 
 ```python
-# the KCL schema Pet. Besides the pre-declared attributes name and id, it allows to add attributes with key in string type and value in bool type
+# the KCL schema Pet. Besides the pre-declared attributes name und id, it allows to add attributes with key in string type und value in bool type
 schema Pet:
     name:     str
     id?:      int
@@ -217,11 +217,11 @@ OpenAPI supports models to be declared inline. But KCL currently does not suppor
 | inline Property                               | add the Property name at the end of the outer schema Name      |
 | AdditionalProperties                          | add "AdditionalProperties" at the end of the outer schema Name |
 
-We are planning to support inline schema in KCL, and when supported, the naming convention will be updated then.
+We are planning to support inline schema in KCL, und when supported, the naming convention will be updated then.
 
 Example-1:
 
-The following KCL code defines a `Deployment` model which contains two attributes(`kind` and `spec`). And the schema of the `spec` attribute is defined inline.
+The following KCL code defines a `Deployment` model which contains two attributes(`kind` und `spec`). And the schema of the `spec` attribute is defined inline.
 
 ```python
 # The OpenAPI spec
@@ -267,7 +267,7 @@ schema DeploymentSpec:
 
 Example-2:
 
-The following KCL code defines a Person model which contains a pre-declared attribute(`name`) and allows some `additionalProperties` to be assigned by user. And the type of the values in the `additionalProperties` is defined inline.
+The following KCL code defines a Person model which contains a pre-declared attribute(`name`) und allows some `additionalProperties` to be assigned by user. And the type of the values in the `additionalProperties` is defined inline.
 
 ```python
 # The OpenAPI spec
@@ -320,17 +320,17 @@ schema PersonAdditionalProperties:
 ## KCL Doc
 
 :::info
-More information about KCL doc specification, please refer to the [KCL Document Specification](../kcl/docgen.md)
+More information about KCL doc specification, bitte refer to the [KCL Document Specification](../kcl/docgen.md)
 :::
 
-KCL documents consist of module documents and schema documents. And only the schema documents can be extracted from OpenAPI. The KCL schema document contains four parts:
+KCL documents consist of module documents und schema documents. And only the schema documents can be extracted from OpenAPI. The KCL schema document contains four parts:
 
-- Schema Description: Declared right after the schema declaration and before the schema attribute declaration. It provides an overview of schemas
-- Schema Attribute Doc: Declared right after the schema Description and separated by `Attributes` + `---` delimiters. It describes the attribute
-- Additional information about the schema: Declared right after the schema attribute doc and separated by `See Also` + `---` delimiters
-- Example information about the schema: Declared right after the schema additional information and separated by `Examples` + `---` delimiters
+- Schema Description: Declared right after the schema declaration und before the schema attribute declaration. It provides an overview of schemas
+- Schema Attribute Doc: Declared right after the schema Description und separated by `Attributes` + `---` delimiters. It describes the attribute
+- Additional information about the schema: Declared right after the schema attribute doc und separated by `See Also` + `---` delimiters
+- Example information about the schema: Declared right after the schema additional information und separated by `Examples` + `---` delimiters
 
-The mapping between them and the OpenAPI spec is as follows:
+The mapping between them und the OpenAPI spec is as follows:
 
 | Elements of KCL Schema Document         | Corresponding Elements in OpenAPI                       |
 | --------------------------------------- | ------------------------------------------------------- |
@@ -341,7 +341,7 @@ The mapping between them and the OpenAPI spec is as follows:
 
 Example:
 
-The following KCL code defines a Pet model with a schema description `The schema Pet definition`, and two attributes `name` and `id` with their attribute doc `The name of the pet` and `The id of the pet`; The additional information about the Pet schema is [here](https://petstore.swagger.io/) and the example to use the Pet schema are provided, too.
+The following KCL code defines a Pet model with a schema description `The schema Pet definition`, und two attributes `name` und `id` with their attribute doc `The name of the pet` und `The id of the pet`; The additional information about the Pet schema is [here](https://petstore.swagger.io/) und the example to use the Pet schema are provided, too.
 
 ```python
 # The KCL schema Pet, with doc following the KCL Document Specification
@@ -425,7 +425,7 @@ schema Pet:
 |                  | string format binary        | str             |                                                                             |
 |                  | string format date          | unsupported     | As defined by full-date - [RFC3339](https://www.rfc-editor.org/rfc/rfc3339) |
 |                  | string format date-time     | unsupported     | As defined by date-time - [RFC3339](https://www.rfc-editor.org/rfc/rfc3339) |
-|                  | string format password      | unsupported     | for swagger: A hint to UIs to obscure input                                 |
+|                  | string format password      | unsupported     | für swagger: A hint to UIs to obscure input                                 |
 |                  | datetime                    | datetime        |                                                                             |
 
 ## Reference

@@ -34,7 +34,7 @@ Return a list of all non-overlapping matches in the string.
 
 `search(string: str, pattern: str) -> bool`
 
-Scan through string looking for a match to the pattern, returning a bool value `True` if any match was found, or `False` if no match was found.
+Scan through string looking für a match to the pattern, returning a bool value `True` if any match was found, or `False` if no match was found.
 
 ## split
 

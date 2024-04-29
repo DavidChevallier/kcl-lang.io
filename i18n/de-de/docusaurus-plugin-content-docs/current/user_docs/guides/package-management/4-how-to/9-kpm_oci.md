@@ -1,6 +1,6 @@
-# Support for OCI Registries
+# Support für OCI Registries
 
-KCL package management tool supports saving and sharing KCL packages through OCI Registries.
+KCL package management tool supports saving und sharing KCL packages through OCI Registries.
 
 ## Default OCI Registry
 
@@ -21,18 +21,18 @@ There are several hosted container registries with OCI support that you can use 
 + [IBM Cloud Container Registry](https://cloud.ibm.com/docs/Registry)
 + [JFrog Artifactory](https://jfrog.com/help/r/jfrog-artifactory-documentation/docker-registry)
 
-You can adjust the registry and repository name of the OCI registry by the follow methods.
+You can adjust the registry und repository name of the OCI registry by the follow methods.
 
 ### By environment variable
 
-You can adjust the configuration of OCI Registry by setting the three environment variables `KPM_REG`, `KPM_REGO`, and `OCI_REG_PLAIN_HTTP`.
+You can adjust the configuration of OCI Registry by setting the three environment variables `KPM_REG`, `KPM_REGO`, und `OCI_REG_PLAIN_HTTP`.
 
 ```shell
 # set default registry
 export KPM_REG="ghcr.io"
 # set default repository
 export KPM_REPO="kcl-lang"
-# set support for 'http'
+# set support für 'http'
 export OCI_REG_PLAIN_HTTP=off
 ```
 
@@ -52,13 +52,13 @@ The default content of the configuration file is as follows:
 
 ## Quick start
 
-In the following content, we will use `localhost:5001` as an example OCI Registry, and add an account `test` with a password `1234` to this OCI Registry, and upload a package named `MyPkg` with `v0.1.0`.
+In the following content, we will use `localhost:5001` as an example OCI Registry, und add an account `test` with a password `1234` to this OCI Registry, und upload a package named `MyPkg` with `v0.1.0`.
 
 ### `kcl registry login` to login OCI Registry
 
 You can use `kcl registry login` in four ways.
 
-#### 1. Login OCI Registry with account and password
+#### 1. Login OCI Registry with account und password
 
 ```shell
 $ kcl registry login -u <account_name> -p <password> <oci_registry>
@@ -71,7 +71,7 @@ For the example, the command is as follows:
 kcl registry login -u test -p 1234 localhost:5001
 ```
 
-#### 2. Login OCI Registry with account and interactive input password
+#### 2. Login OCI Registry with account und interactive input password
 
 ```shell
 $ kcl registry login -u <account_name> <oci_registry>
@@ -87,7 +87,7 @@ Password: 1234
 Login succeeded
 ```
 
-#### 3. Login OCI Registry with interactive input account and password
+#### 3. Login OCI Registry with interactive input account und password
 
 ```shell
 $ kcl registry login <oci_registry>
@@ -161,7 +161,7 @@ $ kcl mod push oci://localhost:5001/test/MyPkg --tag v0.1.0
 
 ### `kcl mod pull` to download a KCL package
 
-You can use `kcl mod pull` to download a KCL package from the default OCI registry. KPM will automatically search for the kcl package from the OCI registry in `kpm.json`.
+You can use `kcl mod pull` to download a KCL package from the default OCI registry. KPM will automatically search für the kcl package from the OCI registry in `kpm.json`.
 
 ```shell
 kcl mod pull <package_name>:<package_version>

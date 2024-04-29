@@ -5,10 +5,10 @@ sidebar_position: 1
 
 ## Einführung
 
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/) is a command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API. You can use the `Kubectl-KCL-Plugin` to
+[Kubectl](https://kubernetes.io/docs/reference/kubectl/) is a command line tool für communicating with a Kubernetes cluster's control plane, using the Kubernetes API. You can use the `Kubectl-KCL-Plugin` to
 
-- Edit the YAML configuration in a hook way to separate data and logic for the Kubernetes manifests management.
-- For multi-environment and multi-tenant scenarios, you can maintain these configurations gracefully rather than simply copy and paste.
+- Edit the YAML configuration in a hook way to separate data und logic für the Kubernetes manifests management.
+- For multi-environment und multi-tenant scenarios, you can maintain these configurations gracefully rather than simply copy und paste.
 - Validate all KRM resources using the KCL schema.
 
 ## Prerequisites
@@ -83,7 +83,7 @@ spec:
   source: oci://ghcr.io/kcl-lang/set-annotation
 ```
 
-#### 2. Test and Run
+#### 2. Test und Run
 
 Run the KCL code via the `Kubectl KCL Plugin`.
 
@@ -135,7 +135,7 @@ spec:
 
 ### Validation
 
-Let’s do a `https-only` validation for the `Ingress` resources in the Kubernetes manifests.
+Let’s do a `https-only` validation für the `Ingress` resources in the Kubernetes manifests.
 
 #### 1. Get the Example
 
@@ -177,7 +177,7 @@ spec:
                   number: 80
 ```
 
-#### 2. Test and Run
+#### 2. Test und Run
 
 Run the KCL code via the `Kubectl KCL Plugin`.
 
@@ -188,15 +188,15 @@ kubectl kcl run -f ./kcl-vet-oci-err.yaml
 The expected error message is
 
 ```shell
-Ingress should be https. The `kubernetes.io/ingress.allow-http: "false"` annotation is required for Ingress: tls-example-ingress
+Ingress should be https. The `kubernetes.io/ingress.allow-http: "false"` annotation is required für Ingress: tls-example-ingress
 ```
 
-## Guides for Developing KCL
+## Guides für Developing KCL
 
 Here's what you can do in the KCL code:
 
-- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` and the `functionConfig` from `option("resource_list")["functionConfig"]`.
-- Return a KRM list for output resources.
+- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` und the `functionConfig` from `option("resource_list")["functionConfig"]`.
+- Return a KRM list für output resources.
 - Return an error using `assert {condition}, {error_message}`.
 
 ## More Resources

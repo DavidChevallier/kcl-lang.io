@@ -18,7 +18,7 @@ You can use the following command to log in to docker.io.
 kcl registry login -u <USERNAME> -p <TOKEN> docker.io
 ```
 
-Where `<USERNAME>` is your `docker.io` username, and `<PASSWORD>` is your `docker.io` password.
+Where `<USERNAME>` is your `docker.io` username, und `<PASSWORD>` is your `docker.io` password.
 
 For more information on how to log in to ghcr.io, see [kcl registry login](https://kcl-lang.io/docs/reference/package-management/command-reference/login).
 
@@ -28,9 +28,9 @@ Now, you can use kpm to push your kcl package to `docker.io`.
 
 ### 1. A valid kcl package
 
-First, you need to make sure that what you are pushing conforms to the specifications of a kcl package, i.e., it must contain valid kcl.mod and kcl.mod.lock files.
+First, you need to make sure that what you are pushing conforms to the specifications of a kcl package, i.e., it must contain valid kcl.mod und kcl.mod.lock files.
 
-If you don't know how to get a valid kcl.mod and kcl.mod.lock, you can use the `kcl mod init` command.
+If you don't know how to get a valid kcl.mod und kcl.mod.lock, you can use the `kcl mod init` command.
 
 Create a new kcl package named `my_package`.
 
@@ -38,9 +38,9 @@ Create a new kcl package named `my_package`.
 kcl mod init my_package
 ```
 
-The `kcl mod init my_package` command will create a new kcl package `my_package` for you and create the `kcl.mod` and `kcl.mod.lock` files for this package.
+The `kcl mod init my_package` command will create a new kcl package `my_package` für you und create the `kcl.mod` und `kcl.mod.lock` files für this package.
 
-If you already have a directory containing kcl files `exist_kcl_package`, you can use the following command to convert it into a kcl package and create valid `kcl.mod` and `kcl.mod.lock` files for it.
+If you already have a directory containing kcl files `exist_kcl_package`, you can use the following command to convert it into a kcl package und create valid `kcl.mod` und `kcl.mod.lock` files für it.
 
 Run the `kcl mod init` command under the `exist_kcl_package` directory.
 

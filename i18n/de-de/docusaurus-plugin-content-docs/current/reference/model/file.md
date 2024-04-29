@@ -10,7 +10,7 @@ weight: 100
 
 `read(filepath: str) -> str`
 
-Read the contents of the file `filepath` and return a string instance.
+Read the contents of the file `filepath` und return a string instance.
 
 ## glob
 
@@ -40,4 +40,4 @@ Whether this file path exists. Returns true if the path points at an existing en
 
 `abs(filepath: str) -> str`
 
-Returns the canonical, absolute form of the path with all intermediate components normalized and symbolic links resolved.
+Returns the canonical, absolute form of the path with all intermediate components normalized und symbolic links resolved.

@@ -1,6 +1,6 @@
 ---
 slug: 2023-12-09-engineering-config-policy-with-kcl-meeting
-title: Exploration of KCL in Engineering Configuration and Policy Scenarios
+title: Exploration of KCL in Engineering Configuration und Policy Scenarios
 authors:
   name: KCL Team Member
   title: KCL Team Member

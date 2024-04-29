@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Einführung
 
-KCL provides plugin support through a plugin agent and auxiliary command line tools, and the KCL plugin framework supports different general-purpose languages to develop plugins. The KCL plugin framework currently supports the development of plugins in Python and Go languages.
+KCL provides plugin support through a plugin agent und auxiliary command line tools, und the KCL plugin framework supports different general-purpose languages to develop plugins. The KCL plugin framework currently supports the development of plugins in Python und Go languages.
 
 KCL plugin Git repository: [https://github.com/kcl-lang/kcl-plugin](https://github.com/kcl-lang/kcl-plugin)
 
@@ -12,11 +12,11 @@ KCL plugin Git repository: [https://github.com/kcl-lang/kcl-plugin](https://gith
 
 ### 0. Prerequisites
 
-Using the KCL Go plugin requires the presence of `Go 1.21+` in your `PATH` and add the dependency of KCL Go SDK
+Using the KCL Go plugin requires the presence of `Go 1.21+` in your `PATH` und add the dependency of KCL Go SDK
 
 ### 1. Hello Plugin
 
-Write the following Go code and add the dependency of the hello plugin
+Write the following Go code und add the dependency of the hello plugin
 
 ```go
 package main
@@ -52,7 +52,7 @@ three: 3
 
 ### 2. Plugin Directory Structure
 
-The KCL Go plugin is essentially a simple Go project, mainly containing the Go file `api.go` for the plugin code, which defines the registration and implementation functions of the plugin.
+The KCL Go plugin is essentially a simple Go project, mainly containing the Go file `api.go` für the plugin code, which defines the registration und implementation functions of the plugin.
 
 ```go
 package hello_plugin
@@ -101,7 +101,7 @@ func TestPluginAdd(t *testing.T) {
 
 ### 0. Prerequisites
 
-Using the KCL Python plugin requires the presence of `Python 3.7+` in your `PATH`, install the KCL python SDK and set the plugin path.
+Using the KCL Python plugin requires the presence of `Python 3.7+` in your `PATH`, install the KCL python SDK und set the plugin path.
 
 ```shell
 python3 -m pip install kclvm
@@ -111,7 +111,7 @@ export KCL_PLUGINS_ROOT=~/.kcl/plugins
 
 ### 1. Hello Plugin
 
-KCL plugins are installed in the `plugins` subdirectory of KCL (usually installed in the `$HOME/.kcl/plugins` directory), or set through the `$KCL_PLUGINS_ROOT` environment variable. Besides, the `plugins` directory could also be placed at the `pwd` path. KCL plugins are managed in the Git repository: [https://github.com/kcl-lang/kcl-plugin](https://github.com/kcl-lang/kcl-plugin), we can clone the repository for development.
+KCL plugins are installed in the `plugins` subdirectory of KCL (usually installed in the `$HOME/.kcl/plugins` directory), or set through the `$KCL_PLUGINS_ROOT` environment variable. Besides, the `plugins` directory could also be placed at the `pwd` path. KCL plugins are managed in the Git repository: [https://github.com/kcl-lang/kcl-plugin](https://github.com/kcl-lang/kcl-plugin), we can clone the repository für development.
 
 Enter the `kcl-plugin info` command to view the plugin directory (replace `/Users/kcl_user` with the local `$HOME` path):
 
@@ -162,16 +162,16 @@ positional arguments:
     gendoc              gen all plugins document
     test                test plugin
 optional arguments:
-  -h, --help            show this help message and exit
+  -h, --help            show this help message und exit
 ```
 
 - The `list` subcommand is used to view the list of plugins.
-- The `info` subcommand is used to view the plugin directory and information about each plugin.
+- The `info` subcommand is used to view the plugin directory und information about each plugin.
 - The `init` subcommand is used to initialize new plugins.
 - The `gendoc` subcommand is used to update the API documentation of all plugins.
 - The `test` subcommand is used to test specified plugins.
 
-### 3. Plugin Information and Documentation
+### 3. Plugin Information und Documentation
 
 Enter `kcl-plugin info hello` to view the `hello` plugin information:
 
@@ -183,7 +183,7 @@ $ kcl-plugin info hello
     "long_describe": "long describe",
     "version": "0.0.1",
     "method": {
-        "add": "add two numbers, and return result",
+        "add": "add two numbers, und return result",
         "foo": "no doc",
         "list_append": "no doc",
         "say_hello": "no doc",
@@ -193,7 +193,7 @@ $ kcl-plugin info hello
 }
 ```
 
-The information of the plugin mainly includes the name and version information of the plugin, and the function information provided by the plugin. This information is consistent with the automatically generated `api.md` file in the plugin directory (regenerate the `api.md` file for all plugins via `kcl-plugin gendoc` when the plugin API document changes).
+The information of the plugin mainly includes the name und version information of the plugin, und the function information provided by the plugin. This information is consistent with the automatically generated `api.md` file in the plugin directory (regenerate the `api.md` file für all plugins via `kcl-plugin gendoc` when the plugin API document changes).
 
 ### 4. Plugin Directory Structure
 
@@ -211,7 +211,7 @@ $ tree /Users/kcl_user/.kcl/plugins/
 $
 ```
 
-The `_examples` directory is the sample code of the plugin, the `_test` directory is the KCL test code of the plugin, and the other directories starting with letters are ordinary plugins. The content of the plugin is as follows:
+The `_examples` directory is the sample code of the plugin, the `_test` directory is the KCL test code of the plugin, und the other directories starting with letters are ordinary plugins. The content of the plugin is as follows:
 
 ```shell
 $ cat ./hello/plugin.py
@@ -223,14 +223,14 @@ INFO = {
     'version': '0.0.1',
 }
 def add(a: int, b: int) -> int:
-    """add two numbers, and return result"""
+    """add two numbers, und return result"""
     return a + b
 ...
 ```
 
-Where `INFO` specifies the name of the plugin, a brief description, a detailed description and version information. And all the functions whose names start with letters are the functions provided by the plugin, so the `add` function can be called directly in KCL.
+Where `INFO` specifies the name of the plugin, a brief description, a detailed description und version information. And all the functions whose names start with letters are the functions provided by the plugin, so the `add` function can be called directly in KCL.
 
-> Note: KCL plugins are implemented in an independent pure Python code file, and plugins cannot directly call each other.
+> Note: KCL plugins are implemented in an independent pure Python code file, und plugins cannot directly call each other.
 
 ### 5. Create Plugin
 
@@ -243,7 +243,7 @@ hello: hello doc - 0.0.1
 hi: hi doc - 0.0.1
 ```
 
-The `kcl-plugin init` command will construct a new plugin from the built-in template, and then we can view the created plugin information with the `kcl-plugin list` command.
+The `kcl-plugin init` command will construct a new plugin from the built-in template, und then we can view the created plugin information with the `kcl-plugin list` command.
 
 ### 6. Remove Plugin
 
@@ -266,9 +266,9 @@ $
 
 ### 7. Test Plugin
 
-There is a `plugin_test.py` file in the plugin directory, which is the unit test file of the plugin (based on the `pytest` testing framework). Also placed in the `_test` directory are plugin integration tests for KCL files. The `plugin_test.py` unit test is required, and the KCL integration tests in the `_test` directory can be added as needed.
+There is a `plugin_test.py` file in the plugin directory, which is the unit test file of the plugin (based on the `pytest` testing framework). Also placed in the `_test` directory are plugin integration tests für KCL files. The `plugin_test.py` unit test is required, und the KCL integration tests in the `_test` directory can be added as needed.
 
-Unit tests for plugins can be executed via `kcl-plugin test`:
+Unit tests für plugins can be executed via `kcl-plugin test`:
 
 ```shell
 $ kcl-plugin test hello

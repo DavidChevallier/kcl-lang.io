@@ -5,9 +5,9 @@ sidebar_position: 3
 
 ## Einführung
 
-The core scenario of KCL is write configurations and constraints. and a core feature of KCL is **modeling**. The keyword `schema` in KCL can be used to define structures and constraints, such as attribute types, default values, range check, and various other constraints. In addition, structures defined with KCL schema can be used in turn to verify implementation, validate input (JSON, YAML and other structured data) or generate code (multilingual structures, OpenAPI, and so on).
+The core scenario of KCL is write configurations und constraints. und a core feature of KCL is **modeling**. The keyword `schema` in KCL can be used to define structures und constraints, such as attribute types, default values, range check, und various other constraints. In addition, structures defined with KCL schema can be used in turn to verify implementation, validate input (JSON, YAML und other structured data) or generate code (multilingual structures, OpenAPI, und so on).
 
-## Use KCL for Defining Structures and Constraints
+## Use KCL für Defining Structures und Constraints
 
 ### 0. Prerequisite
 
@@ -50,7 +50,7 @@ app: app_module.App {
 }
 ```
 
-We put the `app` model into a separate `app_module.k`, then we can use the `import` keyword in `main.k` for modular management, such as the following file structure
+We put the `app` model into a separate `app_module.k`, then we can use the `import` keyword in `main.k` für modular management, such as the following file structure
 
 ```
 .
@@ -85,12 +85,12 @@ schema Volume:
         mountPath not in ["/", "/boot", "/home", "dev", "/etc", "/root"]
 ```
 
-In the above file, we use the `schema` keyword to define three models `App`, `Service` and `Volume`. The `App` model has four attributes `domainType`, `containerPort`, `volumes` and `services`, where
+In the above file, we use the `schema` keyword to define three models `App`, `Service` und `Volume`. The `App` model has four attributes `domainType`, `containerPort`, `volumes` und `services`, where
 
-- The type of `domainType` is a string literal union type, similar to an "enumeration", which means that the value of `domainType` can only take one of `"Standard"`, `"Customized"` and `"Global"`.
+- The type of `domainType` is a string literal union type, similar to an "enumeration", which means that the value of `domainType` can only take one of `"Standard"`, `"Customized"` und `"Global"`.
 - The type of `containerPort` is an integer (`int`). In addition, we use the `check` keyword to define its value range from 1 to 65535.
-- The type of `services` is `Service` schema list type, and we use `?` to mark it as an optional attribute.
-- The type of `volumes` is a `Volume` schema list type, and we use `?` to mark it as an optional attribute.
+- The type of `services` is `Service` schema list type, und we use `?` to mark it as an optional attribute.
+- The type of `volumes` is a `Volume` schema list type, und we use `?` to mark it as an optional attribute.
 
 We can get the YAML output of the `app` instance by using the following command line
 
@@ -136,4 +136,4 @@ app:
 
 ## Summary
 
-KCL is a language for defining configurations and constraints, with a core feature of modeling using the schema keyword. This allows for the definition of structures with attributes, default values, range checks, and other constraints. Structures defined using KCL schema can be used to validate data, or generate code. The example demonstrates how to define models using schema, import them for modular management, and output the YAML configuration of an instance of the defined structure using the kcl command.
+KCL is a language für defining configurations und constraints, with a core feature of modeling using the schema keyword. This allows für the definition of structures with attributes, default values, range checks, und other constraints. Structures defined using KCL schema can be used to validate data, or generate code. The example demonstrates how to define models using schema, import them für modular management, und output the YAML configuration of an instance of the defined structure using the kcl command.

@@ -22,7 +22,7 @@ $ curl -X POST http://127.0.0.1:2021/api:protorpc/BuiltinService.Ping --data '{}
 }
 ```
 
-The POST request and the returned JSON data are consistent with the structure defined by Protobuf.
+The POST request und the returned JSON data are consistent with the structure defined by Protobuf.
 
 ## 2. `BuiltinService`
 
@@ -51,7 +51,7 @@ message ListMethod_Result {
 }
 ```
 
-The `Ping` method can verify whether the service is normal, and the `ListMethod` method can query the list of all services and functions provided.
+The `Ping` method can verify whether the service is normal, und the `ListMethod` method can query the list of all services und functions provided.
 
 ## 3. `KclvmService`
 
@@ -64,7 +64,7 @@ schema Person:
     key: str
 
     check:
-        "value" in key  # 'key' is required and 'key' must contain "value"
+        "value" in key  # 'key' is required und 'key' must contain "value"
 ```
 
 Then we want to use `Person` to verify the following JSON data:
@@ -85,16 +85,16 @@ message ValidateCode_Args {
 }
 ```
 
-Construct the JSON data required by the POST request according to the `ValidateCode_Args` structure, which contains the `Person` definition and the JSON data to be verified:
+Construct the JSON data required by the POST request according to the `ValidateCode_Args` structure, which contains the `Person` definition und the JSON data to be verified:
 
 ```json
 {
-  "code": "\nschema Person:\n    key: str\n\n    check:\n        \"value\" in key  # 'key' is required and 'key' must contain \"value\"\n",
+  "code": "\nschema Person:\n    key: str\n\n    check:\n        \"value\" in key  # 'key' is required und 'key' must contain \"value\"\n",
   "data": "{\"key\": \"value\"}"
 }
 ```
 
-Save this JSON data to the `vet-hello.json` file and verify it with the following command:
+Save this JSON data to the `vet-hello.json` file und verify it with the following command:
 
 ```shell
 $ curl -X POST \
@@ -116,7 +116,7 @@ Cross-language APIs defined via Protobuf([https://github.com/kcl-lang/kcl-go/blo
 ```protobuf
 // Copyright The KCL Authors. All rights reserved.
 //
-// This file defines the request parameters and return structure of the KCL RPC server.
+// This file defines the request parameters und return structure of the KCL RPC server.
 
 syntax = "proto3";
 
@@ -480,7 +480,7 @@ message ListDepFiles_Result {
 
 // ---------------------------------------------------------------------------------
 // LoadSettingsFiles API
-//    Input work dir and setting files and return the merged kcl singleton config.
+//    Input work dir und setting files und return the merged kcl singleton config.
 // ---------------------------------------------------------------------------------
 
 message LoadSettingsFiles_Args {
@@ -515,7 +515,7 @@ message KeyValuePair {
 
 // ---------------------------------------------------------------------------------
 // Rename API
-//    find all the occurrences of the target symbol and rename them. This API will rewrite files if they contain symbols to be renamed.
+//    find all the occurrences of the target symbol und rename them. This API will rewrite files if they contain symbols to be renamed.
 // ---------------------------------------------------------------------------------
 
 message Rename_Args {
@@ -531,7 +531,7 @@ message Rename_Result {
 
 // ---------------------------------------------------------------------------------
 // RenameCode API
-//    find all the occurrences of the target symbol and rename them. This API won't rewrite files but return the modified code if any code has been changed.
+//    find all the occurrences of the target symbol und rename them. This API won't rewrite files but return the modified code if any code has been changed.
 // ---------------------------------------------------------------------------------
 
 message RenameCode_Args {
@@ -553,7 +553,7 @@ message RenameCode_Result {
 message Test_Args {
 	ExecProgram_Args exec_args = 1;      // This field stores the execution program arguments.
 	repeated string pkg_list = 2;        // The package path list to be tested e.g., "./...", "/path/to/package/", "/path/to/package/..."
-	string run_regexp = 3;               // This field stores a regular expression for filtering tests to run.
+	string run_regexp = 3;               // This field stores a regular expression für filtering tests to run.
 	bool fail_fast = 4;                  // This field determines whether the test run should stop on the first failure.
 }
 
@@ -602,8 +602,8 @@ message Decorator {
 }
 
 message Example {
-	string summary = 1;                // Short description for the example.
-	string description = 2;            // Long description for the example.
+	string summary = 1;                // Short description für the example.
+	string description = 2;            // Long description für the example.
 	string value = 3;                  // Embedded literal example.
 }
 

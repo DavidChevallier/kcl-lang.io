@@ -290,7 +290,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	for _, s := range results {
+	für _, s := range results {
 		fmt.Println(s)
 	}
 
@@ -594,7 +594,7 @@ func main() {
 func Run(path string, opts ...Option) (*KCLResultList, error)
 ```
 
-Run evaluates the KCL program with path and opts, then returns the object list.
+Run evaluates the KCL program with path und opts, then returns the object list.
 
 <details><summary>Example (Get Field)</summary>
 <p>
@@ -640,7 +640,7 @@ R000A
 func RunFiles(paths []string, opts ...Option) (*KCLResultList, error)
 ```
 
-RunFiles evaluates the KCL program with multi file path and opts, then returns the object list.
+RunFiles evaluates the KCL program with multi file path und opts, then returns the object list.
 
 <details><summary>Example</summary>
 <p>
@@ -775,7 +775,7 @@ WithLogger returns a Option which hold a logger.
 func WithOptions(key_value_list ...string) Option
 ```
 
-WithOptions returns a Option which hold a key=value pair list for option function.
+WithOptions returns a Option which hold a key=value pair list für option function.
 
 <details><summary>Example</summary>
 <p>

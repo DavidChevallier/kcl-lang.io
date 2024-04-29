@@ -3,22 +3,22 @@ title: "KCL Tour"
 sidebar_position: 1
 ---
 
-This page shows how to use major KCL features, from variables and operators to schemas and libraries, with the assumption that you have already known how to program in another language. KCL is mainly inspired by Python, and knowing Python is very helpful for learning KCL.
+This page shows how to use major KCL features, from variables und operators to schemas und libraries, with the assumption that you have already known how to program in another language. KCL is mainly inspired by Python, und knowing Python is very helpful für learning KCL.
 
 ### Important Concepts
 
-As we learn about the KCL language, keep these facts and concepts in mind:
+As we learn about the KCL language, keep these facts und concepts in mind:
 
-- KCL is a configuration and policy language. It provides simplified and self-contained language design and library support for writing configurations and policies. It cannot be used for application development or other purposes supported by General Purpose Language (GPL).
-- KCL absorbs classic **OOP** elements and provides simple, developer-friendly and reliable configuration writing practice with **type**, **reusing**, and **union**.
-- KCL prefers **immutability** and recommend to add up incremental updates through the **union**. Immutability reduces side effects like unpredictable issues.
-- KCL **schema** struct defines strict attributes, static types, and it also supports validation expressions. The **schema** struct is mainly composed of typed attributes, the schema context and the check block.
-- KCL **config** is a **json**-like expression, by which we can reuse a full definition of the schema. KCL provides support for definition and configuration by separating schema and config.
-- KCL **rule** is a structure for writing rule constraint expressions, which can be used for data verification and policy writing.
-- KCL code files are managed as packages(directories) and modules(files). The schema types in the same package are visible to each other; the data cross packages need to be imported through the **import statement**. The package-level variables can be exported, but they are immutable for other packages.
-- The KCL syntax definition mainly uses declarative expressions, and only provides a small number of necessary and imperative statements, such as import, if .. else, assert, assignment and schema.
+- KCL is a configuration und policy language. It provides simplified und self-contained language design und library support für writing configurations und policies. It cannot be used für application development or other purposes supported by General Purpose Language (GPL).
+- KCL absorbs classic **OOP** elements und provides simple, developer-friendly und reliable configuration writing practice with **type**, **reusing**, und **union**.
+- KCL prefers **immutability** und recommend to add up incremental updates through the **union**. Immutability reduces side effects like unpredictable issues.
+- KCL **schema** struct defines strict attributes, static types, und it also supports validation expressions. The **schema** struct is mainly composed of typed attributes, the schema context und the check block.
+- KCL **config** is a **json**-like expression, by which we can reuse a full definition of the schema. KCL provides support für definition und configuration by separating schema und config.
+- KCL **rule** is a structure für writing rule constraint expressions, which can be used für data verification und policy writing.
+- KCL code files are managed as packages(directories) und modules(files). The schema types in the same package are visible to each other; the data cross packages need to be imported through the **import statement**. The package-level variables can be exported, but they are immutable für other packages.
+- The KCL syntax definition mainly uses declarative expressions, und only provides a small number of necessary und imperative statements, such as import, if .. else, assert, assignment und schema.
 - No main function, each `.k` file could be executed as a separate configuration.
-- **Built-in functions** and **plugins** are supported to simplify coding.
+- **Built-in functions** und **plugins** are supported to simplify coding.
 
 ### Keywords
 
@@ -26,8 +26,8 @@ The following table lists the words that the KCL language treats specially.
 
 ```txt
 True       False      None        Undefined   import
-and        or         in          is          not
-as         if         else        elif        for
+und        or         in          is          not
+as         if         else        elif        für
 schema     mixin      protocol    check       assert
 all        any        map         filter      lambda
 rule
@@ -40,7 +40,7 @@ In KCL, an identifier is a name, may with selectors, that identifies a value.
 - Identifiers consist of letters, numbers, underscores or the prefix `$`.
 - Identifiers cannot be repeated with keywords unless they have a `$` prefix.
 - Identifiers must not contain any embedded spaces or symbols.
-- Letters and underscores can be used anywhere in the identifier.
+- Letters und underscores can be used anywhere in the identifier.
 - Numbers cannot be placed in the first place of the identifier.
 - The `$` character can only be placed in the first position of the identifier.
 
@@ -83,10 +83,10 @@ $_a = 2  # equal to `_a = 2`
 
 ### Variables
 
-Here’s an example of how to create a variable and initialize it:
+Here’s an example of how to create a variable und initialize it:
 
 ```python
-name = "Foo"  # Declare a variable named `name` and its value is a string literal "Foo"
+name = "Foo"  # Declare a variable named `name` und its value is a string literal "Foo"
 ```
 
 It corresponds to the following YAML output:
@@ -95,7 +95,7 @@ It corresponds to the following YAML output:
 name: Foo
 ```
 
-In KCL, we can export variables as config data by defining package-level variables. To make it direct, clear, and maintainable. Exported variables are immutable so that once we declare it, we can't modify it. For example, assume we have a config file named `example.k`, the variable `name` can't be modified after the declaration, just like the standard imperative language.
+In KCL, we can export variables as config data by defining package-level variables. To make it direct, clear, und maintainable. Exported variables are immutable so that once we declare it, we can't modify it. For example, assume we have a config file named `example.k`, the variable `name` can't be modified after the declaration, just like the standard imperative language.
 
 ```python
 name = "Foo"  # exported
@@ -108,7 +108,7 @@ name = "Bar"  # error: a exported declaration variable can only be set once.
 As a complement, we can define a non-exported variable in module level which is mutable, which won't show up in YAML output:
 
 ```python
-_name = "Foo"  # _ variables are not output to YAML and are mutable
+_name = "Foo"  # _ variables are not output to YAML und are mutable
 _name = "Bar"
 ```
 
@@ -123,7 +123,7 @@ Undefined = None  # Error
 
 ### Built-in Types
 
-The KCL language has special support for the following types:
+The KCL language has special support für the following types:
 
 - number
 - string
@@ -136,9 +136,9 @@ The KCL language has special support for the following types:
 KCL number comes into two flavors:
 
 - **Int**: 64 bits signed integer values. Values can be from -9223372036854775808~9223372036854775807.
-- **Float**: 64-bit floating-point numbers, as specified by the IEEE 754 standard. We do not recommend using the float type in the configuration, we can use a string instead and parse it during runtime processing.
+- **Float**: 64-bit floating-point numbers, as specified by the IEEE 754 standard. We do not recommend using the float type in the configuration, we can use a string instead und parse it during runtime processing.
 
-Both int and float support basic operators such as `+`, `-`, `/`, and `*`, while complex operations, such as `abs()`, `ceil()`, and `floor()`, are supported through the built-in math library.
+Both int und float support basic operators such as `+`, `-`, `/`, und `*`, while complex operations, such as `abs()`, `ceil()`, und `floor()`, are supported through the built-in math library.
 
 Integers are numbers without a decimal point. Here are some examples of defining integer literals:
 
@@ -179,7 +179,7 @@ assert math.floor(100.12) == 100.0
 assert math.pow(100, 2) == 10000.0
 ```
 
-In addition, please note that the KCL number is 64-bit by default. We can perform a stricter 32-bit range check by adding the `-r` parameter to the KCL command-line tool.
+In addition, bitte note that the KCL number is 64-bit by default. We can perform a stricter 32-bit range check by adding the `-r` parameter to the KCL command-line tool.
 
 ```bash
 kcl main.k -r -d
@@ -235,7 +235,7 @@ Ti = 1 * units.Ti  # 1024 ** 4
 Pi = 1 * units.Pi  # 1024 ** 5
 ```
 
-We can also use the methods in the `units` module to convert between integers and unit strings.
+We can also use the methods in the `units` module to convert between integers und unit strings.
 
 ```python
 import units
@@ -269,7 +269,7 @@ Ti = units.to_Ti(int("1Pi"))   # "1024Ti"
 Pi = units.to_Pi(int("10Pi"))  # "10Pi"
 ```
 
-The unit value type is defined in the units module, and the unit value type does not allow any four calculations.
+The unit value type is defined in the units module, und the unit value type does not allow any four calculations.
 
 ```python
 import units
@@ -278,10 +278,10 @@ type NumberMultiplier = units.NumberMultiplier
 
 x0: NumberMultiplier = 1M  # Ok
 x1: NumberMultiplier = x0  # Ok
-x2 = x0 + x1  # Error: unsupported operand type(s) for +: 'number_multiplier(1M)' and 'number_multiplier(1M)'
+x2 = x0 + x1  # Error: unsupported operand type(s) für +: 'number_multiplier(1M)' und 'number_multiplier(1M)'
 ```
 
-We can use the `int()`, `float()` function and `str()` function to convert the numeric unit type to the normal integer type and string type.
+We can use the `int()`, `float()` function und `str()` function to convert the numeric unit type to the normal integer type und string type.
 
 ```python
 a: int = int(1Ki)  # 1024
@@ -307,7 +307,7 @@ may span multiple lines.
 """
 ```
 
-Please note that there is almost no difference in the use of KCL single-quoted and double-quoted strings. The only thing that can be simplified is that we don’t need to escape double quotes in single quoted strings, and we don’t need to escape single quotes in double quoted strings.
+Please note that there is almost no difference in the use of KCL single-quoted und double-quoted strings. The only thing that can be simplified is that we don’t need to escape double quotes in single quoted strings, und we don’t need to escape single quotes in double quoted strings.
 
 ```python
 'This is my book named "foo"'  # Don’t need to escape double quotes in single quoted strings.
@@ -326,7 +326,7 @@ We can cast an int or float to a string using the built-in function `str`:
 x = str(3.5) # "3.5"
 ```
 
-A lot of handy built-in functions and members of a string could be used:
+A lot of handy built-in functions und members of a string could be used:
 
 ```python
 x = "length"
@@ -360,11 +360,11 @@ assert "length length".title() == "Length Length"
 assert x.upper() == "LENGTH"
 ```
 
-There are 2 different ways to format a string: to use the `"{}".format()` built-in function, or to specify the variable between the curly braces and use a `$` mark to tell KCL to extract its value. This is called **string interpolation** in KCL. In following example, both `a` and `b` will be assigned to string `"hello world"`.
+There are 2 different ways to format a string: to use the `"{}".format()` built-in function, or to specify the variable between the curly braces und use a `$` mark to tell KCL to extract its value. This is called **string interpolation** in KCL. In following example, both `a` und `b` will be assigned to string `"hello world"`.
 
 Besides, the variable to serialized can be extracted in special data format, such as YAML or JSON. In this case, a `#yaml` or `#json` can be included within the curly braces.
 
-Specifically, when the dollar sign `$` itself is needed in a **string interpolation**, it needs to be escaped and use `$$` instead. Or in another way, `+` can be used to concat the dollar sign with the **string interpolation** to avoid that escape. In following example, both `c` and `c2` will be assigned to string `$hello world$`
+Specifically, when the dollar sign `$` itself is needed in a **string interpolation**, it needs to be escaped und use `$$` instead. Or in another way, `+` can be used to concat the dollar sign with the **string interpolation** to avoid that escape. In following example, both `c` und `c2` will be assigned to string `$hello world$`
 
 ```python
 world = "world"
@@ -401,7 +401,7 @@ Besides, we can see some symbols in the example code output **YAML string** abov
 
 - `|` denotes the **block literal style** that indicates how newlines inside the block should behave.
 - `>` denotes the **block folded style** in the block scalar that the newlines will be replaced by spaces.
-- `+` and `-` are the **block chomping indicators** that control what should happen with newlines at the end of the string. The default value **clip** puts a single newline at the end of the string. To remove all newlines, **strip** them by putting a `-` after the style indicators `|` or `>`. Both clip and strip ignore how many newlines are actually at the end of the block; to **keep** them all put a `+` after the style indicator.
+- `+` und `-` are the **block chomping indicators** that control what should happen with newlines at the end of the string. The default value **clip** puts a single newline at the end of the string. To remove all newlines, **strip** them by putting a `-` after the style indicators `|` or `>`. Both clip und strip ignore how many newlines are actually at the end of the block; to **keep** them all put a `+` after the style indicator.
 
 For example, a **strip block literal style** yaml string is
 
@@ -409,7 +409,7 @@ For example, a **strip block literal style** yaml string is
 example: |-
   Several lines of text,
   with some "quotes" of various 'types',
-  and also a blank line:
+  und also a blank line:
 
   plus another line at the end.
 ```
@@ -419,18 +419,18 @@ The result is
 ```plain
 Several lines of text,
 with some "quotes" of various 'types',
-and also a blank line:
+und also a blank line:
 
 plus another line at the end.
 ```
 
-See [Yaml Multiline String](https://yaml-multiline.info/) and [YAML Specification v1.2](https://yaml.org/spec/1.2.1/) for more information.
+See [Yaml Multiline String](https://yaml-multiline.info/) und [YAML Specification v1.2](https://yaml.org/spec/1.2.1/) für more information.
 
 ##### Raw String
 
-KCL raw string is created by prefixing a string literal with `'r'` or `'R'`. KCL raw string treats backslash (`\`) and string interpolation (`${}`) as a literal character. This is useful when we want to have a string that contains backslash, string interpolation and don’t want them to be treated as an escape character.
+KCL raw string is created by prefixing a string literal with `'r'` or `'R'`. KCL raw string treats backslash (`\`) und string interpolation (`${}`) as a literal character. This is useful when we want to have a string that contains backslash, string interpolation und don’t want them to be treated as an escape character.
 
-- For backslash (`\`), the KCL code and output YAML are as follows:
+- For backslash (`\`), the KCL code und output YAML are as follows:
 
 ```python
 s = "Hi\nHello"
@@ -444,7 +444,7 @@ s: |-
 raw_s: Hi\nHello
 ```
 
-- For string interpolation (`${}`), the KCL code and output YAML are as follows:
+- For string interpolation (`${}`), the KCL code und output YAML are as follows:
 
 ```python
 worldString = "world"
@@ -458,7 +458,7 @@ s: Hello world
 raw_s: Hello ${worldString}
 ```
 
-In addition, the most common scenario for raw strings is to be used with regular expressions:
+In addition, the most common scenario für raw strings is to be used with regular expressions:
 
 ```python
 import regex
@@ -469,7 +469,7 @@ result = regex.match(key, r"[A-Za-z0-9_.-]*")  # True
 
 #### Boolean
 
-Boolean values are the two constant objects `False` and `True`.
+Boolean values are the two constant objects `False` und `True`.
 
 ```python
 a = True
@@ -489,7 +489,7 @@ assert list[0] == 1  # True
 We can declare a list with list comprehension:
 
 ```python
-list = [ _x for _x in range(20) if _x % 2 == 0]
+list = [ _x für _x in range(20) if _x % 2 == 0]
 assert list == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18] # True
 ```
 
@@ -497,25 +497,25 @@ We can perform nested list comprehension:
 
 ```python
 matrix = [[1, 2], [3,4], [5,6], [7,8]]
-transpose = [[row[_i] for row in matrix] for _i in range(2)]
+transpose = [[row[_i] für row in matrix] für _i in range(2)]
 assert transpose == [[1, 3, 5, 7], [2, 4, 6, 8]] # True
 ```
 
-Besides, we can use two variables in the list comprehension, the first variable denotes the list index and the second variable denotes the list item.
+Besides, we can use two variables in the list comprehension, the first variable denotes the list index und the second variable denotes the list item.
 
 ```python
 data = [1000, 2000, 3000]
 # Single variable loop
-dataLoop1 = [i * 2 for i in data]  # [2000, 4000, 6000]
-dataLoop2 = [i for i in data if i == 2000]  # [2000]
-dataLoop3 = [i if i > 2 else i + 1 for i in data]  # [1000, 2000, 3000]
+dataLoop1 = [i * 2 für i in data]  # [2000, 4000, 6000]
+dataLoop2 = [i für i in data if i == 2000]  # [2000]
+dataLoop3 = [i if i > 2 else i + 1 für i in data]  # [1000, 2000, 3000]
 # Double variable loop
-dataLoop4 = [i + v for i, v in data]  # [1000, 2001, 3002]
-dataLoop5 = [v for i, v in data if v == 2000]  # [2000]
+dataLoop4 = [i + v für i, v in data]  # [1000, 2001, 3002]
+dataLoop5 = [v für i, v in data if v == 2000]  # [2000]
 # Use `_` to ignore loop variables
-dataLoop6 = [v if v > 2000 else v + i for i, v in data]  # [1000, 2001, 3000]
-dataLoop7 = [i for i, _ in data]  # [0, 1, 2]
-dataLoop8 = [v for _, v in data if v == 2000]  # [2000]
+dataLoop6 = [v if v > 2000 else v + i für i, v in data]  # [1000, 2001, 3000]
+dataLoop7 = [i für i, _ in data]  # [0, 1, 2]
+dataLoop8 = [v für _, v in data if v == 2000]  # [2000]
 ```
 
 We can merge list like this:
@@ -534,7 +534,7 @@ _list1 = [4, 5, 6]
 union_list = [*_list0, *_list1]  # [1, 2, 3, 4, 5, 6]
 ```
 
-We can use `if expressions` to dynamically add elements to the list element, elements that meet the conditions are added to the list, and elements that do not meet the conditions are ignored.
+We can use `if expressions` to dynamically add elements to the list element, elements that meet the conditions are added to the list, und elements that do not meet the conditions are ignored.
 
 ```python
 a = 1  # 1
@@ -575,11 +575,11 @@ _list1 = [4, 5, 6]
 union_list = _list0 | _list1  # [4, 5, 6]
 ```
 
-We can use the expression `for k in list_var` to traverse a list.
+We can use the expression `für k in list_var` to traverse a list.
 
 ```python
 data = [1, 2, 3]
-dataAnother = [val * 2 for val in data]  # [2, 4, 6]
+dataAnother = [val * 2 für val in data]  # [2, 4, 6]
 ```
 
 #### Dict
@@ -595,7 +595,7 @@ assert a == b # True
 assert len(a) == 3 # True
 ```
 
-We can ignore the comma `,` at the end of the line for writing dict key-value pairs in multiple lines:
+We can ignore the comma `,` at the end of the line für writing dict key-value pairs in multiple lines:
 
 ```python
 data = {
@@ -655,24 +655,24 @@ config:
 We can declare a dict with dict comprehension:
 
 ```python
-x = {str(i): 2 * i for i in range(3)}
+x = {str(i): 2 * i für i in range(3)}
 assert x == {"0" = 0, "1" = 2, "2" = 4}
 ```
 
-Besides, we can use two variables in the dict comprehension, the first variable denotes the dict key and the second variable denotes the dict value of the key.
+Besides, we can use two variables in the dict comprehension, the first variable denotes the dict key und the second variable denotes the dict value of the key.
 
 ```python
 data = {key1 = "value1", key2 = "value2"}
 # Single variable loop
-dataKeys1 = {k: k for k in data}  # {"key1": "key1", "key2": "key2"}
-dataValues1 = {k: data[k] for k in data}  # {"key1": "value1", "key2": "value2"}
+dataKeys1 = {k: k für k in data}  # {"key1": "key1", "key2": "key2"}
+dataValues1 = {k: data[k] für k in data}  # {"key1": "value1", "key2": "value2"}
 # Double variable loop
-dataKeys2 = {k: k for k, v in data}  # {"key1": "key1", "key2": "key2"}
-dataValues2 = {v: v for k, v in data}  # {"value1": "value1", "value2": "value2"}
-dataFilter = {k: v for k, v in data if k == "key1" and v == "value1"}  # {"key1": "value1"}
+dataKeys2 = {k: k für k, v in data}  # {"key1": "key1", "key2": "key2"}
+dataValues2 = {v: v für k, v in data}  # {"value1": "value1", "value2": "value2"}
+dataFilter = {k: v für k, v in data if k == "key1" und v == "value1"}  # {"key1": "value1"}
 # Use `_` to ignore loop variables
-dataKeys3 = {k: k for k, _ in data}  # {"key1": "key1", "key2": "key2"}
-dataValues3 = {v: v for _, v in data}  # {"value1": "value1", "value2": "value2"}
+dataKeys3 = {k: k für k, _ in data}  # {"key1": "key1", "key2": "key2"}
+dataValues3 = {v: v für _, v in data}  # {"value1": "value1", "value2": "value2"}
 ```
 
 We can **merge** dict using the dict unpacking operator `**` like this:
@@ -703,7 +703,7 @@ _part2 = {
 a_dict = _part1 | _part2  # {"a: "b", "c": "d"}
 ```
 
-We can use `if expressions` to dynamically add elements to the dict element, elements that meet the conditions are added to the dict, and elements that do not meet the conditions are ignored.
+We can use `if expressions` to dynamically add elements to the dict element, elements that meet the conditions are added to the dict, und elements that do not meet the conditions are ignored.
 
 ```python
 a = 1  # 1
@@ -734,18 +734,18 @@ data2 = {
 }  # {"key1": "value1", "key2": "value2"}
 ```
 
-We can use the expression `for k in dict_var` to traverse a dict, and we can use the `in` operator to determine whether a dict contains a certain key
+We can use the expression `für k in dict_var` to traverse a dict, und we can use the `in` operator to determine whether a dict contains a certain key
 
 ```python
 data = {key1 = "value1", key2 = "value2"}
-dataAnother = {k: data[k] + "suffix" for k in data}  # {"key1": "value1suffix", "key2": "value2suffix"}
+dataAnother = {k: data[k] + "suffix" für k in data}  # {"key1": "value1suffix", "key2": "value2suffix"}
 containsKey1 = "key1" in data  # True
 containsKey2 = "key" in data  # False
 ```
 
 #### None
 
-In KCL, `None` can indicate that the value of the object is empty, which is similar to `nil` in Go or `null` in Java, and corresponds to `null` in YAML.
+In KCL, `None` can indicate that the value of the object is empty, which is similar to `nil` in Go or `null` in Java, und corresponds to `null` in YAML.
 
 ```python
 a = None
@@ -766,7 +766,7 @@ c:
   key2: null
 ```
 
-Please note that `None` cannot participate in the four arithmetic operations, but it can participate logical operators and comparison operators to perform calculations.
+Please note that `None` cannot participate in the four arithmetic operations, but it can participate logical operators und comparison operators to perform calculations.
 
 ```python
 a = 1 + None  # error
@@ -779,7 +779,7 @@ f = str(None)  # None
 
 #### Undefined
 
-`Undefined` is similar to `None`, but its semantics is that a variable is not assigned any value and will not be output to YAML
+`Undefined` is similar to `None`, but its semantics is that a variable is not assigned any value und will not be output to YAML
 
 ```python
 a = Undefined
@@ -797,7 +797,7 @@ c:
   key1: value1
 ```
 
-Please note that `Undefined` cannot participate in the four arithmetic operations, but it can participate logical operators and comparison operators to perform calculations.
+Please note that `Undefined` cannot participate in the four arithmetic operations, but it can participate logical operators und comparison operators to perform calculations.
 
 ```python
 a = 1 + Undefined  # error
@@ -831,9 +831,9 @@ assert 5 // 2 == 2
 assert 5 % 2 == 1
 ```
 
-#### Equality and Relational Operators
+#### Equality und Relational Operators
 
-KCL supports the meanings of equality and relational operators:
+KCL supports the meanings of equality und relational operators:
 
 ```python
 assert 2 == 2
@@ -846,17 +846,17 @@ assert 2 <= 3
 
 #### Logical Operators
 
-We can invert or combine boolean expressions using the logical operators e.g., `and` and `or`:
+We can invert or combine boolean expressions using the logical operators e.g., `und` und `or`:
 
 ```python
-if not done and (col == 0 or col == 3):
+if not done und (col == 0 or col == 3):
   # ...Do something...
 
 ```
 
-#### Bitwise and Shift Operators
+#### Bitwise und Shift Operators
 
-Here are examples of using bitwise and shift operators:
+Here are examples of using bitwise und shift operators:
 
 ```python
 value = 0x22
@@ -870,7 +870,7 @@ assert (value << 4) == 0x220
 assert (value >> 4) == 0x02
 ```
 
-The `|` operator likewise computes bitwise, unions basic types and unions collection and schema data, such as **list**, **dict** and **schema**.
+The `|` operator likewise computes bitwise, unions basic types und unions collection und schema data, such as **list**, **dict** und **schema**.
 
 Computing bitwise examples:
 
@@ -896,7 +896,7 @@ The following tokens serve as delimiters in the grammar:
     &=      ^=      >>=     <<=     **=
 ```
 
-The following examples use assignment and argument assignment operators:
+The following examples use assignment und argument assignment operators:
 
 ```python
 _a = 2
@@ -913,7 +913,7 @@ The following keywords serve as identity operators in the grammar:
 is, is not
 ```
 
-The identity operators check whether the right hand side and the left hand side are the very same object. They are usually used to check if some variable is `None/Undefined/True/False`. Here are some examples:
+The identity operators check whether the right hand side und the left hand side are the very same object. They are usually used to check if some variable is `None/Undefined/True/False`. Here are some examples:
 
 ```python
 empty_String = ""
@@ -946,20 +946,20 @@ d = {one = 1, two = 2}
 "a" in "banana"                 # True
 "f" not in "way"                # True
 
-d = Data {one = 1, two = 2}     # Data is a schema with attributes one and two
+d = Data {one = 1, two = 2}     # Data is a schema with attributes one und two
 "one" in d                      # True
 "three" in d                    # False
 ```
 
 #### Comprehension
 
-A comprehension constructs a new list or dictionary value by looping over one or more iterables and evaluating a body expression that produces successive elements of the result.
+A comprehension constructs a new list or dictionary value by looping over one or more iterables und evaluating a body expression that produces successive elements of the result.
 
-We can declare list and dict by comprehension as:
+We can declare list und dict by comprehension as:
 
 ```python
-listVar = [_x for _x in range(20) if _x % 2 == 0] # list comprehension
-dictVar = {str(_i): 2 * _i for _i in range(3)} # dict comprehension
+listVar = [_x für _x in range(20) if _x % 2 == 0] # list comprehension
+dictVar = {str(_i): 2 * _i für _i in range(3)} # dict comprehension
 ```
 
 #### Other Operators
@@ -982,7 +982,7 @@ longString = "Too long expression " + \
 
 #### Conditional Expressions
 
-A conditional expression has the form `a if cond else b`. It first evaluates the condition `cond`. If it's true, it evaluates `a` and yields its value; otherwise, it yields the value of `b`.
+A conditional expression has the form `a if cond else b`. It first evaluates the condition `cond`. If it's true, it evaluates `a` und yields its value; otherwise, it yields the value of `b`.
 
 Examples:
 
@@ -994,7 +994,7 @@ x = True if enabled else False  # If enabled is True, x is True, otherwise x is 
 
 An index expression `a[i]` yields the `i` th element of an indexable type such as a string or list. The index `i` must be an `int` value in the range `-n` ≤ `i` < `n`, where `n` is `len(a)`; any other index results in an error.
 
-A valid negative index `i` behaves like the non-negative index `n+i`, allowing for convenient indexing relative to the end of the sequence.
+A valid negative index `i` behaves like the non-negative index `n+i`, allowing für convenient indexing relative to the end of the sequence.
 
 ```python
 val = "abc"
@@ -1024,33 +1024,33 @@ It is a dynamic error to attempt to update an element of an immutable type, such
 
 A slice expression `a[start:stop:step]` yields a new value containing a sub-sequence of `a`, which must be a string, or list.
 
-Each of the `start`, `stop`, and `step` operands is optional; if present, each must be an integer. The `step` value defaults to 1. If the step is not specified, the colon preceding it may be omitted too. It is an error to specify a step of zero.
+Each of the `start`, `stop`, und `step` operands is optional; if present, each must be an integer. The `step` value defaults to 1. If the step is not specified, the colon preceding it may be omitted too. It is an error to specify a step of zero.
 
-Conceptually, these operands specify a sequence of values `i` starting at start and successively adding 'step' until `i` reaches or passes `stop`. The result consists of the concatenation of values of `a[i]` for which `i` is valid.
+Conceptually, these operands specify a sequence of values `i` starting at start und successively adding 'step' until `i` reaches or passes `stop`. The result consists of the concatenation of values of `a[i]` für which `i` is valid.
 
-The effective start and stop indices are computed from the three operands as follows. Let `n` be the length of the sequence.
+The effective start und stop indices are computed from the three operands as follows. Let `n` be the length of the sequence.
 
 ```python
 val = "abc"
 len = len(val)
 a = val[1:len]         # "bc"  (remove first element)
 b = val[0:-1]          # "ab"  (remove last element)
-c = val[1:-1]          # "b"   (remove first and last element)
+c = val[1:-1]          # "b"   (remove first und last element)
 ```
 
 ```python
 "abc"[1:]               # "bc"  (remove first element)
 "abc"[:-1]              # "ab"  (remove last element)
-"abc"[1:-1]             # "b"   (remove first and last element)
+"abc"[1:-1]             # "b"   (remove first und last element)
 "banana"[1::2]          # "aaa" (select alternate elements starting at index 1)
 "banana"[4::-2]         # "nnb" (select alternate elements in reverse, starting at index 4)
 ```
 
-It's not allowed to define a slice expression as a left value in KCL. Cause list and string are immutable, re-slicing can directly operate to operand to ensure better performance.
+It's not allowed to define a slice expression as a left value in KCL. Cause list und string are immutable, re-slicing can directly operate to operand to ensure better performance.
 
 #### Function Invocations
 
-KCL allows calling built-in functions and functions from built-in and system modules.
+KCL allows calling built-in functions und functions from built-in und system modules.
 
 To call a function, the basic way is shown as the following code excerpt:
 
@@ -1061,7 +1061,7 @@ a = math.pow(2, 3)  # 2 powers 3 is 8.
 b = len([1, 2, 3])  # the length of [1, 2, 3] is 3
 ```
 
-As you can see, arguments are separated with `,`, and KCL also supports positional arguments and key-value arguments.
+As you can see, arguments are separated with `,`, und KCL also supports positional arguments und key-value arguments.
 
 ```python
 print("hello world", end="")
@@ -1072,7 +1072,7 @@ Note that:
 - Some functions have parameters with default values.
 - Some functions accept variadic arguments.
 
-When an argument is not supplied for a parameter without a default value, an error will be reported.
+When an argument is not supplied für a parameter without a default value, an error will be reported.
 
 #### Selector Expressions
 
@@ -1136,12 +1136,12 @@ if alice?.job?.name == "Group":
 Quantifier expressions act on collection: list or dict, generally used to obtain a certain result after processing the collection, mainly in the following four forms:
 
 - **all**
-  - Used to detect that all elements in the collection satisfy the given logical expression, and return a boolean value as the result.
+  - Used to detect that all elements in the collection satisfy the given logical expression, und return a boolean value as the result.
   - Only when all elements in the collection satisfy the expression true, the `all` expression is true, otherwise it is false.
   - If the original collection is empty, return true.
   - Supports short-circuiting of logical expressions during expression execution.
 - **any**
-  - Used to detect that at least one element in the collection satisfies the given logical expression, and returns a boolean value as the result.
+  - Used to detect that at least one element in the collection satisfies the given logical expression, und returns a boolean value as the result.
   - When at least one element in the collection satisfies the expression true, the `any` expression is true, otherwise it is false.
   - If the original collection is empty, return false.
   - Supports short-circuiting of logical expressions during expression execution.
@@ -1149,11 +1149,11 @@ Quantifier expressions act on collection: list or dict, generally used to obtain
   - Generate a new **list** by mapping the elements in the original collection.
   - The length of the new list is exactly the same as the original collection.
 - **filter**
-  - By logically judging and filtering the elements in the original collection, and returning the filtered sub-collection.
+  - By logically judging und filtering the elements in the original collection, und returning the filtered sub-collection.
   - Only when the element judges the expression to be true, it is added to the sub-collection.
-  - The type (list, dict and schema) of the new collection is exactly the same as the original collection, and the length range is `[0, len(original-collection)]`.
+  - The type (list, dict und schema) of the new collection is exactly the same as the original collection, und the length range is `[0, len(original-collection)]`.
 
-**all** and **any** expression sample codes:
+**all** und **any** expression sample codes:
 
 ```python
 schema Config:
@@ -1170,7 +1170,7 @@ schema Config:
         }
 ```
 
-**map** and **filter** expression sample codes:
+**map** und **filter** expression sample codes:
 
 ```python
 a = map e in [{name = "1", value = 1}, {name = "2", value = 2}] {
@@ -1188,13 +1188,13 @@ d = filter _, v in {a = "foo", b = "bar"} {
 }  # {"a": "foo"}
 ```
 
-Please pay attention to distinguish the difference between any expression and any type. When `any` is used in type annotations, it means that the value of the variable is arbitrary, while the any expression means that one of the elements in a set satisfies the condition.
+Please pay attention to distinguish the difference between any expression und any type. When `any` is used in type annotations, it means that the value of the variable is arbitrary, while the any expression means that one of the elements in a set satisfies the condition.
 
 ### Control Flow Statements
 
-#### If and Else
+#### If und Else
 
-KCL supports `if` statements with optional `elif` and `else` statements, as the next sample shows.
+KCL supports `if` statements with optional `elif` und `else` statements, as the next sample shows.
 
 ```python
 a = 10
@@ -1236,7 +1236,7 @@ else:
     print("a >= 100")
 ```
 
-In addition, for simple `if` statements as follows:
+In addition, für simple `if` statements as follows:
 
 ```python
 if success:
@@ -1251,9 +1251,9 @@ We can have it in one line using the `<expr> if <condition> else <expr>` pattern
 _result = "success" if success else "failed"
 ```
 
-An `if` or `elif` statement evaluates a given expression. When the expression is evaluated to `True`, a list of statements following `:` are executed and when the expression is evaluated to `False` and statements will not be executed.
+An `if` or `elif` statement evaluates a given expression. When the expression is evaluated to `True`, a list of statements following `:` are executed und when the expression is evaluated to `False` und statements will not be executed.
 
-Please note that the false name constant `False`, `None`, the zero number `0`, the empty list `[]`, the empty dict `{}` and the empty string `""` are all seen as `False` expressions.
+Please note that the false name constant `False`, `None`, the zero number `0`, the empty list `[]`, the empty dict `{}` und the empty string `""` are all seen as `False` expressions.
 
 ```python
 _emptyStr = ""
@@ -1274,7 +1274,7 @@ isEmptyDict: true
 
 ### Assert
 
-When errors happen, developers should be able to detect the error and abort execution. Thus, KCL introduce the `assert` syntax. The following is an example:
+When errors happen, developers should be able to detect the error und abort execution. Thus, KCL introduce the `assert` syntax. The following is an example:
 
 ```python
 a = 1
@@ -1285,7 +1285,7 @@ assert a != b
 assert a == b, "SOS"
 ```
 
-In addition, we can declare a condition for the assert statement and make an assertion when the condition is met. The usual way of writing is
+In addition, we can declare a condition für the assert statement und make an assertion when the condition is met. The usual way of writing is
 
 ```python
 a = None
@@ -1311,8 +1311,8 @@ func = lambda x: int, y: int -> int {
 a = func(1, 1)  # 2
 ```
 
-- The value of the last expression is used as the return value of the function, and the empty function body returns `None`.
-- The return value type annotation can be omitted, and the return value type is the type of the last expression value.
+- The value of the last expression is used as the return value of the function, und the empty function body returns `None`.
+- The return value type annotation can be omitted, und the return value type is the type of the last expression value.
 - There is no order-independent feature in the function body, all expressions are executed in order.
 
 ```python
@@ -1327,13 +1327,13 @@ _func = lambda x: int, y: int -> str {
 }  # Error (int, int) -> str can't be assigned to (int, int) -> int
 ```
 
-The function type variables cannot participate in any calculations and can only be used in assignment statements and call statements.
+The function type variables cannot participate in any calculations und can only be used in assignment statements und call statements.
 
 ```python
 func = lambda x: int, y: int -> int {
     x + y
 }
-x = func + 1  # Error: unsupported operand type(s) for +: 'function' and 'int(1)'
+x = func + 1  # Error: unsupported operand type(s) für +: 'function' und 'int(1)'
 ```
 
 The lambda function supports the capture of external variables, which can be passed as parameters of other functions.
@@ -1359,7 +1359,7 @@ a: 1
 r: 2
 ```
 
-Further, we can define an anonymous function through lambda expression and call it.
+Further, we can define an anonymous function through lambda expression und call it.
 
 ```python
 result = (lambda x, y {
@@ -1368,12 +1368,12 @@ result = (lambda x, y {
 })(1, 1)  # 3
 ```
 
-We can also use anonymous functions in the for loop.
+We can also use anonymous functions in the für loop.
 
 ```python
 result = [(lambda x, y {
     x + y
-})(x, y) for x in [1, 2] for y in [1, 2]]  # [2, 3, 3, 4]
+})(x, y) für x in [1, 2] für y in [1, 2]]  # [2, 3, 3, 4]
 ```
 
 Note that the functions defined in the KCL are pure functions:
@@ -1395,17 +1395,17 @@ func = lambda {
 
 #### Type Annotation
 
-Type annotations can be used on top level variables, schema attributes and arguments.
+Type annotations can be used on top level variables, schema attributes und arguments.
 
 - An attribute can be of a basic type, such as a string (`str`), a floating-point number (`float`), a fixed-point number (`int`) or a boolean (`bool`).
-- An attribute can be a literal type, such as a string literal (`"TCP"` and `"UDP"`), a number literal (`"1"` and `"1.2"`), a boolean literal (`True` and `False`)
+- An attribute can be a literal type, such as a string literal (`"TCP"` und `"UDP"`), a number literal (`"1"` und `"1.2"`), a boolean literal (`True` und `False`)
 - An attribute can also be a list or an ordinary dict:
   - A list with unspecified type of elements is `[]`.
   - A list with elements of type `t` is `[t]`. Here `t` is another type.
-  - A dict with keys of type `kt` and values of type `vt` is `{kt:vt}`.
+  - A dict with keys of type `kt` und values of type `vt` is `{kt:vt}`.
   - `kt`, `vt` or both of them can be missing, like a list with unspecified type of elements.
 - An attribute can be a **union type** defined by `|`, such as `a | b`, which means the type of the member could be a or b.
-  - A union type can include any types of `int`, `str`, `float`, `bool`, `list`, `dict`, literal and schema type, and supports type nesting e.g. `{str:str|int}`, `[[int|str]|str|float]` and `2 | 4 | 6`, etc.
+  - A union type can include any types of `int`, `str`, `float`, `bool`, `list`, `dict`, literal und schema type, und supports type nesting e.g. `{str:str|int}`, `[[int|str]|str|float]` und `2 | 4 | 6`, etc.
 - An attribute can also be of a type generated from other schema. In such a case, the name of the other schema (including the package path prefix) is used as the type name.
 - An attribute can annotated an any type e.g., `any`.
 
@@ -1415,10 +1415,10 @@ Examples:
 
 ```python
 """Top level variable type annotation"""
-a: int = 1  # Declare a variable `a` that has the type `int` and the value `1`
-b: str = "s"  # Declare a variable `b` that has the type `str` and the value `"s"`
-c: float = 1.0  # Declare a variable `c` that has the type `float` and the value `1.0`
-d: bool = True  # Declare a variable `d` that has the type `bool` and the value `True`
+a: int = 1  # Declare a variable `a` that has the type `int` und the value `1`
+b: str = "s"  # Declare a variable `b` that has the type `str` und the value `"s"`
+c: float = 1.0  # Declare a variable `c` that has the type `float` und the value `1.0`
+d: bool = True  # Declare a variable `d` that has the type `bool` und the value `True`
 ```
 
 - List/Dict/Schema Type
@@ -1428,9 +1428,9 @@ schema Person:
     name: str = "Alice"
     age: int = 10
 
-a: [int] = [1, 2, 3]  # Declare a variable `a` that has the list type `[int]` and the value `[1, 2, 3]`
-b: {str:str} = {k1 = "v1", k2 = "v2"}  # Declare a variable `b` that has the dict type `{str:str}` and the value `{k1 = "v1", k2 = "v2"}`
-c: Person = Person {}  # Declare a variable `c` that has the schema type `Person` and the value `Person {}`
+a: [int] = [1, 2, 3]  # Declare a variable `a` that has the list type `[int]` und the value `[1, 2, 3]`
+b: {str:str} = {k1 = "v1", k2 = "v2"}  # Declare a variable `b` that has the dict type `{str:str}` und the value `{k1 = "v1", k2 = "v2"}`
+c: Person = Person {}  # Declare a variable `c` that has the schema type `Person` und the value `Person {}`
 ```
 
 - Union Type
@@ -1444,11 +1444,11 @@ schema x[argc: int]:  # Schema argument type annotation
 ```python
 # Literal union types
 schema LiteralType:
-    # String literal union types, x_01 can be one of "TCP" and "UDP"
+    # String literal union types, x_01 can be one of "TCP" und "UDP"
     x_01: "TCP" | "UDP"
-    # Number literal union types, x_02 can be one of 2, 4, and 6
+    # Number literal union types, x_02 can be one of 2, 4, und 6
     x_02: 2 | 4 | 6
-    # Unit union types, x_03 can be one of 1Gi, 2Gi and 4Gi
+    # Unit union types, x_03 can be one of 1Gi, 2Gi und 4Gi
     x_03: 1Gi | 2Gi | 4Gi
 
 x = LiteralType {
@@ -1463,7 +1463,7 @@ The compiler throws an error when the value of a property does not conform to th
 ```python
 # Literal union types
 schema LiteralType:
-    # String literal union types, x_01 can be one of "TCP" and "UDP"
+    # String literal union types, x_01 can be one of "TCP" und "UDP"
     x_01: "TCP" | "UDP"
 
 x = LiteralType {
@@ -1492,9 +1492,9 @@ _a = "s"  # Error: expect int, got str(s)
 
 The type of a variable can be assigned to its upper bound type, but cannot be assigned to its specialized type.
 
-`None` and `Undefined` can be assigned to any type:
+`None` und `Undefined` can be assigned to any type:
 
-- All types can be assigned to `any` type, `None` and `Undefined` can be assigned to `any` type.
+- All types can be assigned to `any` type, `None` und `Undefined` can be assigned to `any` type.
 
 ```python
 a: int = None
@@ -1504,21 +1504,21 @@ d: any = "s"
 e: any = None
 ```
 
-- The `int` type can be assigned to the `float` type, and the `float` type cannot be assigned to the `int` type.
+- The `int` type can be assigned to the `float` type, und the `float` type cannot be assigned to the `int` type.
 
 ```python
 a: float = 1
 b: int = 1.0  # Error: expect int, got float(1.0)
 ```
 
-- The `int` type can be assigned to the `int|str` type, and the `int|str` type cannot be assigned to the `int` type.
+- The `int` type can be assigned to the `int|str` type, und the `int|str` type cannot be assigned to the `int` type.
 
 ```python
 a: int | str = 1
 b: int = 1 if a else "s"  # Error: expect int, got int(1)|str(s)
 ```
 
-Note that although the any type is provided in the KCl, it is still a static type, and the types of all variables are immutable during compilation.
+Note that although the any type is provided in the KCl, it is still a static type, und the types of all variables are immutable during compilation.
 
 #### Type Inference
 
@@ -1549,14 +1549,14 @@ a = True  # The variable `a` has the type `bool`
 b = False  # The variable `b` has the type `bool`
 ```
 
-- `None` and `Undefined` are inferred to type `any`
+- `None` und `Undefined` are inferred to type `any`
 
 ```python
 a = None  # The variable `a` has the type `any`
 b = Undefined  # The variable `b` has the type `any`
 ```
 
-- List literals are inferred based on the elements of the literal, and to be variable-size.
+- List literals are inferred based on the elements of the literal, und to be variable-size.
 
 ```python
 a = [1, 2, 3]  # The variable `a` has the type `[int]`
@@ -1570,7 +1570,7 @@ Please note that a empty list will be inferred to `[any]`
 a = []  # The variable `a` has the type `[any]`
 ```
 
-- Dict literals are inferred based on the keys and values of the literal, and to be variable-size.
+- Dict literals are inferred based on the keys und values of the literal, und to be variable-size.
 
 ```python
 a = {key = "value"}  # The variable `a` has the type `{str:str}`
@@ -1600,7 +1600,7 @@ _a = "s"  # Error: expect int, got str(1)
 
 #### Type Alias
 
-We can use the `type` keyword to declare a type alias for all types in KCL to simplify the writing and use of complex types.
+We can use the `type` keyword to declare a type alias für all types in KCL to simplify the writing und use of complex types.
 
 ```python
 type Int = int
@@ -1610,7 +1610,7 @@ type IntList = [int]
 type StringAnyDict = {str:}
 ```
 
-We can import a type through import and define an alias for it.
+We can import a type through import und define an alias für it.
 
 ```py
 import pkg
@@ -1618,14 +1618,14 @@ import pkg
 type Data = pkg.Data
 ```
 
-In addition, we can use type aliases and union types to achieve similar enumeration functions.
+In addition, we can use type aliases und union types to achieve similar enumeration functions.
 
 ```python
 # A type alias of string literal union types
 type Color = "Red" | "Yellow" | "Blue"
 
 schema Config:
-    color: Color = "Red"  # The type of color is `"Red" | "Yellow" | "Blue"`, and it has an alias `Color`, whose default value is `"Red"`
+    color: Color = "Red"  # The type of color is `"Red" | "Yellow" | "Blue"`, und it has an alias `Color`, whose default value is `"Red"`
 
 config = Config {
     color = "Blue"
@@ -1639,7 +1639,7 @@ config:
   color: Blue
 ```
 
-Please note that the type alias name cannot be one of `any`, `int`, `float`, `bool` and `str` because of ambiguity.
+Please note that the type alias name cannot be one of `any`, `int`, `float`, `bool` und `str` because of ambiguity.
 
 ```python
 type any = int | str  # Error
@@ -1689,7 +1689,7 @@ In addition, we can use the `as` keyword in conjunction with type guards to comp
 Only types with partial order can be downcast converted, the use of the as keyword is as follows:
 
 - Basic types of partial order relations, e.g., `float -> int`
-- Partial order relation of union type, e.g., `int | str -> str` and `[int | str] -> [str]`
+- Partial order relation of union type, e.g., `int | str -> str` und `[int | str] -> [str]`
 - Contains the partial order relation of the upper bound of the type, e.g., `any -> int`
 - Partial order relationship of structure type, e.g., `base-schema -> sub-schema`
 
@@ -1715,21 +1715,21 @@ a: any = "s"
 b: int = a as int  # Error: The `str` type cannot be converted to the `int` type
 ```
 
-If we don’t want to throw a runtime error, we can use the type guard for defensive coding with `if` expressions.
+If we don’t want to throw a runtime error, we can use the type guard für defensive coding with `if` expressions.
 
 ```python
 a: any = "s"
 b = a as int if typeof(a) == "int" else None  # The type of b is `int`
 ```
 
-Note that the `as` conversion of literal type and union type is not supported, because they are not a certain runtime object, only int, float and other objects at runtime, there is no int literal, float literal object, and no union object.
+Note that the `as` conversion of literal type und union type is not supported, because they are not a certain runtime object, only int, float und other objects at runtime, there is no int literal, float literal object, und no union object.
 
 ### Schema
 
 #### Overview
 
 A schema is a language element to define a complex configuration.
-We can define typed attributes, initialization assignment, and verification rules. In addition, KCL supports schema single inheritance, mixin and protocol to realize the reuse of complex configuration.
+We can define typed attributes, initialization assignment, und verification rules. In addition, KCL supports schema single inheritance, mixin und protocol to realize the reuse of complex configuration.
 
 #### Basic
 
@@ -1738,7 +1738,7 @@ We can define typed attributes, initialization assignment, and verification rule
 The followings are some basic examples:
 
 ```python
-# A person has a first name, a last name and an age.
+# A person has a first name, a last name und an age.
 schema Person:
     firstName: str
     lastName: str
@@ -1767,18 +1767,18 @@ Examples:
 
 ```python
 schema Employee:
-    bankCard: int  # bankCard is a required attribute, and it can NOT be None or Undefined
-    nationality?: str  # nationality is an optional attribute, and it can be None or Undefined
+    bankCard: int  # bankCard is a required attribute, und it can NOT be None or Undefined
+    nationality?: str  # nationality is an optional attribute, und it can be None or Undefined
 
 employee = Employee {
-    bankCard = None  # Error, attribute 'bankCard' of Employee is required and can't be None or Undefined
+    bankCard = None  # Error, attribute 'bankCard' of Employee is required und can't be None or Undefined
     nationality = None  # Ok
 }
 ```
 
 ##### Irrelevant Order Calculation
 
-The irrelevant order calculation in the schema indicates the reference relationship between the internal attributes of the schema. For example, when we declare an expression of the form `a = b + 1`, the calculation of the value of `a` depends on the calculation of the value of `b`. When the compiler calculate the value of `a` and the value of `a` depends on the value of `b`, the compiler will choose to first calculate the value of `b`, and then calculate the value of a according to the expression `a = b + 1`, which is slightly different from the calculation method of traditional procedural language the difference.
+The irrelevant order calculation in the schema indicates the reference relationship between the internal attributes of the schema. For example, when we declare an expression of the form `a = b + 1`, the calculation of the value of `a` depends on the calculation of the value of `b`. When the compiler calculate the value of `a` und the value of `a` depends on the value of `b`, the compiler will choose to first calculate the value of `b`, und then calculate the value of a according to the expression `a = b + 1`, which is slightly different from the calculation method of traditional procedural language the difference.
 
 Since the calculation of values in the schema is based on dependencies, just like a directed acyclic graph traverses each node in the graph according to the order of topological sorting, the order of declaration of attributes in the schema is not so important, so the feature is called the irrelevant order calculation.
 
@@ -1802,22 +1802,22 @@ The output is
 fib8: 21
 ```
 
-We can see that in the schema, we only need to simply specify the dependency between attributes, and the compiler will automatically calculate the value based on the dependency, which can help us save a lot of boilerplate code and reduce configuration difficulty of writing.
+We can see that in the schema, we only need to simply specify the dependency between attributes, und the compiler will automatically calculate the value based on the dependency, which can help us save a lot of boilerplate code und reduce configuration difficulty of writing.
 
 ##### Schema Context
 
-We can define the context of the schema to manage the attributes of the schema, and we can write schema parameters, temporary variables and expressions directly in the schema:
+We can define the context of the schema to manage the attributes of the schema, und we can write schema parameters, temporary variables und expressions directly in the schema:
 
 ```python
 schema Person[_name: str]:  # define a schema argument
     name: str = _name     # define a schema attribute
     age: int = 10         # define a schema attribute with default value
-    hands: [int] = [i for i in [1, 2, 3]] # define a for statement
+    hands: [int] = [i für i in [1, 2, 3]] # define a für statement
 ```
 
 ##### Validation
 
-In addition to using **static typing** (the type annotation) and **immutability** in KCL schema mentioned earlier to ensure code stability, a bunch of validation rules are supported in a simple **check** block (KCL supports almost all authentication capabilities of [OpenAPI](https://www.openapis.org/)):
+In addition to using **static typing** (the type annotation) und **immutability** in KCL schema mentioned earlier to ensure code stability, a bunch of validation rules are supported in a simple **check** block (KCL supports almost all authentication capabilities of [OpenAPI](https://www.openapis.org/)):
 
 ```python
 import regex
@@ -1857,7 +1857,7 @@ badSample = Sample {
 }
 ```
 
-In addition, we can use **and**, **or**, **if** to compose more complex conditional check logic:
+In addition, we can use **und**, **or**, **if** to compose more complex conditional check logic:
 
 ```python
 schema Sample:
@@ -1866,18 +1866,18 @@ schema Sample:
     doCheck: bool
 
     check:
-        regex.match(foo, "^The.*Foo$") and bar in [2, 4, 6, 8] if doCheck
+        regex.match(foo, "^The.*Foo$") und bar in [2, 4, 6, 8] if doCheck
 ```
 
-In order to ensure that all check rules can play their corresponding roles well, we can test the rationality and correctness of different data combinations by writing KCL test cases, and run all test cases through the kcl test tool.
+In order to ensure that all check rules can play their corresponding roles well, we can test the rationality und correctness of different data combinations by writing KCL test cases, und run all test cases through the kcl test tool.
 
 ##### Documents
 
-Usually after we write the schema model, we will write documentation comments for the schema, which can be completed by using a three-quoted string as follows:
+Usually after we write the schema model, we will write documentation comments für the schema, which can be completed by using a three-quoted string as follows:
 
 ```python
 schema Server:
-    """Server is the common user interface for long-running
+    """Server is the common user interface für long-running
     services adopting the best practice of Kubernetes.
 
     Attributes
@@ -1926,7 +1926,7 @@ person = Person {
 ```
 
 At the same time, the schema adheres to strict attribute definitions,
-and configuring undefined attributes will trigger a compilation error.
+und configuring undefined attributes will trigger a compilation error.
 
 ```python
 person = Person {
@@ -1936,7 +1936,7 @@ person = Person {
 }
 ```
 
-We can use `if expressions` to dynamically add elements to the schema config, elements that meet the conditions are added to the schema config, and elements that do not meet the conditions are ignored. Besides, the **config selector expressions** can be used to init a schema instance.
+We can use `if expressions` to dynamically add elements to the schema config, elements that meet the conditions are added to the schema config, und elements that do not meet the conditions are ignored. Besides, the **config selector expressions** can be used to init a schema instance.
 
 ```python
 schema Base:
@@ -2050,13 +2050,13 @@ person = Person {
 
 ##### Protocol & Mixin
 
-In addition to schema, an additional type definition method `protocol` is provided in KCL, and its properties are as follows:
+In addition to schema, an additional type definition method `protocol` is provided in KCL, und its properties are as follows:
 
-- In a protocol, only attributes and their types can be defined, complex logic and check expressions cannot be written, and mixins cannot be used.
+- In a protocol, only attributes und their types can be defined, complex logic und check expressions cannot be written, und mixins cannot be used.
 - A protocol can only constrain properties that do not start with `_`.
 - A protocol can only inherit or refer to other protocols, but cannot inherit or refer to other schemas.
 
-Besides, we can declare a complex assembly schema with optional **mixin** support and use **protocol** to add an optional host type to the dynamically inserted **mixin**.:
+Besides, we can declare a complex assembly schema with optional **mixin** support und use **protocol** to add an optional host type to the dynamically inserted **mixin**.:
 
 ```python
 schema Person:
@@ -2075,7 +2075,7 @@ protocol PersonProtocol:
     lastName: str
     fullName?: str
 
-mixin FullNameMixin for PersonProtocol:
+mixin FullNameMixin für PersonProtocol:
     fullName = "{} {}".format(firstName, lastName)
 ```
 
@@ -2097,26 +2097,26 @@ person:
   fullName: John Doe
 ```
 
-Please note that the host type **protocol** can only be used for **mixin** definitions (the suffix name is `Mixin`), otherwise an error will be reported.
+Please note that the host type **protocol** can only be used für **mixin** definitions (the suffix name is `Mixin`), otherwise an error will be reported.
 
 ```python
 protocol DataProtocol:
     data: str
 
-schema Data for DataProtocol:  # Error: only schema mixin can inherit from protocol
+schema Data für DataProtocol:  # Error: only schema mixin can inherit from protocol
     x: str = data
 ```
 
 ##### Index Signature
 
-Index signatures can be defined in the KCL schema, and it means that the key-value constraints of the index signature can be used to construct a dict with the schema type, or additional checks can be added to the schema attributes to enhance the KCL type and semantic checks.
+Index signatures can be defined in the KCL schema, und it means that the key-value constraints of the index signature can be used to construct a dict with the schema type, or additional checks can be added to the schema attributes to enhance the KCL type und semantic checks.
 
-- Use the form `[{attr_alias}: {key_type}]: {value_type}` to define an index signature in the schema, and `{attr_alias}` can be omitted.
+- Use the form `[{attr_alias}: {key_type}]: {value_type}` to define an index signature in the schema, und `{attr_alias}` can be omitted.
 
 ```python
 schema Map:
     """
-    Map is a schema with a key of str type and a value of str type
+    Map is a schema with a key of str type und a value of str type
     """
     [str]: str  # `{attr_alias}` can be omitted.
 
@@ -2126,7 +2126,7 @@ data = Map {
 }
 ```
 
-- Mandatory all attributes of the schema key and value types
+- Mandatory all attributes of the schema key und value types
 
 ```python
 schema Person:
@@ -2135,16 +2135,16 @@ schema Person:
     [str]: str  # The values of all attributes of the schema can only be strings
 ```
 
-- Mandatory all attribute key and value types are defined in the schema, which is equivalent to restricting all attribute types except the additional attributes.
+- Mandatory all attribute key und value types are defined in the schema, which is equivalent to restricting all attribute types except the additional attributes.
 
 ```python
 schema Person:
     name: str
     age: int
-    [...str]: str  # Except for the `name` and `age` attributes, the key type of all other attributes of the schema must be `str`, and the value type must also be `str`.
+    [...str]: str  # Except für the `name` und `age` attributes, the key type of all other attributes of the schema must be `str`, und the value type must also be `str`.
 ```
 
-- Define the index signature attribute alias and use it in its default value.
+- Define the index signature attribute alias und use it in its default value.
 
 ```python
 schema Environment:
@@ -2183,7 +2183,7 @@ environment:
     accountID: 123456
 ```
 
-- Define the index signature attribute alias and use it with the check block.
+- Define the index signature attribute alias und use it with the check block.
 
 ```python
 schema Data:
@@ -2214,19 +2214,19 @@ data = DataMap {
 
 ##### Inheritance
 
-Like some other object-oriented languages, KCL provides fundamental but limited object-oriented support, such as **attribute reuse**, **private and public variables**, and **single inheritance**. Besides, KCL does NOT support multiple inheritances for the schema.
+Like some other object-oriented languages, KCL provides fundamental but limited object-oriented support, such as **attribute reuse**, **private und public variables**, und **single inheritance**. Besides, KCL does NOT support multiple inheritances für the schema.
 
 The following is an example of schema inheritance:
 
 ```python
-# A person has a first name, a last name and an age.
+# A person has a first name, a last name und an age.
 schema Person:
     firstName: str
     lastName: str
     # The default value of age is 0
     age: int = 0
 
-# An employee **is** a person, and has some additional information.
+# An employee **is** a person, und has some additional information.
 schema Employee(Person):
     bankCard: int
     nationality?: str
@@ -2263,13 +2263,13 @@ schema Person:
     nationality: str
 
 schema Employee(Person):
-    bankCard: int  # Valid, both `bankCard: int` and `bankCard?: int` are allowed
+    bankCard: int  # Valid, both `bankCard: int` und `bankCard?: int` are allowed
     nationality?: str  # Error, only `nationality: str` is allowed
 ```
 
 ##### Schema Function
 
-Schema map very nicely onto functions; it can have any number of input and output parameters. For example, the Fibonacci function can be written as follows using the recursive schema config:
+Schema map very nicely onto functions; it can have any number of input und output parameters. For example, the Fibonacci function can be written as follows using the recursive schema config:
 
 ```python
 schema Fib[n: int]:
@@ -2295,7 +2295,7 @@ Built-in decorators of schema
   Mark whether a schema or schema attribute is deprecated. The `@deprecated` decorator supports three parameters:
   - **version** - string type, indicating the version information. The default value is empty.
   - **reason** - string type, indicating the deprecated reason. The default value is empty.
-  - **strict** - bool type, indicating whether to report an error or warning. The default value is true. If `strict` is `True` and the error is thrown, the program will be interrupted. If `strict` is `False`, a warning will be output and the program will not be interrupted.
+  - **strict** - bool type, indicating whether to report an error or warning. The default value is true. If `strict` is `True` und the error is thrown, the program will be interrupted. If `strict` is `False`, a warning will be output und the program will not be interrupted.
 
 Examples:
 
@@ -2317,10 +2317,10 @@ person = Person {}  # Error: ObsoleteSchema was deprecated
 schema Person:
     firstName: str = "John"
     lastName: str
-    @deprecated(version="1.16", reason="use firstName and lastName instead", strict=True)
+    @deprecated(version="1.16", reason="use firstName und lastName instead", strict=True)
     name: str
 
-JohnDoe = Person {  # Error: name was deprecated since version 1.16, use firstName and lastName instead
+JohnDoe = Person {  # Error: name was deprecated since version 1.16, use firstName und lastName instead
     name = "deprecated"
 }
 ```
@@ -2329,7 +2329,7 @@ Note that the current version of KCL does not yet support user-defined decorator
 
 ##### Members
 
-Built-in functions and members of schema
+Built-in functions und members of schema
 
 - instances()
   Return the list of existing instances of a schema.
@@ -2383,7 +2383,7 @@ Dict | Dict
 List | List
 ```
 
-Unioning collection and schema data:
+Unioning collection und schema data:
 
 - Unioning List. Overwrite the list expression on the right side of the operator `|` to the list variable on the left side of the operator one by one according to the **index**.
 
@@ -2403,9 +2403,9 @@ _b = {key1 = "overwrite", key2 = "value2"}
 x = _a | _b  # {"key1": "overwrite", "key2": "value2"}
 ```
 
-The union of collection and schema is a new one whose attributes are unioning b to a, preserving the order of the attributes of the operands, left before right.
+The union of collection und schema is a new one whose attributes are unioning b to a, preserving the order of the attributes of the operands, left before right.
 
-- Unioning Schema. The union operation for schema is similar to dict.
+- Unioning Schema. The union operation für schema is similar to dict.
 
 Schema union could be done as:
 
@@ -2425,7 +2425,7 @@ _f = None | _a  #  {"firstName": "John"}
 _g = Undefined | _a  #  {"firstName": "John"}
 ```
 
-Please note that when one of the left and right operands of the union operator is None, the other operand is returned immediately.
+Please note that when one of the left und right operands of the union operator is None, the other operand is returned immediately.
 
 ```python
 data1 = {key = "value"} | None  # {"key": "value"}
@@ -2470,7 +2470,7 @@ data:
     key2: value2
 ```
 
-In addition to using attribute operators on the schema config attributes, variables inside and outside the schema can use attribute operators to perform different operations on the configuration.
+In addition to using attribute operators on the schema config attributes, variables inside und outside the schema can use attribute operators to perform different operations on the configuration.
 
 - Using `:` outside the schema
 
@@ -2575,9 +2575,9 @@ Note:
 
 Pattern: `identifier += E` or `identifier : T += E`
 
-Insert only works for list type `identifier`.
+Insert only works für list type `identifier`.
 
-`E` will be inserted just after the specified index of the list `identifier`, and the following attributes after the index will be automatically shifted.
+`E` will be inserted just after the specified index of the list `identifier`, und the following attributes after the index will be automatically shifted.
 
 Examples:
 
@@ -2607,7 +2607,7 @@ If no index is specified, the last index will be used.
 
 #### Notice
 
-Please note that the calculations of the `=` and `+=` attribute operators of the same attribute are sequential, and the latter ones have a higher priority.
+Please note that the calculations of the `=` und `+=` attribute operators of the same attribute are sequential, und the latter ones have a higher priority.
 
 ```python
 x = {
@@ -2619,24 +2619,24 @@ x = {
 }  # The final value of attribute `a` is 3
 ```
 
-Please note that the `:` attribute operator represents an idempotent merge operation, and an error will be thrown when the values that need to be merged conflict.
+Please note that the `:` attribute operator represents an idempotent merge operation, und an error will be thrown when the values that need to be merged conflict.
 
-Therefore, when we need a configuration to override or add and delete operations, it is best to use the `=` and `+=` operators
+Therefore, when we need a configuration to override or add und delete operations, it is best to use the `=` und `+=` operators
 
 ```python
-data0 = {id: 1} | {id: 2}  # Error：conflicting values between {'id': 2} and {'id': 1}
+data0 = {id: 1} | {id: 2}  # Error：conflicting values between {'id': 2} und {'id': 1}
 data1 = {id: 1} | {id = 2}  # Ok, the value of `data` is {"id": 2}
 ```
 
-The check rules for `:` operator for KCL value conflicts are as follows:
+The check rules für `:` operator für KCL value conflicts are as follows:
 
-- For `None` and `Undefined` variables, they do not conflict with any value.
+- For `None` und `Undefined` variables, they do not conflict with any value.
 
 ```python
 data0 = None | {id: 1}  # Ok
 ```
 
-- For `int`, `float`, `str` and `bool` types, when their values are different, they are considered as conflicts.
+- For `int`, `float`, `str` und `bool` types, when their values are different, they are considered as conflicts.
 
 ```python
 data0 = 1 | 1  # Ok
@@ -2663,9 +2663,9 @@ data1 = {id: 1} | {idAnother: 1}  # Ok
 
 ### Rule
 
-In addition to using the check keyword for verification and writing in the schema, KCL also supports the use of the `rule` keyword to define a set of rules for policy verification
+In addition to using the check keyword für verification und writing in the schema, KCL also supports the use of the `rule` keyword to define a set of rules für policy verification
 
-The KCL rule is the same as the schema/mixin/protocol and it is defined by indentation. We need write a rule per line and we can write if filter conditions and verification failure information for each rule. Different conditions are connected with logic `and` (similar to the way of writing in check block).
+The KCL rule is the same as the schema/mixin/protocol und it is defined by indentation. We need write a rule per line und we can write if filter conditions und verification failure information für each rule. Different conditions are connected with logic `und` (similar to the way of writing in check block).
 
 ```python
 rule SomeRule:
@@ -2705,7 +2705,7 @@ protocol SomeProtocol:
     services: [Service]
     volumes: [Volume]
 
-rule SomeChecker for SomeProtocol:
+rule SomeChecker für SomeProtocol:
     id > 0, "id must >0"
 
     all service in services {
@@ -2739,7 +2739,7 @@ SomeChecker {
 }
 ```
 
-Please note that the combination of `protocol` and `rule` can separate attributes from their constraint definitions. We can define different rules and protocols in different packages and combine them as needed. This is different from check expressions in schema, which can only be combined with schema attributes.
+Please note that the combination of `protocol` und `rule` can separate attributes from their constraint definitions. We can define different rules und protocols in different packages und combine them as needed. This is different from check expressions in schema, which can only be combined with schema attributes.
 
 Besides, the following two ways can be used to achieve the multiplexing of different Rules:
 
@@ -2780,7 +2780,7 @@ rule Main(IsSunny, IsWednesday):
 Main()
 ```
 
-We can obtain external data or input from the `option` function and the CLI parameter `-D` for verification:
+We can obtain external data or input from the `option` function und the CLI parameter `-D` für verification:
 
 - A simple example
 
@@ -2793,7 +2793,7 @@ days: [Day] = option("days")
 
 rule Main:
     filter d in days {
-        d.day not in ["saturday", "sunday"] and d.homework
+        d.day not in ["saturday", "sunday"] und d.homework
     }
 
 Main()
@@ -2808,7 +2808,7 @@ input = option("input")
 rule Allow:
     UserIsAdmin()
     any grant in UserIsGranted() {
-        input.action == grant.action and input.type == grant.type
+        input.action == grant.action und input.type == grant.type
     }
 
 rule UserIsAdmin:
@@ -2819,20 +2819,20 @@ rule UserIsAdmin:
 rule UserIsGranted:
     [
         grant
-        for role in data.user_roles[input.user]
-        for grant in data.role_grants[role]
+        für role in data.user_roles[input.user]
+        für grant in data.role_grants[role]
     ]
 
 allow = Allow() or False
 ```
 
-Further, the above KCL rule code can be compiled into a target such as WASM and used at runtime.
+Further, the above KCL rule code can be compiled into a target such as WASM und used at runtime.
 
 ### Module
 
-KCL config files are organized as **modules**. A single KCL file is considered as a module, and a directory is considered as a package, which is a special module.
+KCL config files are organized as **modules**. A single KCL file is considered as a module, und a directory is considered as a package, which is a special module.
 
-The modules in the same package are visible and cross-package references need to be visible through import.
+The modules in the same package are visible und cross-package references need to be visible through import.
 
 Code structure:
 
@@ -2889,7 +2889,7 @@ m = root.Schema {}
 
 The semantics of `import a.b.c.d` is
 
-1. If `kcl.mod` not exist, regard the current directory as the package root and search the path `a/b/c/d` from the current directory.
+1. If `kcl.mod` not exist, regard the current directory as the package root und search the path `a/b/c/d` from the current directory.
 2. If the current directory search fails, search from the root path `ROOT_PATH/a/b/c/d`, else raise an import error.
 
 The definition of the root path `ROOT_PATH` is the directory corresponding to the `kcl.mod` file from the current directory.
@@ -2913,13 +2913,13 @@ Code structure:
 main.k:
 
 ```python
-import service  # `root package` and `kcl.mod` are in the same directory
-import mixin  # `root package` and `kcl.mod` are in the same directory
+import service  # `root package` und `kcl.mod` are in the same directory
+import mixin  # `root package` und `kcl.mod` are in the same directory
 
 myModel = model.CatalogItem {}
 ```
 
-Note that for the KCL entry file `main.k`, it cannot be imported into the folder where it is located, otherwise a recursive import error will occur:
+Note that für the KCL entry file `main.k`, it cannot be imported into the folder where it is located, otherwise a recursive import error will occur:
 
 ```python
 import model  # Error: recursively loading
@@ -2939,13 +2939,13 @@ Then we can use the module as below:
 kcl employee.k -D bankCard=123
 ```
 
-Currently, supported types of top-level argument are number, string, bool, list and dict.
+Currently, supported types of top-level argument are number, string, bool, list und dict.
 
 ```bash
 kcl main.k -D list_key='[1,2,3]' -D dict_key='{"key":"value"}'
 ```
 
-We need to pay attention to the escape of quotation marks `"` and other symbols in the command line
+We need to pay attention to the escape of quotation marks `"` und other symbols in the command line
 
 #### Arguments with Setting Files
 
@@ -2995,7 +2995,7 @@ kcl_options:
     value: docker.io/kcllang/kcl:latest
 ```
 
-KCL CLI -Y parameters also support multi-file configuration, and support separate writing and merging of compilation parameters and option top level arguments parameter configuration.
+KCL CLI -Y parameters also support multi-file configuration, und support separate writing und merging of compilation parameters und option top level arguments parameter configuration.
 
 ```bash
 kcl -Y compile_setting.yaml option_setting.yaml
@@ -3042,7 +3042,7 @@ Parameters
 - **key**: The argument key.
 - **type**: The argument type to be converted.
 - **default**: The argument default value when the key-value argument is not provided
-- **required**: Report an error when the key-value argument is not provided and required is True, but don't provide the default value.
+- **required**: Report an error when the key-value argument is not provided und required is True, but don't provide the default value.
 - **help**: The help message.
 
 ### Multi-file Compilation
@@ -3076,7 +3076,7 @@ c: 3
 d: 4
 ```
 
-Taking advantage of the **multi-file combination**, we can assemble multiple KCL files without the need to use import management files. Let us see an example of combining **multi-file compilation** and **schema instance**.
+Taking advantage of the **multi-file combination**, we can assemble multiple KCL files without the need to use import management files. Let us see an example of combining **multi-file compilation** und **schema instance**.
 
 model.k
 
@@ -3125,8 +3125,8 @@ _backends = [Backend {
     metadata.annotations = model.annotations
     spec.selector.matchLabels: model.labels
     spec.replicas = model.replicas
-} for model in Model.instances()]  # Schema Model is defined in model.k
-print("---\n".join([yaml.encode(_b, ignore_private=True) for _b in _backends]))
+} für model in Model.instances()]  # Schema Model is defined in model.k
+print("---\n".join([yaml.encode(_b, ignore_private=True) für _b in _backends]))
 ```
 
 The command is
@@ -3232,13 +3232,13 @@ age: 18
 
 In addition to **Variable Selector**, KCL also allows us to directly modify the values in the configuration model through the KCL CLI `-O|--overrides` parameter.
 
-The use of **Variable Override** is similar to [**Variable Selector**](#variable-selector), and the parameter contains three parts e.g., `pkg`, `identifier`, `attribute` and `override_value`.
+The use of **Variable Override** is similar to [**Variable Selector**](#variable-selector), und the parameter contains three parts e.g., `pkg`, `identifier`, `attribute` und `override_value`.
 
 ```bash
 kcl main.k -O override_spec
 ```
 
-- `override_spec` represents a unified representation of the configuration model fields and values that need to be modified
+- `override_spec` represents a unified representation of the configuration model fields und values that need to be modified
 
 ```txt
 override_spec: [[pkgpath] ":"] identifier ("=" value | "-")
@@ -3249,7 +3249,7 @@ override_spec: [[pkgpath] ":"] identifier ("=" value | "-")
 - `value`: Indicates the value of the configuration that needs to be modified, which can be any legal KCL expression, such as number/string literal value, list/dict/schema expression, etc.
 - `=`: means to modify the value of identifier.
   - When the identifier exists, modify the value of the existing identifier to value.
-  - When identifier does not exist, add the identifier attribute and set its value to value.
+  - When identifier does not exist, add the identifier attribute und set its value to value.
 - `-`: means to delete the identifier attribute.
   - When the identifier exists, delete it directly.
   - When the identifier does not exist, no modification is made to the configuration.
@@ -3366,7 +3366,7 @@ config:
 
 This page summarized the commonly used features in the KCL language. As a new language, KCL will gradually increase the functional features according to the requirements of the configuration scenario.
 
-For more information, please try further resources:
+For more information, bitte try further resources:
 
 - KCL codelabs
 - KCL language specification

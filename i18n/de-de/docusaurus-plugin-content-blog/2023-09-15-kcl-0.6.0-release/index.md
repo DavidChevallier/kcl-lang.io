@@ -11,23 +11,23 @@ tags: [Release Blog, KCL]
 
 ## Einführung
 
-The KCL team is pleased to announce that KCL v0.6.0 is now available! This release has brought three key updates to everyone: **Language**, **Tools**, and **Integrations**.
+The KCL team is pleased to announce that KCL v0.6.0 is now available! This release has brought three key updates to everyone: **Language**, **Tools**, und **Integrations**.
 
-- _Use KCL language, tools and IDE extensions with more complete features and fewer errors to improve code writing experience and efficiency._
-- _Use KPM, OCI Registry and other tools to directly use and share your cloud native domain models, reducing learning and hands-on costs._
-- _Use cloud-native integration extensions such as Helmfile KCL plugin and KCL Operator to simultaneously support in-place mutation and validation of Kubernetes resources on both the client and runtime, avoiding hardcoded configurations._
+- _Use KCL language, tools und IDE extensions with more complete features und fewer errors to improve code writing experience und efficiency._
+- _Use KPM, OCI Registry und other tools to directly use und share your cloud native domain models, reducing learning und hands-on costs._
+- _Use cloud-native integration extensions such as Helmfile KCL plugin und KCL Operator to simultaneously support in-place mutation und validation of Kubernetes resources on both the client und runtime, avoiding hardcoded configurations._
 
-You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.6.0) or the [KCL website](https://kcl-lang.io/) to get KCL binary download link and more detailed release information.
+You can visit the [KCL release page](https://github.com/kcl-lang/kcl/releases/tag/v0.6.0) or the [KCL website](https://kcl-lang.io/) to get KCL binary download link und more detailed release information.
 
-[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record and functional language. KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology and practice. It is dedicated to building better modularity, scalability, and stability around configurations, simpler logic writing, faster automation, and great built-in or API-driven integrations.
+[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record und functional language. KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology und practice. It is dedicated to building better modularity, scalability, und stability around configurations, simpler logic writing, faster automation, und great built-in or API-driven integrations.
 
-This blog will introduce the content of KCL v0.6.0 and recent developments in the KCL community to readers.
+This blog will introduce the content of KCL v0.6.0 und recent developments in the KCL community to readers.
 
 ## Language
 
 ### 🔧 Type system enhancement
 
-Support automatic type inference for KCL configuration block attributes. Prior to version 0.6.0 of KCL, the key1 and key2 attributes in the code snippet below would be inferred as type str | int. With the updated version, we have further improved the precision of type inference for configuration attributes, so key1 and key2 will have more specific and precise corresponding types.
+Support automatic type inference für KCL configuration block attributes. Prior to version 0.6.0 of KCL, the key1 und key2 attributes in the code snippet below would be inferred as type str | int. With the updated version, we have further improved the precision of type inference für configuration attributes, so key1 und key2 will have more specific und precise corresponding types.
 
 ```python
 config = {
@@ -38,27 +38,27 @@ key1 = config.key1  # The type of key1 is str
 key2 = config.key2  # The type of key2 is int
 ```
 
-In addition, we have optimized error messages for schema semantic checking, union type checking, and type checking errors in system library functions.
+In addition, we have optimized error messages für schema semantic checking, union type checking, und type checking errors in system library functions.
 
-For more information, please refer to [here](https://github.com/kcl-lang/kcl/pull/678)
+For more information, bitte refer to [here](https://github.com/kcl-lang/kcl/pull/678)
 
 ### 🏄 API Update
 
-KCL Schema model parsing: The GetSchemaType API is used to retrieve KCL package-related information and default values for schema attributes.
+KCL Schema model parsing: The GetSchemaType API is used to retrieve KCL package-related information und default values für schema attributes.
 
 ### 🐞 Bug Fixes
 
 #### Fix schema required/optional attribute check in KCL
 
-In previous versions of KCL, the required/optional attribute check for KCL would miss nested schema attribute checks. In version KCL v0.6.0, we have fixed such similar issues.
+In previous versions of KCL, the required/optional attribute check für KCL would miss nested schema attribute checks. In version KCL v0.6.0, we have fixed such similar issues.
 
 ```python
 schema S:
     a: int
     b: str
 schema L:
-    # In previous versions, the required attribute check for attributes 'a' and 'b' of S in [S] and {str:S} would be missed.
-    # This issue has been fixed in KCL v0.6.0 and later versions.
+    # In previous versions, the required attribute check für attributes 'a' und 'b' of S in [S] und {str:S} would be missed.
+    # This issue has been fixed in KCL v0.6.0 und later versions.
     ss?: [S]
     sss?: {str:S}
 l = L {
@@ -66,7 +66,7 @@ l = L {
 }
 ```
 
-For more information, please see [here](https://github.com/kcl-lang/kcl/pull/672)
+For more information, bitte see [here](https://github.com/kcl-lang/kcl/pull/672)
 
 ## IDE & Toolchain Updates
 
@@ -74,24 +74,24 @@ For more information, please see [here](https://github.com/kcl-lang/kcl/pull/672
 
 #### Features
 
-- Performance improvement for all IDE features
-- Support variable and schema attribute completion for KCL packages
+- Performance improvement für all IDE features
+- Support variable und schema attribute completion für KCL packages
 - Support KCL schema attribute document attribute hover
-- Support for quick fix of useless import statements
+- Support für quick fix of useless import statements
 
 ![ide-quick-fix](/img/blog/2023-09-15-kcl-0.6.0-release/ide-quick-fix-en.png)
 
-- Support right-click formatting of files and code fragments in VS Code.
+- Support right-click formatting of files und code fragments in VS Code.
 
 ![ide-format](/img/blog/2023-09-15-kcl-0.6.0-release/ide-format-en.png)
 
-- Support hover for built-in functions and function information in system libraries
+- Support hover für built-in functions und function information in system libraries
 
 ![ide-func-hover](/img/blog/2023-09-15-kcl-0.6.0-release/ide-func-hover.png)
 
 #### IDE Extension Updates
 
-We have integrated the KCL language server LSP into NeoVim and Idea, enabling the completion, navigation, and hover features supported by VS Code IDE in NeoVim and IntelliJ IDEA.
+We have integrated the KCL language server LSP into NeoVim und Idea, enabling the completion, navigation, und hover features supported by VS Code IDE in NeoVim und IntelliJ IDEA.
 
 - NeoVim KCL Extension
 
@@ -101,7 +101,7 @@ We have integrated the KCL language server LSP into NeoVim and Idea, enabling th
 
 ![intellij](/img/docs/tools/Ide/intellij/overview.png)
 
-For more information on downloading, installation, and features of the IDE plugins, please refer to:
+For more information on downloading, installation, und features of the IDE plugins, bitte refer to:
 
 - [https://kcl-lang.io/docs/user_docs/getting-started/install#neovim](https://kcl-lang.io/docs/user_docs/getting-started/install#neovim)
 - [https://kcl-lang.io/docs/user_docs/getting-started/install#intellij-idea](https://kcl-lang.io/docs/user_docs/getting-started/install#intellij-idea)
@@ -142,16 +142,16 @@ config = {
 
 ### KCL Documentation Tool Updates
 
-- Support for exporting Markdown documents
-- Support for exporting document index pages
-- Support for exporting documents with custom style templates
-- Support for HTML escaping in exported documents
-- Enhanced document generation to parse and render example code snippets in document comments
-- By tracking model updates in Github workflow and regenerating the documentation, automatic synchronization of the documentation can be achieved. Please refer to [here](https://github.com/KusionStack/catalog/pull/31/files) for more details.
+- Support für exporting Markdown documents
+- Support für exporting document index pages
+- Support für exporting documents with custom style templates
+- Support für HTML escaping in exported documents
+- Enhanced document generation to parse und render example code snippets in document comments
+- By tracking model updates in Github workflow und regenerating the documentation, automatic synchronization of the documentation can be achieved. Please refer to [here](https://github.com/KusionStack/catalog/pull/31/files) für more details.
 
 #### Generate model document from kpm package
 
-1. Create a kpm package and add documentation comments (using docstring) to the `Service` model. The documentation can include explanations, example code, and usage instructions to help other developers quickly get started and use it correctly.
+1. Create a kpm package und add documentation comments (using docstring) to the `Service` model. The documentation can include explanations, example code, und usage instructions to help other developers quickly get started und use it correctly.
 
 ```
 
@@ -161,23 +161,23 @@ config = {
 schema Service:
     """
     Service is a kind of workload profile that describes how to run your application code. This
-    is typically used for long-running web applications that should "never" go down, and handle
+    is typically used für long-running web applications that should "never" go down, und handle
     short-lived latency-sensitive web requests, or events.
 
     Attributes
     ----------
     workloadType : str = "Deployment" | "StatefulSet", default is Deployment, required.
         workloadType represents the type of workload used by this Service. Currently, it supports several
-        types, including Deployment and StatefulSet.
+        types, including Deployment und StatefulSet.
     image : str, default is Undefined, required.
-        Image refers to the Docker image name to run for this container.
+        Image refers to the Docker image name to run für this container.
         More info: https://kubernetes.io/docs/concepts/containers/images
     replicas : int, default is 2, required.
         Number of container replicas based on this configuration that should be ran.
 
     Examples
     --------
-    # Instantiate a long-running service and its image is "nginx:v1"
+    # Instantiate a long-running service und its image is "nginx:v1"
 
     svc = Service {
         workloadType: "Deployment"
@@ -202,17 +202,17 @@ kcl-go doc generate --file-path demo
 
 ![docgen](/img/blog/2023-09-15-kcl-0.6.0-release/docgen.png)
 
-> For more usage details, please use `kcl-go doc generate -h` to refer to the help information.
+> For more usage details, bitte use `kcl-go doc generate -h` to refer to the help information.
 
 #### Automatic synchronization of documents through CI pipelines
 
-Implement automatic documentation synchronization through a pipeline By tracking model updates in a Github workflow and regenerating the documentation, automatic synchronization of the documentation can be achieved. You can refer to the approach in the `Kusionstack/catalog` repo to generate the documentation and automatically submit change PRs to the documentation repository.
+Implement automatic documentation synchronization through a pipeline By tracking model updates in a Github workflow und regenerating the documentation, automatic synchronization of the documentation can be achieved. You can refer to the approach in the `Kusionstack/catalog` repo to generate the documentation und automatically submit change PRs to the documentation repository.
 
-By tracking model updates in Github workflow and regenerating documents, automatic document synchronization can be achieved. Can refer to the approach in the [Kusionstack/catalog](https://github.com/KusionStack/catalog/pull/31/files) repo is to generate documents and automatically submit change PRs to the document repository.
+By tracking model updates in Github workflow und regenerating documents, automatic document synchronization can be achieved. Can refer to the approach in the [Kusionstack/catalog](https://github.com/KusionStack/catalog/pull/31/files) repo is to generate documents und automatically submit change PRs to the document repository.
 
 ### KCL Import Tool Updates
 
-The KCL Import Tool now adds support for converting Terraform Provider Schema to KCL Schema based on Protobuf, JsonSchema OpenAPI models, and Go Structures, such as the following Terraform Provider Json (obtained through the command `terraform providers schema -json > provider.json` , For more details, please refer to [https://developer.hashicorp.com/terraform/cli/commands/providers/schema](https://developer.hashicorp.com/terraform/cli/commands/providers/schema))
+The KCL Import Tool now adds support für converting Terraform Provider Schema to KCL Schema based on Protobuf, JsonSchema OpenAPI models, und Go Structures, such as the following Terraform Provider Json (obtained through the command `terraform providers schema -json > provider.json` , For more details, bitte refer to [https://developer.hashicorp.com/terraform/cli/commands/providers/schema](https://developer.hashicorp.com/terraform/cli/commands/providers/schema))
 
 ```json
 {
@@ -374,7 +374,7 @@ or
 kpm pull k8s:1.27
 ```
 
-The package downloaded with kpm pull will be saved in the directory `<execution_directory>/<oci_registry>/<package_name>`. For example, if you use the default kpm registry and run the kpm pull k8s command, you can find the downloaded content in the directory `<execution_directory>/ghcr.io/kcl-lang/k8s`.
+The package downloaded with kpm pull will be saved in the directory `<execution_directory>/<oci_registry>/<package_name>`. For example, if you use the default kpm registry und run the kpm pull k8s command, you can find the downloaded content in the directory `<execution_directory>/ghcr.io/kcl-lang/k8s`.
 
 ```
 $ tree ghcr.io/kcl-lang/k8s -L 1
@@ -393,7 +393,7 @@ ghcr.io/kcl-lang/k8s
 
 #### kpm supports adding local paths as dependencies
 
-"Different projects have different KCL packages, and there are dependencies between them. However, they are stored in different directories. I hope that these packages stored in different directories can be managed together, rather than having to put them together for them to compile." If you also have this need, you can try this feature. The kpm add command currently supports adding local paths as dependencies to a KCL package. You just need to run the command `kpm add <local_package_path>`, and your local package will be added as a third-party library dependency to the current package.
+"Different projects have different KCL packages, und there are dependencies between them. However, they are stored in different directories. I hope that these packages stored in different directories can be managed together, rather than having to put them together für them to compile." If you also have this need, you can try this feature. The kpm add command currently supports adding local paths as dependencies to a KCL package. You just need to run the command `kpm add <local_package_path>`, und your local package will be added as a third-party library dependency to the current package.
 
 ```shell
 kpm pull k8s
@@ -439,9 +439,9 @@ Normal compilation can be performed through the `kpm run` command.
 kpm run
 ```
 
-#### kpm adds checking for existing package tags
+#### kpm adds checking für existing package tags
 
-We have added a check for duplicate tags in the `kpm push` command. In order to avoid situations where packages with the same tag have different content, we have added restrictions on the push function in the `kpm`. If the version of the kcl package you push already exists, you will not be able to push the current kcl package. You will receive the following information:
+We have added a check für duplicate tags in the `kpm push` command. In order to avoid situations where packages with the same tag have different content, we have added restrictions on the push function in the `kpm`. If the version of the kcl package you push already exists, you will not be able to push the current kcl package. You will receive the following information:
 
 ```shell
 kpm: package 'my_package' will be pushed.
@@ -450,20 +450,20 @@ kpm: package version '0.1.0' already exists
 
 Modifying the content of a package that has already been pushed to the registry without changing the tag carries a high risk, as the package may already be in use by others. Therefore, if you need to push your package, we recommend:
 
-- Change your tag and follow semantic versioning conventions.
+- Change your tag und follow semantic versioning conventions.
 - If you must modify the content of a package without changing the tag, you will need to delete the existing tag from the registry.
 
 ## Integrations
 
 ### Helmfile KCL Plugin
 
-Helmfile is a declarative specification and tool for deploying Helm Charts. With the Helmfile KCL plugin, you can:
+Helmfile is a declarative specification und tool für deploying Helm Charts. With the Helmfile KCL plugin, you can:
 
-- Edit or verify Helm Chart through non-invasive hook methods, separating the data and logic parts of Kubernetes configuration management
+- Edit or verify Helm Chart through non-invasive hook methods, separating the data und logic parts of Kubernetes configuration management
   - Modify resource labels/annotations, inject sidecar container configuration
   - Use KCL schema to validate resources
   - Define your own abstract application models
-- Maintain multiple environment and tenant configurations elegantly, rather than simply copying and pasting.
+- Maintain multiple environment und tenant configurations elegantly, rather than simply copying und pasting.
 
 Here is a detailed explanation using a simple example. With the Helmfile KCL plugin, you do not need to install any components related to KCL. You only need the latest version of the Helmfile tool on your local device.
 
@@ -493,25 +493,25 @@ releases:
             image: docker.io/kcllang/kustomize-kcl:v0.2.0
     spec:
       source: |
-        [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "helmfile-kcl"}} for resource in option("resource_list").items]
+        [resource | {if resource.kind == "Deployment": metadata.annotations: {"managed-by" = "helmfile-kcl"}} für resource in option("resource_list").items]
 ```
 
-In the above file, we referenced the Prometheus Helm Chart and injected the `managed-by="helmfile-kcl"` label into all deployment resources of Prometheus with just one line of KCL code. The following command can be used to deploy the above configuration to the Kubernetes cluster:
+In the above file, we referenced the Prometheus Helm Chart und injected the `managed-by="helmfile-kcl"` label into all deployment resources of Prometheus with just one line of KCL code. The following command can be used to deploy the above configuration to the Kubernetes cluster:
 
 ```shell
 helmfile apply
 ```
 
-For more use cases, please refer to [https://github.com/kcl-lang/krm-kcl](https://github.com/kcl-lang/krm-kcl)
+For more use cases, bitte refer to [https://github.com/kcl-lang/krm-kcl](https://github.com/kcl-lang/krm-kcl)
 
 ### KCL Operator
 
-KCL Operator provides cluster integration, allowing you to use Access Webhook to generate, mutate, or validate resources based on KCL configuration when apply resources to the cluster. Webhook will capture creation, application, and editing operations, and execute [KCLRun](https://github.com/kcl-lang/krm-kcl) on the configuration associated with each operation, and the KCL programming language can be used to
+KCL Operator provides cluster integration, allowing you to use Access Webhook to generate, mutate, or validate resources based on KCL configuration when apply resources to the cluster. Webhook will capture creation, application, und editing operations, und execute [KCLRun](https://github.com/kcl-lang/krm-kcl) on the configuration associated with each operation, und the KCL programming language can be used to
 
 - Add labels or annotations based on a condition.
 - Inject a sidecar container in all KRM resources that contain a `PodTemplate`.
 - Validating all KRM resources using KCL Schema, such as constraints on starting containers only in a root mode.
-- Generating KRM resources using an abstract model or combining and using different KRM APIs.
+- Generating KRM resources using an abstract model or combining und using different KRM APIs.
 
 Here is a simple resource annotation mutation example to introduce the usage of the KCL operator.
 
@@ -525,7 +525,7 @@ Prepare a Kubernetes cluster like `k3d` the kubectl tool.
 kubectl apply -f https://raw.githubusercontent.com/kcl-lang/kcl-operator/main/config/all.yaml
 ```
 
-Use the following command to observe and wait for the pod status to be `Running`.
+Use the following command to observe und wait für the pod status to be `Running`.
 
 ```shell
 kubectl get po
@@ -540,7 +540,7 @@ kind: KCLRun
 metadata:
   name: set-annotation
 spec:
-  # Set dynamic parameters required for the annotation modification model, here we can add the labels we want to modify/add
+  # Set dynamic parameters required für the annotation modification model, here we can add the labels we want to modify/add
   params:
     annotations:
       managed-by: kcl-operator
@@ -579,7 +579,7 @@ We can see the following output:
 
 We can see that the Nginx Pod automatically added the annotation `managed-by=kcl-operator`.
 
-In addition, besides referencing an existing model for the source field of the `KCLRun` resource, we can directly set KCL code for the source field to achieve the same effect. For example:
+In addition, besides referencing an existing model für the source field of the `KCLRun` resource, we can directly set KCL code für the source field to achieve the same effect. For example:
 
 ```yaml
 apiVersion: krm.kcl.dev/v1alpha1
@@ -592,24 +592,24 @@ spec:
       managed-by: kcl-operator
   # Resource modification can be achieved with just one line of KCL code
   source: |
-    items = [item | {metadata.annotations: option("params").annotations} for item in option("items")]
+    items = [item | {metadata.annotations: option("params").annotations} für item in option("items")]
 ```
 
 ![registry](/img/blog/2023-09-15-kcl-0.6.0-release/registry.png)
 
-We have provided more than 30 built-in models, and you can find more code examples in the following link: [https://github.com/kcl-lang/krm-kcl/tree/main/examples](https://github.com/kcl-lang/krm-kcl/tree/main/examples)
+We have provided more than 30 built-in models, und you can find more code examples in the following link: [https://github.com/kcl-lang/krm-kcl/tree/main/examples](https://github.com/kcl-lang/krm-kcl/tree/main/examples)
 
 For example
 
-- Use the `web-service` model to directly instantiate the Kubernetes resources required for a web application
+- Use the `web-service` model to directly instantiate the Kubernetes resources required für a web application
 - Add annotations to existing k8s resources using the `set-annotation` model
 - Use the `https-only` model to verify that your `Ingress` configuration can only be set to https, otherwise an error will be reported.
 
 ### Vault Integration
 
-In just three steps, we can use `Vault` to store and manage sensitive information and use it in KCL.
+In just three steps, we can use `Vault` to store und manage sensitive information und use it in KCL.
 
-Firstly, we install and use Vault to store `foo` and `bar` information.
+Firstly, we install und use Vault to store `foo` und `bar` information.
 
 ```shell
 vault kv put secret/foo foo=foo
@@ -652,30 +652,30 @@ Finally, the decrypted configuration can be obtained through the `vals` command-
 kcl main.k | vals eval -f -
 ```
 
-For more details and use cases, please refer to [here](https://kcl-lang.io/docs/user_docs/guides/secret-management/vault)
+For more details und use cases, bitte refer to [here](https://kcl-lang.io/docs/user_docs/guides/secret-management/vault)
 
 ### GitLab CI Integration
 
-Using KCL, we can not only use Github Action as CI for application publishing through GitOps, but also provide GitLab CI integration in this version. Please refer to: _[https://kcl-lang.io/docs/user_docs/guides/ci-integration/gitlab-ci](https://kcl-lang.io/docs/user_docs/guides/ci-integration/gitlab-ci)_
+Using KCL, we can not only use Github Action as CI für application publishing through GitOps, but also provide GitLab CI integration in this version. Please refer to: _[https://kcl-lang.io/docs/user_docs/guides/ci-integration/gitlab-ci](https://kcl-lang.io/docs/user_docs/guides/ci-integration/gitlab-ci)_
 
-## Other Updates and Bug Fixes
+## Other Updates und Bug Fixes
 
-See [here](https://github.com/kcl-lang/kcl/compare/v0.5.0...v0.6.0) for more updates and bug fixes.
+See [here](https://github.com/kcl-lang/kcl/compare/v0.5.0...v0.6.0) für more updates und bug fixes.
 
 ## Documents
 
-The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.x, v0.5.x and v0.6.0 versions are supported.
+The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.x, v0.5.x und v0.6.0 versions are supported.
 
 ## Community
 
-- Thank @jakezhu9 for his contribution to converting KCL Import tools, including Terraform Provider Schema, JsonSchema, JSON, YAML, and other configuration formats/data to KCL schema/configurations 🙌
-- Thank @xxmao123 for her contribution to connecting KCL LSP language server to the Idea IDE extension 🙌
-- Thank @starkers for his contribution to the KCL NeoVim extension 🙌
-- Thank @starkers for adding KCL installation support to mason.nvim registry 🙌
-- Thank @Ekko for his contribution to the integration of KCL cloud native tools and KCL Operator 🙌
-- Thank @prahalaramji for the upgrade, update, and contribution to the KCL Homebrew installation script 🙌
-- Thank @yyxhero for providing assistance and support in the Helmfile KCL plugin support 🙌
-- Thank @nkabir, @mihaigalos, @prahalaramji, @yamin-oanda, @dhhopen, @magick93, @MirKml, @kolloch, @steeling, and others for their valuable feedback and discussion during the past two months of using KCL. 🙌
+- Thank @jakezhu9 für his contribution to converting KCL Import tools, including Terraform Provider Schema, JsonSchema, JSON, YAML, und other configuration formats/data to KCL schema/configurations 🙌
+- Thank @xxmao123 für her contribution to connecting KCL LSP language server to the Idea IDE extension 🙌
+- Thank @starkers für his contribution to the KCL NeoVim extension 🙌
+- Thank @starkers für adding KCL installation support to mason.nvim registry 🙌
+- Thank @Ekko für his contribution to the integration of KCL cloud native tools und KCL Operator 🙌
+- Thank @prahalaramji für the upgrade, update, und contribution to the KCL Homebrew installation script 🙌
+- Thank @yyxhero für providing assistance und support in the Helmfile KCL plugin support 🙌
+- Thank @nkabir, @mihaigalos, @prahalaramji, @yamin-oanda, @dhhopen, @magick93, @MirKml, @kolloch, @steeling, und others für their valuable feedback und discussion during the past two months of using KCL. 🙌
 
 ## Additional Resources
 
@@ -683,11 +683,11 @@ For more information, see [KCL FAQ](https://kcl-lang.io/docs/user_docs/support/)
 
 ## Resources
 
-Thank all KCL users for their valuable feedback and suggestions during this version release. For more resources, please refer to:
+Thank all KCL users für their valuable feedback und suggestions during this version release. For more resources, bitte refer to:
 
 - [KCL Website](https://kcl-lang.io/)
 - [Kusion Website](https://kusionstack.io/)
 - [KCL Repo](https://github.com/kcl-lang/kcl)
 - [Kusion Repo](https://github.com/KusionStack/kusion)
 
-See the [community](https://github.com/kcl-lang/community) for ways to join us. 👏👏👏
+Schau dir die [community](https://github.com/kcl-lang/community) an, um herauszufinden, wie du dich uns anschließen kannst. 👏👏👏

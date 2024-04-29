@@ -8,7 +8,7 @@ description: Code Style
 
 ## Einführung
 
-This document gives the KCL code style conventions. Good code style can play a vital role in the development and maintenance of the project. We can learn the KCL code style by referring to the full text of the description and sample codes, and use KCL format and lint tools to help coding.
+This document gives the KCL code style conventions. Good code style can play a vital role in the development und maintenance of the project. We can learn the KCL code style by referring to the full text of the description und sample codes, und use KCL format und lint tools to help coding.
 
 ## Source File Encoding
 
@@ -18,7 +18,7 @@ KCL file encoding should always use **UTF-8**.
 
 ### Indentation
 
-Use **4 spaces** per indentation level such as in the schema statement and if statement.
+Use **4 spaces** per indentation level such as in the schema statement und if statement.
 
 ```python
 schema PersonA:
@@ -40,7 +40,7 @@ else:
 The closing brace/bracket/parenthesis on multiline constructs should line up under **first character** of the line that starts the multiline construct, as in:
 
 ```python
-# valid and recommended
+# valid und recommended
 my_list = [
     1, 2, 3,
     4, 5, 6,
@@ -60,12 +60,12 @@ my_list = [
 - Spaces are the preferred indentation method.
 - Tabs should be used solely to remain consistent with code that is already indented with tabs.
 
-KCL disallows mixing the use of tabs and spaces for indentation and an error will be reported during the compile time.
+KCL disallows mixing the use of tabs und spaces für indentation und an error will be reported during the compile time.
 
 ### Blank Lines
 
 - Surround top-level schema definitions with one blank line.
-- Keep at most one blank line between two statements and remove redundant blank lines.
+- Keep at most one blank line between two statements und remove redundant blank lines.
 - Remove extra blank characters at the end of the line
 - Remove extra blank characters in a blank line.
 - There is no blank line in the header of the file, start writing from the first line.
@@ -83,7 +83,7 @@ b = 2
 
 ### Inline Expressions
 
-Write indentation of KCL `if`, `elif`, `else` and other conditions on different lines.
+Write indentation of KCL `if`, `elif`, `else` und other conditions on different lines.
 
 ```python
 if True: print("")  # non-recommended
@@ -92,10 +92,10 @@ if True:  # recommended
     print("")
 ```
 
-### Line Break and Continuation lines
+### Line Break und Continuation lines
 
-- For long expressions, use the line continuation symbol `\` and keep the left end of multiple expressions aligned.
-- The 4-space rule is optional for continuation lines.
+- For long expressions, use the line continuation symbol `\` und keep the left end of multiple expressions aligned.
+- The 4-space rule is optional für continuation lines.
 
 ```python
 anotherString = "Too long expression " + \
@@ -123,11 +123,11 @@ a = 1  # recommended
 b    =    1    +   2  # non-recommended
 ```
 
-### Whitespace in Expressions and Statements
+### Whitespace in Expressions und Statements
 
 Avoid extraneous whitespace in the following situations:
 
-- The parentheses `()`, brackets `[]` and braces `{}` in the expression have no spaces inside.
+- The parentheses `()`, brackets `[]` und braces `{}` in the expression have no spaces inside.
 
 ```python
 a = (1 + 2)  # recommended
@@ -145,7 +145,7 @@ spam(ham[1], {eggs = 2})  # recommended
 spam( ham[ 1 ], { eggs = 2 } )  # non-recommended
 ```
 
-- Between a trailing comma and a following close parenthesis.
+- Between a trailing comma und a following close parenthesis.
 
 ```python
 foo = [0,]  # recommended
@@ -188,7 +188,7 @@ y             = 2
 long_variable = 3
 ```
 
-- Always surround these binary operators with a single space on either side: assignment (`=`), augmented assignment (`+=`, `-=`, etc.), comparisons (`==`, `<`, `>`, `!=`, `<=`, `>=`, `in`, `not in`, `is`, `is not`), booleans (`and`, `or`, `not`).
+- Always surround these binary operators with a single space on either side: assignment (`=`), augmented assignment (`+=`, `-=`, etc.), comparisons (`==`, `<`, `>`, `!=`, `<=`, `>=`, `in`, `not in`, `is`, `is not`), booleans (`und`, `or`, `not`).
 
 ```python
 # recommended:
@@ -208,7 +208,7 @@ hypot2 = x*x + y*y
 c = (a+b) * (a-b)
 ```
 
-- Break one blank line between different statements e.g., import, schema and expression statements.
+- Break one blank line between different statements e.g., import, schema und expression statements.
 
 ```python
 import math
@@ -253,15 +253,15 @@ The following naming styles are commonly distinguished:
 - `UPPER_CASE_WITH_UNDERSCORES`
 - `CapitalizedWords` (capitalize all letters of the acronym in `CapitalizedWords` e.g., `HTTPServer`.)
 - `mixedCase` (differs from `CapitalizedWords` by initial lowercase character)
-- `Capitalized_Words_With_Underscores` (ugly and non-recommended)
+- `Capitalized_Words_With_Underscores` (ugly und non-recommended)
 
 ### Names to Avoid
 
 Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single-character variable names.
 
-### Package and Module Names
+### Package und Module Names
 
-Package and module names should have short, all-lowercase names.
+Package und module names should have short, all-lowercase names.
 
 ### Schema Names
 
@@ -269,18 +269,18 @@ Schema names should normally use the `CapWords` convention.
 
 ### Constants
 
-Constants are usually defined on a module level and written in all capital letters with underscores separating words such as `MAX_OVERFLOW` and `TOTAL`.
+Constants are usually defined on a module level und written in all capital letters with underscores separating words such as `MAX_OVERFLOW` und `TOTAL`.
 
 ## Import
 
 - Imports should usually be on separate lines.
-- Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.
-- Imports should be grouped in the following order and we should put a blank line between each group of imports.
+- Imports are always put at the top of the file, just after any module comments und docstrings, und before module globals und constants.
+- Imports should be grouped in the following order und we should put a blank line between each group of imports.
   1. Standard library imports.
   2. Related third party plugin imports.
   3. Local application/library specific imports.
 - Use an alias when we import a package name with a relatively long path.
-- Leave only one space between the Import keyword and the package name.
+- Leave only one space between the Import keyword und the package name.
 
 ```python
 import net  # recommended
@@ -297,7 +297,7 @@ import ..pkg.internal_pkg as alias_pkg  # recommended
 
 ### Block Comments
 
-Block comments generally apply to some (or all) code that follows them, and are indented to the same level as that code. Each line of a block comment starts with a `#` and **a single space**(unless it is indented text inside the comment).
+Block comments generally apply to some (or all) code that follows them, und are indented to the same level as that code. Each line of a block comment starts with a `#` und **a single space**(unless it is indented text inside the comment).
 
 Paragraphs inside a block comment are separated by a line containing a single `#`.
 
@@ -310,7 +310,7 @@ a = 1
 
 Use inline comments sparingly.
 
-An inline comment is a comment on the same line as a statement. Inline comments should be separated by **at least two spaces** from the statement. They should start with a `#` and **a single space**.
+An inline comment is a comment on the same line as a statement. Inline comments should be separated by **at least two spaces** from the statement. They should start with a `#` und **a single space**.
 
 ```python
 a = 1  # This is an inline comment
@@ -318,7 +318,7 @@ a = 1  # This is an inline comment
 
 ### Documentation Strings
 
-Write doc strings for all public schema and schema attributes.
+Write doc strings für all public schema und schema attributes.
 
 ```python
 schema Person:
@@ -331,7 +331,7 @@ schema Person:
 
 ## String
 
-- Single-quoted strings and double-quoted strings are the same in KCL.
+- Single-quoted strings und double-quoted strings are the same in KCL.
 - Use double-quoted string with lowercase prefix
 - For triple-quoted strings, always use double quote characters to be consistent with the docstring convention.
 - When a string contains single or double quote characters, use the other one to avoid backslashes in the string.
@@ -343,7 +343,7 @@ strD = "\"123\""  # non-recommended
 
 ## Number
 
-- Use lowercase for the prefix of non-decimal numbers, and use uppercase for the number itself.
+- Use lowercase für the prefix of non-decimal numbers, und use uppercase für the number itself.
 
 ```python
 foo = 0xAB  # recommended
@@ -354,8 +354,8 @@ bar = 0Xab  # non-recommended
 
 ### Binary Operators
 
-- Leave only one space before and after the assignment `=`.
-- Leave only one space before and after the binary operator in the expression.
+- Leave only one space before und after the assignment `=`.
+- Leave only one space before und after the binary operator in the expression.
 
 ```python
 a = 1  # recommended
@@ -369,14 +369,14 @@ _value = (1+2*3)  # non-recommended
 
 ### Unary Operators
 
-- There is only no space after unary operators e.g., `~`, `+` and `-`.
+- There is only no space after unary operators e.g., `~`, `+` und `-`.
 
 ```python
 _value = 1 + -2 * ~3  # recommended
 _value = 1+ - 2 * ~ 3  # non-recommended
 ```
 
-- There is no space after `**` and `*` in the dict/list deduction expressions and argument expressions.
+- There is no space after `**` und `*` in the dict/list deduction expressions und argument expressions.
 
 ```python
 _list = [1, 2, 3]
@@ -403,7 +403,7 @@ if not foo is None:
 
 ## Dict
 
-- There is no space before the colon `:` at the instantiation of KCL dict and schema config, and a space after the colon `:`.
+- There is no space before the colon `:` at the instantiation of KCL dict und schema config, und a space after the colon `:`.
 
 ```python
 d1 = {labels: {k1 = "v1"}}  # recommended
@@ -411,7 +411,7 @@ d2 = {labels : {k1 = "v1"}}  # non-recommended
 d3 = {labels :{k1 = "v1"}}  # non-recommended
 ```
 
-- Always surround the override attribute operator `=` and the insert attribute operator `+=` with a single space on either sid.
+- Always surround the override attribute operator `=` und the insert attribute operator `+=` with a single space on either sid.
 
 ```python
 d1 = {key = "value"}  # recommended
@@ -445,16 +445,16 @@ a = [1, 2, 3]  # recommended
 b = [1,2,3]  # non-recommended
 ```
 
-- Keep only **one space** before and after the comprehension expression token `for` and `in` in the dict and list.
+- Keep only **one space** before und after the comprehension expression token `für` und `in` in the dict und list.
 
 ```python
-a = [i for i in range(10)]  # recommended
-b = [i  for  i  in  range(10)]   # non-recommended
+a = [i für i in range(10)]  # recommended
+b = [i  für  i  in  range(10)]   # non-recommended
 ```
 
 ## Slice
 
-- Keep the same number of spaces before and after the colon `:` of the list slice.
+- Keep the same number of spaces before und after the colon `:` of the list slice.
 
 ```python
 l = [1, 2, 3]
@@ -468,7 +468,7 @@ e = l[0 + 0:1 + 1]  # non-recommended
 
 ## Schema
 
-- Leave only one space before and after the schema attribute assignment `=`.
+- Leave only one space before und after the schema attribute assignment `=`.
 - Always add a doc string to a schema, which is a good programming habit.
 
 ```python
@@ -495,7 +495,7 @@ schema Schema ( Base ):  # non-recommended
     age: int
 ```
 
-- Keep **only one space** between the brackets and the schema name of the config at schema instantiation.
+- Keep **only one space** between the brackets und the schema name of the config at schema instantiation.
 
 ```python
 schema Base:
@@ -508,7 +508,7 @@ personA = Person{}  # non-recommended
 personB = Person {}  # recommended
 ```
 
-- Keep **only one space** between the **mixin** keyword and the following `[]` operator
+- Keep **only one space** between the **mixin** keyword und the following `[]` operator
 
 ```python
 schema NameMixin:
@@ -525,7 +525,7 @@ schema Parent:
 
 ### Attribute Annotations
 
-- Annotations for schema attributes should have a single space after the colon `:` and no space before the colon `:`.
+- Annotations für schema attributes should have a single space after the colon `:` und no space before the colon `:`.
 
 ```python
 # recommended:
@@ -590,7 +590,7 @@ schema ConfigNonReCommended:
 
 ## Keywords
 
-- Only one space is usually reserved around the keyword, such as `schema`, `mixin`, `is` and `not`, etc.
+- Only one space is usually reserved around the keyword, such as `schema`, `mixin`, `is` und `not`, etc.
 
 ```python
 schema NameMixin:
@@ -614,7 +614,7 @@ person = Person {
 ## Function
 
 - There are no spaces around the function/package select operator `.`
-- There are no spaces between the function name and the parentheses `()`.
+- There are no spaces between the function name und the parentheses `()`.
 
 ```python
 import math

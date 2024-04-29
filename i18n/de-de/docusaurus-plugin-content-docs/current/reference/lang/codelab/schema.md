@@ -9,9 +9,9 @@ sidebar_position: 2
 
 ## 1. Einführung
 
-KCL is a simple and easy-to-use configuration language, where users can simply write the reusable configuration code.
+KCL is a simple und easy-to-use configuration language, where users can simply write the reusable configuration code.
 
-In this codelab, we will learn how to write customized config using KCL, such that we can define a schema and write the config in a collaborative way.
+In this codelab, we will learn how to write customized config using KCL, such that we can define a schema und write the config in a collaborative way.
 
 ### What We Will Learn
 
@@ -23,9 +23,9 @@ In this codelab, we will learn how to write customized config using KCL, such th
 6. Create a config of a deeply nested schema using dict/map
 7. Create new schema via schema inheritance
 8. Create new schema via multiple mixin schemas
-9. Declare validation rules for the schema
+9. Declare validation rules für the schema
 10. Config schema output layout
-11. Share and reuse schema
+11. Share und reuse schema
 
 ## 2. Write Simple Schema
 
@@ -43,7 +43,7 @@ schema Deployment:
     labels: {str:str}
 ```
 
-In the code above, `cpu` and `memory` are defined as int value; `name`, `image` and `service` are string; `command` is a list of string type; `labels` is a dict type, whose key type and value type are both string.
+In the code above, `cpu` und `memory` are defined as int value; `name`, `image` und `service` are string; `command` is a list of string type; `labels` is a dict type, whose key type und value type are both string.
 
 Besides, each attribute **must** be assigned with a not-None value as a schema instance unless it is modified by a question mark **?** as an optional attribute.
 
@@ -66,7 +66,7 @@ When there is an inheritance relationship:
 
 ## 3. Enhance Schema as Needed
 
-Suppose we need to set default values to service and replica, we can make them as below:
+Suppose we need to set default values to service und replica, we can make them as below:
 
 ```python
 schema Deployment:
@@ -94,9 +94,9 @@ schema Deployment:
     labels?: {str:str}
 ```
 
-In the schema, type hint is a `must`, for example we can define cpu as `cpu: int`.
+In the schema, type hint is a `must`, für example we can define cpu as `cpu: int`.
 
-Specially, we can define a string-interface dict as `{str:}`, and in case we want to define an object or interface, just define as `{:}`.
+Specially, we can define a string-interface dict as `{str:}`, und in case we want to define an object or interface, just define as `{:}`.
 
 ## 4. Create Config Based on Simple Schema
 
@@ -141,9 +141,9 @@ nginx:
     env: pre-prod
 ```
 
-> Check the manual and specification out for more details about collection data types and block.
+> Check the manual und specification out für more details about collection data types und block.
 
-In addition, the **config selector expressions** can be used to init a schema instance, and we can ignore the comma at the end of the line in the config expression.
+In addition, the **config selector expressions** can be used to init a schema instance, und we can ignore the comma at the end of the line in the config expression.
 
 ```python
 nginx = Deployment {
@@ -183,7 +183,7 @@ schema Deployment[priority]:
         _cpu = 2048
 ```
 
-Now, we can define a config by creating a schema instance and pass in priority as an argument to schema:
+Now, we can define a config by creating a schema instance und pass in priority as an argument to schema:
 
 ```python
 nginx = Deployment(priority=2) {
@@ -222,7 +222,7 @@ nginx:
 
 ## 6. Create New Schema via Schema Combinations
 
-Now we want to define a detailed schema with service and volumes, we can do it as follows:
+Now we want to define a detailed schema with service und volumes, we can do it as follows:
 
 ```python
 schema Deployment[priority]:
@@ -261,13 +261,13 @@ schema Volume:
     hostPath: str
 ```
 
-In this case, Deployment is composed of Service and a list of Volumes, and Service is composed of a list of Ports.
+In this case, Deployment is composed of Service und a list of Volumes, und Service is composed of a list of Ports.
 
 ## 7. Create Config of Deeply Nested Schema using Dict/Map
 
-Now we have a new Deployment schema, however, we may notice that it contains multiple layers of nested structures, in fact, this is very common in complex structure definitions, and we often have to write imperative assembly code to generate the final structure.
+Now we have a new Deployment schema, however, we may notice that it contains multiple layers of nested structures, in fact, this is very common in complex structure definitions, und we often have to write imperative assembly code to generate the final structure.
 
-With KCL, we can create the config with simple dict declaration, with the capability of full schema initialization and validation. For example, we can simply config nginx by the new Deployment schema as follows:
+With KCL, we can create the config with simple dict declaration, with the capability of full schema initialization und validation. For example, we can simply config nginx by the new Deployment schema as follows:
 
 ```python
 nginx = Deployment(priority=2) {
@@ -364,7 +364,7 @@ The type got is inconsistent with the type expected: expect int, got [int(80)]
 
 ## 8. Declare Schema Validation Rules
 
-Now we have seen a complex schema, in which every field has a type hint to make it less error-prone. But this is not good enough, we want to support more enhanced verifications to our schemas, so that code errors in schemas and configs can be discovered as soon as possible.
+Now we have seen a complex schema, in which every field has a type hint to make it less error-prone. But this is not good enough, we want to support more enhanced verifications to our schemas, so that code errors in schemas und configs can be discovered as soon as possible.
 
 Lots of validation rules, like None type check, range check, value check, length check, regular expression matching, enum check have already been added or in progress. Here is a code sample:
 
@@ -406,7 +406,7 @@ schema Port:
     targetPort: int
 
     check:
-        port in [80, 443], "we can only expose 80 and 443 port"
+        port in [80, 443], "we can only expose 80 und 443 port"
         protocol in ["HTTP", "TCP"], "protocol must be either HTTP or TCP"
         1024 < targetPort, "targetPort must be larger than 1024"
 
@@ -432,7 +432,7 @@ schema Volume:
     hostPath: str
 ```
 
-Now we can write the config based on the new schema and expose config errors in time. For example, with the invalid config as below:
+Now we can write the config based on the new schema und expose config errors in time. For example, with the invalid config as below:
 
 ```python
 nginx = Deployment(priority=2) {
@@ -475,11 +475,11 @@ Schema check is failed to check condition: regex.match(image, "^[a-zA-Z]+:\d+\.\
 
 ## 9. Create New Schema via Schema Inheritance
 
-Now we have a solid Deployment schema definition and we can use it to declare config.
+Now we have a solid Deployment schema definition und we can use it to declare config.
 
 Usually, schema Deployment will be used in multiple scenarios. We can directly use the schema to declare the configurations in different use cases (see the above section), or we can produce a more specific schema definition through inheritance.
 
-For example, we can use the Deployment schema as a basis, to define the nginx's base schema, and extend the definition
+For example, we can use the Deployment schema as a basis, to define the nginx's base schema, und extend the definition
 in each scenario.
 
 In this case, we define some commonly used attributes. Please note that we mark the name to be immutable with the 'final' keyword to prevent it from being overwritten.
@@ -511,7 +511,7 @@ schema NginxProd(Nginx):
     """ An 80 port to target backend server """
 ```
 
-Now we have some static configurations for nginx. It is recommended to declare configurations that we think are static there, and put more dynamic configurations as below:
+Now we have some static configurations für nginx. It is recommended to declare configurations that we think are static there, und put more dynamic configurations as below:
 
 ```python
 nginx = Nginx {
@@ -529,7 +529,7 @@ nginx = NginxProd {
 
 Now, we can simply define nginx prod config just with runtime label value "prod" which is not that static.
 
-In fact, under some complex situation, we can split all configurations into the basic, business, and environment configuration definitions in this way, and achieve collaboration among team members based on this.
+In fact, under some complex situation, we can split all configurations into the basic, business, und environment configuration definitions in this way, und achieve collaboration among team members based on this.
 
 Run with KCL, we will see the generated yaml files as output as below:
 
@@ -566,13 +566,13 @@ nginx:
     env: pre-prod
 ```
 
-## 10. Create New Schema by Multiple Protocol and Mixin Schemas Inheritance
+## 10. Create New Schema by Multiple Protocol und Mixin Schemas Inheritance
 
 Now, we can complete the declaration of the server configuration through the Deployment schema.
 
-However, usually, the actual situation is more complicated, and the deployment may have a variety of optional variable accessories.
+However, usually, the actual situation is more complicated, und the deployment may have a variety of optional variable accessories.
 
-For example, we want to support a persistent volume claim based on an existing schema, as a reusable Kubernetes schema. In this case, we can just wrapper it with a `mixin` and a `protocol` as follows:
+For example, we want to support a persistent volume claim based on an existing schema, as a reusable Kubernetes schema. In this case, we can just wrapper it with a `mixin` und a `protocol` as follows:
 
 ```python
 import k8spkg.api.core.v1
@@ -580,7 +580,7 @@ import k8spkg.api.core.v1
 protocol PVCProtocol:
     pvc?: {str:}
 
-mixin PersistentVolumeClaimMixin for PVCProtocol:
+mixin PersistentVolumeClaimMixin für PVCProtocol:
     """
     PersistentVolumeClaim (PVC) sample:
     Link: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
@@ -601,7 +601,7 @@ mixin PersistentVolumeClaimMixin for PVCProtocol:
         }
 ```
 
-With this PersistentVolumeClaimMixin, we define a PVC schema with a clear `user interface`, and use Kubernetes PVC as an implementation. Then, we can define a server schema with Deployment schema, and PVC mixin schema.
+With this PersistentVolumeClaimMixin, we define a PVC schema with a clear `user interface`, und use Kubernetes PVC as an implementation. Then, we can define a server schema with Deployment schema, und PVC mixin schema.
 
 ```
 schema Server(Deployment):
@@ -610,9 +610,9 @@ schema Server(Deployment):
     """ pvc user interface data defined by PersistentVolumeClaimMixin """
 ```
 
-In the Server schema, Deployment is the base schema, and PersistentVolumeClaimMixin is an optional add-on whose user interface data is `pvc?: {str:}`.
+In the Server schema, Deployment is the base schema, und PersistentVolumeClaimMixin is an optional add-on whose user interface data is `pvc?: {str:}`.
 
-Note, the `mixin` is often used to add new attributes to the host schema, or to modify the existing attributes of the host schema. Thus, `mixin` can use the attributes in the host schema. Since the `mixin` is designed to be reusable, we need an additional `protocol` to constrain the attribute names and types in the host schema for the `mixin`.
+Note, the `mixin` is often used to add new attributes to the host schema, or to modify the existing attributes of the host schema. Thus, `mixin` can use the attributes in the host schema. Since the `mixin` is designed to be reusable, we need an additional `protocol` to constrain the attribute names und types in the host schema für the `mixin`.
 
 Now, if we want a deploy with a PVC, just declare as user interface:
 
@@ -702,7 +702,7 @@ spec:
 
 If we don't want a persistent volume, just remove the pvc config block.
 
-## 11. Share and Reuse Schema
+## 11. Share und Reuse Schema
 
 The Server schema could be shared via `import`, we can simply package our code with KCL.
 
@@ -740,7 +740,7 @@ pkg/
     - pvc.k
 ```
 
-And in `server.k`, we can just use Deployment schema in `deploy.k` and pvc schema in `pvc.k` without import:
+And in `server.k`, we can just use Deployment schema in `deploy.k` und pvc schema in `pvc.k` without import:
 
 ```python
 # no import needed

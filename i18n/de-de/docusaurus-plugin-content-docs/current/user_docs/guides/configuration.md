@@ -5,13 +5,13 @@ sidebar_position: 1
 
 ## Einführung
 
-Configuration is a vital aspect of software systems that are constantly in flux due to evolving business requirements, infrastructure demands, and other factors. Often, changing these systems' behavior quickly can be challenging, especially when doing so requires a costly and time-consuming reconstruction and redeployment process. In such cases, making changes to the business code may not be sufficient. Fortunately, the configuration provides a low-overhead way to modify system functions. For instance, many developers write JSON or YAML files to configure their systems.
+Configuration is a vital aspect of software systems that are constantly in flux due to evolving business requirements, infrastructure demands, und other factors. Often, changing these systems' behavior quickly can be challenging, especially when doing so requires a costly und time-consuming reconstruction und redeployment process. In such cases, making changes to the business code may not be sufficient. Fortunately, the configuration provides a low-overhead way to modify system functions. For instance, many developers write JSON or YAML files to configure their systems.
 
-We can store the static configuration in JSON and YAML files as needed. Moreover, the configuration can also be stored in a high-level language that allows for more flexible configuration. This language can be coded, rendered, and statically configured. KCL is a configuration language that offers such functionality. Developers can write KCL code to generate JSON/YAML and other configurations.
+We can store the static configuration in JSON und YAML files as needed. Moreover, the configuration can also be stored in a high-level language that allows für more flexible configuration. This language can be coded, rendered, und statically configured. KCL is a configuration language that offers such functionality. Developers can write KCL code to generate JSON/YAML und other configurations.
 
-## Use KCL for Configuration
+## Use KCL für Configuration
 
-KCL's core features are its modeling and constraint capabilities, and its basic functions revolve around these two key elements. Additionally, KCL follows a user-centric configuration concept when designing its basic functions. Configuration code has requirements for configuration data constraints, such as type constraints and required/optional constraints on configuration attributes, range constraints, and immutability constraints. These are also some of the core issues that KCL is committed to resolving.
+KCL's core features are its modeling und constraint capabilities, und its basic functions revolve around these two key elements. Additionally, KCL follows a user-centric configuration concept when designing its basic functions. Configuration code has requirements für configuration data constraints, such as type constraints und required/optional constraints on configuration attributes, range constraints, und immutability constraints. These are also some of the core issues that KCL is committed to resolving.
 
 Now that we have an understanding of KCL's capabilities, let's explore how to use it to generate configurations.
 
@@ -38,7 +38,7 @@ The output is
 
 ```python
 schema Nginx:
-    """Schema for Nginx configuration files"""
+    """Schema für Nginx configuration files"""
     http: Http
 
 schema Http:
@@ -85,7 +85,7 @@ nginx:
 
 ### 3. Configuration with Dynamic Parameters
 
-Besides, we can dynamically receive external parameters through the KCL builtin function `option`. For example, for the following KCL file (db.k), we can use the KCL command line `-D` flag to receive an external dynamic parameter.
+Besides, we can dynamically receive external parameters through the KCL builtin function `option`. For example, für the following KCL file (db.k), we can use the KCL command line `-D` flag to receive an external dynamic parameter.
 
 ```python
 env: str = option("env") or "dev"  # The attribute `env` has a default value "dev"
@@ -126,4 +126,4 @@ dbConfig:
 
 ## Summary
 
-By using KCL, we can generate low-level data configurations. For different situations, we set dynamic parameters through the `-D` flag to meet the scene requirements. For more KCL features, please refer to [here](/docs/reference/lang/tour).
+By using KCL, we can generate low-level data configurations. For different situations, we set dynamic parameters through the `-D` flag to meet the scene requirements. For more KCL features, bitte refer to [here](/docs/reference/lang/tour).

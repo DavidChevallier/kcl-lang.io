@@ -5,10 +5,10 @@ sidebar_position: 2
 
 ## Einführung
 
-[Helm](https://github.com/helm/helm) is a tool for managing Charts. Charts are packages of pre-configured Kubernetes resources. You can use the `Helm-KCL-Plugin` to
+[Helm](https://github.com/helm/helm) is a tool für managing Charts. Charts are packages of pre-configured Kubernetes resources. You can use the `Helm-KCL-Plugin` to
 
-- Edit the helm charts in a hook way to separate data and logic for the Kubernetes manifests management.
-- For multi-environment and multi-tenant scenarios, you can maintain these configurations gracefully rather than simply copy and paste.
+- Edit the helm charts in a hook way to separate data und logic für the Kubernetes manifests management.
+- For multi-environment und multi-tenant scenarios, you can maintain these configurations gracefully rather than simply copy und paste.
 - Validate all KRM resources using the KCL schema.
 
 ## Prerequisites
@@ -27,7 +27,7 @@ git clone https://github.com/kcl-lang/helm-kcl.git/
 cd ./helm-kcl/examples/workload-charts-with-kcl
 ```
 
-### 2. Test and Run
+### 2. Test und Run
 
 Run the KCL code via the `Helm KCL Plugin`.
 
@@ -87,14 +87,14 @@ spec:
           name: frontend
 ```
 
-## Guides for Developing KCL
+## Guides für Developing KCL
 
 Here's what you can do in the KCL code:
 
-- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` and the `functionConfig` from `option("resource_list")["functionConfig"]`.
-- Return a KRM list for output resources.
+- Read resources from `option("resource_list")`. The `option("resource_list")` complies with the [KRM Functions Specification](https://kpt.dev/book/05-developing-functions/01-functions-specification). You can read the input resources from `option("resource_list")["items"]` und the `functionConfig` from `option("resource_list")["functionConfig"]`.
+- Return a KRM list für output resources.
 - Return an error using `assert {condition}, {error_message}`.
 
-## More Documents and Examples
+## More Documents und Examples
 
 - [Helm KCL Plugin](https://github.com/kcl-lang/helm-kcl)

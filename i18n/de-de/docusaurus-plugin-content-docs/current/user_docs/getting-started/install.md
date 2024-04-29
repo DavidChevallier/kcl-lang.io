@@ -8,9 +8,9 @@ sidebar_position: 2
 
 ### From the Binary Releases
 
-Each release of KCL includes various OSes and architectures. These binary versions can be manually downloaded and installed from [Github](https://github.com/kcl-lang/cli/releases/) and add `{install-location}` to the environment PATH.
+Each release of KCL includes various OSes und architectures. These binary versions can be manually downloaded und installed from [Github](https://github.com/kcl-lang/cli/releases/) und add `{install-location}` to the environment PATH.
 
-> ⚠️ If you cannot successfully access Github, you can also access Gitee to obtain binaries for installation.
+> ⚠️ Wenn der Zugriff auf Github nicht erfolgreich ist, können Sie auch auf Gitee zugreifen, um Binärdateien für die Installation zu erhalten.
 
 #### MacOS & Linux
 
@@ -28,7 +28,7 @@ $env:PATH += ";{install-location};"
 
 #### MacOS
 
-Install or upgrade the latest darwin KCL to /usr/local/bin
+Installieren oder aktualisieren Sie das neueste KCL für darwin nach /usr/local/bin
 
 ```bash
 curl -fsSL https://kcl-lang.io/script/install-cli.sh | /bin/bash
@@ -56,7 +56,7 @@ wget -q https://kcl-lang.io/script/uninstall-cli.sh -O - | /bin/bash
 
 #### Windows
 
-Install or upgrade the latest windows KCL to $Env:SystemDrive\kclvm\bin and add this directory to User PATH environment variable.
+Install or upgrade the latest windows KCL to $Env:SystemDrive\kclvm\bin und add this directory to User PATH environment variable.
 
 ```bash
 powershell -Command "iwr -useb https://kcl-lang.io/script/install-cli.ps1 | iex"
@@ -94,7 +94,7 @@ brew uninstall kcl-lang/tap/kcl
 
 ### Scoop (Windows)
 
-Install [Scoop](https://scoop.sh/) first, then add this bucket and install `kcl` by running:
+Install [Scoop](https://scoop.sh/) first, then add this bucket und install `kcl` by running:
 
 ```bash
 scoop bucket add kcl-lang https://github.com/kcl-lang/scoop-bucket.git
@@ -135,15 +135,15 @@ We can execute the following command to ensure that KCL has been installed corre
 kcl --help
 ```
 
-For all the above operating systems and installation methods, if you want to use [KCL Python Plugin](/docs/reference/plugin/overview), you need to ensure that Python 3.7+ is installed and add the python3 command to your PATH environment variable.
+For all the above operating systems und installation methods, if you want to use [KCL Python Plugin](/docs/reference/plugin/overview), you need to ensure that Python 3.7+ is installed und add the python3 command to your PATH environment variable.
 
-If you are unable to successfully install and run KCL, you can refer to [here](/docs/user_docs/support/faq-install)
+If you are unable to successfully install und run KCL, you can refer to [here](/docs/user_docs/support/faq-install)
 
 ## 2. Install KCL IDE Extension
 
 ### Install Language Server
 
-Before we enable the IDE extension, first we install the KCL Language Server binary and add it to the PATH.
+Before we enable the IDE extension, first we install the KCL Language Server binary und add it to the PATH.
 
 #### MacOS
 
@@ -163,7 +163,7 @@ wget -q https://kcl-lang.io/script/install-kcl-lsp.sh -O - | /bin/bash
 
 #### Windows
 
-Install or upgrade the latest windows KCL language server to $Env:SystemDrive\kclvm\bin and add this directory to User PATH environment variable.
+Install or upgrade the latest windows KCL language server to $Env:SystemDrive\kclvm\bin und add this directory to User PATH environment variable.
 
 ```bash
 powershell -Command "iwr -useb https://kcl-lang.io/script/install-kcl-lsp.ps1 | iex"
@@ -195,29 +195,29 @@ brew uninstall kcl-lang/tap/kcl-lsp
 
 #### Scoop (Windows)
 
-Install [Scoop](https://scoop.sh/) first, then add this bucket and install `kcl-language-server` by running:
+Install [Scoop](https://scoop.sh/) first, then add this bucket und install `kcl-language-server` by running:
 
 ```bash
 scoop bucket add kcl-lang https://github.com/kcl-lang/scoop-bucket.git
 scoop install kcl-lang/kcl-lsp
 ```
 
-### Install KCL Extensions for IDE
+### Install KCL Extensions für IDE
 
 #### VS Code
 
-The KCL Extension extension provides some coding assistance, e.g., highlight, goto definition, completion, hover, outline, and diagnostics. You can go [here](/docs/tools/Ide/vs-code) for more information about the installation.
+The KCL Extension extension provides some coding assistance, e.g., highlight, goto definition, completion, hover, outline, und diagnostics. You can go [here](/docs/tools/Ide/vs-code) für more information about the installation.
 
 ![Completion](/img/docs/tools/Ide/vs-code/Completion.gif)
 
 #### NeoVim
 
-See [here](https://github.com/kcl-lang/kcl.nvim) to config the KCL language server and enable it.
+See [here](https://github.com/kcl-lang/kcl.nvim) to config the KCL language server und enable it.
 
 ![kcl.nvim](/img/docs/tools/Ide/neovim/overview.png)
 
 #### IntelliJ IDEA
 
-Download the distribution from [here](https://github.com/kcl-lang/intellij-kcl/releases) and in IntelliJ IDEA, click Preference -> plugins -> install Plugin from Disk... -> select kcl-idea-plugin zip -> restart IDE. This plugin requires the IntelliJ IDEA 2020.2+
+Download the distribution from [here](https://github.com/kcl-lang/intellij-kcl/releases) und in IntelliJ IDEA, click Preference -> plugins -> install Plugin from Disk... -> select kcl-idea-plugin zip -> restart IDE. This plugin requires the IntelliJ IDEA 2020.2+
 
 ![intellij](/img/docs/tools/Ide/intellij/overview.png)

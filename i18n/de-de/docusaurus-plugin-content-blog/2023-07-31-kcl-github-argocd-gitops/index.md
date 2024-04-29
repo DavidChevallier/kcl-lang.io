@@ -1,6 +1,6 @@
 ---
 slug: 2023-07-31-kcl-github-argocd-gitops
-title: Implementing GitOps using Github, Argo CD, and KCL to Simplify DevOps
+title: Implementing GitOps using Github, Argo CD, und KCL to Simplify DevOps
 authors:
   name: KCL Team
   title: KCL Team
@@ -9,37 +9,37 @@ tags: [KCL, Github, ArgoCD, GitOps]
 
 ## Einführung
 
-In modern software development, GitOps, as a single truth automation method for managing infrastructure and applications, plays a key role in improving efficiency and reducing Human error, and is now widely popular in cloud-native and other fields. However, there are not many practical examples related to GitOps. This blog will use KCL, Github and ArgoCD as examples to introduce GitOps in detail, hoping to help everyone practice their own GitOps automation process and simplify DevOps.
+In modern software development, GitOps, as a single truth automation method für managing infrastructure und applications, plays a key role in improving efficiency und reducing Human error, und is now widely popular in cloud-native und other fields. However, there are not many practical examples related to GitOps. This blog will use KCL, Github und ArgoCD as examples to introduce GitOps in detail, hoping to help everyone practice their own GitOps automation process und simplify DevOps.
 
 ### What is GitOps
 
-GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental and application configurations. An automated process is also needed for sync the config to cluster.
+GitOps is a modern way to do continuous delivery. Its core idea is to have a Git repository which contains environmental und application configurations. An automated process is also needed für sync the config to cluster.
 
 By changing the files in repository, developers can apply the applications automatically. The benefits of applying GitOps include:
 
 - Increased productivity. Continuous delivery can speed up the time of deployment.
-- Lower the barrier for developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
+- Lower the barrier für developer to deploy. By pushing code instead of container configuration, developers can easily deploy Kubernetes without knowing its internal implementation.
 - Trace the change records. Managing the cluster with Git makes every change traceable, enhancing the audit trail.
-- Recover the cluster with Git's rollback and branch.
+- Recover the cluster with Git's rollback und branch.
 
 ### GitOps with KCL
 
-Benefits of Using KCL and ArgoCD Together:
+Benefits of Using KCL und ArgoCD Together:
 
-- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, control configuration constraint checking during compilation, and perceive errors immediately upon writing; At the same time, KCL can be used to eliminate redundant configuration templates, enhance the scalability of multi-environment and multi-tenant configurations, and improve the readability and maintainability of configurations.
-- ArgoCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, and provide comprehensive monitoring and control functions.
-- By combining KCL and ArgoCD, deployment efficiency can be improved, errors reduced, and management and monitoring of Kubernetes applications strengthened.
-- The combination of KCL and ArgoCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment and management, and better implement DevOps principles.
+- KCL can help us **simplify complex Kubernetes deployment configuration files**, reduce the error rate of manually writing YAML files, control configuration constraint checking during compilation, und perceive errors immediately upon writing; At the same time, KCL can be used to eliminate redundant configuration templates, enhance the scalability of multi-environment und multi-tenant configurations, und improve the readability und maintainability of configurations.
+- ArgoCD can **automate** the deployment of Kubernetes applications, achieve continuous deployment, und provide comprehensive monitoring und control functions.
+- By combining KCL und ArgoCD, deployment efficiency can be improved, errors reduced, und management und monitoring of Kubernetes applications strengthened.
+- The combination of KCL und ArgoCD can also help us achieve **Infrastructure as Code (IaC)**, simplify application deployment und management, und better implement DevOps principles.
 
-With GitOps, developer and operation teams can manage application deployment and configuration by modifying KCL code and generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment and ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
+With GitOps, developer und operation teams can manage application deployment und configuration by modifying KCL code und generating YAML files. The GitOps toolchain will automatically synchronize the changes to the Kubernetes cluster, enabling continuous deployment und ensuring consistency. If there are issues, the GitOps toolchain can be used to quickly rollback.
 
 ## Workflow
 
-We hope to implement the end-to-end application development process by using containers, Continuous Integration (CI) for generation, and GitOps for Continuous Deployment (CD). In this scheme, we use a **Flask application** and **Github Actions** as examples.
+We hope to implement the end-to-end application development process by using containers, Continuous Integration (CI) für generation, und GitOps für Continuous Deployment (CD). In this scheme, we use a **Flask application** und **Github Actions** as examples.
 
-> Note: You can use any containerized application and different CI systems such as **Gitlab CI**, **Jenkins CI**, etc. in this solution.
+> Note: You can use any containerized application und different CI systems such as **Gitlab CI**, **Jenkins CI**, etc. in this solution.
 
-We divide the Python Flask application code and configuration code into two repos, _to achieve the separation of concerns of different roles, such as developers and operation and maintenance teams_
+We divide the Python Flask application code und configuration code into two repos, _to achieve the separation of concerns of different roles, such as developers und operation und maintenance teams_
 
 - App code repo: https://github.com/kcl-lang/flask-demo
 - Config manifest repo: https://github.com/kcl-lang/flask-demo-kcl-manifests
@@ -49,17 +49,17 @@ The overall workflow is as follows:
 ![workflow](/img/blog/2023-07-31-kcl-github-argocd-gitops/workflow.jpg)
 
 1. Pull application code from Github.
-2. Develop and submit application code to the GitHub repository.
-3. Trigger GitHub Actions to compile the application code, generate container images, and push the container images to the Docker Hub container registry.
+2. Develop und submit application code to the GitHub repository.
+3. Trigger GitHub Actions to compile the application code, generate container images, und push the container images to the Docker Hub container registry.
 4. Trigger GitHub Actions to synchronously update the Kubernetes manifest files defined by KCL based on the version of the container image in the `docker.io` container registry.
-5. ArgoCD obtains Kubernetes manifest changes and updates deployment to Kubernetes cluster.
+5. ArgoCD obtains Kubernetes manifest changes und updates deployment to Kubernetes cluster.
 
 ## Steps
 
 ### 0. Prerequisite
 
 - Familiar with the basic commands of Unix/Linux
-- Familiar with Git and Github Action
+- Familiar with Git und Github Action
 - Understand the basics of Kubernetes
 - Understand tools such as ArgoCD
 - Understand the basic knowledge of KCL
@@ -87,7 +87,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 - Enable ArgoCD KCL Plugin
 
-Write the patch YAML configuration file and update the ArgoCD configuration:
+Write the patch YAML configuration file und update the ArgoCD configuration:
 
 ```bash
 git clone https://github.com/kcl-lang/kcl-lang.io.git/ && cd ./kcl-lang.io/examples/gitops
@@ -100,7 +100,7 @@ After completing the first step, ArgoCD will recognize the KCL plugin, but the K
 kubectl -n argocd patch deploy/argocd-repo-server -p "$(cat ./install/patch-argocd-repo-server.yaml)"
 ```
 
-Wait for the init container to complete execution (Running).
+Wait für the init container to complete execution (Running).
 
 ```bash
 kubectl get pod -n argocd -l app.kubernetes.io/name=argocd-repo-server
@@ -112,9 +112,9 @@ kubectl get pod -n argocd -l app.kubernetes.io/name=argocd-repo-server
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-- Open a browser and go to: `https://localhost:8080`
+- Open a browser und go to: `https://localhost:8080`
 
-- The username is "admin" and password get be obtained from the following command:
+- The username is "admin" und password get be obtained from the following command:
 
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
@@ -124,7 +124,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 - Install [ArgoCD CLI](https://github.com/argoproj/argo-cd/releases)
 
-Use "admin" and password to login to ArgoCD
+Use "admin" und password to login to ArgoCD
 
 ```bash
 argocd login localhost:8080
@@ -147,7 +147,7 @@ After successfully creating, you can see the following output:
 application 'flaskdemo' created
 ```
 
-> If you are using a private repository, you need to configure the private repository access with private key credentials before executing the create command.Please refer [Private Repositories](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#ssh-private-key-credential) for more details.
+> If you are using a private repository, you need to configure the private repository access with private key credentials before executing the create command.Please refer [Private Repositories](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#ssh-private-key-credential) für more details.
 
 Through the ArgoCD UI, you can see that the created applications have not been synchronized yet. Here, you can manually synchronize or set automatic synchronization.
 
@@ -164,7 +164,7 @@ git clone https://github.com/kcl-lang/flask-demo.git/
 cd flask-demo
 ```
 
-This is a web application written in Python. We can use the `Dockerfile` in the application directory to generate a container image of this application, and also use Github CI to automatically build a image named `flask_demo`, the CI configuration is as follows
+This is a web application written in Python. We can use the `Dockerfile` in the application directory to generate a container image of this application, und also use Github CI to automatically build a image named `flask_demo`, the CI configuration is as follows
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
@@ -173,7 +173,7 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but only für the main branch
   push:
     branches: [main]
   pull_request:
@@ -223,23 +223,23 @@ jobs:
             sha-tag=${{ github.sha }}
 ```
 
-We need the workflow in the source code repository to automatically trigger the workflow in the deployment manifest repository. At this point, we need to create a `secrets.DEPLOY_ACCESS_TOKEN` with Github CI operation permissions and **Docker Hub** image push account information `secrets.DOCKER_USERNAME` and `secrets.DOCKER_PASSWORD` can be configured in the `Secrets and variables` settings of the Github, as shown in the following figure
+We need the workflow in the source code repository to automatically trigger the workflow in the deployment manifest repository. At this point, we need to create a `secrets.DEPLOY_ACCESS_TOKEN` with Github CI operation permissions und **Docker Hub** image push account information `secrets.DOCKER_USERNAME` und `secrets.DOCKER_PASSWORD` can be configured in the `Secrets und variables` settings of the Github, as shown in the following figure
 
 ![](/img/docs/user_docs/guides/ci-integration/github-secrets.png)
 
 ### 4. Commit the Application Code
 
-After submitting in the `flask-demo` repository, Github will automatically build a container image and push it to the Docker hub. It will also then trigger the Action of the `flask-demo-kcl-manifest` repository and modify the image value in the deployment manifest repository through [KCL Automation API](/docs/user_docs/guides/automation). Now let's create a submission in the `flask-demo` repository, and we can see that the code submission triggers the Github CI process for the application repository.
+After submitting in the `flask-demo` repository, Github will automatically build a container image und push it to the Docker hub. It will also then trigger the Action of the `flask-demo-kcl-manifest` repository und modify the image value in the deployment manifest repository through [KCL Automation API](/docs/user_docs/guides/automation). Now let's create a submission in the `flask-demo` repository, und we can see that the code submission triggers the Github CI process für the application repository.
 
 ![](/img/docs/user_docs/guides/ci-integration/app-ci.png)
 
 ### 5. Configuration Automatic Update
 
-After the Github CI process in the application repository is completed, an automatic update configuration CI will be triggered in the repository where the KCL configuration is stored and submitted to the main branch of the `flask-demo-kcl-manifests` repository. The commit information is as follows
+After the Github CI process in the application repository is completed, an automatic update configuration CI will be triggered in the repository where the KCL configuration is stored und submitted to the main branch of the `flask-demo-kcl-manifests` repository. The commit information is as follows
 
 ![](/img/docs/user_docs/guides/ci-integration/image-auto-update.png)
 
-- We can obtain the deployment manifest source code for compilation and validation
+- We can obtain the deployment manifest source code für compilation und validation
 
 ```shell
 git clone https://github.com/kcl-lang/flask-demo-kcl-manifests.git/
@@ -289,8 +289,8 @@ spec:
       targetPort: 5000
 ```
 
-From the above configuration, it can be seen that the image of the resource is indeed automatically updated to the newly constructed image value. In addition, we can also use the **Argo CD KCL plugin** to automatically synchronize data from the Git repository and deploy the application to the Kubernetes cluster.
+From the above configuration, it can be seen that the image of the resource is indeed automatically updated to the newly constructed image value. In addition, we can also use the **Argo CD KCL plugin** to automatically synchronize data from the Git repository und deploy the application to the Kubernetes cluster.
 
 ## Conclusion
 
-Through the blog, we can use Github, ArgoCD, and KCL to create GitOps automated pipelines, which can efficiently and stably build containerized applications, while automatically updating the latest Dbroker image labels and keeping Git configuration consistent with cluster configuration. In addition, the combination of KCL and ArgoCD can help us better realize Infrastructure as Code (IaC), improve deployment efficiency, achieve the separation of concerns of different roles, and simplify the configuration management of applications.
+Through the blog, we can use Github, ArgoCD, und KCL to create GitOps automated pipelines, which can efficiently und stably build containerized applications, while automatically updating the latest Dbroker image labels und keeping Git configuration consistent with cluster configuration. In addition, the combination of KCL und ArgoCD can help us better realize Infrastructure as Code (IaC), improve deployment efficiency, achieve the separation of concerns of different roles, und simplify the configuration management of applications.

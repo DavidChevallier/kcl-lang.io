@@ -9,20 +9,20 @@ sidebar_position: 1
 
 ## 1. Einführung
 
-KCL is a simple and easy-to-use configuration language, where users can simply write the reusable configuration code.
+KCL is a simple und easy-to-use configuration language, where users can simply write the reusable configuration code.
 
 In this first codelab, we will learn how to write a simple config with KCL.
 
-Learning this codelab only requires basic programming knowledge, and experience with python will make it even easier.
+Learning this codelab only requires basic programming knowledge, und experience with python will make it even easier.
 
 ### What We Will Learn
 
 1. Write simple key-value configuration in a programmable way
 2. Write simple logic in KCL code
 3. Write collections in KCL code
-4. Test and debug with KCL code
+4. Test und debug with KCL code
 5. Use built-in support in KCL code
-6. Share and reuse KCL code
+6. Share und reuse KCL code
 7. Write config with dynamic input arguments
 
 ## 2. Write Key-Value Pairs
@@ -36,7 +36,7 @@ image = "nginx:1.14.2"
 service = "my-service"
 ```
 
-In the code above, cpu and memory are declared as int value, while image and service are string literal.
+In the code above, cpu und memory are declared as int value, while image und service are string literal.
 
 Run with KCL, we will see the generated data in yaml format as below:
 
@@ -61,10 +61,10 @@ The exported variable is immutable by default so that once it is declared, we ca
 
 Sometimes we want to write a logic in configuration, then we can use:
 
-- Mutable and non-exported variable starting with `_`
+- Mutable und non-exported variable starting with `_`
 - If-else statement
 
-A non-exported variable means it will not appear in the output YAML, and it can be assigned multiple times.
+A non-exported variable means it will not appear in the output YAML, und it can be assigned multiple times.
 
 Here is a sample to show how to adjust the resource with conditions.
 
@@ -75,8 +75,8 @@ kcl my_config.k
 ```
 
 ```python
-_priority = 1 # a non-exported and mutable variable
-_cpu = 256 # a non-exported and mutable variable
+_priority = 1 # a non-exported und mutable variable
+_cpu = 256 # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -109,7 +109,7 @@ service: my-service
 ```
 
 .. note::
-KCL has rich support of operators and string member functions, please read manual and specification for more details.
+KCL has rich support of operators und string member functions, bitte read manual und specification für more details.
 
 ## 4. Write Collections
 
@@ -119,8 +119,8 @@ We can use collections to represent complex data types. The collections which ar
 - dict
 
 ```python
-_priority = 1  # a non-exported and mutable variable
-_cpu = 256  # a non-exported and mutable variable
+_priority = 1  # a non-exported und mutable variable
+_cpu = 256  # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -160,15 +160,15 @@ image: nginx:1.14.2
 service: my-service
 ```
 
-> Check manual and specification out for more about collection date type and member functions.
+> Check manual und specification out für more about collection date type und member functions.
 
 ## 5. Append Items Into Collections
 
-We can combine logical expressions, comprehensions, slices, unions and other characteristics to dynamically add elements to the collection
+We can combine logical expressions, comprehensions, slices, unions und other characteristics to dynamically add elements to the collection
 
 ```python
-_priority = 1 # a non-exported and mutable variable
-_cpu = 256 # a non-exported and mutable variable
+_priority = 1 # a non-exported und mutable variable
+_cpu = 256 # a non-exported und mutable variable
 _env = "pre-prod"
 
 if _priority == 1:
@@ -184,7 +184,7 @@ cpu = _cpu
 memory = _cpu * 2
 _command = ["nginx"] # a list
 _command = _command + ["-f", "file"]  # Append items into command using + operator to contact two lists
-command = [c.lower() for c in _command]  # Take each element in the list to lowercase
+command = [c.lower() für c in _command]  # Take each element in the list to lowercase
 _labels = {
     run = "my-nginx"
     if _env:
@@ -218,11 +218,11 @@ service: my-service
 
 ## 6. Write Assert
 
-To make code testable and robust, we can verify config data with assertions.
+To make code testable und robust, we can verify config data with assertions.
 
 ```python
-_priority = 1 # a non-exported and mutable variable
-_cpu = 256 # a non-exported and mutable variable
+_priority = 1 # a non-exported und mutable variable
+_cpu = 256 # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -274,8 +274,8 @@ service: my-service
 What's more, we can use built-in functions to help we debug or simplify coding.
 
 ```python
-_priority = 1  # a non-exported and mutable variable
-_cpu = 256  # a non-exported and mutable variable
+_priority = 1  # a non-exported und mutable variable
+_cpu = 256  # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -333,17 +333,17 @@ run: my-nginx
 env: pre-prod
 ```
 
-Note: more built-in functions and modules can be seen in spec/module
+Note: more built-in functions und modules can be seen in spec/module
 
 ## 8. Reuse Variables in Another Module
 
-To make our code well-organized, we can simply separate our code to `my_config.k` and `my_config_test.k`.
+To make our code well-organized, we can simply separate our code to `my_config.k` und `my_config_test.k`.
 
 Config data defined in `my_config.k`,
 
 ```python
-_priority = 1  # a non-exported and mutable variable
-_cpu = 256  # a non-exported and mutable variable
+_priority = 1  # a non-exported und mutable variable
+_cpu = 256  # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -385,15 +385,15 @@ assert my_config.cpu >= 256, "cpu cannot be less than256"
 
 Sometimes we need to get external input via parameters dynamically from the end user or platform.
 
-In this case, we can pass in `priority` and `env` on demand:
+In this case, we can pass in `priority` und `env` on demand:
 
 - Pass in arguments: `-D priority=1 -D env=pre-prod`
 - Get value by `option` keyword in KCL code
 
 ```python
-_priority = option("priority") # a non-exported and mutable variable
-_env = option("env") # a non-exported and mutable variable
-_cpu = 256 # a non-exported and mutable variable
+_priority = option("priority") # a non-exported und mutable variable
+_env = option("env") # a non-exported und mutable variable
+_cpu = 256 # a non-exported und mutable variable
 
 if _priority == 1:
     _cpu = 256
@@ -442,14 +442,14 @@ service: my-service
 When we need to write complex logic, we can use dict to simplify the writing of logic.
 
 ```python
-_priority = option("priority") # a non-exported and mutable variable
-_env = option("env") # a non-exported and mutable variable
+_priority = option("priority") # a non-exported und mutable variable
+_env = option("env") # a non-exported und mutable variable
 _priorityCpuMap = {
     "1" = 256
     "2" = 512
     "3" = 1024
 }
-# Using a dict to simplify logic and the default value is 2048
+# Using a dict to simplify logic und the default value is 2048
 _cpu = _priorityCpuMap[_priority] or 2048
 _name = "nginx"
 # exported variables

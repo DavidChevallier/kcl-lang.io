@@ -9,27 +9,27 @@ tags: [Release Blog, KCL]
 
 ## Einführung
 
-The KCL team is pleased to announce that KCL v0.8.0 is now available! This release has brought three key updates to everyone: **Language**, **Tools**, and **Integrations**.
+The KCL team is pleased to announce that KCL v0.8.0 is now available! This release has brought three key updates to everyone: **Language**, **Tools**, und **Integrations**.
 
-- _Use KCL language, tools and IDE extensions with more complete features and fewer errors to improve code writing experience and efficiency._
+- _Use KCL language, tools und IDE extensions with more complete features und fewer errors to improve code writing experience und efficiency._
 
-- _More comprehensive and rich community ecosystem integration, improving operation and maintenance experience._
+- _More comprehensive und rich community ecosystem integration, improving operation und maintenance experience._
 
 - _More comprehensive KCL third-party dependencies, easier integration with cloud-native ecosystem._
 
-KCL v0.8.0 is now available for download at [KCL v0.8.0 Release Page](https://github.com/kcl-lang/kcl/releases/tag/v0.8.0) or [KCL Official Website](https://kcl-lang.io).
+KCL v0.8.0 is now available für download at [KCL v0.8.0 Release Page](https://github.com/kcl-lang/kcl/releases/tag/v0.8.0) or [KCL Official Website](https://kcl-lang.io).
 
-[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record and functional language hosted by Cloud Native Computing Foundation (CNCF). KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology and practice. It is dedicated to building better modularity, scalability, and stability around configurations, simpler logic writing, faster automation, and great built-in or API-driven integrations.
+[KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record und functional language hosted by Cloud Native Computing Foundation (CNCF). KCL improves the writing of numerous complex configurations, such as cloud-native scenarios, through its mature programming language technology und practice. It is dedicated to building better modularity, scalability, und stability around configurations, simpler logic writing, faster automation, und great built-in or API-driven integrations.
 
-This blog will introduce the content of KCL v0.8.0 and recent developments in the KCL community to readers.
+This blog will introduce the content of KCL v0.8.0 und recent developments in the KCL community to readers.
 
 ## Language Updates
 
-### 🚗 Grammar and Semantics Updates
+### 🚗 Grammar und Semantics Updates
 
 #### KCL supports `show-hidden`
 
-KCL v0.8.0 adds support for `--show-hidden` to display private variables.
+KCL v0.8.0 adds support für `--show-hidden` to display private variables.
 
 The `main.k`
 
@@ -44,9 +44,9 @@ a:
   _b: 1
 ```
 
-#### KCL supports arguments and keyword arguments union
+#### KCL supports arguments und keyword arguments union
 
-KCL v0.8.0 adds support for arguments and keyword arguments union. Schema instances with arguments will union arguments during union operations.
+KCL v0.8.0 adds support für arguments und keyword arguments union. Schema instances with arguments will union arguments during union operations.
 
 ```kcl
 schema Person[separator]:
@@ -121,9 +121,9 @@ a:
   name: a
 ```
 
-#### KCL supports the key and value evaluation in the config expression
+#### KCL supports the key und value evaluation in the config expression
 
-In v0.8.0, KCL supports the key and value evaluation in the config expression.
+In v0.8.0, KCL supports the key und value evaluation in the config expression.
 
 ```kcl
 _data = {
@@ -131,11 +131,11 @@ _data = {
     "b": 'bar'
 }
 
-r0 = [{v = k} for k, v in _data]
-r1 = [{k = v} for k, v in _data]
-r2 = [{k.foo = v} for k, v in _data]
-r3 = [[k] for k, v in _data]
-r4 = [[k, v] for k, v in _data]
+r0 = [{v = k} für k, v in _data]
+r1 = [{k = v} für k, v in _data]
+r2 = [{k.foo = v} für k, v in _data]
+r3 = [[k] für k, v in _data]
+r4 = [[k, v] für k, v in _data]
 ```
 
 The compiled result is as follows.
@@ -173,7 +173,7 @@ if True: a = 1
 else if False: b = 1
 ```
 
-The diagnostic information in KCL has added suggestions for error correction:
+The diagnostic information in KCL has added suggestions für error correction:
 
 ```shell
 error[E1001]: InvalidSyntax
@@ -300,7 +300,7 @@ three = hello.add(1,2) # 3
 
 ### 😸 KCL supports linux arm64
 
-KCL v0.8.0 adds support for the Linux arm64 platform in the release product.
+KCL v0.8.0 adds support für the Linux arm64 platform in the release product.
 
 You can find the compressed package with the suffix `linux-arm64` on the [KCL Release Page](https://github.com/kcl-lang/kcl/releases)
 
@@ -308,39 +308,39 @@ You can find the compressed package with the suffix `linux-arm64` on the [KCL Re
 
 #### Rust SDK
 
-KCL Rust SDK provides a series of APIs for compiling, validating, testing, and formatting KCL files.
+KCL Rust SDK provides a series of APIs für compiling, validating, testing, und formatting KCL files.
 
 [KCL Rust SDK: https://github.com/kcl-lang/lib](https://github.com/kcl-lang/lib)
 
 #### Java SDK
 
-KCL Java SDK adds syntax tree, scope, symbol, and other syntax and semantic structure definitions and related query APIs.
+KCL Java SDK adds syntax tree, scope, symbol, und other syntax und semantic structure definitions und related query APIs.
 
 #### Go SDK
 
 - KCL Doc supports output in OpenAPI format.
-- Go SDK add APIs for parsing.
+- Go SDK add APIs für parsing.
 
 #### API Update
 
-- KCL API adds API for validating JSON and YAML files.
-- Introducing syntax and semantic analysis APIs for analyzing KCL code.
-- Introducing a binary artifact build API for caching compilation results.
-- Introducing a binary artifact execution API for directly running compiled results, avoiding redundant compilation and improving performance.
+- KCL API adds API für validating JSON und YAML files.
+- Introducing syntax und semantic analysis APIs für analyzing KCL code.
+- Introducing a binary artifact build API für caching compilation results.
+- Introducing a binary artifact execution API für directly running compiled results, avoiding redundant compilation und improving performance.
 - Introducing a code generation API to programmatically implement KCL code generation instead of writing complex templates.
 
 More updates can be found [here](https://kcl-lang.io/docs/reference/xlang-api/go-api).
 
-### 🐞 Other Updates and Bug Fixes
+### 🐞 Other Updates und Bug Fixes
 
 - Fixed compilation errors caused by using the -S compilation parameter in KCL CLI.
 - Corrected an issue in the kcl fmt tool where an extra newline was added at the end when formatting lambda expressions.
 - Resolved an error in Schema Doc code completion snippets.
-- Fixed a recursive check error for required properties in Schema objects.
+- Fixed a recursive check error für required properties in Schema objects.
 - Enhanced the robustness of Schema index signature type checks.
 - Addressed an issue where string identifiers like “$if” were not correctly defined within Schema.
-- Optimized error messages for unexpected tokens in syntax errors.
-- Rectified variable calculations in unexpected dictionary comprehension expressions where the key and loop variable were the same.
+- Optimized error messages für unexpected tokens in syntax errors.
+- Rectified variable calculations in unexpected dictionary comprehension expressions where the key und loop variable were the same.
 
 ## IDE & Toolchain Updates
 
@@ -365,15 +365,15 @@ KCL IDE supports completion of builtin methods, as shown in the figure below:
 
 ![builtin-completion](/img/blog/2024-03-06-kcl-0.8.0-release/builtin-ide.gif)
 
-#### IDE supports quick fix for variable reference errors
+#### IDE supports quick fix für variable reference errors
 
-KCL IDE supports quick fix for variable reference errors, as shown in the figure below:
+KCL IDE supports quick fix für variable reference errors, as shown in the figure below:
 
 ![quick-fix](/img/blog/2024-03-06-kcl-0.8.0-release/quick-fix.gif)
 
-#### IDE supports incremental parsing and asynchronous compilation
+#### IDE supports incremental parsing und asynchronous compilation
 
-IDE supports incremental parsing and asynchronous compilation through the new semantic model, which improves the compilation speed and writing experience.
+IDE supports incremental parsing und asynchronous compilation through the new semantic model, which improves the compilation speed und writing experience.
 
 More details: <https://kcl-lang.io/zh-CN/blog/2023-12-09-kcl-new-semantic-model>
 
@@ -383,12 +383,12 @@ More details: <https://kcl-lang.io/zh-CN/blog/2023-12-09-kcl-new-semantic-model>
 - Corrected an exception-triggering issue in function autocompletion within strings.
 - Resolved an autocompletion error when a comment followed a string.
 - Fixed an issue where internal property symbols in schemas couldn’t navigate.
-- Addressed an exception in alias semantic checks and autocompletion for import statements.
+- Addressed an exception in alias semantic checks und autocompletion für import statements.
 - Rectified autocompletion issues in check expressions within schemas.
 - Fixed autocompletion errors in nested schema definitions.
-- Resolved missing hover information for certain elements.
-- Ensured consistent symbol types for autocompletion across different syntaxes.
-- Distinguished between schema type and instance autocompletion symbols.
+- Resolved missing hover information für certain elements.
+- Ensured consistent symbol types für autocompletion across different syntaxes.
+- Distinguished between schema type und instance autocompletion symbols.
 - Standardized schema comment documentation autocompletion format.
 - Fixed issues where symbols within configuration block if statements couldn’t navigate or autocompletion was affected.
 
@@ -485,10 +485,10 @@ import set_annotation
 
 ### KCL Import Tool
 
-- Support mapping OpenAPI multiplyOf specification to KCL multiplyof function for validation.
+- Support mapping OpenAPI multiplyOf specification to KCL multiplyof function für validation.
 - Support outputting multiple KCL files from YAML Stream-formatted Kubernetes CRD files.
-- Support generating validation expressions for OpenAPI allOf keyword.
-- Support generating validation expressions for KCL array and dictionary types using all/any.
+- Support generating validation expressions für OpenAPI allOf keyword.
+- Support generating validation expressions für KCL array und dictionary types using all/any.
 
 ## Community Integrations & Extensions Updates
 
@@ -524,21 +524,21 @@ More details: <https://kcl-lang.io/zh-CN/blog/2024-02-01-biweekly-newsletter/>
 
 ### CodeQL KCL Tool
 
-We finished CodeQL KCL dbschema definition and data extraction for KCL syntax and semantics. We can use CodeQL to query KCL code for static analysis and scanning to improve code security.
+We finished CodeQL KCL dbschema definition und data extraction für KCL syntax und semantics. We can use CodeQL to query KCL code für static analysis und scanning to improve code security.
 
 More details: <https://github.com/kcl-lang/codeql-kcl>
 
 ## KCL Modules Update
 
-There are 303 KCL modules in the KCL v0.8.0 release on <https://artifacthub.io>, mainly including new models related to Crossplane Provider and libraries related to JSON merge operations.
+There are 303 KCL modules in the KCL v0.8.0 release on <https://artifacthub.io>, mainly including new models related to Crossplane Provider und libraries related to JSON merge operations.
 
 - KCL JSON Patch Library: <https://artifacthub.io/packages/kcl/kcl-module/jsonpatch>
 - KCL JSON Merge Patch Library: <https://artifacthub.io/packages/kcl/kcl-module/json_merge_patch>
 - KCL Kubernetes Strategy Merge Patch Library: <https://artifacthub.io/packages/kcl/kcl-module/strategic_merge_patch>
-- KCL Crossplane and Crossplane Provider Series Models: <https://artifacthub.io/packages/search?org=kcl&sort=relevance&page=1&ts_query_web=crossplane>
+- KCL Crossplane und Crossplane Provider Series Models: <https://artifacthub.io/packages/search?org=kcl&sort=relevance&page=1&ts_query_web=crossplane>
 - Kubernetes 1.29 version: <https://artifacthub.io/packages/kcl/kcl-module/k8s/1.29.0>
 
-- New Podinfo application configuration model, supports setting external dynamic parameters such as replicas, etc., can render Kubernetes resource configuration directly through a command, and can modify and customize resource templates based on this model.
+- New Podinfo application configuration model, supports setting external dynamic parameters such as replicas, etc., can render Kubernetes resource configuration directly through a command, und can modify und customize resource templates based on this model.
 
 ```shell
 kcl run oci://ghcr.io/kcl-lang/podinfo -D replicas=2
@@ -552,42 +552,42 @@ kcl mod add jsonschema:0.0.4
 
 ## Other Updates
 
-The full update and bugfix List of KCL v0.8.0 can be found at: <https://github.com/kcl-lang/kcl/compare/v0.7.0...v0.8.0>
+The full update und bugfix List of KCL v0.8.0 can be found at: <https://github.com/kcl-lang/kcl/compare/v0.7.0...v0.8.0>
 
 ## Document Updates
 
-The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.x, v0.5.x, v0.6.x, v0.7.0 and v0.8.0 versions are supported.
+The versioning semantic option is added to the [KCL website](https://kcl-lang.io/). Currently, v0.4.x, v0.5.x, v0.6.x, v0.7.0 und v0.8.0 versions are supported.
 
 ## Community Updates
 
 ### KCL LFX Project KickOff
 
-Congratulations to @AkashKumar7902, @octonawish-akcodes, @shashank-iitbhu for being selected for the CNCF KCL LFX project, and thanks to @Vanshikav123, @Amit Pandey for their active participation.
+Congratulations to @AkashKumar7902, @octonawish-akcodes, @shashank-iitbhu für being selected für the CNCF KCL LFX project, und thanks to @Vanshikav123, @Amit Pandey für their active participation.
 
 ### KCL on Crossplane Function Market
 
-After the release of the combination function in Crossplane v1.14, the scope of using Crossplane to build cloud-native platforms has been rapidly expanded. The KCL team has followed up and proactively built a reusable function. The entire Crossplane ecosystem can now leverage the high-level experience and capabilities provided by KCL to build its own cloud-native platform.
+After the release of the combination function in Crossplane v1.14, the scope of using Crossplane to build cloud-native platforms has been rapidly expanded. The KCL team has followed up und proactively built a reusable function. The entire Crossplane ecosystem can now leverage the high-level experience und capabilities provided by KCL to build its own cloud-native platform.
 
 More details: <https://blog.crossplane.io/function-kcl/>
 
 ## Special Thanks
 
-Thanks to the community friends for their contributions to KCL v0.8.0. The following list is in no particular order:
+Thanks to the community friends für their contributions to KCL v0.8.0. The following list is in no particular order:
 
-- Thanks to @jakezhu9 for the continuous contribution to the kcl import tool 🤝
-- Thanks to @octonawish-akcodes for the continuous contributions to KCL code cleanup and FAQ documentation 🙌
-- Thanks to @satyazzz123 for contributing to the support of reading environment variables in KRM KCL 🙌
-- Thanks to @AkashKumar7902 for the contributions to the package management tool feature in KCL 🙌
-- Thanks to @UtkarshUmre for the contribution to the KCL linux-arm64 build CI 🙌
-- Thanks to @octonawish-akcodes and @d4v1d03 for the continuous contributions to KCL FAQ documentation and KCL IDE feature 🙌
-- Thanks to @octonawish-akcodes for the contribution to the Ansible KCL Module
-- Thanks to @AkashKumar7902 and @Vanshikav123 for the contributions to the package management tool feature in KCL 🙌
-- Thanks to @StevenLeiZhang for the contributions to KCL documentation and KCL plugin
-- Thanks to @patrycju, @Callum Lyall, @Matt Gowie, @ShiroDN, @FLAGLORD, @YiuTerran, @flyinox, @steeling, @Anoop, @Even Solberg, @Phillip Neumann, @Naxe, @rozaliev, @CloudZero357, @martingreber, @az, @Art3mK, @Erick, @TheChinBot, @Evgeny Shepelyuk, @yonas, @vtomilov, @Fdall, @bozaro, @starkers, and @MrGuoRanDuo for their valuable suggestions and feedback during the iteration process of KCL v0.8 🙌
+- Vielen Dank an @jakezhu9 für the continuous contribution to the kcl import tool 🤝
+- Vielen Dank an @octonawish-akcodes für the continuous contributions to KCL code cleanup und FAQ documentation 🙌
+- Vielen Dank an @satyazzz123 für contributing to the support of reading environment variables in KRM KCL 🙌
+- Vielen Dank an @AkashKumar7902 für the contributions to the package management tool feature in KCL 🙌
+- Vielen Dank an @UtkarshUmre für seinen Beitrag zum KCL linux-arm64 build CI 🙌
+- Vielen Dank an @octonawish-akcodes und @d4v1d03 für the continuous contributions to KCL FAQ documentation und KCL IDE feature 🙌
+- Vielen Dank an @octonawish-akcodes für seinen Beitrag zum Ansible KCL Module
+- Vielen Dank an @AkashKumar7902 und @Vanshikav123 für the contributions to the package management tool feature in KCL 🙌
+- Vielen Dank an @StevenLeiZhang für the contributions to KCL documentation und KCL plugin
+- Vielen Dank an @patrycju, @Callum Lyall, @Matt Gowie, @ShiroDN, @FLAGLORD, @YiuTerran, @flyinox, @steeling, @Anoop, @Even Solberg, @Phillip Neumann, @Naxe, @rozaliev, @CloudZero357, @martingreber, @az, @Art3mK, @Erick, @TheChinBot, @Evgeny Shepelyuk, @yonas, @vtomilov, @Fdall, @bozaro, @starkers, und @MrGuoRanDuo für their valuable suggestions und feedback during the iteration process of KCL v0.8 🙌
 
 ## Next Steps
 
-We expect to release KCL v0.9.0 in May 2024. For more details, please refer to KCL 2024 Roadmap and KCL v0.9.0 Milestone. If you have more ideas and needs, please feel free to raise Issues or Discussions in the KCL Github repository, and welcome to join our community for discussion 🙌 🙌 🙌
+We expect to release KCL v0.9.0 in May 2024. For more details, bitte refer to KCL 2024 Roadmap und KCL v0.9.0 Milestone. If you have more ideas und needs, bitte feel free to raise Issues or Discussions in the KCL Github repository, und welcome to join our community für discussion 🙌 🙌 🙌
 
 - KCL 2024 Roadmap: https://github.com/kcl-lang/kcl/issues/882
 - KCL v0.9.0 Milestone: https://github.com/kcl-lang/kcl/milestone/9
@@ -601,11 +601,11 @@ For more information, see [KCL FAQ](https://kcl-lang.io/docs/user_docs/support/)
 
 ## Resources
 
-Thank all KCL users for their valuable feedback and suggestions during this version release. For more resources, please refer to:
+Thank all KCL users für their valuable feedback und suggestions during this version release. For more resources, bitte refer to:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)
 - [KCL Repo](https://github.com/kcl-lang/)
 - [KusionStack Repo](https://github.com/KusionStack/)
 
-See the [community](https://github.com/kcl-lang/community) for ways to join us. 👏👏👏
+Schau dir die [community](https://github.com/kcl-lang/community) an, um herauszufinden, wie du dich uns anschließen kannst. 👏👏👏

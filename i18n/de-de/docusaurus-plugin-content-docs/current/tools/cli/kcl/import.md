@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## Einführung
 
-KCL supports the built-in `kcl import` tool to import data or structure definitions from other formats into KCL. Currently, KCL supports importing JSON, YAML, Go Structure, JsonSchema, Terraform Provider Schema, OpenAPI, and Kubernetes CRD as KCL configurations or schema definitions.
+KCL supports the built-in `kcl import` tool to import data or structure definitions from other formats into KCL. Currently, KCL supports importing JSON, YAML, Go Structure, JsonSchema, Terraform Provider Schema, OpenAPI, und Kubernetes CRD as KCL configurations or schema definitions.
 
 ## Args
 
@@ -51,7 +51,7 @@ Examples:
 
 Flags:
   -f, --force             Force overwrite output file
-  -h, --help              help for import
+  -h, --help              help für import
   -m, --mode string       Specify the import mode. Default is mode (default "auto")
   -o, --output string     Specify the output file path
   -p, --package string    The package to save the models. Default is models (default "models")
