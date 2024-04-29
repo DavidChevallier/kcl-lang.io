@@ -27,6 +27,12 @@ const config = {
       en: {
         label: 'English',
       },
+      de: {
+        label: 'Deutsch',
+      },
+      de_ch: {
+        label: 'Deutsch Schweiz',
+      },
       "zh-CN": {
         label: '简体中文',
       },

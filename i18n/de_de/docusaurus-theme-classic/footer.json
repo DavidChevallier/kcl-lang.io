@@ -1,0 +1,66 @@
+{
+  "link.title.Document": {
+    "message": "Dokument",
+    "description": "Der Titel der Fußzeilenspalte mit dem Titel=Dokument in der Fußzeile"
+  },
+  "link.title.Resource": {
+    "message": "Ressource",
+    "description": "Der Titel der Fußzeilenspalte mit dem Titel=Ressource in der Fußzeile"
+  },
+  "link.title.More": {
+    "message": "Mehr",
+    "description": "Der Titel der Fußzeilenspalte mit dem Titel=Mehr in der Fußzeile"
+  },
+  "link.item.label.Introduction": {
+    "message": "Einführung",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Einführung, der zu /docs/user_docs/getting-started/intro verlinkt"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Blog, der zu /blog verlinkt"
+  },
+  "link.item.label.Github": {
+    "message": "Github",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Github, der zu https://github.com/kcl-lang/kcl verlinkt"
+  },
+  "link.item.label.Slack": {
+    "message": "Slack",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Slack, der zu https://join.slack.com/t/kcl-lang/shared_invite/zt-1ybxk41c7-C0VtaJl3bSiarijrCBDmKA verlinkt"
+  },
+  "link.item.label.FAQ": {
+    "message": "FAQ",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=FAQ, der zu /docs/user_docs/support verlinkt"
+  },
+  "link.item.label.Changelog": {
+    "message": "Änderungsprotokoll",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Changelog, der zu /changelog verlinkt"
+  },
+  "link.item.label.User Guide": {
+    "message": "Benutzerhandbuch",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Benutzerhandbuch, der zu /docs/user_docs/guides verlinkt"
+  },
+  "link.item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Tutorial, der zu /docs/reference/lang/tour verlinkt"
+  },
+  "link.item.label.Gitee": {
+    "message": "Gitee",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Gitee, der zu https://gitee.com/kusionstack/kcl verlinkt"
+  },
+  "link.item.label.Community": {
+    "message": "Gemeinschaft",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=Gemeinschaft, der zu /docs/community/intro verlinkt"
+  },
+  "logo.alt": {
+    "message": "AntGroup Open Source Logo",
+    "description": "Der Alternativtext des Fußzeilenlogos"
+  },
+  "link.item.label.KusionStack": {
+    "message": "KusionStack",
+    "description": "Die Beschriftung des Fußzeilenlinks mit der Bezeichnung=KusionStack, der zu https://kusionstack.io verlinkt"
+  },
+  "copyright": {
+    "message": "\n          <br />\n          <br />\n          <strong>© KCL Autoren 2024 | Dokumentation ist lizenziert unter <a href=\"https://creativecommons.org/licenses/by/4.0\">CC-BY-4.0</a> </strong> \n          <br />\n          <br />\n          © 2024 The Linux Foundation. Alle Rechte vorbehalten. Die Linux Foundation besitzt eingetragene Markenzeichen und nutzt Markenrechte. Eine Liste der Markenzeichen der Linux Foundation finden Sie auf unserer <a href=\"https://www.linuxfoundation.org/trademark-usage/\"> zur Markennutzung</a> Seite .\n        ",
+    "description": "Das Urheberrecht im Footer"
+  }
+}

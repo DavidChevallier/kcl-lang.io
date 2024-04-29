@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "kcl-lang Änderungsprotokoll",
+    "description": "Der Titel für den Blog, verwendet für SEO"
+  },
+  "description": {
+    "message": "Halten Sie sich über neue Funktionen in jedem Release auf dem Laufenden",
+    "description": "Die Beschreibung für den Blog, verwendet für SEO"
+  },
+  "sidebar.title": {
+    "message": "Änderungsprotokoll",
+    "description": "Die Bezeichnung für die linke Seitenleiste"
+  }
+}

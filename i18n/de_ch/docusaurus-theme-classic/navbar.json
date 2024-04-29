@@ -1,0 +1,58 @@
+{
+  "title": {
+    "message": "",
+    "description": "The title in the navbar"
+  },
+  "item.label.UserDoc": {
+    "message": "Get Started",
+    "description": "Navbar item with label UserDoc"
+  },
+  "item.label.Reference": {
+    "message": "Reference",
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.DevDoc": {
+    "message": "Developing",
+    "description": "Navbar item with label DevDoc"
+  },
+  "item.label.Governance": {
+    "message": "Governance",
+    "description": "Navbar item with label Governance"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Events": {
+    "message": "Events",
+    "description": "Navbar item with label Events"
+  },
+  "item.label.Tools": {
+    "message": "Tools",
+    "description": "Navbar item with label Tools"
+  },
+  "item.label.Playground": {
+    "message": "Playground",
+    "description": "Navbar item with label Playground"
+  },
+  "item.label.Packages": {
+    "message": "Packages",
+    "description": "Navbar item with label Packages"
+  },
+  "item.label.Modules": {
+    "message": "Modules",
+    "description": "Navbar item with label Modules"
+  },
+  "item.label.Examples": {
+    "message": "Examples",
+    "description": "Navbar item with label Examples"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "logo.alt": {
+    "message": "KCL Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
