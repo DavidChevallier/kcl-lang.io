@@ -28,7 +28,7 @@ $env:PATH += ";{install-location};"
 
 #### MacOS
 
-Installieren oder aktualisieren Sie das neueste KCL für darwin nach /usr/local/bin.
+Install or upgrade the latest darwin KCL to /usr/local/bin
 
 ```bash
 curl -fsSL https://kcl-lang.io/script/install-cli.sh | /bin/bash
