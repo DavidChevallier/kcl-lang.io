@@ -118,7 +118,7 @@ three = hello.add(1,2) # 3
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @octonawish-akcodes und @d4v1d03 für their continuous contributions to KCL FAQ documentation und KCL IDE functionality 🙌
 - Vielen Dank an @octonawish-akcodes für seinen Beitrag zum Ansible KCL Module
@@ -128,9 +128,9 @@ The following are listed in no particular order:
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

@@ -77,9 +77,9 @@ Thank you to all the community contributors over the past two weeks, listed in n
 
 ## Resources
 
-❤️ See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

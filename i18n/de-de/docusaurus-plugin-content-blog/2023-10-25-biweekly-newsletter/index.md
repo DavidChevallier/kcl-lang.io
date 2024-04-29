@@ -29,7 +29,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @jakezhu9 für enhancing the KCL syntax parsing unit tests, migrating some test cases to the snaptest framework 🙌 [https://github.com/kcl-lang/kcl/pull/794](https://github.com/kcl-lang/kcl/pull/794)
 - Vielen Dank an @opsnull für correcting code examples in kcl-lang.io website 🙌 [https://github.com/kcl-lang/kcl-lang.io/pull/182](https://github.com/kcl-lang/kcl-lang.io/pull/182)
@@ -80,7 +80,7 @@ With the inclusion in CNCF Sandbox, we are glad to announce that the CNCF KCL Sl
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community.
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

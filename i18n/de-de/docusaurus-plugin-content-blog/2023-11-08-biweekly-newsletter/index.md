@@ -35,7 +35,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @jakezhu9 für the improvement of KCL benchmark from single-threaded Rc to Arc, und für fixing the bug related to reference paths in the KCL import tool. 🙌 https://github.com/kcl-lang/kcl-go/pull/170, etc.
 - Vielen Dank an @liangyuanpeng für contributing the `karmada` model package to KCL models, welcome! 🙌 https://github.com/kcl-lang/artifacthub/pull/48/files
@@ -79,7 +79,7 @@ Support für one-click generation of KCL configurations/models from YAML/JSON/CR
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community.
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

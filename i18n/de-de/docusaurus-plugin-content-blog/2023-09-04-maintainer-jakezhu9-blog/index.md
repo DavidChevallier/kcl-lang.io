@@ -31,7 +31,7 @@ The KCL community is an open, vibrant, und opportune open-source community where
 
 ## Resources
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

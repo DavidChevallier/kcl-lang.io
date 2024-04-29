@@ -71,7 +71,7 @@ For more details, visit: https://github.com/kcl-lang/lib
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @octonawish-akcodes für contributions to KCL code cleanup und FAQ documents. 🙌
 - Vielen Dank an @satyazzz123 für contributions to the KRM KCL's support für reading environment variables. 🙌
@@ -255,9 +255,9 @@ At the same time, the Flux KCL Controller will automatically pull the configurat
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

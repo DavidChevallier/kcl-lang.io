@@ -12,7 +12,7 @@ image: /img/biweekly-newsletter.png
 
 [KCL](https://github.com/kcl-lang) ist eine auf Einschränkungen basierende rekursive und funktionale Sprache, die von der Cloud Native Computing Foundation (CNCF) gehostet wird und die Erstellung komplexer Konfigurationen und Richtlinien, einschließlich solcher für Cloud-native Szenarien, erleichtert. Mit ihrer fortschrittlichen Programmiersprachentechnologie und -praxis ist KCL darauf ausgerichtet, eine bessere Modularität, Skalierbarkeit und Stabilität für Konfigurationen zu fördern. Sie ermöglicht einfacheres Schreiben von Logik und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
 
-Dieser Abschnitt wird die neuesten Nachrichten der KCL language community's aktualisieren, einschließlich Funktionen, Website Updates und den neuesten community nachrichten, um allen ein besseres Verständnis der KCL Community zu ermöglichen!
+Dieser Abschnitt wird die neuesten Nachrichten der KCL language Community's aktualisieren, einschließlich Funktionen, Website Updates und den neuesten community nachrichten, um allen ein besseres Verständnis der KCL Community zu ermöglichen!
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
@@ -57,14 +57,14 @@ content = template.execute("""\
 
 **🔥 SDK Updates**
 
-- The KCL Go SDK has been released in version 0.8.4.
-- The KCL Rust SDK has added the `llvm` feature, allowing to choose whether to use the LLVM, defaulting to off. When the LLVM feature is turned off, binary size can be reduced by 90%. Dependencies can be added in the following way:
+- Die KCL Go SDK wurde in Version 0.8.4 veröffentlicht.
+- Die KCL Rust SDK hat das llvm Feature erhalten, das es ermöglicht, zu wählen, ob LLVM verwendet werden soll. Standardmäßig ist dies deaktiviert. Wenn das LLVM Feature deaktiviert ist, kann die Größe der Binärdatei um 90% reduziert werden. Abhängigkeiten können folgendermaßen hinzugefügt werden:
 
 ```shell
 cargo add --git https://github.com/kcl-lang/lib
 ```
 
-- The initial release of the KCL Node.js SDK. Repository link: [https://github.com/kcl-lang/lib/tree/main/nodejs](https://github.com/kcl-lang/lib/tree/main/nodejs). Contributions are welcome.
+- Die erste Veröffentlichung von KCL Node.js SDK ist jetzt verfügbar. Repository-Link: [https://github.com/kcl-lang/lib/tree/main/nodejs](https://github.com/kcl-lang/lib/tree/main/nodejs). Euere Beiträge sind willkommen.
 
 * `__test__/test_data/schema.k`
 
@@ -122,37 +122,37 @@ main();
 
 **💻 IDE Updates**
 
-- Added compilation unit caching to enhance IDE performance.
+- Caching der Compilation Units wurde hinzugefügt, um die Leistung der IDE zu verbessern.
 
 **🌼 Integration Updates**
 
-- Crossplane KCL Function supports reading Function Context parameters für passing parameters to different functions.
-  - Support reading the function context across different functions.
-  - Support reading the function details to set sensitive information.
-  - Support setting the status field of XR to output user information.
-  - Fixed errors related to concurrent requests when issuing clusters under multiple XR resources.
-- KCL has released a Nix package, allowing installation of the KCL command line tools with `nix-shell` or `devbox shell`.
+- Die Crossplane KCL-Funktion unterstützt das Lesen von Funktionskontext-Parametern, um Parameter an verschiedene Funktionen zu übergeben.
+  - Unterstützung für das Lesen des Funktionskontexts über verschiedene Funktionen hinweg.
+  - Unterstützung für das Lesen der Funktionsdetails, um sensible Informationen festzulegen.
+  - Unterstützung für das Setzen des Statusfeldes von XR, um Benutzerinformationen auszugeben.
+  - Fehlerbehebungen bei gleichzeitigen Anfragen beim Ausstellen von Clustern unter mehreren XR-Ressourcen.
+- KCL hat ein Nix-Paket veröffentlicht, das die Installation der KCL-Befehlszeilentools mit `nix-shell` oder `devbox shell` ermöglicht.
 
 ## Special Thanks
 
-We'd like to thank all the community participants from the past two weeks.
+Wir möchten uns bei allen Teilnehmern der Community der letzten zwei Wochen bedanken.
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @bozaro für seinen Beitrag zum KCL Go SDK 🙌
 - Vielen Dank an @jheyduk für seinen Beitrag zum Kubectl KCL plugin 🙌
 - Vielen Dank an @shashank-iitbhu für seinen Beitrag zum quick fix feature für KCL IDE syntax 🙌
-- Vielen Dank an @d4v1d03 für seinen Beitrag zum KCL official website FAQ documentation 🙌
-- Vielen Dank an @octonawish-akcodes für seinen Beitrag zum automatic dependency update feature für KCL IDE based on kcl.mod 🙌
-- Vielen Dank an @utnim2 für seinen Beitrag zum restart kcl-language-server command für KCL IDE 🙌
+- Vielen Dank an @d4v1d03 für seinen Beitrag zur KCL official website FAQ Dokumentaion 🙌
+- Vielen Dank an @octonawish-akcodes für seinen Beitrag zum automatic dependency update feature für KCL IDE Basierend auf kcl.mod 🙌
+- Vielen Dank an @utnim2 für seinen Beitrag zum restart kcl-language-server command für die KCL IDE 🙌
 - Vielen Dank an @AkashKumar7902 für seinen Beitrag zum KCL package management tool MVS algorithm 🙌
 - Vielen Dank an @steeling, @bozaro, @vtomilov, @sanzoghenzo, @folliehiyuki, @markphillips100, @wilsonwang371, @zargor, @aleeriz, @reckless-huang, @zhuxw, @jheyduk, @Vitaly Tomilov, @Sergey Ryabin, @Stephen C, @ytsarev und others für their valuable suggestions und feedback while using KCL recently. 🙌
 
 ## Resources
 
-❤️ See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

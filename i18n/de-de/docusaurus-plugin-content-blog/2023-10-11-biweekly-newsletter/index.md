@@ -35,7 +35,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @jakezhu9 für contributing the KCL Import tool to convert Terraform Schema to KCL Schema 🙌 [https://github.com/kcl-lang/kcl-go/pull/152](https://github.com/kcl-lang/kcl-go/pull/152)
 - Vielen Dank an @jakezhu9 für contributing the integration of the Import tool to kpm 🙌 [https://github.com/kcl-lang/kpm/pull/194](https://github.com/kcl-lang/kpm/pull/194)
@@ -136,7 +136,7 @@ A validation that prevents the creation of Service resources of type `LoadBalanc
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community.
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

@@ -177,7 +177,7 @@ For more use cases, bitte refer to [https://github.com/kcl-lang/krm-kcl](https:/
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. We will write more articles on the new features of KCL v0.5.x, so stay tuned!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

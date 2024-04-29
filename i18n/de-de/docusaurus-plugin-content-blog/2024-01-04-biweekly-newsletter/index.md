@@ -41,7 +41,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @FLAGLORD, @YiuTerran, @flyinox, @steeling, @Anoop, @Phillip Neumann, und @Even Solberg für their valuable feedback und discussions during the promotion und usage of KCL 🙌
 
@@ -267,9 +267,9 @@ Both methods require a registry (usually docker.io) to assist in completing the 
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

@@ -117,7 +117,7 @@ This blog provided a quick getting started guide to help you master the basics o
 
 ## Resources
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

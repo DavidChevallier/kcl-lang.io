@@ -57,7 +57,7 @@ Both of these methods require a Registry to facilitate the work. The final choic
 
 The function-kcl project is now donated to the Crossplane community, und we encourage the entire community to test it und try using KCL (the latest advanced language experience provided by Crossplane Functions) to build a cloud-native control plane. We welcome contributions und feedback from the community on the GitHub repository. Let us know your thoughts! https://github.com/crossplane-contrib/function-kcl
 
-For more resources, bitte refer to:
+Für weitere Ressourcen, bitte siehe dir folgendes an::
 
 - KCL Website: https://kcl-lang.io/
 - KusionStack Website: https://kusionstack.io/

@@ -50,7 +50,7 @@ The mainly updates:
 
 ## Special Thanks
 
-We'd like to thank all the community participants from the past two weeks.
+Wir möchten uns bei allen Teilnehmern der Community der letzten zwei Wochen bedanken.
 
 the following are listed in no particular order:
 
@@ -67,9 +67,9 @@ the following are listed in no particular order:
 
 ## Resources
 
-❤️ See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

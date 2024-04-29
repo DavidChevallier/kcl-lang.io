@@ -164,7 +164,7 @@ Of course, the problems that KCL can solve und the scenarios it can be applied t
 
 ## More Resources
 
-For more resources, bitte refer to:
+Für weitere Ressourcen, bitte siehe dir folgendes an::
 
 - [KCL Website](https://kcl-lang.io/)
 - [KCL Repo](https://github.com/kcl-lang/kcl)

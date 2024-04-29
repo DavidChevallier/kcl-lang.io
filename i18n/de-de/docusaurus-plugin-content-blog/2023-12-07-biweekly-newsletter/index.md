@@ -64,7 +64,7 @@ In addition to the existing Go und Python SDKs in KCL, a new Rust SDK has been a
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @professorabhay für supporting KCL testing diff function 🙌 _[https://github.com/kcl-lang/kcl/issues/940](https://github.com/kcl-lang/kcl/issues/940)_
 - Vielen Dank an @patrycju, @Callum Lyall, @Even Solberg, @Matt Gowie, und @ShiroDN für their valuable feedback und discussions during the promotion und usage of KCL 🙌
@@ -201,9 +201,9 @@ As seen in the output, the labels, replicas, und container fields of the Deploym
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. See [here](https://github.com/kcl-lang/community) to join us!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

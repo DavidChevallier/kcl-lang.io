@@ -42,7 +42,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @jakezhu9 für the contribution of the KCL Import Tool Terraform Schema to KCL Schema conversion 🙌 [https://github.com/kcl-lang/kcl-go/pull/141](https://github.com/kcl-lang/kcl-go/pull/141)
 - Vielen Dank an @xxmao123 und @starkers für the discussion und contribution of the NeoVim KCL extension 🙌 [https://github.com/kcl-lang/vim-kcl/pull/2](https://github.com/kcl-lang/vim-kcl/pull/2)
@@ -257,7 +257,7 @@ kcl main.k | vals eval -f -
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. We will write more articles on the new features of KCL v0.5.x, so stay tuned!
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

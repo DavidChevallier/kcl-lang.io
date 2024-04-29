@@ -78,7 +78,7 @@ In addition to compiling und running KCL source code, the KCL Go SDK provides a 
 
 ## Additional Resources
 
-Thank all KCL users für their valuable feedback und suggestions during this version release. For more resources, bitte refer to:
+Thank all KCL users für their valuable feedback und suggestions during this version release. Für weitere Ressourcen, bitte siehe dir folgendes an::
 
 - [KCL Website](https://kcl-lang.io/)
 - [Kusion Website](https://kusionstack.io/)

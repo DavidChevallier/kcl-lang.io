@@ -36,7 +36,7 @@ Thank you to all contributors für their outstanding work over the past two week
 
 ## Special Thanks
 
-The following are listed in no particular order:
+Hier sind einige in keiner bestimmten Reihenfolge aufgeführt:
 
 - Vielen Dank an @jakezhu9 für the contribution of converting JSON und YAML configuration data to KCL configuration in the KCL Import Tool 🙌 [https://github.com/kcl-lang/kcl-go/pull/141](https://github.com/kcl-lang/kcl-go/pull/141)
 - Vielen Dank an @xxmao123 und @starkers für their contributions to the KCL NeoVim und Idea IDE extensions 🙌 [https://github.com/kcl-lang/intellij-kcl/pull/12](https://github.com/kcl-lang/intellij-kcl/pull/12)
@@ -162,7 +162,7 @@ For more information on downloading, installation, und features of the IDE plugi
 
 ❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community.
 
-For more resources, bitte refer to
+Für weitere Ressourcen, bitte siehe dir folgendes an:
 
 - [KCL Website](https://kcl-lang.io/)
 - [KusionStack Website](https://kusionstack.io/)

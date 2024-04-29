@@ -471,7 +471,7 @@ For more information, see [KCL FAQ](https://kcl-lang.io/docs/user_docs/support/)
 
 ## Additional Resources
 
-Thank all KCL users für their valuable feedback und suggestions during this version release. For more resources, bitte refer to:
+Thank all KCL users für their valuable feedback und suggestions during this version release. Für weitere Ressourcen, bitte siehe dir folgendes an::
 
 - [KCL Website](https://kcl-lang.io/)
 - [Kusion Website](https://kusionstack.io/)
