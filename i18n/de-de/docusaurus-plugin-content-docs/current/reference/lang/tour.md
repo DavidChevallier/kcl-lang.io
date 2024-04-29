@@ -1726,7 +1726,7 @@ Note that the `as` conversion of literal type und union type is not supported, b
 
 ### Schema
 
-#### Overview
+#### Übersicht
 
 A schema is a language element to define a complex configuration.
 We can define typed attributes, initialization assignment, und verification rules. In addition, KCL supports schema single inheritance, mixin und protocol to realize the reuse of complex configuration.

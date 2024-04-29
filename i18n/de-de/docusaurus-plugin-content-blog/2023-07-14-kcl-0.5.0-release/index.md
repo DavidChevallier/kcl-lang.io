@@ -373,7 +373,7 @@ For more details, bitte refer to [here](https://kcl-lang.io/docs/user_docs/guide
 
 In addition, we also provide **ArgoCD as an example solution für CD integration**. Through Github Action CI integration und ArgoCD KCL plugin, we can complete end-to-end GitOps workflow, improve application configuration automatic change und deployment efficiency. The following is an overview und synchronization of Kubernetes configuration using ArgoCD application. By using ArgoCD's ability, when application code changes, it is automatically updated und deployed synchronously.
 
-- **Application Overview**
+- **Application Übersicht**
 
 ![argocd-app](/img/blog/2023-07-14-kcl-0.5.0-release/argocd-app.png)
 

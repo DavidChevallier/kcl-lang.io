@@ -5,7 +5,7 @@ sidebar_position: 0
 import DocsCard from '@site/src/components/global/DocsCard';
 import DocsCards from '@site/src/components/global/DocsCards';
 
-# Overview
+# Übersicht
 
 KCL provides engineering extensibility through built-in modules, system modules und plug-in modules.
 

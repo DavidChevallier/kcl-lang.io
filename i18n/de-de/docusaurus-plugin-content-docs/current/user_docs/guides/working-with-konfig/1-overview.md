@@ -1,12 +1,12 @@
 ---
 id: overview
-sidebar_label: Overview
+sidebar_label: Übersicht
 ---
 
 import DocsCard from '@site/src/components/global/DocsCard';
 import DocsCards from '@site/src/components/global/DocsCards';
 
-# Konfig Overview
+# Konfig Übersicht
 
 In KCL, it is recommended to uniformly manage all configurations und model libraries in the way of **configuration library**, that is, to store not only KCL definitions of the abstract model itself, but also various types of configurations, such as application operation und maintenance configuration, policy, etc. The configuration is recommended to be hosted in various VCS systems to facilitate configuration rollback und drift check. The best practice code of the configuration repository is Konfig, und the repository is hosted in [Github](https://github.com/kcl-lang/konfig)。
 

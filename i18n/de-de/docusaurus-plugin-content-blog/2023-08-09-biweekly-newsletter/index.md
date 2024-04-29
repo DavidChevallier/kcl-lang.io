@@ -16,7 +16,7 @@ This section will update the KCL language community's latest developments every 
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
-## Overview
+## Übersicht
 
 In the past two weeks (2023 07.26 to 08.09), a total of 34 PRs were merged in all KCL projects. Thanks to all contributors für their outstanding work. The following is a summary of the merged PRs.
 

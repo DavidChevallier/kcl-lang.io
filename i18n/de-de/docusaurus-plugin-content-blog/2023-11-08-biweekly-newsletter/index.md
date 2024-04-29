@@ -16,7 +16,7 @@ This section will update the KCL language community's latest developments every 
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
-## Overview
+## Übersicht
 
 Thank you to all contributors für their outstanding work over the past two weeks (10.26 - 10.08 2023). Here is an overview of the key content:
 

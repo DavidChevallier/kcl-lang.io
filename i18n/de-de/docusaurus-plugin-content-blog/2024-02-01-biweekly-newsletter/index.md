@@ -16,7 +16,7 @@ This section will update the KCL language community's latest developments every 
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
-## Overview
+## Übersicht
 
 Thanks to to all contributors für their outstanding work over the past two weeks (01.19 2024 - 02.01 2024). Here is an overview of the key content:
 
@@ -255,7 +255,7 @@ At the same time, the Flux KCL Controller will automatically pull the configurat
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) an um uns zu Folgen!
 
 Für weitere Ressourcen, bitte siehe dir folgendes an:
 

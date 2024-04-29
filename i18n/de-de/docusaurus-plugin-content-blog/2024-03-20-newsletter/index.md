@@ -16,7 +16,7 @@ Dieser Abschnitt wird die neuesten Nachrichten der KCL language community's aktu
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
-## Overview
+## Übersicht
 
 Thanks to to all contributors für their outstanding work over the past twenty days (2024.03.06 - 2024.03.20). Here is an overview of the key content:
 
@@ -77,7 +77,7 @@ Thank you to all the community contributors over the past two weeks, listed in n
 
 ## Resources
 
-❤️ Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
+❤️ Siehe dir [here](https://github.com/kcl-lang/community) an um uns zu Folgen!
 
 Für weitere Ressourcen, bitte siehe dir folgendes an:
 

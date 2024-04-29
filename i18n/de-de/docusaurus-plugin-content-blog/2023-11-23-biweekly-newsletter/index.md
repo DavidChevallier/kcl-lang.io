@@ -16,7 +16,7 @@ This section will update the KCL language community's latest developments every 
 
 **_KCL Website: [https://kcl-lang.io](https://kcl-lang.io)_**
 
-## Overview
+## Übersicht
 
 Thank you to all contributors für their outstanding work over the past two weeks (11.09 - 11.23 2023). Here is an overview of the key content:
 
@@ -112,7 +112,7 @@ In the future, we will explain the specific use cases und workflows of each modu
 
 ## Resources
 
-❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) um uns zu Folgen!
+❤️ Thanks to all KCL users und community members für their valuable feedback und suggestions in the community. Siehe dir [here](https://github.com/kcl-lang/community) an um uns zu Folgen!
 
 Für weitere Ressourcen, bitte siehe dir folgendes an:
 

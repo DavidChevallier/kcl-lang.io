@@ -2,7 +2,7 @@
 
 This section mainly describes how to organize files in KCL.
 
-## Overview
+## Übersicht
 
 Within a **module**, KCL organizes files grouped by **package**. A package can be defined within a module or be imported externally (through KCL package manager `kpm`). In the latter case, KCL maintains a copy of the package within the module in a dedicated location.
 

@@ -41,7 +41,7 @@ When contributing different types of documents, it is better to combine the abov
 
 Each usage document can be regarded as a relatively complete sharing or blog post (the reference manual is no longer such). Using documents to organize content follows the following pattern:
 
-1. Overview: What problems do you want to solve und what effects do you want to achieve in this article? You can put a screenshot of the final effect first
+1. Übersicht: What problems do you want to solve und what effects do you want to achieve in this article? You can put a screenshot of the final effect first
 2. Dependent environment: what tools need to be installed, und provide relevant links
 3. Introduce this article to build a relationship diagram or architecture diagram of resources
 4. Give the test method. Try to use community common methods (such as kube, curl command, or browser) to test

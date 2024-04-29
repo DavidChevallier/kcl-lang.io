@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# Overview
+# Übersicht
 
 Die KCL Toolchain ist ein toolset der KCL Sprache, das darauf abzielt, die Effizienz der batch migration, des Schreibens, compiling und Ausführens von KCL zu verbessern.
 
