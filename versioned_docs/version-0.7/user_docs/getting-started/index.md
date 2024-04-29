@@ -1,6 +1,6 @@
 # Get Started
 
-Get started include a quick overview of the KCL programming language.
+Beginnen Sie mit einer kurzen Übersicht über die Programmiersprache KCL.
 
 import DocCardList from '@theme/DocCardList';
 

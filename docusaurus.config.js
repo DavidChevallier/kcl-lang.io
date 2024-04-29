@@ -22,15 +22,15 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-CN'],
+    locales: ['en', 'zh-CN', 'de-de', 'de-ch'],
     localeConfigs: {
       en: {
         label: 'English',
       },
-      de: {
+      "de-de": {
         label: 'Deutsch',
       },
-      "de_ch": {
+      "de-ch": {
         label: 'Deutsch Schweiz',
       },
       "zh-CN": {
