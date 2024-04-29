@@ -30,7 +30,7 @@ const config = {
       de: {
         label: 'Deutsch',
       },
-      de_ch: {
+      "de_ch": {
         label: 'Deutsch Schweiz',
       },
       "zh-CN": {

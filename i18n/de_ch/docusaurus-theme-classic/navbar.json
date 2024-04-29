@@ -1,58 +1,58 @@
 {
   "title": {
     "message": "",
-    "description": "The title in the navbar"
+    "description": "Der Titel in der Navigationsleiste"
   },
   "item.label.UserDoc": {
-    "message": "Get Started",
-    "description": "Navbar item with label UserDoc"
+    "message": "Erste Schritte",
+    "description": "Navigationsleistenelement mit der Bezeichnung UserDoc"
   },
   "item.label.Reference": {
-    "message": "Reference",
-    "description": "Navbar item with label Reference"
+    "message": "Referenz",
+    "description": "Navigationsleistenelement mit der Bezeichnung Reference"
   },
   "item.label.DevDoc": {
-    "message": "Developing",
-    "description": "Navbar item with label DevDoc"
+    "message": "Entwicklung",
+    "description": "Navigationsleistenelement mit der Bezeichnung DevDoc"
   },
   "item.label.Governance": {
     "message": "Governance",
-    "description": "Navbar item with label Governance"
+    "description": "Navigationsleistenelement mit der Bezeichnung Governance"
   },
   "item.label.Blog": {
     "message": "Blog",
-    "description": "Navbar item with label Blog"
+    "description": "Navigationsleistenelement mit der Bezeichnung Blog"
   },
   "item.label.Events": {
-    "message": "Events",
-    "description": "Navbar item with label Events"
+    "message": "Veranstaltungen",
+    "description": "Navigationsleistenelement mit der Bezeichnung Events"
   },
   "item.label.Tools": {
-    "message": "Tools",
-    "description": "Navbar item with label Tools"
+    "message": "Werkzeuge",
+    "description": "Navigationsleistenelement mit der Bezeichnung Tools"
   },
   "item.label.Playground": {
-    "message": "Playground",
-    "description": "Navbar item with label Playground"
+    "message": "Spielplatz",
+    "description": "Navigationsleistenelement mit der Bezeichnung Playground"
   },
   "item.label.Packages": {
-    "message": "Packages",
-    "description": "Navbar item with label Packages"
+    "message": "Pakete",
+    "description": "Navigationsleistenelement mit der Bezeichnung Packages"
   },
   "item.label.Modules": {
-    "message": "Modules",
-    "description": "Navbar item with label Modules"
+    "message": "Module",
+    "description": "Navigationsleistenelement mit der Bezeichnung Modules"
   },
   "item.label.Examples": {
-    "message": "Examples",
-    "description": "Navbar item with label Examples"
+    "message": "Beispiele",
+    "description": "Navigationsleistenelement mit der Bezeichnung Examples"
   },
   "item.label.Community": {
-    "message": "Community",
-    "description": "Navbar item with label Community"
+    "message": "Gemeinschaft",
+    "description": "Navigationsleistenelement mit der Bezeichnung Community"
   },
   "logo.alt": {
     "message": "KCL Logo",
-    "description": "The alt text of navbar logo"
+    "description": "Der Alternativtext des Logos in der Navigationsleiste"
   }
 }

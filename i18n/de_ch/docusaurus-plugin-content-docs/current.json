@@ -1,24 +1,27 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "Nächste",
+    "description": "Die Bezeichnung für die aktuelle Version"
   },
   "sidebar.docs.category.参考手册": {
-    "message": "Reference",
-    "description": "The label for category 参考手册 in sidebar docs"
+    "message": "Referenzhandbuch",
+    "description": "Die Bezeichnung für die Kategorie 参考手册 in der Seitenleiste der Dokumentation"
   },
   "sidebar.docs.category.命令行工具": {
-    "message": "Command Line Tools",
-    "description": "The label for category 命令行工具 in sidebar docs"
+    "message": "Kommandozeilen-Tools",
+    "description": "Die Bezeichnung für die Kategorie 命令行工具 in der Seitenleiste der Dokumentation"
   },
   "sidebar.docs.category.KCL 语言工具": {
-    "message": "KCL Tools",
-    "description": "The label for category KCL 语言工具 in sidebar docs"
+    "message": "KCL Werkzeuge",
+    "description": "Die Bezeichnung für die Kategorie KCL 语言工具 in der Seitenleiste der Dokumentation"
   },
   "sidebar.docs.category.OpenAPI 工具": {
-    "message": "OpenAPI Tools",
-    "description": "The label for category OpenAPI 工具 in sidebar docs"
+    "message": "OpenAPI Werkzeuge",
+    "description": "Die Bezeichnung für die Kategorie OpenAPI 工具 in der Seitenleiste der Dokumentation"
   },
+
+
+// break
   "sidebar.docs.category.包管理工具": {
     "message": "Package Management Tools",
     "description": "The label for category OpenAPI 工具 in sidebar docs"

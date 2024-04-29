@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "kcl-lang Changelog",
-    "description": "The title for the blog used in SEO"
+    "message": "kcl-lang Änderungsprotokoll",
+    "description": "Der Titel für den Blog, verwendet für SEO"
   },
   "description": {
-    "message": "Keep yourself up-to-date about new features in every release",
-    "description": "The description for the blog used in SEO"
+    "message": "Halten Sie sich über neue Funktionen in jedem Release auf dem Laufenden",
+    "description": "Die Beschreibung für den Blog, verwendet für SEO"
   },
   "sidebar.title": {
-    "message": "Changelog",
-    "description": "The label for the left sidebar"
+    "message": "Änderungsprotokoll",
+    "description": "Die Bezeichnung für die linke Seitenleiste"
   }
 }

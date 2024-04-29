@@ -1,66 +1,66 @@
 {
   "link.title.Document": {
-    "message": "Document",
-    "description": "The title of the footer links column with title=Document in the footer"
+    "message": "Dokument",
+    "description": "Der Titel der Fusszeilenspalte mit dem Titel=Dokument in der Fusszeile"
   },
   "link.title.Resource": {
-    "message": "Resource",
-    "description": "The title of the footer links column with title=Resource in the footer"
+    "message": "Ressource",
+    "description": "Der Titel der Fusszeilenspalte mit dem Titel=Ressource in der Fusszeile"
   },
   "link.title.More": {
-    "message": "More",
-    "description": "The title of the footer links column with title=More in the footer"
+    "message": "Mehr",
+    "description": "Der Titel der Fusszeilenspalte mit dem Titel=Mehr in der Fusszeile"
   },
   "link.item.label.Introduction": {
-    "message": "Introduction",
-    "description": "The label of footer link with label=Introduction linking to /docs/user_docs/getting-started/intro"
+    "message": "Einführung",
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Einführung, der zu /docs/user_docs/getting-started/intro verlinkt"
   },
   "link.item.label.Blog": {
     "message": "Blog",
-    "description": "The label of footer link with label=Blog linking to /blog"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Blog, der zu /blog verlinkt"
   },
   "link.item.label.Github": {
     "message": "Github",
-    "description": "The label of footer link with label=Github linking to https://github.com/kcl-lang/kcl"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Github, der zu https://github.com/kcl-lang/kcl verlinkt"
   },
   "link.item.label.Slack": {
     "message": "Slack",
-    "description": "The label of footer link with label=Slack linking to https://join.slack.com/t/kcl-lang/shared_invite/zt-1ybxk41c7-C0VtaJl3bSiarijrCBDmKA"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Slack, der zu https://join.slack.com/t/kcl-lang/shared_invite/zt-1ybxk41c7-C0VtaJl3bSiarijrCBDmKA verlinkt"
   },
   "link.item.label.FAQ": {
     "message": "FAQ",
-    "description": "The label of footer link with label=FAQ linking to /docs/user_docs/support"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=FAQ, der zu /docs/user_docs/support verlinkt"
   },
   "link.item.label.Changelog": {
-    "message": "Changelog",
-    "description": "The label of footer link with label=Changelog linking to /changelog"
+    "message": "Änderungsprotokoll",
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Changelog, der zu /changelog verlinkt"
   },
   "link.item.label.User Guide": {
-    "message": "User Guide",
-    "description": "The label of footer link with label=User Guide linking to /docs/user_docs/guides"
+    "message": "Benutzerhandbuch",
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Benutzerhandbuch, der zu /docs/user_docs/guides verlinkt"
   },
   "link.item.label.Tutorial": {
     "message": "Tutorial",
-    "description": "The label of footer link with label=Tutorial linking to /docs/reference/lang/tour"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Tutorial, der zu /docs/reference/lang/tour verlinkt"
   },
   "link.item.label.Gitee": {
     "message": "Gitee",
-    "description": "The label of footer link with label=Gitee linking to https://gitee.com/kusionstack/kcl"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Gitee, der zu https://gitee.com/kusionstack/kcl verlinkt"
   },
   "link.item.label.Community": {
-    "message": "Community",
-    "description": "The label of footer link with label=Community linking to /docs/community/intro"
+    "message": "Gemeinschaft",
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=Gemeinschaft, der zu /docs/community/intro verlinkt"
   },
   "logo.alt": {
     "message": "AntGroup Open Source Logo",
-    "description": "The alt text of footer logo"
+    "description": "Der Alternativtext des Fusszeilenlogos"
   },
   "link.item.label.KusionStack": {
     "message": "KusionStack",
-    "description": "The label of footer link with label=KusionStack linking to https://kusionstack.io"
+    "description": "Die Beschriftung des Fusszeilenlinks mit der Bezeichnung=KusionStack, der zu https://kusionstack.io verlinkt"
   },
   "copyright": {
-    "message": "\n          <br />\n          <br />\n          <strong>© KCL Authors 2024 | Documentation Distributed under <a href=\"https://creativecommons.org/licenses/by/4.0\">CC-BY-4.0</a> </strong> \n          <br />\n          <br />\n          © 2024 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href=\"https://www.linuxfoundation.org/trademark-usage/\"> Trademark Usage</a> page.\n        ",
-    "description": "The footer copyright"
+    "message": "\n          <br />\n          <br />\n          <strong>© KCL Autoren 2024 | Dokumentation ist lizenziert unter <a href=\"https://creativecommons.org/licenses/by/4.0\">CC-BY-4.0</a> </strong> \n          <br />\n          <br />\n          © 2024 The Linux Foundation. Alle Rechte vorbehalten. Die Linux Foundation besitzt eingetragene Markenzeichen und nutzt Markenrechte. Eine Liste der Markenzeichen der Linux Foundation finden Sie auf unserer <a href=\"https://www.linuxfoundation.org/trademark-usage/\"> zur Markennutzung</a> Seite .\n        ",
+    "description": "Das Urheberrecht im Footer"
   }
 }
