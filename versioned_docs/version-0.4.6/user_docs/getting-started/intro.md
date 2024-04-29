@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-## What is KCL?
+## Was ist KCL?
 
 [KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record and functional language that enhances the writing of complex configurations, including those for cloud-native scenarios. With its advanced programming language technology and practices, KCL is dedicated to promoting better modularity, scalability, and stability for configurations. It enables simpler logic writing and offers ease of automation APIs and integration with homegrown systems.
 
@@ -105,7 +105,7 @@ spec:
             - containerPort: 80
 ```
 
-## How to Choose?
+## Warum KCL?
 
 Communities have been making significant efforts to improve their configuration technologies, which can be categorized into three groups:
 

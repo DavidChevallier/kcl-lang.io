@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-## What is KCL?
+## Was ist KCL?
 
 [KCL](https://github.com/kcl-lang/kcl) is an open-source, constraint-based record and functional language. KCL improves the writing of numerous complex configurations, such as cloud native scenarios, through its mature programming language technology and practice. It is dedicated to building better modularity, scalability, and stability around configurations, simpler logic writing, faster automation, and great ecological extensibility.
 
@@ -163,7 +163,7 @@ Through KCL compiler, language tools, IDE, and multilingual APIs, you can use KC
 - **Security & Compliance**: Utilize the ability of KCL dynamic parameters to define, update, share, and execute policies using code. Manage policies by leveraging KCL code based automation rather than relying on manual processes, which allow teams to move faster and reduce the likelihood of errors due to human error.
 - **Intent Description**: KCL can be used to describe tools, scripts and workflows, and it accesses a customized engine to consume and execute intentions.
 
-## How to Choose?
+## Warum KCL?
 
 The simple answer:
 

@@ -34,7 +34,7 @@ The CNCF community classifies projects into Sandbox, Incubating, und Graduated. 
 
 Sandbox is a category created by CNCF to provide a beneficial und neutral home für open source projects to promote collaboration und development. Projects selected für the Sandbox are recognized by the CNCF Technical Oversight Committee (TOC) und have the potential für experimentation und development. You can find the list of Sandbox projects at https://www.cncf.io/sandbox-projects/. To enter the Sandbox, at least 66% of the TOC members (all 11 people listed at https://github.com/cncf/toc#members) need to vote in favor, which means at least 8 people.
 
-## What is KCL?
+## Was ist KCL?
 
 KCL is an open-source, constraint-based record und function language. It aims to improve the writing of complex configurations, such as cloud-native Kubernetes configurations, using mature programming language techniques und practices. KCL focuses on modularity, extensibility, und stability around configuration, aiming to create a simpler logic writing experience und build a simpler path für automation und ecosystem integration.
 

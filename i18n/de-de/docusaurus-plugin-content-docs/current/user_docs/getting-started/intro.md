@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Einführung
 
-## What is KCL?
+## Was ist KCL?
 
 [KCL](https://github.com/kcl-lang/kcl) ist eine Open-Source Sprache mit Constraint basierten Records und funktionalen Elementen, die die Erstellung komplexer Konfigurationen, einschließlich solcher für Cloud-native Szenarien, verbessert. Sie wird von der Cloud Native Computing Foundation (CNCF) als Sandbox-Projekt gehostet. Mit fortschrittlicher Programmiersprachentechnologie und -praktiken widmet sich KCL der Förderung von besserer Modularität, Skalierbarkeit und Stabilität für Konfigurationen. Es ermöglicht einfacheres Schreiben von Logik und bietet eine einfache Automatisierung von APIs sowie Integration mit hausinternen Systemen.
 
-## Why KCL?
+## Warum KCL?
 
 KCL zielt darauf ab, die Lücke in Konfigurationssprachen und -werkzeugen im Bereich der leichtgewichtigen clientseitigen Cloud-native dynamischen Konfiguration durch eine modernere deklarative Konfigurationssprache und -werkzeuge zu schließen. Es zielt darauf ab, die folgenden Probleme anzugehen:
 
@@ -120,7 +120,7 @@ spec:
             - containerPort: 80
 ```
 
-## How to Choose?
+## Warum KCL?
 
 Communities have been making significant efforts to improve their configuration technologies, which can be categorized into three groups:
 

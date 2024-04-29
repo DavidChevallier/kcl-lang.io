@@ -57,7 +57,7 @@ const config = {
     },
     sections: {
       features: {
-        title: "Why KCL?",
+        title: "Warum KCL?",
         featureList: [
           {
             title: 'Easy-to-Use',
