@@ -1,0 +1,66 @@
+{
+  "link.title.Document": {
+    "message": "Document",
+    "description": "The title of the footer links column with title=Document in the footer"
+  },
+  "link.title.Resource": {
+    "message": "Resource",
+    "description": "The title of the footer links column with title=Resource in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "Introduction",
+    "description": "The label of footer link with label=Introduction linking to /docs/user_docs/getting-started/intro"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Github": {
+    "message": "Github",
+    "description": "The label of footer link with label=Github linking to https://github.com/kcl-lang/kcl"
+  },
+  "link.item.label.Slack": {
+    "message": "Slack",
+    "description": "The label of footer link with label=Slack linking to https://join.slack.com/t/kcl-lang/shared_invite/zt-1ybxk41c7-C0VtaJl3bSiarijrCBDmKA"
+  },
+  "link.item.label.FAQ": {
+    "message": "FAQ",
+    "description": "The label of footer link with label=FAQ linking to /docs/user_docs/support"
+  },
+  "link.item.label.Changelog": {
+    "message": "Changelog",
+    "description": "The label of footer link with label=Changelog linking to /changelog"
+  },
+  "link.item.label.User Guide": {
+    "message": "User Guide",
+    "description": "The label of footer link with label=User Guide linking to /docs/user_docs/guides"
+  },
+  "link.item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "The label of footer link with label=Tutorial linking to /docs/reference/lang/tour"
+  },
+  "link.item.label.Gitee": {
+    "message": "Gitee",
+    "description": "The label of footer link with label=Gitee linking to https://gitee.com/kusionstack/kcl"
+  },
+  "link.item.label.Community": {
+    "message": "Community",
+    "description": "The label of footer link with label=Community linking to /docs/community/intro"
+  },
+  "logo.alt": {
+    "message": "AntGroup Open Source Logo",
+    "description": "The alt text of footer logo"
+  },
+  "link.item.label.KusionStack": {
+    "message": "KusionStack",
+    "description": "The label of footer link with label=KusionStack linking to https://kusionstack.io"
+  },
+  "copyright": {
+    "message": "\n          <br />\n          <br />\n          <strong>© KCL Authors 2024 | Documentation Distributed under <a href=\"https://creativecommons.org/licenses/by/4.0\">CC-BY-4.0</a> </strong> \n          <br />\n          <br />\n          © 2024 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href=\"https://www.linuxfoundation.org/trademark-usage/\"> Trademark Usage</a> page.\n        ",
+    "description": "The footer copyright"
+  }
+}

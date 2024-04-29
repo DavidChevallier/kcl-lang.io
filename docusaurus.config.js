@@ -27,6 +27,9 @@ const config = {
       en: {
         label: 'English',
       },
+      he: {
+        label: 'Hebrew',
+      },
       "zh-CN": {
         label: '简体中文',
       },
