@@ -18,52 +18,52 @@ Dieser Abschnitt wird die neuesten Nachrichten der KCL language community's aktu
 
 ## Overview
 
-Thanks to to all contributors für their outstanding work over the past twenty days (2024.03.06 - 2024.03.20). Here is an overview of the key content:
+Vielen Dank an alle Mitwirkenden für ihre herausragende Arbeit in den letzten zwanzig Tagen (06.03.2024 - 20.03.2024).
 
-Certainly! Here's the translation für the provided content:
+Hier ist ein Überblick über die wichtigsten Inhalte:
 
 **🏄 Language Updates**
-**Release of versions 0.8.3 und 0.8.4 für KCL**
+**Veröffentlichung der Versionen 0.8.3 und 0.8.4 für KCL**
 
-The mainly updates:
+Die Hauptaktualisierungen:
 
-- Added file system built-in methods `file.abs` to compute the absolute file path und `file.exists` to determine if a file exists.
+- Hinzufügen von built-in methods für das Dateisystem: `file.abs` zur Berechnung des absoluten Dateipfads und `file.exists` zur Überprüfung, ob eine Datei existiert.
 
 **🔧 Toolchain Updates**
 
-- KCL package manager: Added support für oci URLs in the `kcl.mod` file.
-- KCL package manager: Removed updates of indirect dependencies in `kcl.mod`.
-- KCL package manager: Removed checksum verification für local dependencies.
-- KCL package manager: Fixed an issue where local dependency version numbers were missing.
-- KCL package manager: Fixed the issue of missing local dependencies.
-- KCL package manager: Fixed an internal bug that caused the creation of symbolic links to fail.
+- KCL-Paketmanager: Unterstützung für OCI-URLs in der `kcl.mod` hinzugefügt.
+- KCL-Paketmanager: Entfernen von Updates für indirekte dependencies in `kcl.mod`.
+- KCL-Paketmanager: Entfernen der checksum für lokale dependencies.
+- KCL-Paketmanager: Korrektur eines Problems, bei dem Versionsnummern lokaler dependencies fehlten.
+- KCL-Paketmanager: Behebung des Problems fehlender lokaler dependencies.
+- KCL-Paketmanager: Behebung eines internen Fehlers, der das Erstellen von symbolischen Verknüpfungen scheitern ließ.
 
 **🔥 SDK Updates**
 
-- Release of version 0.8.3 für the KCL Go SDK.
-- KCL Go SDK fixed a panic issue that occurred during the ParseFile process.
-- KCL Go SDK supports setting the kcl compiler automatic download through environment variables.
+- Veröffentlichung der Version 0.8.3 für das KCL Go SDK.
+- KCL Go SDK hat ein Problem behoben, bei dem während des ParseFile Prozesses ein Panic issue auftrat.
+- KCL Go SDK unterstützt jetzt das automatische Downloads des KCL Compilers über environment.
 
 **💻 IDE Update**
 
-- Fixed format function of IDE für unsaved code.
+- Fixing Formatierungs function der IDE für ungespeicherten Code.
 
 ## Special Thanks
 
 Wir möchten uns bei allen Teilnehmern der Community der letzten zwei Wochen bedanken.
 
-the following are listed in no particular order:
+Die folgenden sind in keiner bestimmten Reihenfolge aufgeführt:
 
-- Vielen Dank an @bozaro für the contributions to the KCL Go SDK 🙌
-- Vielen Dank an @reckless-huang für the contributions to the KCL Go SDK 🙌
-- Vielen Dank an @vemoo für the contributions to the KCL IDE 🙌
-- Vielen Dank an @wilsonwang371 für the contributions to the KCL docker image und KCL website 🙌
-- Vielen Dank an @d4v1d03 für the contributions to the KCL website 🙌
-- Vielen Dank an @liangyuanpeng für the contributions to KCL github action 🙌
-- Vielen Dank an @octonawish-akcodes für the contributions to KCL IDE 🙌
-- Vielen Dank an @AkashKumar7902 für the contributions to KCL package management tool 🙌
-- Vielen Dank an @empath-nirvana für the contributions to crossplane function-kcl 🙌
-- Vielen Dank an @reckless-huang, @steeling, @vfarcic, @wilsonwang371, und others für their valuable suggestions und feedback during the recent use of KCL 🙌
+- Vielen Dank an @bozaro für seine Beiträge zum KCL Go SDK 🙌
+- Vielen Dank an @reckless-huang für seine Beiträge zum KCL Go SDK 🙌
+- Vielen Dank an @vemoo für seine Beiträge zur KCL IDE 🙌
+- Vielen Dank an @wilsonwang371 für seine Beiträge zum KCL Docker-Image und zur KCL-Website 🙌
+- Vielen Dank an @d4v1d03 für seine Beiträge zur KCL-Website 🙌
+- Vielen Dank an @liangyuanpeng für seine Beiträge zur KCL GitHub-Action 🙌
+- Vielen Dank an @octonawish-akcodes für seine Beiträge zur KCL IDE 🙌
+- Vielen Dank an @AkashKumar7902 für seine Beiträge zum KCL-Paketverwaltungstool 🙌
+- Vielen Dank an @empath-nirvana für seine Beiträge zur Crossplane-Funktion-KCL 🙌
+- Vielen Dank an @reckless-huang, @steeling, @vfarcic, @wilsonwang371 und andere für ihre wertvollen Vorschläge und Feedback während der jüngsten Nutzung von KCL 🙌
 
 ## Resources
 
