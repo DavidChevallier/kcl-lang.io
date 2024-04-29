@@ -12,11 +12,11 @@
     "description": "Der Titel der 404-Seite"
   },
   "theme.NotFound.p1": {
-    "message": "Wir konnten nicht finden, wonach Sie gesucht haben.",
+    "message": "Wir konnten nicht finden, wonach du gesucht haben.",
     "description": "Der erste Absatz der 404-Seite"
   },
   "theme.NotFound.p2": {
-    "message": "Bitte kontaktieren Sie den Besitzer der Website, die Sie zu der ursprünglichen URL verlinkt hat, und lassen Sie sie wissen, dass ihr Link defekt ist.",
+    "message": "Bitte kontaktieren den Admin der Website, der dich zu der ursprünglichen URL verlinkt hat, und lasse ihn wissen, dass die verlinkung defekt ist.",
     "description": "Der zweite Absatz der 404-Seite"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
@@ -49,7 +49,7 @@
   },
   "theme.blog.post.readingTime.plurals": {
     "message": "Eine Minute Lesezeit|{readingTime} Minuten Lesezeit",
-    "description": "Pluralisierte Bezeichnung für \"{readingTime} Minuten Lesezeit\". Verwenden Sie so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralisierte Bezeichnung für \"{readingTime} Minuten Lesezeit\". Verwendest du so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMoreLabel": {
     "message": "Lesen Sie mehr über {title}",
@@ -73,7 +73,7 @@
   },
   "theme.blog.post.plurals": {
     "message": "Ein Beitrag|{count} Beiträge",
-    "description": "Pluralisierte Bezeichnung für \"{count} Beiträge\". Verwenden Sie so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralisierte Bezeichnung für \"{count} Beiträge\". Verwende so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
     "message": "{nPosts} mit \"{tagName}\" getaggt",
@@ -149,7 +149,7 @@
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "Ein Dokument getaggt|{count} Dokumente getaggt",
-    "description": "Pluralisierte Bezeichnung für \"{count} Dokumente getaggt\". Verwenden Sie so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralisierte Bezeichnung für \"{count} Dokumente getaggt\". Verwenden so viele Pluralformen (getrennt durch \"|\") wie Ihre Sprache unterstützt (siehe https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
     "message": "{nDocsTagged} mit \"{tagName}\" getaggt",
@@ -240,7 +240,7 @@
     "description": "Der Titel der Suchseite für leere Suchanfragen"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Geben Sie Ihre Suche hier ein",
+    "message": "Geben Ihre Suche hier ein",
     "description": "Der Platzhalter für das Sucheingabefeld"
   },
   "theme.SearchPage.inputLabel": {
@@ -375,7 +375,7 @@
     "description": "Der Titel für den Fehlerbildschirm des Suchmodals"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "Möglicherweise sollten Sie Ihre Netzwerkverbindung überprüfen.",
+    "message": "Möglicherweise solltest du deine Netzwerkverbindung überprüfen.",
     "description": "Der Hilfetext für den Fehlerbildschirm des Suchmodals"
   },
   "theme.SearchModal.footer.selectText": {
@@ -415,15 +415,15 @@
     "description": "Der Text erklärt, dass es keine Ergebnisse für die folgende Suche gibt"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "Versuchen Sie zu suchen nach",
+    "message": "Versuche zu suchen nach",
     "description": "Der Text für die vorgeschlagene Abfrage, wenn keine Ergebnisse für die folgende Suche gefunden werden"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "Glauben Sie, dass diese Abfrage Ergebnisse liefern sollte?",
+    "message": "Glaubst du, dass diese Abfrage Ergebnisse liefern sollte?",
     "description": "Der Text für die Frage, ob der Benutzer denkt, dass Ergebnisse fehlen"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Lassen Sie es uns wissen.",
+    "message": "Lass es uns wissen.",
     "description": "Der Text für den Link, um fehlende Ergebnisse zu melden"
   },
   "theme.SearchModal.placeholder": {
@@ -442,7 +442,7 @@
   "Production-Ready": {
     "message": "Produktionsbereit"
   },
-  "KCL is an open-source constraint-based record & functional programming language mainly used in configuration und policy scenarios.": {
+  "KCL is an open-source constraint-based record & functional programming language mainly used in configuration and policy scenarios.": {
     "message": "KCL ist eine Open-Source-Programmiersprache, die auf Einschränkungen basiert und hauptsächlich in Konfigurations- und Richtlinienszenarien verwendet wird."
   },
   "Learn More": {
@@ -454,19 +454,19 @@
   "Easy-to-Use": {
     "message": "Einfach zu bedienen"
   },
-  "Originated from programming languages ​​such as Python und Golang, rich language features, power IDEs und tools.": {
+  "Originated from programming languages ​​such as Python and Golang, rich language features, power IDEs and tools.": {
     "message": "KCL stammt von Programmiersprachen wie Python und Golang ab, reich an Sprachfunktionen, leistungsstarken IDEs und Werkzeugen."
   },
   "Quick Modeling": {
     "message": "Schnelle Modellierung"
   },
-  "Schema-centric configuration types und modular abstraction with logic und policy based on Config, Schema, Lambda, Rule.": {
+  "Schema-centric configuration types and modular abstraction with logic and policy based on Config, Schema, Lambda, Rule.": {
     "message": "Schema-zentrierte Konfigurationstypen und modulare Abstraktion mit Logik und Richtlinien basierend auf Konfiguration, Schema, Lambda, Regel."
   },
   "Stability": {
     "message": "Stabilität"
   },
-  "Configuration stability built on static type system, strong immutablity , und constraints.": {
+  "Configuration stability built on static type system, strong immutablity , and constraints.": {
     "message": "Konfigurationsstabilität basierend auf einem statischen Typsystem, starker Unveränderlichkeit und Einschränkungen."
   },
   "Scalability": {
@@ -478,26 +478,26 @@
   "Fast Automation": {
     "message": "Schnelle Automatisierung"
   },
-  "High performance und gradient automation scheme of CRUD APIs, multilingual SDKs, language plugins für GitOps.": {
+  "High performance and gradient automation scheme of CRUD APIs, multilingual SDKs, language plugins für GitOps.": {
     "message": "Hohe Leistung und graduelle Automatisierungsschemata von CRUD-APIs, mehrsprachigen SDKs und Sprach-Plugins für GitOps."
   },
   "API Affinity": {
     "message": "API-Affinität"
   },
-  "Native support API ecological specifications such as OpenAPI, Kubernetes CRD und KRM spec.": {
+  "Native support API ecological specifications such as OpenAPI, Kubernetes CRD and KRM spec.": {
     "message": "Native Unterstützung von API-ökologischen Spezifikationen wie OpenAPI, Kubernetes CRD und KRM-Spezifikation."
   },
-  "Codify und Manage Your Modern Configuration und Policy": {
+  "Codify and Manage Your Modern Configuration and Policy": {
     "message": "Kodifizieren und Verwalten Ihrer modernen Konfiguration und Richtlinien"
   },
-  "With configs, models, functions und rules": {
+  "With configs, models, functions and rules": {
     "message": "Mit Konfigurationen, Modellen, Funktionen und Regeln"
   },
   "Trusted By": {
     "message": "Uns Vertrauen"
   },
   "Integrate with Your Favorite Projects": {
-    "message": "Integrieren Sie mit Ihren Lieblingsprojekten"
+    "message": "Integrieren deine Lieblingsprojekte"
   },
   "Tools für Experience": {
     "message": "Werkzeuge für die Erfahrung"
@@ -524,16 +524,16 @@
     "message": "Landschaft"
   },
   "Start your cloud-native journey with scalable config": {
-    "message": "Beginnen Sie Ihre Cloud-native Reise mit skalierbarer Konfiguration"
+    "message": "Beginne Ihre Cloud-native Reise mit skalierbarer Konfiguration"
   },
   "Abstract your schema-centric model with static typing": {
-    "message": "Abstrahieren Sie Ihr schema-zentriertes Modell mit statischer Typisierung"
+    "message": "Abstrahiere dein schema-zentriertes Modell mit statischer Typisierung"
   },
-  "Define und reuse your config und logic through small function fragments": {
-    "message": "Definieren und wiederverwenden Sie Ihre Konfiguration und Logik durch kleine Funktionsfragmente"
+  "Define and reuse your config and logic through small function fragments": {
+    "message": "Definieren und wiederverwenden deiner Konfiguration und Logik durch kleine Funktionsfragmente"
   },
-  "Define your environmental rules to ensure consistency und stability": {
-    "message": "Definieren Sie Ihre Umweltregeln, um Konsistenz und Stabilität zu gewährleisten"
+  "Define your environmental rules to ensure consistency and stability": {
+    "message": "Definieren deine regeln, um Konsistenz und Stabilität zu gewährleisten"
   },
   "Subscribe to Newsletter": {
     "message": "Newsletter abonnieren"

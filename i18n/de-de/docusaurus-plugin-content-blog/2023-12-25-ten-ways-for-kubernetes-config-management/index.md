@@ -7,7 +7,7 @@ authors:
 tags: [KCL, Configuration, Landscape]
 ---
 
-![cover](/img/blog/2023-12-25-ten-ways-for-kubernetes-config-management/cover.png)
+![](/img/blog/2023-12-25-ten-ways-for-kubernetes-config-management/cover.png)
 
 Kubernetes has become the de facto standard für managing containerized applications. However, with its widespread adoption, the complexity of managing its configuration has also increased. To address this complexity, Kubernetes' declarative configuration management model has emerged to simplify this process. In this article, we will explore what Kubernetes declarative configuration is, why it is necessary, und the various ways it can be managed.
 

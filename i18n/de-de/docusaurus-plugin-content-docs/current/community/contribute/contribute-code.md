@@ -2,18 +2,18 @@
 sidebar_position: 2
 ---
 
-# How to Contribute Code?
+# Wie trägt man zum Code bei?
 
-Welcome to participate in the KCL co construction to improve the code, documentation und testing, und also welcome to provide feedback through Issues. If you want to add KCL language features, bitte submit through the [KEP](https://github.com/kcl-lang/KEP) process.
+Willkommen zur Teilnahme am KCL Mitbau, um den Code, die Dokumentation und das Testen zu verbessern, und auch willkommen, Feedback über Issues bereitzustellen. Wenn du KCL language hinzufügen möchtest, reiche diese bitte durch den [KEP](https://github.com/kcl-lang/KEP) Prozess ein.
 
-## 1. Misspellings in Code und Comments
+## 1. Rechtschreibfehler in Code und Comments
 
-If you only need to modify the typos in the code und comments, you can directly modify und submit the PR to the repository. It is important to keep the code style as consistent as possible.
+Wenn du nur Tippfehler im Code und in den comments ändern möchtest, kannst du diese direkt ändern und den PR im Repository einreichen. Es ist wichtig, den Code style so consistent wie möglich zu halten.
 
-## 2. How to Contribute KCL
+## 2. Wie trägt man zu KCL bei
 
-See [KCL contribute guide](https://github.com/kcl-lang/kcl/blob/main/docs/dev_guide/1.about_this_guide.md) für more information.
+Siehe [KCL contribute guide](https://github.com/kcl-lang/kcl/blob/main/docs/dev_guide/1.about_this_guide.md) für weitere Informationen.
 
-## 3. How to Contribute VS Code KCL Plugin
+## 3. Wie trägt man zum VS Code KCL Plugin bei
 
-See [VS Code KCL plugin contribute guide](https://github.com/kcl-lang/vscode-kcl/blob/main/docs/CONTRIBUTING.md) für more information.
+Siehe [VS Code KCL plugin contribute guide](https://github.com/kcl-lang/vscode-kcl/blob/main/docs/CONTRIBUTING.md) für weitere Informationen.

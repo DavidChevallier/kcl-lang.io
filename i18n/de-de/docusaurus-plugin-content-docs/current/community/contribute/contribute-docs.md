@@ -2,51 +2,56 @@
 sidebar_position: 1
 ---
 
-# How to Contribute Document?
+# Wie trägt man zur Dokumentation bei?
 
-This document mainly makes partial modifications to existing documents. If you are submitting blog posts, adding new documents or adjusting the document directory structure, bitte contact team members first.
+Dieses Dokument umfasst hauptsächlich partielle Änderungen an vorhandenen Dokumenten. Wenn du Blogbeiträge einreichst, neue Dokumente hinzufügst oder die Verzeichnisstruktur des Dokuments anpasst, kontaktiere bitte zuerst Teammitglieder.
 
-KCL documents are divided into user guides, development documents, internal documents, reference manuals und blog articles. Their differences are as follows:
+Die KCL-Dokumente sind in Benutzerhandbücher, Entwicklungsunterlagen, interne Dokumente, Referenzhandbücher und Blogartikel unterteilt. Ihre Unterschiede sind wie folgt:
 
-- User's Guide: The corresponding usage document allows users to quickly use the KCL tool to complete their work at the minimum cost, without involving too much internal principles und implementation
-- Reference: KCL language, tools, IDE und other documents with all features, covering the most extensive but trivial content
-- Blog: There are no special restrictions. They can be shared für specific scenarios, technical points or overall development prospects
+- Benutzerhandbuch: Das entsprechende Benutzerdokument ermöglicht es Benutzern, das KCL-Tool schnell zu verwenden, um ihre Arbeit mit minimalen Kosten zu erledigen, ohne zu viele interne Prinzipien und Implementierungen einzubeziehen.
+- Referenz: KCL-Sprache, Tools, IDE und andere Dokumente mit allen Funktionen, die den umfangreichsten, aber trivialen Inhalt abdecken.
+- Blog: Hier gibt es keine speziellen Einschränkungen. Sie können für spezifische Szenarien, technische Punkte oder allgemeine Entwicklungsansichten geteilt werden.
 
-When contributing different types of documents, it is better to combine the above positioning to make some appropriate tailoring für different content to give readers the best experience.
+Beim Beitrag unterschiedlicher Dokumenttypen ist es am besten, die oben genannte Positionierung zu kombinieren, um eine angemessene Anpassung für unterschiedliche Inhalte vorzunehmen und den Lesern das bestmögliche Erlebnis zu bieten.
 
-## 1. Basic Specifications
+## 1. Grundlegende Spezifikationen
 
-- In addition to the title, the internal subtitles shall be numbered as much as possible für easy reading
-- The document automatically output by the tool needs a link to the source code, und the subtitle can be without number
-- Try not to paste large pieces of code (within 30 lines). It is better to provide text explanations und corresponding reference links für the code
-- There are diagrams und truths, but overly complex architecture diagrams are not recommended
-- Internal link: in the form of [`/docs/user_docs/getting-started/intro`](/docs/user_docs/getting-started/intro) absolute path
+- Neben dem Titel sollten die internen Untertitel nach Möglichkeit nummeriert werden, um das Lesen zu erleichtern.
+- Das automatisch vom Tool ausgegebene Dokument benötigt einen Link zum Quellcode, und der Untertitel kann ohne Nummer sein.
+- Versuche, keine großen Codeabschnitte einzufügen (innerhalb von 30 Zeilen). Es ist besser, Texterklärungen und entsprechende Referenzlinks für den Code bereitzustellen.
+- Es gibt Diagramme und Abbildungen, aber übermäßig komplexe Architekturdiagramme werden nicht empfohlen.
+- Interne Verknüpfung: in Form eines absoluten Pfades [`/docs/user_docs/getting-started/intro`](/docs/user_docs/getting-started/intro).
 
-**Punctuation und space**
+**Zeichensetzung und Leerzeichen**
 
-- Chinese punctuation is preferred in Chinese documents
-- One space is required between Chinese und English
-- One space needs to be added between Chinese und numbers
-- Chinese uses full width punctuation without adding spaces before und after punctuation
-- English content uses half width punctuation, with a space after the punctuation
-- You need to leave a space before und after the link, but you do not need to add a space near the beginning of the paragraph und Chinese full width punctuation.
+- In chinesischen Dokumenten wird chinesische Zeichensetzung bevorzugt.
+- Ein Leerzeichen ist zwischen Chinesisch und Englisch erforderlich.
+- Ein Leerzeichen muss zwischen Chinesisch und Zahlen hinzugefügt werden.
+- Chinesisch verwendet Vollbreitenzeichen ohne Leerzeichen vor und nach der Zeichensetzung.
+- Englischer Inhalt verwendet Halbbreitenzeichen mit einem Leerzeichen nach der Zeichensetzung.
+- Du musst einen Abstand vor und nach dem Link lassen, aber du musst keinen Abstand in der Nähe des Absatzanfangs und der chinesischen Vollbreitenzeichen hinzufügen.
 
-**Picture und resource file names**
+**Bild- und Ressourcendateinamen**
 
 - The file name und directory name can only use numbers, English letters und underscores`_` And minus sign '-'
 - Pictures of the current document are placed in the images directory of the current directory
 - Vector pictures can be viewed through [drawio offline version](https://github.com/jgraph/drawio-desktop/releases) (und submit source files at the same time), und export png format pictures at 200% resolution
 
-## 2. Basic mode of using document content
+- Der Dateiname und Verzeichnisname dürfen nur Zahlen, englische Buchstaben und Unterstriche `_` und Minuszeichen '-' verwenden.
+- Bilder des aktuellen Dokuments werden im Bilder Verzeichnis des aktuellen Verzeichnisses platziert.
+- Vektorgrafiken können über [drawio offline version](https://github.com/jgraph/drawio-desktop/releases) angesehen werden (und gleichzeitig die source eingereicht werden) und als PNG Format bilder mit 200% Auflösung exportiert werden.
 
-Each usage document can be regarded as a relatively complete sharing or blog post (the reference manual is no longer such). Using documents to organize content follows the following pattern:
+## 2. Grundlegender Modus der Verwendung von Dokumentinhalten
 
-1. Übersicht: What problems do you want to solve und what effects do you want to achieve in this article? You can put a screenshot of the final effect first
-2. Dependent environment: what tools need to be installed, und provide relevant links
-3. Introduce this article to build a relationship diagram or architecture diagram of resources
-4. Give the test method. Try to use community common methods (such as kube, curl command, or browser) to test
-5. Summary und Outlook. Briefly review the current operation process und some places that can be expanded (some links can be given)
+Jedes Benutzerhandbuch kann als relativ vollständiger Beitrag oder Blogbeitrag angesehen werden (das reference manual ist nicht mehr so). 
+Die Organisation von Inhalten in den reference manuals folgt dem folgenden Muster:
 
-## 3. Test und submit PR
+1. Übersicht: Welche Probleme möchtest du in diesem Artikel lösen und welche Effekte möchtest du erzielen? Du kannst zuerst einen Screenshot des endgültigen Effekts einfügen.
+2. Abhängige Umgebung: Welche Tools müssen installiert sein, und bereitstelle relevante Links.
+3. Einführung: In diesem Artikel wird ein Beziehungsdiagramm oder Architekturdiagramm der Ressourcen erstellt.
+4. Gib die Testmethode an. Versuche, gängige Methoden der Community (wie kube, curl command oder Browser) zum Testen zu verwenden.
+5. Zusammenfassung und Outlook. Überprüfe kurz den aktuellen process und einige Stellen, die erweitert werden können (du kannst einige Links angeben werden).
 
-First, clone the document warehouse, und then test the viewing effect locally with the 'npm run start' und 'npm run build' commands to ensure that you can browse normally und then submit PR.
+## 3. Testing und Einreichen von PRs
+
+Clone zuerst das Dokumenten Repository und teste dann die lokale Instanz mit den Befehlen 'npm run start' und 'npm run build', um sicherzustellen, dass du normal navigieren kannst, und reiche dann den PR ein.
